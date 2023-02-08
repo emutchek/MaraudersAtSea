@@ -9,10 +9,12 @@
 
 ## Respond to Random Obstacles
 
-## Place Item on Map
-
-## Check Map
+## Place Items and View Map
 
 ## Respond to Story Pop-Up
+
+## Game Management
+
+## Interact with Inventory
 
 
