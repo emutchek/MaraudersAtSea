@@ -1,9 +1,6 @@
 # Brief Use Cases
 
-## Move Ship 
-<p>
-
-</p>
+## Move Ship
 
 ## Interact with NPCs
 
