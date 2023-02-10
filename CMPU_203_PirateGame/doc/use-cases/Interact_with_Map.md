@@ -1,4 +1,4 @@
-# Interact with Map
+﻿# Interact with Map
 
 ## Priority: high
 ## Level:
@@ -10,16 +10,17 @@ User goal.
 
 ## Stakeholders and Interests:
 <p>
-User: Wants to be able to move the ship quickly and intuitively as they navigate the islands. Should be able to interact 
-with the islands around the ship as well as move the ship forwards and back with minimal effort.
+User: Wants to be able to easily tell which landmarks they've added to the map and how many are remaining.
+Should be able to launch map view from the main screen and choose to add their current location if they've
+found something new.
 </p>
 
 ## Preconditions:
 
 <ul>
 <li>Must have started or resumed the game. </li>
-<li>The position of the ship must be autosaved so the user can pick up where they
-left off.</li>
+<li>To add something, the ship must currently be positioned next to one of the pre-identified landmarks.</li>
+<li></li>
 </ul>
 
 ## Postconditions:
@@ -28,11 +29,15 @@ left off.</li>
 <li>The ship must look as if it has moved, so the surroundings must have changed. </li>
 <li>If the move interacted with anything on the side, the correct prompt must appear/the correct event must be
 set in motion</li>
-<li>The user's progress must be autosaved.</li>
+<li>The user's progress must be auto saved.</li>
 </ul>
 
 ## Workflow
-@startuml
+
+
+```PlantUML
+@startuml 
+
 skin rose
 title Move Ship
 |User|
@@ -47,14 +52,12 @@ if (invalid_move) then (do_nothing)
 else (
 if (forward) then (yes)
 :Move ship forward;
-elseif (right/left) then (yes)
-:Interact with something IF IT'S THERE;
-)
+
 endif
 stop
 
 @enduml
-
+```
 ## Non-Functional requirements:
 <ul>
 <li>Usability: Grid is large enough that movement commands ar easily recognizable. </li>
