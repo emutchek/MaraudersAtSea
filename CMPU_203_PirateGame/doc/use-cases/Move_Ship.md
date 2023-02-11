@@ -32,6 +32,7 @@ set in motion</li>
 </ul>
 
 ## Workflow 
+```PlantUML
 @startuml
 skin rose
 title Move Ship
@@ -43,17 +44,19 @@ start
 :Give movement command;
 
 |System|
-if (invalid_move) then (do_nothing)
-else (
-    if (forward) then (yes)
-    :Move ship forward;
-    elseif (right/left) then (yes)
-    :Interact with something IF IT'S THERE;
-)
+if (valid move?) then (no)
+end
+else (yes)
+if (at a landmark?) then (yes)
+:interact;
+
 endif
+:move ship;
+
 stop
 
 @enduml
+```
 
 ## Non-Functional requirements:
 <ul>

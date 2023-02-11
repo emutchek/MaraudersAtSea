@@ -28,6 +28,7 @@ User: Wants to be able to navigate through a series of story cards and then choo
 </ul>
 
 ## Workflow
+```PlantUML
 @startuml
 skin rose
 title Respond to Story Prompt
@@ -39,23 +40,25 @@ start
 while (more cards?) is (yes)
     :display story card;
     |User|
-    :passes card;
-endwhile (no)
+    :reads card;
+
 |System|
 if (action required) then (yes)
     :display options;
-endif
-|User|
-;pick option:
+    |User|
+    :pick option;
+
 |System|
-if (pick option 1) then (yes)
+if (option) then (1)
     :trigger option 1;
-else
+else (2)
     :trigger option 2;
 endif
-
+endif
+endwhile (no)
 stop
 @enduml
+```
 
 ## Non-Functional requirements:
 <ul>
