@@ -20,39 +20,39 @@ found something new.
 <ul>
 <li>Must have started or resumed the game. </li>
 <li>To add something, the ship must currently be positioned next to one of the pre-identified landmarks.</li>
-<li></li>
+<li>To view a landmark on the map, the user must have already discovered and added it.</li>
 </ul>
 
 ## Postconditions:
 
 <ul>
-<li>The ship must look as if it has moved, so the surroundings must have changed. </li>
-<li>If the move interacted with anything on the side, the correct prompt must appear/the correct event must be
-set in motion</li>
-<li>The user's progress must be auto saved.</li>
+<li>If the user adds something to the map, from then on it must appear whenever they open it.</li>
+<li>When the user exits the map view, the regular grid screen should appear.</li>
 </ul>
 
 ## Workflow
-
-
 ```PlantUML
 @startuml 
 
 skin rose
-title Move Ship
+title Interact with Map
 |User|
 |System|
 
 |User|
 start
-:Give movement command;
-
+:Select map view;
 |System|
-if (invalid_move) then (do_nothing)
-else (
-if (forward) then (yes)
-:Move ship forward;
-
+:open map;
+if (at landmark) then (yes)
+    |User|
+    if(add place?) then (yes)
+    |System|
+    :add to map;
+    else(no)
+    end
+    endif
+else (no)
 endif
 stop
 
@@ -60,8 +60,8 @@ stop
 ```
 ## Non-Functional requirements:
 <ul>
-<li>Usability: Grid is large enough that movement commands ar easily recognizable. </li>
-<li>Performance: Must move the ship fast enough so that the movement looks smooth.</li>
-<li>Reliability: Data, such as ship's progress, must be saved at least up to a recent checkpoint</li>
+<li>Usability: Map has easily-readable text and shows a straightforward sequence. </li>
+<li>Performance: Must launch the most up-to-date map view in less than 30 seconds</li>
+<li>Reliability: Whenever the map is launched, it should display the most up-to-date save data.</li>
 <li>Supportability: Not-applicable</li>
 </ul>
