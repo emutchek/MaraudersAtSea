@@ -3,62 +3,77 @@
 ### Priority:
 high
 ### Level:
-User goal.
+Subfunction
 ### Primary Actor:
 User
 
 ### Stakeholders and Interests:
 <p>
-User: Wants to be able to navigate through a series of story cards and then choose between a few courses of action. p>
+User: Wants to be able to start the game, pause, resume, and exit with their data automatically saved.</p>
 
 ### Preconditions:
 
 <ul>
-<li>Must have started or resumed the game. </li>
-<li>Must have progressed far enough through the world to trigger this particular event.</li>
+<li>User launches the app on their device </li>
 </ul>
 
 ### Postconditions:
 
 <ul>
-<li>Any inventory or map decision that the user made has taken effect.</li>
-<li>Their progress in the story has been autosaved.</li>
-<li>Screen has returned to the usual grid interface.</li>
+<li>When they start or resume, the grid view is launched to the last location the user reached while 
+playing the game, or the beginning if it's the first time.</li>
+<li>When they pause or end, the game automatically saves and the welcome menu is displayed.</li>
 </ul>
 
 ### Workflow
 ```PlantUML
 @startuml
-title Respond to Story Prompt
+title Start/resume game
 |#LightSkyBlue|User|
 |#Wheat|System|
 
-|System|
+|User|
 start
-while (more cards?) is (yes)
-    :display story card;
-    |User|
-    :swipe card;
-
-|System|
-if (action required) then (yes)
-    :display options;
-    |User|
-    :pick option;
-
-|System|
-:trigger response;
-
+if (presses go) then (start)
+    |System|
+    :open beginning;
+    end
+else (resume)
+    :open recent save point;
+    end
 endif
-endwhile (no)
-stop
+@enduml
+```
+```PlantUML
+@startuml
+title End/pause game
+|#LightSkyBlue|User|
+|#Wheat|System|
+
+|User|
+start
+:presses pause button;
+|System|
+:auto save progress;
+:display controls;
+|User|
+if (presses quit) then (yes)
+    |System|
+    :close game;
+    end
+else (no)
+    :wait;
+    break;
+endif
 @enduml
 ```
 
 ### Non-Functional requirements:
 <ul>
-<li>Usability: Large, readable text, big buttons that are easy to press. </li>
-<li>Performance: Story cards transition in under 30 seconds and close promptly when finished.</li>
-<li>Reliability: The system remembers which story cards have already been displayed and shows the appropriate ones.</li>
+<li>Usability: Menu button is easily identifiable on main grid screen, does not rely on contrasting colors. </li>
+<li>Performance: Saves and launches menu before any other game features try to launch or update.</li>
+<li>Reliability: When the user resumes after pause, the ship, inventory, and story progress are in the
+exact same place they were left; if a dialogue prompt was open, it is reopened on that view.</li>
 <li>Supportability: Not-applicable. </li>
 </ul>
+
