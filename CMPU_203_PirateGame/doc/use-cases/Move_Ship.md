@@ -1,20 +1,19 @@
 # Move Ship
 
-## Priority: high
-## Level: 
-<p>
-User goal.
-</p>
+### Priority: 
+high
+### Level: 
+User goal
+### Primary Actor: 
+User
 
-## Primary Actor: User
-
-## Stakeholders and Interests: 
+### Stakeholders and Interests: 
 <p>
 User: Wants to be able to move the ship quickly and intuitively as they navigate the islands. Should be able to interact 
 with the islands around the ship as well as move the ship forwards and back with minimal effort.
 </p>
 
-## Preconditions:
+### Preconditions:
 
 <ul>
 <li>Must have started or resumed the game. </li>
@@ -22,7 +21,7 @@ with the islands around the ship as well as move the ship forwards and back with
 left off.</li>
 </ul>
 
-## Postconditions:
+### Postconditions:
 
 <ul>
 <li>The ship must look as if it has moved, so the surroundings must have changed. </li>
@@ -31,13 +30,12 @@ set in motion</li>
 <li>The user's progress must be autosaved.</li>
 </ul>
 
-## Workflow 
+### Workflow 
 ```PlantUML
 @startuml
-skin rose
 title Move Ship
-|User|
-|System|
+|#LightSkyBlue|User|
+|#Wheat|System|
 
 |User|
 start
@@ -58,7 +56,7 @@ stop
 @enduml
 ```
 
-## Non-Functional requirements:
+### Non-Functional requirements:
 <ul>
 <li>Usability: Grid is large enough that movement commands ar easily recognizable. </li>
 <li>Performance: Must move the ship fast enough so that the movement looks smooth.</li>
