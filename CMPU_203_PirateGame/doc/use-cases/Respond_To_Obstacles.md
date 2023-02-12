@@ -1,64 +1,65 @@
-# Respond to story pop-up
+# Respond to obstacle
 
 ### Priority:
-high
+low
 ### Level:
-User goal.
+User goal
 ### Primary Actor:
 User
 
 ### Stakeholders and Interests:
 <p>
-User: Wants to be able to navigate through a series of story cards and then choose between a few courses of action. p>
+User: Wants to address the random obstacles in a way that allow them to use their 
+skills and inventory to fix the problem swiftly.</p>
 
 ### Preconditions:
 
 <ul>
-<li>Must have started or resumed the game. </li>
-<li>Must have progressed far enough through the world to trigger this particular event.</li>
+<li>Must have started or resumed the game, but not be at the end of the story. </li>
+<li>Must be on the regular grid view.</li>
 </ul>
 
 ### Postconditions:
 
 <ul>
-<li>Any inventory or map decision that the user made has taken effect.</li>
-<li>Their progress in the story has been autosaved.</li>
-<li>Screen has returned to the usual grid interface.</li>
+<li>The obstacle card has closed and been replaced with the regular grid interface.</li>
+<li>Any resources that were used have been permanently removed from the inventory.</li>
+<li>The function to launch obstacles at random times has been reset.</li>
+<li>The obstacle card has been marked as used and removed from the deck.</li>
 </ul>
 
 ### Workflow
 ```PlantUML
 @startuml
-title Respond to Story Prompt
+title Respond to Obstacle
 |#LightSkyBlue|User|
 |#Wheat|System|
 
 |System|
 start
-while (more cards?) is (yes)
-    :display story card;
-    |User|
-    :swipe card;
-
+:display obstacle card;
+|User|
+:selects from options;
 |System|
-if (action required) then (yes)
-    :display options;
+:execute solution;
+if (health depleted) then (yes)
     |User|
-    :pick option;
-
+    :end game;
+    end
+else (no)
 |System|
-:trigger response;
-
+:close card;
 endif
-endwhile (no)
+
 stop
 @enduml
 ```
 
 ### Non-Functional requirements:
 <ul>
-<li>Usability: Large, readable text, big buttons that are easy to press. </li>
-<li>Performance: Story cards transition in under 30 seconds and close promptly when finished.</li>
-<li>Reliability: The system remembers which story cards have already been displayed and shows the appropriate ones.</li>
+<li>Usability: Readable text, big buttons that are easy to press, ability to open inventory view
+while considering the obstacle card. </li>
+<li>Performance: Obstacle card opens and closes in under thirty seconds.</li>
+<li>Reliability: The system remembers which obstacles cards have already been displayed to avoid any repeats.</li>
 <li>Supportability: Not-applicable. </li>
 </ul>
