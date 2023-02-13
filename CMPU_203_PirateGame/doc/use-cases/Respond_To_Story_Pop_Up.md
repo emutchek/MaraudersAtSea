@@ -9,7 +9,7 @@ User
 
 ### Stakeholders and Interests:
 <p>
-User: Wants to be able to navigate through a series of story cards and then choose between a few courses of action. p>
+User: Wants to be able to navigate through a series of story cards and then choose between a few courses of action. </p>
 
 ### Preconditions:
 
