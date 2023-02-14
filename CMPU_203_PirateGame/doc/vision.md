@@ -1,26 +1,32 @@
 ## Target Audience
-<p>Our app is designed to be played by anyone ages 10 and up who enjoys 
-video games. It will be especially popular with fans of popular fantasy 
-franchises. The app is geared towards players who prefer a more story-driven
-experience versus intense combat.</p>
+<ul>
+<li>Players ages 10 and up.</li>
+<li>Fans of popular fantasy franchises.</li>
+<li>Players that prefer a more story-driven experience versus intense combat.</li>
+</ul>
 
 ## Value Proposition
-<p>Our app will provide entertainment by placing the user in a compelling
-world. They will have the opportunity to explore the intricacies of a 
-different society and confront their own role in systems of power. It will 
-also be funny.</p>
+<p>Our app will:
+<ul>
+<li>Provide entertainment by placing the user in a compelling fantasy world.</li>
+<li>Give the user an opportunity to explore the intricacies of a different society while confronting
+their own role in systems of power</li>
+<li>Provide humor and a moment of levity in the user's day.</li>
+</ul>
+</p>
 
 ## Main Features
-<p>The primary mechanic of the game is a grid upon which the user navigates
-a pirate ship. The app displays a bird's eye view of the ocean and
-everything the ship passes (e.g. enemy ships, small islands, floating 
-debris). As the user moves forward, they can interact with these obstacles
-and accumulate resources. The story of the game will progress through
-pop-up dialogues which will prompt decisions for the crew to make. They
-will also face random setbacks in a system similar to the Oregon Trail game.
-The goal of the game is to complete the mission without the ship, or its
-inhabitants, perishing. Their progress will be tracked through a health bar.
-</p>
+<ul>
+<li>A 3D grid upon which the user navigates a pirate ship.</li>
+<li>A birds-eye view of everything the user passes on the ship (e.g. enemy ships, small islands, 
+floating debris).</li>
+<li>Pop-up dialogues with NPCs that will further the story and prompt decisions for the user
+to make.</li>
+<li>A larger mission that guides them through the story.</li>
+<li>Automatic saves that preserves their progress and measures their health.</li>
+
+</ul>
+
 
 ## Constraints
 <ul>
@@ -40,3 +46,30 @@ inhabitants, perishing. Their progress will be tracked through a health bar.
 <li>To view their progress on the map they're creating</li>
 <li>To accumulate resources and treasure</li>
 </ul>
+
+## System Context Diagram
+```PlantUML
+@startuml
+left to right direction
+actor User as u
+package Game{
+    usecase "Game Management" as UC1
+    usecase "Interact with Inventory" as UC2
+    usecase "Interact with Map" as UC3
+    usecase "Interact with NPCs" as UC4
+    usecase "Move Ship" as UC5
+    usecase "Respond to Story Pop-Up" as UC6
+    usecase "Respond to Obstacles" as UC7
+}
+
+u --> UC1
+u --> UC2
+u --> UC3
+u --> UC4
+u --> UC5
+u --> UC6
+u --> UC7
+
+
+@enduml
+```
