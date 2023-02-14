@@ -9,12 +9,12 @@ User
 
 ### Stakeholders and Interests:
 <p>
-User: Wants to be able to start the game, pause, resume, and exit with their data automatically saved.</p>
+User: Wants to be able to start the game, pause, resume, exit, or restart game with their data automatically saved.</p>
 
 ### Preconditions:
 
 <ul>
-<li>User launches the app on their device </li>
+<li>User launches the app on their device.</li>
 </ul>
 
 ### Postconditions:
@@ -23,12 +23,13 @@ User: Wants to be able to start the game, pause, resume, and exit with their dat
 <li>When they start or resume, the grid view is launched to the last location the user reached while 
 playing the game, or the beginning if it's the first time.</li>
 <li>When they pause or end, the game automatically saves and the welcome menu is displayed.</li>
+<li>When they choose to reset, the next time they open the game it should start at the beginning with the default resources.</li>
 </ul>
 
 ### Workflow
 ```PlantUML
 @startuml
-title Start/resume game
+title Subfunction: start/resume game
 |#LightSkyBlue|User|
 |#Wheat|System|
 
@@ -46,7 +47,7 @@ endif
 ```
 ```PlantUML
 @startuml
-title End/pause game
+title Subfunction: end/pause game
 |#LightSkyBlue|User|
 |#Wheat|System|
 
