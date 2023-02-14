@@ -8,14 +8,14 @@
 </ul>
 
 ## Value Proposition
-<p>Our app will:
+<p>Our app will:</p>
 <ul>
 <li>Provide entertainment by placing the user in a compelling fantasy world.</li>
 <li>Give the user an opportunity to explore the intricacies of a different society while confronting
 their own role in systems of power</li>
 <li>Provide humor and a moment of levity in the user's day.</li>
 </ul>
-</p>
+
 
 ## Main Features
 <ul>
@@ -54,8 +54,10 @@ to make.</li>
 @startuml
 left to right direction
 actor User as u
+NPC <<system>>
+Encounter <<system>>
 package Game{
-    usecase "Game Management" as UC1
+    usecase "Manage Game" as UC1
     usecase "Interact with Inventory" as UC2
     usecase "Interact with Map" as UC3
     usecase "Interact with NPCs" as UC4
@@ -63,7 +65,6 @@ package Game{
     usecase "Respond to Story Pop-Up" as UC6
     usecase "Respond to Obstacles" as UC7
 }
-
 u --> UC1
 u --> UC2
 u --> UC3
@@ -71,7 +72,9 @@ u --> UC4
 u --> UC5
 u --> UC6
 u --> UC7
-
-
+UC4 --> NPC
+UC1 --> Encounter
+UC6 --> Encounter
+UC7 --> Encounter
 @enduml
 ```
