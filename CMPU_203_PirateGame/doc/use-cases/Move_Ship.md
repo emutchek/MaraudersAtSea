@@ -58,7 +58,7 @@ stop
 
 ### Non-Functional requirements:
 <ul>
-<li>Usability: Grid is large enough that movement commands ar easily recognizable. </li>
+<li>Usability: Grid is large enough that movement commands arr easily recognizable. </li>
 <li>Performance: Must move the ship fast enough so that the movement looks smooth.</li>
 <li>Reliability: Data, such as ship's progress, must be saved at least up to a recent checkpoint</li>
 <li>Supportability: Not-applicable</li>
