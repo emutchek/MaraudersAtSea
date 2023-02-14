@@ -1,17 +1,13 @@
-# Brief Use Cases
+# Use Cases
+<ol>
+<li>Move Ship</li>
+<li>Respond to Story Pop-Up</li>
+<li>Manage game</li>
+<li>Move Ship</li>
+<li>Interact with Map</li>
+<li>Interact with Inventory</li>
+<li>Interact with NPCs</li>
+</ol>
 
-## Move Ship
-
-## Interact with NPCs
-
-## Respond to Random Obstacles
-
-## Place Items and View Map
-
-## Respond to Story Pop-Up
-
-## Game Management
-
-## Interact with Inventory
 
 

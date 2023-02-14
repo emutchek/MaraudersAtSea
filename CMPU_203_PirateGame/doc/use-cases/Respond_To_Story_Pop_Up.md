@@ -3,7 +3,7 @@
 ### Priority: 
 high
 ### Level: 
-User goal.
+user goal
 ### Primary Actor: 
 User
 
