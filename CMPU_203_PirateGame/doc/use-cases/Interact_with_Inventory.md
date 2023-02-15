@@ -33,6 +33,24 @@ and no longer be viewable by the user.</li>
 ### Workflow
 ```PlantUML
 @startuml
+title View Inventory
+|#LightSkyBlue|User|
+|#Wheat|System|
+
+|User|
+start
+:view inventory;
+|System|
+while (open?)
+    :display inventory;
+endwhile
+    if (remove item?) then (yes)
+        :Remove item;
+
+@enduml
+```
+```PlantUML
+@startuml
 title Add item
 |#LightSkyBlue|User|
 |#Wheat|System|
@@ -46,7 +64,7 @@ if(has resources) then (yes)
     if(pick up item?) then (yes)
     |System|
         :update inventory;
-        :remove item from map;
+        :remove item from world map;
         end
     else (no)
         end
