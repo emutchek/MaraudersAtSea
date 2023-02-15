@@ -8,6 +8,7 @@ they know if they have the stuff</li>
 lowkey the same thing-- fix?? change??</li>
 <li>If they refuse to put something on the map, we still need to know they got there</li>
 <li>The choice to do the right thing comes 50-75% of the way through, not the very end, but it will end the game early</li>
+<li>Make an encounters use case to deal with obstacles, rescources, etc. and then subfunctions</li>
 </ul>
 
 ## Immediate To-Dos
