@@ -37,22 +37,14 @@ title Interact with Map
 |#LightSkyBlue|User|
 |#Wheat|System|
 
-|User|
-start
-:Select map view;
 |System|
-:open map;
-if (at landmark) then (yes)
-    |User|
-    if(add place?) then (yes)
-    |System|
-    :add to map;
-    else(no)
-    end
-    endif
-else (no)
-endif
-stop
+start
+:Interact_Surroundings;
+if(not on map) then (yes)
+:add location to map;
+end
+else(no)
+end
 
 @enduml
 ```
