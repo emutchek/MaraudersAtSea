@@ -1,5 +1,6 @@
 # Use Cases
 <ol>
+<li>Interact Surroundings</li>
 <li>Move Ship</li>
 <li>Respond to Story Pop-Up</li>
 <li>Manage game</li>

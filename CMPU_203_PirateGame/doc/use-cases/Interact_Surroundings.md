@@ -47,8 +47,7 @@ if(encounter exists) then (yes)
         else if (map landmark) then (yes)
         :Add item in Interact_With_Map;
         end
-    else (no)
-        end
+ 
     endif
 else (no)
     end
