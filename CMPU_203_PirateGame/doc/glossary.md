@@ -16,7 +16,7 @@ Glossary
 | Resources | Lumber, rope, food, medicine, treasure, weapons. | Object |N/A. |
 | Inventory | Collection of all resources on the ship. \n Accessible from any screen.| Object |Pocket. |
 | Navigation Bar | Contains game management (resume, quit, save, reset). \n Accessible from any screen.| Object |Menu/Settings |
-| Encounters | Anything the user can interact with \n  outside the ship (islands, NPCs, obstacles, etc.) | Objects | Obstacles, Terrain, \n Land, Resource Drops, \n Traders/NPCs/Towns/People|
+| Surroundings | Anything the user can interact with \n  outside the ship (islands, NPCs, obstacles, etc.) | Objects | Obstacles, Terrain, \n Land, Resource Drops, \n Traders/NPCs/Towns/People|
 end title
 
 @enduml

@@ -30,12 +30,12 @@ class Landmass {}
 
 ' associations
 Surroundings "1-10" -- "1" Grid : \tLocated on \t\t
-Surroundings "1" -- "1" Map : \tPrompts\t\t
-Surroundings "1" -- "1" Landmass : \tDescribes \t\t
-Surroundings "1" -- "1" Debris : \tDescribes \t\t
-Surroundings "1" -- "1" Island : \tDescribes \t\t
+Surroundings "1" -- "1" Landmass : \tAppear as \t\t
+Surroundings "1" -- "1" Debris : \tAppear as \t\t
+Surroundings "1" -- "1" Island : \tAppear as \t\t
 Ship "1" -- "1" Grid : \tLocated on \t\t
-Island "1" -- "1" StoryScene : \tContains \t\t
+StoryScene "1" -- "1" Island : \tTake place on \t\t
+Map "1" -- "1-10" Island : \tContains \t\t
 
 @enduml
 ```
