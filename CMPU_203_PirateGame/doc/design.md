@@ -20,6 +20,7 @@ abstract class ASurrounding {
 ASurrounding <|-- Island
 ASurrounding <|-- Landmass
 ASurrounding <|-- Debris
+Island <|-- StoryScene
 
 class Landmass {}
 class Debris {}
@@ -46,14 +47,14 @@ class Ship {
     health : int
     --
     -update_health(amount : int) : void
-    +displayHealth() : void
+    +toString() : String
 }
 
 class Inventory {
     debrisMaterial : int
     landmassMaterial : int 
     --
-    +displayInventory() : void
+    +toString() : String
     -update_inventory(debrisAmt : int, landmassAmt : int) : void
 }
 @enduml
