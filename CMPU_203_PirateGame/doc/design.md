@@ -21,9 +21,14 @@ ASurrounding <|-- Island
 ASurrounding <|-- ResourceArea
 
 class ResourceArea {}
+
 class Island {
     discovered : boolean
+    --
+    +callStoryScene() : String
 }
+
+Island -> "Contains a single" StoryScene : \t\t\t\t
 
 class Map {
 --
@@ -59,17 +64,37 @@ class Game {
 }
 @enduml
 ```
-## Sequence Diagram Ideas:
+## Sequence Diagrams:
 
-### Display story:
+### Movement
+```PlantUML
+@startuml
+hide footbox
+actor User as user
+participant ": Game" as game
+participant ": Grid" as grid
+participant ": Island" as island
+user -->> game **: enters move
+game ->> grid **: parseInput()
+grid -->> island **: IdentifyIslands()
+ref over island
+Display Story
+endref
+@enduml
+```
 
-Story:
-grid calls identifyIslands whenever user moves --> tells island to bring up story scene -->
-story class runs its display method
-
-
-Game:
-scanner takes in input --> grid class handles the movement w/ multiple methods
+### Display Story
+```PlantUML
+@startuml
+mainframe sd Display Story
+hide footbox
+participant ": Island" as island
+alt IsIsland
+    island -> storyscene: callStoryScene
+else !IsIsland
+end
+@enduml
+```
 
 
 

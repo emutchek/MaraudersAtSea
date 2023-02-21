@@ -11,24 +11,30 @@ low key the same thing-- fix?? change??</li>
 <li>Make an encounters use case to deal with obstacles, resources, etc. and then subfunctions</li>
 </ul>
 
-### Domain model conceptual classes:
+### Game Class
 <ul>
-<li>MAP (array of surroundings objects)</li>
-<li>GAME (progress)</li>
-<li>GRID (environment, ship_location</li>
-<li>SHIP (health)</li>
-<li>SURROUNDINGS (location, description)</li>
-<li>STORYSCENE (chronology, text)</li>
-<li>ISLAND</li>
-<li>DEBRIS</li>
-<li>LANDMASS</li>
-</ul>
-
-### Domain model relationships:
-<ul>
-<li>surroundings prompt Map</li>
-<li>Ship is located on Grid</li>
-<li>Island contains StoryScene</li>
-<li>Surroundings are located on Grid (0..10)</li>
-
+<li>Call newGame, which initializes a new Grid object and then saves it as a field</li>
+    <ul>
+        <li>Initializes a new grid object (isle of pirates Island second row)</li>
+        <li>Initializes a new Ship, inventory, and map</li>
+    </ul>
+ <li>Print welcome message</li>
+<li>Loop</li>
+    <ul>
+    <li>Input Loop</li>
+        <ul>
+        <li>Scanner to take in input and parse it</li>
+        <li>check if valid input (M, W, H, I, Q) using trycatch else continue</li>
+        </ul>
+    <li>switch case:</li>
+        <ul>
+        <li>if M, call map.toString()</li>
+        <li>if W, call grid.move()</li>
+        <li>if H, call Ship.toString()</li>
+        <li>if I, call Inventory.toString()</li>
+        <li>else (Q)</li>
+        </ul>
+    <li>turn off while loop</li>
+    </ul>
+<li>Print exit message</li>
 </ul>
