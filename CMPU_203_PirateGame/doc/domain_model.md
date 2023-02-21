@@ -25,13 +25,11 @@ class Game {
 progress
 }
 class Island {}
-class Debris {}
-class Landmass {}
+class ResourceArea{}
 
 ' associations
 Surroundings "1-10" -- "1" Grid : \tLocated on \t\t
-Surroundings "1" -- "1" Landmass : \tAppear as \t\t
-Surroundings "1" -- "1" Debris : \tAppear as \t\t
+Surroundings "1" -- "1" ResourceArea : \tAppear as \t\t
 Surroundings "1" -- "1" Island : \tAppear as \t\t
 Ship "1" -- "1" Grid : \tLocated on \t\t
 StoryScene "1" -- "1" Island : \tTake place on \t\t

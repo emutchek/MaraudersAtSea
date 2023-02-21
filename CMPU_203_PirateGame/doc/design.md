@@ -18,15 +18,12 @@ abstract class ASurrounding {
     +toString() : String
 }
 ASurrounding <|-- Island
-ASurrounding <|-- Landmass
-ASurrounding <|-- Debris
+ASurrounding <|-- ResourceArea
 
-class Landmass {}
-class Debris {}
+class ResourceArea {}
 class Island {
     discovered : boolean
 }
-
 
 class Map {
 --
@@ -50,22 +47,33 @@ class Ship {
 }
 
 class Inventory {
-    debrisMaterial : int
-    landmassMaterial : int 
+    rope : int
+    wood : int 
     --
     +displayInventory() : void
-    -update_inventory(debrisAmt : int, landmassAmt : int) : void
+    -update_inventory(rope : int, wood : int) : void
+}
+
+class Game {
+    +run_game()
 }
 @enduml
 ```
-### Sequence Diagram Ideas:
+## Sequence Diagram Ideas:
 
-Display story:
+### Display story:
 
+Story:
 grid calls identifyIslands whenever user moves --> tells island to bring up story scene -->
 story class runs its display method
 
-Moving:
 
-scanner within the move method that verifies user's input , increments ship position, calls populate grid, 
-and calls toString
+Game:
+scanner takes in input --> grid class handles the movement w/ multiple methods
+
+
+
+
+
+
+
