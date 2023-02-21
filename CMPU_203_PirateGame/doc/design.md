@@ -14,6 +14,8 @@ Grid ->  "\nlist of surroundings\n{ordered}" ASurrounding : \t\t\t\t
 abstract class ASurrounding {
     descr : String
     location : int 
+    --
+    +toString() : String
 }
 ASurrounding <|-- Island
 ASurrounding <|-- Landmass
@@ -29,7 +31,7 @@ class Island {
 class Map {
 --
     +toString() : String
-    +addItem(
+    +addItem() 
 
 }
 Map ->  "\nlist of islands" Island : \t\t\t\t
@@ -44,6 +46,15 @@ class Ship {
     health : int
     --
     -update_health(amount : int) : void
+    +displayHealth() : void
+}
+
+class Inventory {
+    debrisMaterial : int
+    landmassMaterial : int 
+    --
+    +displayInventory() : void
+    -update_inventory(debrisAmt : int, landmassAmt : int) : void
 }
 @enduml
 ```
