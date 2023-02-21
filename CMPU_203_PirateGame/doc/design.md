@@ -43,7 +43,7 @@ class Ship {
     health : int
     --
     -update_health(amount : int) : void
-    +displayHealth() : void
+    +toString() : String 
 }
 
 class Inventory {
