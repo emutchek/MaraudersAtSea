@@ -6,6 +6,6 @@ public abstract class ASurrounding {
     String description;
     int location;
     public String toString() {
-        return "O";
+        return "Ѳ";
     }
 }

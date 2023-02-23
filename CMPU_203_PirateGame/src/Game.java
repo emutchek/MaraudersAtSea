@@ -12,21 +12,21 @@ public class Game {
 
         System.out.println("Welcome to PirateGame, a pirate adventure game where you will set off with" +
                 " your crew and explore the unknown. \n");
+
         boolean run = true;
         while(run){
             char act = ' ';
             //takes in user input to determine next action, and then checks if that input is valid
             while (true){
-                System.out.println("Enter Action \nM(check map), W(move forward), H(check health), I(check inventory), " +
+                System.out.println("\nEnter Action \nM(check map), W(move forward), H(check health), I(check inventory), " +
                         "Q(quit)");
-                java.util.Scanner input = new java.util.Scanner(System.in);
+                Scanner input = new Scanner(System.in);
                 act = input.next().charAt(0);
                 if ((act == 'M') || (act == 'W') || (act == 'H') || (act == 'I') || (act == 'Q')){
                     break;
                 }
                 else {
                     System.out.println("Invalid Action");
-                    continue;
                 }
             }
 
@@ -35,13 +35,15 @@ public class Game {
                     System.out.println("m.toString()");
                     break;
                 case ('W'):
-                    //g.move();
+                    System.out.print("before:\n" + g);
+                    g.move();
+                    System.out.print("after:\n" + g);
                     break;
                 case ('H'):
-                    s.toString();
+                    System.out.print(s);
                     break;
                 case ('I'):
-                    inv.toString();
+                    System.out.print(inv);
                     break;
                 default:
                     run = false;
