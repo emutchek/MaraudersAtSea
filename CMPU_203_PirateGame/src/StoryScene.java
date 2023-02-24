@@ -9,5 +9,7 @@ public class StoryScene {
     public StoryScene(String text) {
         this.text = text;
     }
-    public void displayCards() {}
+    public void displayCards() {
+        System.out.println(this.text);
+    }
 }

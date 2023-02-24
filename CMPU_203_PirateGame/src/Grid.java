@@ -7,8 +7,11 @@ public class Grid {
     int ship_location = 0; //0-50
     //int islands_met = 0;
     String [][] grid;
+    Island[] all_islands = new Island[10];
+    int islands_met = 0;
 
     public Grid(Island[]all_islands) {
+        this.all_islands = all_islands;
         grid = new String [][]{
         {" ", " "}, {all_islands[0].toString(), " "},
         {" ", " "},
@@ -72,11 +75,13 @@ public class Grid {
         this.ship_location++;
         populateGrid();
         System.out.print(this);
+        identifyIslands();
     }
-    /*public void identifyIslands() {
+    public void identifyIslands() {
         if(this.grid[ship_location][0].equals("Ѳ") ||
                 this.grid[ship_location][1].equals("Ѳ")){
-            System.out.println(islands_met
+            all_islands[islands_met].story.displayCards();
+            this.islands_met ++;
         }
-    }*/
+    }
 }

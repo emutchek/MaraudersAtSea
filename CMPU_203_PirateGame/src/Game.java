@@ -25,10 +25,11 @@ public class Game {
         Grid g = new Grid(m.all_islands);
         System.out.println("Welcome to PirateGame, a pirate adventure game where you will set off with" +
                 " your crew and explore the unknown. \n");
-
+        System.out.println(g);
         boolean run = true;
         while(run){
             char act = ' ';
+
             //takes in user input to determine next action, and then checks if that input is valid
             while (true){
                 System.out.println("\nEnter Action \nM(check map), W(move forward), H(check health), I(check inventory), " +
