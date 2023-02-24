@@ -6,6 +6,8 @@
 public class StoryScene {
     String text;
 
-    public StoryScene() {}
+    public StoryScene(String text) {
+        this.text = text;
+    }
     public void displayCards() {}
 }

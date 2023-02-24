@@ -5,48 +5,45 @@
  */
 public class Grid {
     int ship_location = 0; //0-50
-    ASurrounding [] all_islands = new ASurrounding[21]; //all islands on world map
+    //have to fetch field from map
     String [][] grid;
 
-    public Grid() {
-        for(int i = 0; i < 21; i++) {
-            all_islands [i] = new Island();
-        }
+    public Grid(Island[]all_islands) {
         grid = new String [][]{
         {" ", " "}, {all_islands[0].toString(), " "},
-        {" ", all_islands[1].toString()},
-        {all_islands[2].toString(), " "},
+        {" ", " "},
+        {" ", " "},
+        {all_islands[1].toString(), " "},
+        {" ", all_islands[2].toString()},
+        {" ", " "},
+        {" ", " "},
         {all_islands[3].toString(), " "},
+        {" ", " "},
+        {" ", " "},
         {" ", all_islands[4].toString()},
         {" ", " "},
         {" ", " "},
+        {" ", " "},
         {all_islands[5].toString(), " "},
-        {" ", all_islands[6].toString()},
+        {" ", " "},
+        {" ", " "},
+        {" ", " "},
+        {all_islands[6].toString(), " "},
+        {" ", " "},
         {" ", " "},
         {" ", all_islands[7].toString()},
-        {all_islands[8].toString(), " "},
         {" ", " "},
-        {all_islands[9].toString(), " "},
-        {all_islands[10].toString(), " "},
+        {" ", all_islands[8].toString()},
         {" ", " "},
         {" ", " "},
         {" ", " "},
-        {all_islands[11].toString(), " "},
-        {" ", all_islands[12].toString()},
         {" ", " "},
-        {" ", all_islands[13].toString()},
         {" ", " "},
-        {" ", all_islands[14].toString()},
         {" ", " "},
-        {all_islands[15].toString(), " "},
-        {" ", all_islands[16].toString()},
+        {all_islands[9].toString()," ", },
         {" ", " "},
-        {" ", all_islands[17].toString()},
         {" ", " "},
-        {" ", all_islands[18].toString()},
-        {all_islands[19].toString(), " "},
-        {" ", " "},
-        {all_islands[20].toString(), " "}};
+        {" ", " "}};
     }
 
     public String toString() {
@@ -74,7 +71,7 @@ public class Grid {
     public void move(){
         this.ship_location++;
         populateGrid();
-        //System.out.print(this);
+        System.out.print(this);
     }
     public void identifyIslands() {
 

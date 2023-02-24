@@ -5,5 +5,7 @@
  */
 public class Island extends ASurrounding{
     StoryScene story;
-    public Island() {}
+    public Island(StoryScene s) {
+        this.story = s;
+    }
 }

@@ -12,34 +12,4 @@ they know if they have the stuff</li>
 
 ### Islands
 Map class uses for loop to create and initialize all the islands
-Where is the list of story scenes?
-
-Grid 
-
-### Game Class
-<ul>
-<li>Call newGame, which initializes a new Grid object and then saves it as a field</li>
-    <ul>
-        <li>Initializes a new grid object (isle of pirates Island second row)</li>
-        <li>Initializes a new Ship, inventory, and map</li>
-    </ul>
- <li>Print welcome message</li>
-<li>Loop</li>
-    <ul>
-    <li>Input Loop</li>
-        <ul>
-        <li>Scanner to take in input and parse it</li>
-        <li>check if valid input (M, W, H, I, Q) using try catch else continue</li>
-        </ul>
-    <li>switch case:</li>
-        <ul>
-        <li>if M, call map.toString()</li>
-        <li>if W, call grid.move()</li>
-        <li>if H, call Ship.toString()</li>
-        <li>if I, call Inventory.toString()</li>
-        <li>else (Q)</li>
-        </ul>
-    <li>turn off while loop</li>
-    </ul>
-<li>Print exit message</li>
-</ul>
+Where is the list of story scenes? -- in game

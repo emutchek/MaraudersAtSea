@@ -5,11 +5,24 @@ Game class
 import java.util.Scanner;
 public class Game {
     public static void main(String[] args) {
-        Grid g = new Grid();
+
         Ship s = new Ship();
-        //Map m = new Map();
         Inventory inv = new Inventory();
 
+        StoryScene [] all_stories = new StoryScene [10];
+        all_stories[0] = new StoryScene("//text 1");
+        all_stories[1] = new StoryScene("//text 2");
+        all_stories[2] = new StoryScene("//text 3");
+        all_stories[3] = new StoryScene("//text 4");
+        all_stories[4] = new StoryScene("//text 5");
+        all_stories[5] = new StoryScene("//text 6");
+        all_stories[6] = new StoryScene("//text 7");
+        all_stories[7] = new StoryScene("//text 8");
+        all_stories[8] = new StoryScene("//text 9");
+        all_stories[9] = new StoryScene("//text 10");
+
+        Map m = new Map(all_stories);
+        Grid g = new Grid(m.all_islands);
         System.out.println("Welcome to PirateGame, a pirate adventure game where you will set off with" +
                 " your crew and explore the unknown. \n");
 
@@ -35,9 +48,8 @@ public class Game {
                     System.out.println("m.toString()");
                     break;
                 case ('W'):
-                    System.out.print("before:\n" + g);
                     g.move();
-                    System.out.print("after:\n" + g);
+                    //System.out.print("after:\n" + g);
                     break;
                 case ('H'):
                     System.out.print(s);
