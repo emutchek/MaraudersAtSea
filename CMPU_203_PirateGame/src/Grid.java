@@ -5,7 +5,7 @@
  */
 public class Grid {
     int ship_location = 0; //0-50
-    //have to fetch field from map
+    //int islands_met = 0;
     String [][] grid;
 
     public Grid(Island[]all_islands) {
@@ -73,7 +73,10 @@ public class Grid {
         populateGrid();
         System.out.print(this);
     }
-    public void identifyIslands() {
-
-    }
+    /*public void identifyIslands() {
+        if(this.grid[ship_location][0].equals("Ѳ") ||
+                this.grid[ship_location][1].equals("Ѳ")){
+            System.out.println(islands_met
+        }
+    }*/
 }

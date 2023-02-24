@@ -8,4 +8,7 @@ public class Island extends ASurrounding{
     public Island(StoryScene s) {
         this.story = s;
     }
+    public String toString() {
+        return "Ѳ";
+    }
 }

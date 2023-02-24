@@ -5,11 +5,11 @@ Game class
 import java.util.Scanner;
 public class Game {
     public static void main(String[] args) {
-
+        int num_islands = 10;
         Ship s = new Ship();
         Inventory inv = new Inventory();
 
-        StoryScene [] all_stories = new StoryScene [10];
+        StoryScene [] all_stories = new StoryScene [num_islands];
         all_stories[0] = new StoryScene("//text 1");
         all_stories[1] = new StoryScene("//text 2");
         all_stories[2] = new StoryScene("//text 3");
