@@ -5,49 +5,48 @@
  */
 public class Grid {
     int ship_location = 0; //0-50
-    ASurrounding [] all_surroundings = new ASurrounding[21]; //all islands & resource areas on world map
+    ASurrounding [] all_islands = new ASurrounding[21]; //all islands on world map
     String [][] grid;
 
     public Grid() {
         for(int i = 0; i < 21; i++) {
-            all_surroundings [i] = new Island();
+            all_islands [i] = new Island();
         }
         grid = new String [][]{
-        {all_surroundings[0].toString(), " "},
-        {" ", " "},
-        {" ", all_surroundings[1].toString()},
-        {all_surroundings[2].toString(), " "},
-        {all_surroundings[3].toString(), " "},
-        {" ", all_surroundings[4].toString()},
-        {" ", " "},
-        {" ", " "},
-        {all_surroundings[5].toString(), " "},
-        {" ", all_surroundings[6].toString()},
-        {" ", " "},
-        {" ", all_surroundings[7].toString()},
-        {all_surroundings[8].toString(), " "},
-        {" ", " "},
-        {all_surroundings[9].toString(), " "},
-        {all_surroundings[10].toString(), " "},
+        {" ", " "}, {all_islands[0].toString(), " "},
+        {" ", all_islands[1].toString()},
+        {all_islands[2].toString(), " "},
+        {all_islands[3].toString(), " "},
+        {" ", all_islands[4].toString()},
         {" ", " "},
         {" ", " "},
+        {all_islands[5].toString(), " "},
+        {" ", all_islands[6].toString()},
         {" ", " "},
-        {all_surroundings[11].toString(), " "},
-        {" ", all_surroundings[12].toString()},
+        {" ", all_islands[7].toString()},
+        {all_islands[8].toString(), " "},
         {" ", " "},
-        {" ", all_surroundings[13].toString()},
+        {all_islands[9].toString(), " "},
+        {all_islands[10].toString(), " "},
         {" ", " "},
-        {" ", all_surroundings[14].toString()},
         {" ", " "},
-        {all_surroundings[15].toString(), " "},
-        {" ", all_surroundings[16].toString()},
         {" ", " "},
-        {" ", all_surroundings[17].toString()},
+        {all_islands[11].toString(), " "},
+        {" ", all_islands[12].toString()},
         {" ", " "},
-        {" ", all_surroundings[18].toString()},
-        {all_surroundings[19].toString(), " "},
+        {" ", all_islands[13].toString()},
         {" ", " "},
-        {all_surroundings[20].toString(), " "}};
+        {" ", all_islands[14].toString()},
+        {" ", " "},
+        {all_islands[15].toString(), " "},
+        {" ", all_islands[16].toString()},
+        {" ", " "},
+        {" ", all_islands[17].toString()},
+        {" ", " "},
+        {" ", all_islands[18].toString()},
+        {all_islands[19].toString(), " "},
+        {" ", " "},
+        {all_islands[20].toString(), " "}};
     }
 
     public String toString() {
@@ -77,5 +76,7 @@ public class Grid {
         populateGrid();
         //System.out.print(this);
     }
-    public void identifyIslands() {}
+    public void identifyIslands() {
+
+    }
 }
