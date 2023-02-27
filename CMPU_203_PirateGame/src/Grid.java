@@ -5,7 +5,6 @@
  */
 public class Grid {
     int ship_location = 0; //0-50
-    //int islands_met = 0;
     String [][] grid;
     Island[] all_islands = new Island[10];
     int islands_met = 0;
@@ -71,11 +70,15 @@ public class Grid {
             }
         }
     }
-    public void move(){
+    public boolean move(){
         this.ship_location++;
+        if(this.ship_location >= this.grid.length - 5) {
+            return false;
+        }
         populateGrid();
         System.out.print(this);
         identifyIslands();
+        return true;
     }
     public void identifyIslands() {
         if(this.grid[ship_location][0].equals("Ѳ") ||

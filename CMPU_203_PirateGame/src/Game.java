@@ -27,8 +27,9 @@ public class Game {
                 " your crew and explore the unknown. \n");
         System.out.println(g);
         boolean run = true;
+        outerloop:
         while(run){
-            char act = ' ';
+            char act;
 
             //takes in user input to determine next action, and then checks if that input is valid
             while (true){
@@ -49,8 +50,9 @@ public class Game {
                     System.out.println("m.toString()");
                     break;
                 case ('W'):
-                    g.move();
-                    //System.out.print("after:\n" + g);
+                    if(!g.move()) {
+                        break outerloop;
+                    }
                     break;
                 case ('H'):
                     System.out.print(s);
