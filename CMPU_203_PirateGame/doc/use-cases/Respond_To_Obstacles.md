@@ -17,6 +17,8 @@ skills and inventory to fix the problem swiftly.</p>
 <ul>
 <li>Must have started or resumed the game, but not be at the end of the story. </li>
 <li>Must be on the regular grid view.</li>
+<li>Must have executed a move that does not result in interacting
+with an island or resource area, but otherwise random.</li>
 </ul>
 
 ### Postconditions:
@@ -37,7 +39,8 @@ title Respond to Obstacle
 
 |System|
 start
-:display obstacle card;
+:display obstacle card (random);
+:generate options given current inventory;
 |User|
 :selects from options;
 |System|
