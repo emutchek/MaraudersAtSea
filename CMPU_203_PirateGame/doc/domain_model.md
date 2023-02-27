@@ -21,7 +21,7 @@ class StoryScene {
 chronology
 text
 }
-class Game {
+class UserInterface {
 progress
 }
 class Island {}

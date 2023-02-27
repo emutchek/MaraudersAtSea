@@ -1,19 +1,27 @@
 ### Problems Staring us in the Face
 
 <ul>
-<li>It runs fine if we store the story scenes in game, pass them into map so that they end up as a field in map,
-and then use them within map to initialize all the islands with a story scene each. After we've done that,
-when we make our grid object, we can pass it this list of islands by digging into the map's field. Grid uses the
-islands to make the big world map. BUT the move method needs to alert us if we're next to an island so
-we can carry that out. As it stands, the grid is made up of strings - there are no island objects present
-in the grid class. This makes it difficult/impossible(?) to identify/act on islands we encounter on the world map.</li>
 <li>They need to be able to launch the inventory/map/pause screen while they're reading an obstacle card or else how will
 they know if they have the stuff</li>
 <li>If they refuse to put something on the map, we still need to know they got there</li>
-<li>The choice to do the right thing comes 50-75% of the way through, not the very end, but it WILL end the game early</li>
+<li></li>
 </ul>
 
 ### Random to dos
 <li>Add rubber/steel-like resource to glossary and give name</li>
+
+### Doubt Meter
+<p>Things like peeking at the diary and interrogating locals about the grove will
+drive up the user's doubt meter (e.g. their level of suspicion about the true nature
+of the mission). There will be subtle hints throughout scenes 1-6. 
+
+At that point, if their doubt is high enough, they receive alternate versions of scenes 
+7-9 wherein they learn more about the shady client, the recent conquering of Helion, and the 
+potential value of the Vironium (all these clues are unrelated so that if later on,
+they only see a few, they still make sense). 
+
+In the non-alternate timeline, there is one more opportunity to increase the doubt meter.
+At the end, if the doubt meter is above 0, they have a choice whether to send in the letter.
+Otherwise, it gets sent automatically.</p>
 
 

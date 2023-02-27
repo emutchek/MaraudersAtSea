@@ -59,7 +59,7 @@ class Inventory {
     -update_inventory(rope : int, wood : int) : void
 }
 
-class Game {
+class UserInterface {
     +run_game()
 }
 @enduml
@@ -71,7 +71,7 @@ class Game {
 @startuml
 hide footbox
 actor User as user
-participant ": Game" as game
+participant ": UserInterface" as game
 participant ": Grid" as grid
 participant ": Island" as island
 user -->> game **: enters move

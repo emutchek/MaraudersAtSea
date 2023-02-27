@@ -62,8 +62,8 @@ left to right direction
 actor User as u
 NPC <<system>>
 Encounter <<system>>
-package Game{
-    usecase "Manage Game" as UC1
+package UserInterface{
+    usecase "Manage UserInterface" as UC1
     usecase "Interact with Inventory" as UC2
     usecase "Interact with Map" as UC3
     usecase "Interact with NPCs" as UC4
