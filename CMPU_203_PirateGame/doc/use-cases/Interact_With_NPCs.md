@@ -18,16 +18,17 @@ NPC.
 
 <ul>
 <li>Must have started or resumed the game. </li>
-<li>Must be at landmark and/or be presented with a story pop-up</li>
+<li>Must be in the middle of a random obstacle, or at an island inside a story scene</li>
 </ul>
 
 ### Postconditions:
 
 <ul>
-<li>Any information learned must be autosaved.</li>
 <li>The user must be returned to a any story cards that
 were playing out, or returned to the grid and prompted to
 make the next move. </li>
+<li>The game state is unchanged by NPC conversations; the user's choices only affect
+the responses they get back during the interaction.</li>
 </ul>
 
 ### Workflow
@@ -41,8 +42,8 @@ title Interact with NPC
 start
 if (interact with npc?) then (yes)
 
-while (more conversation cards?) is (yes)
-    :display conversation prompt card;
+while (more obstacle/story information?) is (yes)
+    :display card;
 
 |System|
 if (response required) then (yes)

@@ -9,20 +9,24 @@ User
 
 ### Stakeholders and Interests:
 <p>
-User: Wants to be able to navigate through a series of story cards and then choose between a few courses of action. </p>
+User: Wants to view an excerpt of the story, presented on a series of cards, and sometimes
+choose between two courses of action on how to proceed. </p>
 
 ### Preconditions:
 
 <ul>
 <li>Must have started or resumed the game. </li>
-<li>Must have progressed far enough through the world to trigger this particular event.</li>
+<li>Must have reached an island. There is a story pop up associated with each and every
+island, and it is automatically triggered when the ship moves into the island's range.</li>
 </ul>
 
 ### Postconditions:
 
 <ul>
-<li>Any inventory or map decision that the user made has taken effect.</li>
-<li>Their progress in the story has been autosaved.</li>
+<li>If the user makes a choice to spend less energy on the map a certain number of times,
+then they will receive an alternate ending in the last few scenes of the game.</li>
+<li>Any modifications that the user has made to the map has taken effect.</li>
+<li>The user's progress in the story has been autosaved.</li>
 <li>Screen has returned to the usual grid interface.</li>
 </ul>
 
