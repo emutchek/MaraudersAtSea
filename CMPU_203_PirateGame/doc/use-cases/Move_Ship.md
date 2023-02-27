@@ -45,8 +45,9 @@ start
 if (valid move?) then (no)
 end
 else (yes)
+:move forward;
 if (at a landmark?) then (yes)
-:interact;
+:Interact_Surroundings;
 
 endif
 :move ship;
