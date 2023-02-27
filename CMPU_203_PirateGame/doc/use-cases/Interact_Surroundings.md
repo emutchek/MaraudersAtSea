@@ -1,4 +1,4 @@
-# Interact with Encounter
+# Interact with Surrounding
 
 ### Priority:
 Medium
@@ -9,50 +9,46 @@ User
 
 ### Stakeholders and Interests:
 <p>
-User: Wants to be able to encounter resources or critical places on the map and
+User: Wants to be able to encounter resources or islands and
 make decisions regarding what to do with them.</p>
 
 ### Preconditions:
 
 <ul>
 <li>Must have started or resumed the game. </li>
-<li>The ship must be positioned at an unvisited resource or unmapped location.</li>
+<li>The ship must be positioned at an unvisited resource or unreached location.</li>
 </ul>
 
 ### Postconditions:
 
 <ul>
-<li>If the user doesn't use the encounter, the screen must be returned to the grid.</li>
-<li>If the user decides to use the encounter, execute Resource or execute Map.</li>
+<li>The screen must be returned to the grid.</li>
+<li>If the user has reached an island, then interact with story pop up executes. If the user
+has reached a resource area, then interact with inventory executes.</li>
 </ul>
 
 ### Workflow
 ```PlantUML
 @startuml
-title Interact Encounter
+title Interact with Surrounding
 |#LightSkyBlue|User|
 |#Wheat|System|
 
 |User|
 start
-:select location;
+:moves forward;
 |System|
-if(encounter exists) then (yes)
-    |User|
-    if(choice?) then (yes)
+if(surrounding exists) then (yes)
     |System|
-        if (resource) then (yes)
-        :Add item in Interact_With_Inventory;
+        if (resource_area) then (yes)
+            :execute Manage_Inventory;
         end
-        else if (map landmark) then (yes)
-        :Add item in Interact_With_Map;
+        else (island)
+            :execute Complete_StoryScene;
         end
- 
     endif
 else (no)
     end
-endif
-    
 @enduml
 ```
 
