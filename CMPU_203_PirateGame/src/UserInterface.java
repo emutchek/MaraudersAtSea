@@ -3,23 +3,12 @@ Game class
  */
 
 import java.util.Scanner;
-public class Game {
+public class UserInterface {
     public static void main(String[] args) {
-        int num_islands = 10;
+        Library lib = new Library();
         Ship s = new Ship();
         Inventory inv = new Inventory();
-
-        StoryScene [] all_stories = new StoryScene [num_islands];
-        all_stories[0] = new StoryScene("//text 1");
-        all_stories[1] = new StoryScene("//text 2");
-        all_stories[2] = new StoryScene("//text 3");
-        all_stories[3] = new StoryScene("//text 4");
-        all_stories[4] = new StoryScene("//text 5");
-        all_stories[5] = new StoryScene("//text 6");
-        all_stories[6] = new StoryScene("//text 7");
-        all_stories[7] = new StoryScene("//text 8");
-        all_stories[8] = new StoryScene("//text 9");
-        all_stories[9] = new StoryScene("//text 10");
+        StoryScene [] all_stories = lib.getScenes();
 
         Map m = new Map(all_stories);
         Grid g = new Grid(m.all_islands);
