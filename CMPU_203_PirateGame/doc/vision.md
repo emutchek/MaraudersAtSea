@@ -1,5 +1,11 @@
 # Vision Document
 
+## Summary
+This is a story-driven pirate adventure game that allows the player
+to be part of a crew and explore the unknown by steering a ship
+and working towards completing a map of the area, encountering
+obstacles and accumulating resources along the way.
+
 ## Target Audience
 <ul>
 <li>Players ages 10 and up.</li>
