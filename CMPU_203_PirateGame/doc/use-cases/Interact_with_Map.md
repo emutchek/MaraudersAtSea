@@ -39,8 +39,8 @@ title Interact with Map
 
 |System|
 start
-:Interact_Surroundings;
-if(not on map) then (yes)
+:Interact_Surroundings adds item;
+if(not already on map) then (yes)
 :add location to map;
 end
 else(no)
@@ -48,6 +48,22 @@ end
 
 @enduml
 ```
+
+```PlantUML
+@startuml 
+title View Map
+|#LightSkyBlue|User|
+|#Wheat|System|
+
+|User|
+start
+:view map;
+|System|
+:display map;
+
+@enduml
+```
+
 ### Non-Functional requirements:
 <ul>
 <li>Usability: Map has easily-readable text and shows a straightforward sequence. </li>
