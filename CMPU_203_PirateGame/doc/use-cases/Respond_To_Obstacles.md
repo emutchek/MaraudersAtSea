@@ -17,8 +17,8 @@ skills and inventory to fix the problem swiftly.</p>
 <ul>
 <li>Must have started or resumed the game, but not be at the end of the story. </li>
 <li>Must be on the regular grid view.</li>
-<li>Must have executed a move that does not result in interacting
-with an island or resource area, but otherwise random.</li>
+<li>Each time they move, a random number generator provides around a 20% chance
+of getting an obstacle (assuming they aren't moving into a surrounding).</li>
 </ul>
 
 ### Postconditions:
@@ -28,6 +28,7 @@ with an island or resource area, but otherwise random.</li>
 <li>Any resources that were used have been permanently removed from the inventory.</li>
 <li>The function to launch obstacles at random times has been reset.</li>
 <li>The obstacle card has been marked as used and removed from the deck.</li>
+<li>If the user was unable to overcome the obstacle, the game ends.</li>
 </ul>
 
 ### Workflow
@@ -39,13 +40,17 @@ title Respond to Obstacle
 
 |System|
 start
-:display obstacle card (random);
-:generate options given current inventory;
+:display random obstacle;
+:list choices;
 |User|
-:selects from options;
+:select from choices;
 |System|
-:execute solution;
-if (health depleted) then (yes)
+if (requires resource) then (yes)
+    :execute Manage Inventory;
+else if (involves conversation) then (yes)
+    :execute Interact with NPC;
+endif
+if (health empty) then (yes)
     |User|
     :end game;
     end

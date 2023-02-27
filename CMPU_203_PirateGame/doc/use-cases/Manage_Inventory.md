@@ -9,14 +9,14 @@ User
 
 ### Stakeholders and Interests:
 <p>
-User: Wants to be able to view the resources on the ship (i.e. food, lumber, rope, etc.), pick up new items
-on the journey, and "spend" items in order to get past obstacles.</p>
+User: Wants to be able to view the resources on the ship (i.e. food, lumber, rope, etc.), 
+pick up new items on the journey, and "spend" items in order to get past obstacles.</p>
 
 ### Preconditions:
 
 <ul>
 <li>Must have started or resumed the game. </li>
-<li>To add an item, the ship must be positioned on a predetermined resource location which they have
+<li>To add an item, the ship must be positioned on a predetermined resource area which they have
 not yet visited.</li>
 </ul>
 
@@ -43,13 +43,19 @@ start
 |System|
 :display inventory;
 |User|
-if (remove an item?) then (yes)
+while (remove an item?) is (yes)
 |System|
-:throw item overboard;
+    :throw item overboard;
+endwhile
+|User|
+while (add an item?) is (yes)
+    |System|
+    :add item;
+    :erase item from world map;
+endwhile
+|User|
+:close inventory;
 end
-else (no)
-end
-
 @enduml
 ```
 ```PlantUML
@@ -62,10 +68,15 @@ title Add item
 start
 :Interact_Surroundings;
 if(room in inventory) then (yes)
-:add item to inventory;
-:remove item from world map;
+    :add item to inventory;
+    :remove item from world map;
 end
 else (no)
+    if(make room?) then (yes)
+            :execute Remove Item;
+        else
+            end
+        endif 
 end
     
 @enduml
