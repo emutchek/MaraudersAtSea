@@ -3,8 +3,8 @@ public class Controller {
     Ship s = new Ship();
     Inventory inv = new Inventory();
 
-    Map m = new Map(lib.getScenes());
-    Grid g = new Grid(m.all_islands);
+    Map m = new Map(lib.getIslands());
+    Grid g = new Grid(lib.getIslands());
 
     public Controller() {}
 
@@ -14,10 +14,11 @@ public class Controller {
     public Boolean respondInput(char act){
         switch(act) {
             case ('M'):
-                System.out.println("m.toString()");
+                System.out.println(m);
                 return true;
             case ('W'):
-                return g.move();
+                boolean res = g.move();
+                return res;
             case ('H'):
                 System.out.print(s);
                 return true;

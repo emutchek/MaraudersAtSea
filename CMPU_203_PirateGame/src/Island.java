@@ -5,10 +5,18 @@
  */
 public class Island extends ASurrounding{
     StoryScene story;
-    public Island(StoryScene s) {
+    String symbol = "Ѳ";
+    String descr; //how does it appear on the map? ex "Old Cave"
+    boolean found;
+    boolean onMap;
+
+    public void setStory(StoryScene s) {
         this.story = s;
     }
+
     public String toString() {
-        return "Ѳ";
+        return symbol;
     }
+
+
 }

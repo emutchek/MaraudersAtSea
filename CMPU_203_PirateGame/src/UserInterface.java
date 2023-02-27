@@ -27,7 +27,7 @@ public class UserInterface {
             }
 
             if (!c.respondInput(act)){
-                break;
+                break; //user typed quit or reached end of map
             }
             else{continue;}
 

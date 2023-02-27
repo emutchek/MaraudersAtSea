@@ -4,48 +4,48 @@
  * around it.
  */
 public class Grid {
-    int ship_location = 0; //0-50
-    String [][] grid;
-    Island[] all_islands = new Island[10];
+    int ship_location = 0; //0-33
     int islands_met = 0;
+    String [][] grid;
+    Island[] all_islands;
 
-    public Grid(Island[]all_islands) {
-        this.all_islands = all_islands;
-        grid = new String [][]{
-        {" ", " "}, {all_islands[0].toString(), " "},
-        {" ", " "},
-        {" ", " "},
-        {all_islands[1].toString(), " "},
-        {" ", all_islands[2].toString()},
-        {" ", " "},
-        {" ", " "},
-        {all_islands[3].toString(), " "},
-        {" ", " "},
-        {" ", " "},
-        {" ", all_islands[4].toString()},
-        {" ", " "},
-        {" ", " "},
-        {" ", " "},
-        {all_islands[5].toString(), " "},
-        {" ", " "},
-        {" ", " "},
-        {" ", " "},
-        {all_islands[6].toString(), " "},
-        {" ", " "},
-        {" ", " "},
-        {" ", all_islands[7].toString()},
-        {" ", " "},
-        {" ", all_islands[8].toString()},
-        {" ", " "},
-        {" ", " "},
-        {" ", " "},
-        {" ", " "},
-        {" ", " "},
-        {" ", " "},
-        {all_islands[9].toString()," ", },
-        {" ", " "},
-        {" ", " "},
-        {" ", " "}};
+    public Grid(Island[]islands) {
+        this.all_islands = islands;
+        grid = new String[][]{
+                {" ", " "}, {all_islands[0].toString(), " "},
+                {" ", " "},
+                {" ", " "},
+                {all_islands[1].toString(), " "},
+                {" ", all_islands[2].toString()},
+                {" ", " "},
+                {" ", " "},
+                {all_islands[3].toString(), " "},
+                {" ", " "},
+                {" ", " "},
+                {" ", all_islands[4].toString()},
+                {" ", " "},
+                {" ", " "},
+                {" ", " "},
+                {all_islands[5].toString(), " "},
+                {" ", " "},
+                {" ", " "},
+                {" ", " "},
+                {all_islands[6].toString(), " "},
+                {" ", " "},
+                {" ", " "},
+                {" ", all_islands[7].toString()},
+                {" ", " "},
+                {" ", all_islands[8].toString()},
+                {" ", " "},
+                {" ", " "},
+                {" ", " "},
+                {all_islands[9].toString(), " "},
+                {" ", " "},
+                {" ", " "},
+                {" ", " "},
+                {" ", " "},
+                {" ", " "},
+        };
     }
 
     public String toString() {
@@ -70,6 +70,7 @@ public class Grid {
             }
         }
     }
+
     public boolean move(){
         this.ship_location++;
         if(this.ship_location >= this.grid.length - 5) {
