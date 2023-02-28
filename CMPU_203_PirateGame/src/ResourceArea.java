@@ -16,7 +16,7 @@ public class ResourceArea extends ASurrounding {
         return symbol;
     }
 
-    public String displayCards() {
+    public String displayCards(){
         return "Oh look! Some " + description;
     }
 
