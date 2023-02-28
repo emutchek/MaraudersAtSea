@@ -6,6 +6,6 @@ public abstract class ASurrounding {
     String description;
     String symbol;
 
-    public String getSymbol() {return symbol;}
+    public abstract String getSymbol();
 
 }

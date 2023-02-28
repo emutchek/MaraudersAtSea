@@ -15,10 +15,6 @@ public class Controller {
         switch(act) {
             case ('M'):
                 return m.toString();
-            case ('W'):
-                String res = g.move();
-                if(res.equals("end")) {return "null";}
-                else return res;
             case ('H'):
                 return s.toString();
             case ('I'):
@@ -27,4 +23,31 @@ public class Controller {
                 return "null";
         }
     }
+
+    public String makeMove(){
+        if (!g.move()){
+            return "null";
+        }
+        ASurrounding left = g.grid[g.ship_location][0];
+        ASurrounding right = g.grid[g.ship_location][1];
+        String ret = g.toString();
+        //check if the ship is next to an island
+        if (left instanceof Island){
+            ret += ((Island) left).displayCards();
+        }
+        else if(right instanceof Island){
+            ret +=((Island) right).displayCards();
+        }
+        //check if ship is next to a resource area
+        else if (left instanceof ResourceArea){
+            ret +=((ResourceArea) left).displayCards();
+        }
+        else if(right instanceof ResourceArea){
+            ret +=((ResourceArea) right).displayCards();
+        }
+        //ship is next to nothing
+        return ret;
+    }
+
+
 }

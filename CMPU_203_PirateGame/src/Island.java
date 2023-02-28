@@ -17,9 +17,7 @@ public class Island extends ASurrounding{
         this.story = s;
     }
 
-    public String toString() {
-        return symbol;
-    }
+    public String getSymbol() {return symbol;}
 
     public String displayCards() {
         return story.text;

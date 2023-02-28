@@ -6,45 +6,48 @@
 public class Grid {
     int ship_location = 0; //0-33
     int islands_met = 0;
-    String [][] grid;
+    ASurrounding [][] grid;
     Island[] all_islands;
+
 
     public Grid(Island[]islands) {
         this.all_islands = islands;
-        grid = new String[][]{
-                {" ", " "}, {all_islands[0].toString(), " "},
-                {" ", " "},
-                {" ", " "},
-                {all_islands[1].toString(), " "},
-                {" ", all_islands[2].toString()},
-                {" ", " "},
-                {" ", " "},
-                {all_islands[3].toString(), " "},
-                {" ", " "},
-                {" ", " "},
-                {" ", all_islands[4].toString()},
-                {" ", " "},
-                {" ", " "},
-                {" ", " "},
-                {all_islands[5].toString(), " "},
-                {" ", " "},
-                {" ", " "},
-                {" ", " "},
-                {all_islands[6].toString(), " "},
-                {" ", " "},
-                {" ", " "},
-                {" ", all_islands[7].toString()},
-                {" ", " "},
-                {" ", all_islands[8].toString()},
-                {" ", " "},
-                {" ", " "},
-                {" ", " "},
-                {all_islands[9].toString(), " "},
-                {" ", " "},
-                {" ", " "},
-                {" ", " "},
-                {" ", " "},
-                {" ", " "},
+        grid = new ASurrounding[][]{
+                {null, null},
+                {all_islands[0], null},
+                {null, null},
+                {null, null},
+                {all_islands[1], null},
+                {null, all_islands[2]},
+                {null, null},
+                {null, null},
+                {all_islands[3], null},
+                {null, null},
+                {null, null},
+                {null, all_islands[4]},
+                {null, null},
+                {null, null},
+                {null, null},
+                {all_islands[5], null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {all_islands[6], null},
+                {null, null},
+                {null, null},
+                {null, all_islands[7]},
+                {null, null},
+                {null, all_islands[8]},
+                {null, null},
+                {null, null},
+                {null, null},
+                {all_islands[9], null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
         };
     }
 
@@ -52,15 +55,25 @@ public class Grid {
         String s = "";
         for(int r = this.ship_location + 4; r >= ship_location; r--) {
             if(r != ship_location) {
-                s += "|" + this.grid[r][0] + "| |" + this.grid[r][1] + "|\n";
+                s += "|" + toStringHelper(this.grid[r][0]) + "| |" + toStringHelper(this.grid[r][1]) + "|\n";
             }
             else {
-                s += "|" + this.grid[r][0] + "|Δ|" + this.grid[r][1] + "|\n";
+                s += "|" + toStringHelper(this.grid[r][0]) + "|Δ|" + toStringHelper(this.grid[r][1]) + "|\n";
             }
         }
         return s;
     }
 
+    private String toStringHelper(ASurrounding x){
+        if (x == null){
+            return " ";
+        }
+        else{
+            return x.getSymbol();
+        }
+    }
+
+    /*
     public void populateGrid() {
         for (int r=this.ship_location + 4; r >= this.ship_location; r--){
             for (int c=0; c < 2; c++) {
@@ -70,23 +83,28 @@ public class Grid {
             }
         }
     }
+    */
 
-    public String move(){
+    public void addRA(){
+        if ((this.grid[ship_location + 4][0] == null) && (this.grid[ship_location + 4][1] == null)){
+            if (Math.random() < 0.33){
+                if (Math.random() < 0.5){
+                    this.grid[ship_location +4 ][0] = new ResourceArea();
+                }
+                else{
+                    this.grid[ship_location +4 ][1] = new ResourceArea();
+                }
+            }
+        }
+    }
+
+    public Boolean move(){
         this.ship_location++;
         if(this.ship_location >= this.grid.length - 5) {
-            return "end";
+            return false;
         }
-        populateGrid();
-        if(atSurrounding()) {
-            islands_met++;
-            return this.toString() + this.all_islands[islands_met - 1].displayCards();
-        }
-        return this.toString();
+        addRA();
+        return true;
     }
 
-    public boolean atSurrounding() {
-        String island_symbol = all_islands[0].symbol;
-        String row = this.grid[ship_location][0] + this.grid[ship_location][1];
-        return row.contains(island_symbol);
-    }
 }

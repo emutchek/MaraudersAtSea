@@ -25,7 +25,16 @@ public class UserInterface {
                     System.out.println("Invalid Action");
                 }
             } //if loop ends, user has entered valid action
-            String res = c.respondInput(act);
+
+            String res = "";
+            if (act == 'W'){
+                //do all the associated move stuff
+                res = c.makeMove();
+            }
+            else {
+                res = c.respondInput(act);
+            }
+
             if (res.equals("null")){
                 break; //user typed quit or reached end of map - leave game
             }
