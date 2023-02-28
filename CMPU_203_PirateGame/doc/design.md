@@ -78,13 +78,15 @@ class Controller {
 @startuml
 hide footbox
 actor User as user
-participant ": UserInterface" as game
+participant ": UserInterface" as UI
+participant ": Controller" as controller
 participant ": Grid" as grid
 participant ": Island" as island
-user -->> game **: enters move
-game ->> grid **: parseInput()
-grid -->> island **: IdentifyIslands()
-ref over island
+user -->> UI **: enters move
+UI ->> controller **: isValid()
+UI ->> controller **: respondInput()
+controller ->> grid **: move()
+ref over grid
 Display Story
 endref
 @enduml

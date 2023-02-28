@@ -18,9 +18,5 @@ Otherwise, it gets sent automatically.</p>
 
 ### Stuff to figure out
 <ul>
-<li>If we randomly generate resource area objects, do they get stored in some list?
-Cause the grid is just an array of strings. But how do we print info about it and access
-what type of resource it is?</li>
 <li>Access modifiers</li>
-<li></li>
 </ul>
