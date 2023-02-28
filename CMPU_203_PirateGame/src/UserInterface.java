@@ -41,9 +41,30 @@ public class UserInterface {
             else{
                 System.out.println(res);
             }
+            //execute user interaction
+            if(res.contains("?")) {
+                char choice = ' ';
+                while (true){
+                    System.out.println("\nChoose action A or B");
+                    Scanner input = new Scanner(System.in);
+                    choice = input.next().charAt(0);
+                    if (choice == 'A' || choice == 'B'){
+                        break;
+                    }
+                    else {
+                        System.out.println("Invalid Action");
+                    }
+                } //they've given valid A or B
+
+                if(res.contains("Oh")) {
+                    c.addressResource(choice);
+                }
+                else {
+                    c.addressIsland(choice);
+                }
+            }
         }
         System.out.println("Thank you for playing [PirateGame]! We hope you enjoyed");
         //print out game stats, like whether they "won" or not/how much they filled up map
     }
-
 }

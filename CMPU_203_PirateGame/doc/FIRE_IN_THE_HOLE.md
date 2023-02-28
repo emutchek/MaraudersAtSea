@@ -18,5 +18,16 @@ Otherwise, it gets sent automatically.</p>
 
 ### Stuff to figure out
 <ul>
-<li>Access modifiers</li>
+<li>Make move knows whether we're at an island, but all it does if we are is print story cards, 
+and we want it to trigger a scanner multiple choice moment </li>
+<li>Make it so the last island ends the game lol this is important</li>
 </ul>
+
+
+UI class has a generic A B scanner method to be used AFTER you've already asked the user something
+
+if make move result, which is stored in res, contains a ? then after printing res, the UI does
+its A B scanner class method
+
+
+Eventually, ideally, they get some resolution to the choice they made

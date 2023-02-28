@@ -5,9 +5,20 @@
  */
 public class StoryScene {
     String text;
+    String question;
+    String [] options;
 
-    public StoryScene(String text) {
+    public StoryScene(String text, String q, String[] o) {
         this.text = text;
+        this.question = q;
+        this.options = o;
+    }
+
+    public String toString() {
+        if(this.question.contains("?")) {
+            return text + "\n" + question + "\nA: " + options[0] + "\nor\nB: " + options[1];
+        }
+        return text;
     }
 
 }

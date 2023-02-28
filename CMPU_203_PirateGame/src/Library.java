@@ -1,16 +1,16 @@
 public class Library {
 
     StoryScene [] all_stories = {
-    new StoryScene("//text 0"),
-    new StoryScene("//text 1"),
-    new StoryScene("//text 2"),
-    new StoryScene("//text 3"),
-    new StoryScene("//text 4"),
-    new StoryScene("//text 5"),
-    new StoryScene("//text 6"),
-    new StoryScene("//text 7"),
-    new StoryScene("//text 8"),
-    new StoryScene("//text 9")};
+    new StoryScene("//text 0", "q0", new String[]{"opA","opB"}),
+    new StoryScene("//text 1","q1?", new String[]{"opA","opB"}),
+    new StoryScene("//text 2", "q2", new String[]{"opA","opB"}),
+    new StoryScene("//text 3", "q3", new String[]{"opA","opB"}),
+    new StoryScene("//text 4", "q4", new String[]{"opA","opB"}),
+    new StoryScene("//text 5", "q5", new String[]{"opA","opB"}),
+    new StoryScene("//text 6", "q6", new String[]{"opA","opB"}),
+    new StoryScene("//text 7", "q7", new String[]{"opA","opB"}),
+    new StoryScene("//text 8", "q8", new String[]{"opA","opB"}),
+    new StoryScene("//text 9", "q9", new String[]{"opA","opB"})};
 
     Island [] all_islands = {
             new Island(),

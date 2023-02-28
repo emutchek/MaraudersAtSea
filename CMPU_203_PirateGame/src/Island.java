@@ -20,6 +20,6 @@ public class Island extends ASurrounding{
     public String getSymbol() {return symbol;}
 
     public String displayCards() {
-        return story.text;
+        return story.toString();
     }
 }
