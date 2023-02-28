@@ -3,45 +3,47 @@
 
 class Grid {
     ship_location : int
+    islands_met : int
+    grid : String [][]
     --
     +toString() : String
     +populateGrid() : void
-    +move() : void
-    +identifyIslands() : void
+    +move() : String
+    +atSurrounding() : Boolean
 }
 Grid ->  "\nlist of surroundings\n{ordered}" ASurrounding : \t\t\t\t
 
 abstract class ASurrounding {
-    descr : String
-    location : int 
+    symbol : String
     --
-    +toString() : String
+    +getSymbol() : String
 }
 ASurrounding <|-- Island
 ASurrounding <|-- ResourceArea
 
-class ResourceArea {}
+class ResourceArea {
+    +toString() : String
+}
 
 class Island {
-    discovered : boolean
+    onMap : boolean
+    found: boolean
     --
-    +callStoryScene() : String
+    +setStory() : void
+    +toString() : String
+    +displayCards() : String
 }
 
 Island -> "Contains a single" StoryScene : \t\t\t\t
 
 class Map {
---
     +toString() : String
-    +addItem() 
-
+    +addIsland() : void 
 }
 Map ->  "\nlist of islands" Island : \t\t\t\t
 
 class StoryScene {
     text : String
-    --
-    -displayCards() : void
 }
 
 class Ship {
@@ -61,6 +63,11 @@ class Inventory {
 
 class UserInterface {
     +run_game()
+}
+
+class Controller {
+    +isValid() : boolean
+    +respondInput() : String
 }
 @enduml
 ```
