@@ -73,18 +73,6 @@ public class Grid {
         }
     }
 
-    /*
-    public void populateGrid() {
-        for (int r=this.ship_location + 4; r >= this.ship_location; r--){
-            for (int c=0; c < 2; c++) {
-                if(!(this.grid[r][c].equals("Ѳ"))) {//if this element isn't an island
-                    this.grid[r][c] = " "; //put something there
-                }
-            }
-        }
-    }
-    */
-
     public void addRA(){
         if ((this.grid[ship_location + 4][0] == null) && (this.grid[ship_location + 4][1] == null)){
             if (Math.random() < 0.33){

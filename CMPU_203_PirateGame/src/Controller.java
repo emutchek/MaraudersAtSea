@@ -45,7 +45,7 @@ public class Controller {
         else if(right instanceof ResourceArea){
             ret +=((ResourceArea) right).displayCards();
         }
-        //ship is next to nothing
+
         return ret;
     }
 
