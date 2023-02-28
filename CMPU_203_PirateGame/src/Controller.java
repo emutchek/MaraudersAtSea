@@ -11,23 +11,20 @@ public class Controller {
     public Boolean isValid(char act){
         return ((act == 'M') || (act == 'W') || (act == 'H') || (act == 'I') || (act == 'Q'));
     }
-    public Boolean respondInput(char act){
+    public String respondInput(char act){
         switch(act) {
             case ('M'):
-                System.out.println(m);
-                return true;
+                return m.toString();
             case ('W'):
-                boolean res = g.move();
-                return res;
+                String res = g.move();
+                if(res.equals("end")) {return "null";}
+                else return res;
             case ('H'):
-                System.out.print(s);
-                return true;
+                return s.toString();
             case ('I'):
-                System.out.print(inv);
-                return true;
+                return inv.toString();
             default:
-                return false;
+                return "null";
         }
     }
-
 }

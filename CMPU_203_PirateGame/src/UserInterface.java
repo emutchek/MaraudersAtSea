@@ -24,13 +24,14 @@ public class UserInterface {
                 else {
                     System.out.println("Invalid Action");
                 }
+            } //if loop ends, user has entered valid action
+            String res = c.respondInput(act);
+            if (res.equals("null")){
+                break; //user typed quit or reached end of map - leave game
             }
-
-            if (!c.respondInput(act)){
-                break; //user typed quit or reached end of map
+            else{
+                System.out.println(res);
             }
-            else{continue;}
-
         }
         System.out.println("Thank you for playing [PirateGame]! We hope you enjoyed");
         //print out game stats, like whether they "won" or not/how much they filled up map

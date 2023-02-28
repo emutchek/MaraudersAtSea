@@ -35,4 +35,8 @@ public class Library {
     public StoryScene[] getScenes () {
         return all_stories;
     }
+
+    //ArrayList<ResourceArea> resources = new ArrayList<ResourceArea>();
+
+
 }

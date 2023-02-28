@@ -13,7 +13,6 @@ public class Inventory {
     }
 
     public String toString(){
-        return "Inventory Contents: \n" + "Rope: " + rope + "\nWood: " + wood;
-
+        return "INVENTORY: \n" + "Rope: " + rope + "\nWood: " + wood;
     }
 }

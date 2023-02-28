@@ -4,6 +4,8 @@
  */
 public abstract class ASurrounding {
     String description;
-    int location;
+    String symbol;
+
+    public String getSymbol() {return symbol;}
 
 }

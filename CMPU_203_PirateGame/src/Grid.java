@@ -71,21 +71,22 @@ public class Grid {
         }
     }
 
-    public boolean move(){
+    public String move(){
         this.ship_location++;
         if(this.ship_location >= this.grid.length - 5) {
-            return false;
+            return "end";
         }
         populateGrid();
-        System.out.print(this);
-        identifyIslands();
-        return true;
-    }
-    public void identifyIslands() {
-        if(this.grid[ship_location][0].equals("Ѳ") ||
-                this.grid[ship_location][1].equals("Ѳ")){
-            all_islands[islands_met].story.displayCards();
-            this.islands_met ++;
+        if(atSurrounding()) {
+            islands_met++;
+            return this.toString() + this.all_islands[islands_met - 1].displayCards();
         }
+        return this.toString();
+    }
+
+    public boolean atSurrounding() {
+        String island_symbol = all_islands[0].symbol;
+        String row = this.grid[ship_location][0] + this.grid[ship_location][1];
+        return row.contains(island_symbol);
     }
 }

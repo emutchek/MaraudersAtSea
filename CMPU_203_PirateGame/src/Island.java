@@ -5,10 +5,13 @@
  */
 public class Island extends ASurrounding{
     StoryScene story;
-    String symbol = "Ѳ";
-    String descr; //how does it appear on the map? ex "Old Cave"
+
     boolean found;
     boolean onMap;
+
+    public Island() {
+        symbol = "Ѳ";
+    }
 
     public void setStory(StoryScene s) {
         this.story = s;
@@ -18,5 +21,7 @@ public class Island extends ASurrounding{
         return symbol;
     }
 
-
+    public String displayCards() {
+        return story.text;
+    }
 }
