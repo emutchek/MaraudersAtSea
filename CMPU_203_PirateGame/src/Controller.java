@@ -67,6 +67,7 @@ public class Controller {
         return ret;
     }
 
+
     public boolean addressResource(char choice) {
         ASurrounding left = g.grid[g.ship_location][0];
         ASurrounding right = g.grid[g.ship_location][1];

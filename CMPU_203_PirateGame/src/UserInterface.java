@@ -29,7 +29,8 @@ public class UserInterface {
             if (act == 'W') {
                 //do all the associated move stuff
                 res = c.makeMove();
-            } else {
+            }
+            else {
                 res = c.respondInput(act);
             }
 
@@ -37,6 +38,24 @@ public class UserInterface {
                 break; //user typed quit or reached end of map - leave game
             } else {
                 System.out.println(res);
+                if (act == 'I'){
+                    char inInv;
+                    while(true){
+                        System.out.println("Do you want to remove something from inventory? (R) for rope, " +
+                                        "(W) for wood, (M) for medicine, or (C) for nothing");
+                        Scanner input = new Scanner(System.in);
+                        inInv = input.next().charAt(0);
+                        if (c.isValid(c.invOps,inInv)) {
+                            break;
+                        } else {
+                            System.out.println("Invalid Action");
+                        }
+                    }
+                    if (!(inInv == 'C')) {
+                        c.callRemoveInventory(inInv);
+                        System.out.println("Updated inventory: \n" + c.inv);
+                    }
+                }
             }
             //execute story or resource area interaction
             if (res.contains("?'")) {
@@ -71,7 +90,12 @@ public class UserInterface {
                         if (!(i == 'C')) {
                             c.callRemoveInventory(i);
                             c.addressResource(choice);
+                            System.out.println("Updated inventory: \n" + c.inv);
                         }
+                    }
+                    //if inventory was added to with no problem, print updated one.
+                    else{
+                        System.out.println("Updated inventory: \n" + c.inv);
                     }
 
 
