@@ -2,7 +2,7 @@ public class Ship {
     int health;
 
     public Ship(){
-        health = 0;
+        health = 100;
     }
 
     public void updateHealth(int amt){

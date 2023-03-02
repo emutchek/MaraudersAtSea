@@ -8,10 +8,15 @@ public class Island extends ASurrounding{
 
     boolean found;
     boolean onMap;
+    String name;
 
-    public Island() {
+    public Island(String n) {
         symbol = "Ѳ";
+        onMap = false;
+        name = n;
     }
+
+    public String toString(){return name;}
 
     public void setStory(StoryScene s) {
         this.story = s;

@@ -5,7 +5,7 @@
  */
 public class Grid {
     int ship_location = 0; //0-33
-    int islands_met = 0;
+    int islandsMet = 0;
     ASurrounding [][] grid;
     Island[] all_islands;
 

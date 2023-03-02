@@ -57,8 +57,8 @@ public class UserInterface {
                     }
                 }
             }
-            //execute story (IF there's a question) or resource area interaction
-            if (res.contains("?'")) {
+            //if they've reached a resource area or an island WITH A QUESTION
+            if (res.contains("(Q)")) {
                 char choice = ' ';
                 while (true) {
                     System.out.println("\nChoose action A or B");
@@ -69,8 +69,7 @@ public class UserInterface {
                     } else {
                         System.out.println("Invalid Action");
                     }
-                } //they've given valid A or B
-
+                }
                 //if they're at a resource
                 if (res.contains("Oh")) {
                     //updates inventory if there's space, or enters if statement if there isn't
@@ -97,14 +96,47 @@ public class UserInterface {
                     else{
                         System.out.println("Updated inventory: \n" + c.inv);
                     }
-
-
                 }
-                //if they're at an island
+                //if they're at an island with a question
                 else {
                     System.out.println(c.addressIsland(choice));
                 }
              }
+            //for all islands, even if there's no question, ask the user if they want to add to map
+            if(res.contains("(Island)")){
+                char inMap = ' ';
+                while (true) {
+                    System.out.println("\nDo you want to add this island to the map? Y or N");
+                    Scanner input = new Scanner(System.in);
+                    inMap = input.next().charAt(0);
+                    if (inMap == 'Y' || inMap == 'N') {
+                        break;
+                    } else {
+                        System.out.println("Invalid Action");
+                    }
+                }
+                if(inMap == 'Y'){
+                    c.addToMap();
+                    System.out.println(c.m);
+                }
+            }
+            String obsText = c.generateObstacle();
+            if(obsText != null) {
+                System.out.println(obsText);
+                char inObs = ' ';
+                while (true) {
+                    Scanner input = new Scanner(System.in);
+                    inObs = input.next().charAt(0);
+                    if (inObs == 'A' || inObs == 'B') {
+                        break;
+                    } else {
+                        System.out.println("Invalid Action");
+                    }
+                }
+                //execute their choice
+                System.out.println(c.addressObstacle(inObs));
+            }
+
         }
             System.out.println("Thank you for playing [PirateGame]! We hope you enjoyed");
             //print out game stats, like whether they "won" or not/how much they filled up map

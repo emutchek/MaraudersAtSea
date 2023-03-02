@@ -7,6 +7,8 @@ public class Controller {
     Map m = new Map(lib.getIslands());
     Grid g = new Grid(lib.getIslands());
 
+    Obstacle tempObs = new Obstacle();
+
     int doubt = 0;
     ArrayList<String> moveOps = new ArrayList<String>();
     ArrayList<String> invOps = new ArrayList<String>();
@@ -23,9 +25,6 @@ public class Controller {
         invOps.add("R");
         invOps.add("C");
     }
-
-
-
 
     public Boolean isValid(ArrayList<String> options, char c) {
         return options.contains(String.valueOf(c));
@@ -52,10 +51,9 @@ public class Controller {
         ASurrounding right = g.grid[g.ship_location][1];
         String ret = g.toString();
         //check if the ship is next to an island
-        if (left instanceof Island) {
-            ret += ((Island) left).displayCards();
-        } else if (right instanceof Island) {
-            ret += ((Island) right).displayCards();
+        if (left instanceof Island || right instanceof Island) {
+            ret += (g.all_islands[g.islandsMet]).displayCards();
+            g.islandsMet++;
         }
         //check if ship is next to a resource area
         else if (left instanceof ResourceArea) {
@@ -93,18 +91,55 @@ public class Controller {
     }
 
     public String addressIsland(char choice) {
-        String ret = "";
-        ASurrounding left = g.grid[g.ship_location][0];
-        ASurrounding right = g.grid[g.ship_location][1];
-        if (choice == 'A') {
+       if (choice == 'A') {
             doubt++;
         }
-        if (left instanceof Island) {
-            ret += ((Island) left).displayEnding(choice);
+        return g.all_islands[g.islandsMet].displayEnding(choice);
+    }
+
+    public void addToMap() {
+        m.addIsland(g.islandsMet-1);
+    }
+
+    public String generateObstacle() {
+        if(Math.random() <= 0.2) {
+            int randIndex = (int)(Math.random() * 6);
+            tempObs = lib.all_obstacles.get(randIndex);
+            //lib.all_obstacles.remove(tempObs);
+            return tempObs.toString();
         }
-        if (right instanceof Island) {
-            ret += ((Island) right).displayEnding(choice);
+        return null;
+    }
+
+    public void performSolutionA (int x) {
+        switch (x) {
+            case 0:
+                inv.removeInventory('M');
+                System.out.println("called remove inventory");
+                s.updateHealth(10);
+                break;
+            case 1:
+                inv.removeInventory('R');
+                s.updateHealth(-10);
+                break;
         }
-        return ret;
+    }
+
+    public void performSolutionB (int x) {
+        switch (x) {
+            case 0:
+                s.updateHealth(-10);
+                break;
+            case 1:
+                inv.removeInventory('W');
+                s.updateHealth(10);
+                break;
+        }
+    }
+
+    public String addressObstacle(char c) {
+        if(c == 'A') {performSolutionA(tempObs.code);}
+        else {performSolutionB(tempObs.code);}
+        return tempObs.returnObsEnding(c);
     }
 }
