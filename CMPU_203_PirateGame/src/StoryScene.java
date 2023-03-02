@@ -7,11 +7,13 @@ public class StoryScene {
     String text;
     String question;
     String [] options;
+    String [] endings;
 
-    public StoryScene(String text, String q, String[] o) {
+    public StoryScene(String text, String q, String[] o, String[] e) {
         this.text = text;
         this.question = q;
         this.options = o;
+        this.endings = e;
     }
 
     public String toString() {
