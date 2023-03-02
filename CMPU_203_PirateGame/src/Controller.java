@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 public class Controller {
     Library lib = new Library();
     Ship s = new Ship();
@@ -7,12 +8,27 @@ public class Controller {
     Grid g = new Grid(lib.getIslands());
 
     int doubt = 0;
+    ArrayList<String> moveOps = new ArrayList<String>();
+    ArrayList<String> invOps = new ArrayList<String>();
 
     public Controller() {
+        moveOps.add("M");
+        moveOps.add("W");
+        moveOps.add("I");
+        moveOps.add("Q");
+        moveOps.add("H");
+
+        invOps.add("M");
+        invOps.add("W");
+        invOps.add("R");
+        invOps.add("C");
     }
 
-    public Boolean isValid(char act) {
-        return ((act == 'M') || (act == 'W') || (act == 'H') || (act == 'I') || (act == 'Q'));
+
+
+
+    public Boolean isValid(ArrayList<String> options, char c) {
+        return options.contains(String.valueOf(c));
     }
 
     public String respondInput(char act) {
@@ -51,17 +67,28 @@ public class Controller {
         return ret;
     }
 
-    public void addressResource(char choice) {
+    public boolean addressResource(char choice) {
         ASurrounding left = g.grid[g.ship_location][0];
         ASurrounding right = g.grid[g.ship_location][1];
+        //they want to add something
         if (choice == 'A') {
+            //inventory is full
+            if(inv.isFull()) {
+                return false;
+            }
             if (left instanceof ResourceArea) {
-                inv.updateInventory((ResourceArea) left);
+                inv.addToInventory((ResourceArea) left);
             }
             if (right instanceof ResourceArea) {
-                inv.updateInventory((ResourceArea) right);
+                inv.addToInventory((ResourceArea) right);
             }
+
         }
+        return true;
+    }
+
+    public void callRemoveInventory(char c) {
+        inv.removeInventory(c);
     }
 
     public void addressIsland(char choice) {

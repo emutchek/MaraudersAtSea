@@ -2,7 +2,7 @@ public class Library {
 
     StoryScene [] all_stories = {
     new StoryScene("//text 0", "q0", new String[]{"opA","opB"}),
-    new StoryScene("//text 1","q1?", new String[]{"opA","opB"}),
+    new StoryScene("//text 1","q1?'", new String[]{"opA","opB"}),
     new StoryScene("//text 2", "q2", new String[]{"opA","opB"}),
     new StoryScene("//text 3", "q3", new String[]{"opA","opB"}),
     new StoryScene("//text 4", "q4", new String[]{"opA","opB"}),
@@ -35,6 +35,8 @@ public class Library {
     public StoryScene[] getScenes () {
         return all_stories;
     }
+
+
 
     //ArrayList<ResourceArea> resources = new ArrayList<ResourceArea>();
 
