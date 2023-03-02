@@ -92,12 +92,19 @@ public class Controller {
         inv.removeInventory(c);
     }
 
-    public void addressIsland(char choice) {
+    public String addressIsland(char choice) {
+        String ret = "";
         ASurrounding left = g.grid[g.ship_location][0];
         ASurrounding right = g.grid[g.ship_location][1];
         if (choice == 'A') {
             doubt++;
-            System.out.println(doubt);
         }
+        if (left instanceof Island) {
+            ret += ((Island) left).displayEnding(choice);
+        }
+        if (right instanceof Island) {
+            ret += ((Island) right).displayEnding(choice);
+        }
+        return ret;
     }
 }

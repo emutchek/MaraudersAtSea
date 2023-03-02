@@ -23,4 +23,13 @@ public class StoryScene {
         return text;
     }
 
+    public String returnEnding(char x){
+        if (x=='A'){
+            return this.endings[0];
+        }
+        else{
+            return this.endings[1];
+
+        }
+    }
 }

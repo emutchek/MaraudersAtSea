@@ -57,7 +57,7 @@ public class UserInterface {
                     }
                 }
             }
-            //execute story or resource area interaction
+            //execute story (IF there's a question) or resource area interaction
             if (res.contains("?'")) {
                 char choice = ' ';
                 while (true) {
@@ -102,7 +102,7 @@ public class UserInterface {
                 }
                 //if they're at an island
                 else {
-                    c.addressIsland(choice);
+                    System.out.println(c.addressIsland(choice));
                 }
              }
         }

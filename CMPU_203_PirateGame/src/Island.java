@@ -17,6 +17,8 @@ public class Island extends ASurrounding{
         this.story = s;
     }
 
+    public String displayEnding(char x){return story.returnEnding(x);}
+
     public String getSymbol() {return symbol;}
 
     public String displayCards() {
