@@ -16,7 +16,7 @@ public class Obstacle {
     public Obstacle() {}
 
     public String toString() {
-        return "OBSTACLE:\n" + text + "\nA: " + options[0] + "\nB: " + options[1];
+        return "OBSTACLE:\n" + text + "\n\nChoose action A or B\n\nA: " + options[0] + "\nor\nB: " + options[1];
     }
 
     public String returnObsEnding(char x){

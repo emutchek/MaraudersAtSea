@@ -103,7 +103,7 @@ public class Controller {
 
     public String generateObstacle() {
         if(Math.random() <= 0.2) {
-            int randIndex = (int)(Math.random() * 6);
+            int randIndex = (int)(Math.random() * 2);
             tempObs = lib.all_obstacles.get(randIndex);
             //lib.all_obstacles.remove(tempObs);
             return tempObs.toString();
@@ -115,7 +115,6 @@ public class Controller {
         switch (x) {
             case 0:
                 inv.removeInventory('M');
-                System.out.println("called remove inventory");
                 s.updateHealth(10);
                 break;
             case 1:
