@@ -94,7 +94,7 @@ public class Controller {
        if (choice == 'A') {
             doubt++;
         }
-        return g.all_islands[g.islandsMet].displayEnding(choice);
+        return g.all_islands[g.islandsMet-1].displayEnding(choice);
     }
 
     public void addToMap() {

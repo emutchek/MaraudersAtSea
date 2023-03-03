@@ -42,7 +42,7 @@ public class UserInterface {
                     char inInv;
                     while(true){
                         System.out.println("Do you want to remove something from inventory? (R) for rope, " +
-                                        "(W) for wood, (M) for medicine, or (C) for nothing");
+                                        "(W) for wood, (M) for medicine, or (C) for cancel");
                         Scanner input = new Scanner(System.in);
                         inInv = input.next().charAt(0);
                         if (c.isValid(c.invOps,inInv)) {
@@ -61,7 +61,7 @@ public class UserInterface {
             if (res.contains("(Q)")) {
                 char choice = ' ';
                 while (true) {
-                    System.out.println("\nChoose action A or B");
+                    System.out.println("Choose action A or B");
                     Scanner input = new Scanner(System.in);
                     choice = input.next().charAt(0);
                     if (choice == 'A' || choice == 'B') {
