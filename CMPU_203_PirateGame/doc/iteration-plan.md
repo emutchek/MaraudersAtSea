@@ -13,3 +13,19 @@ Iteration 1 Plan
 end title
 @enduml
 ```
+
+```PlantUML
+@startuml
+title
+Iteration 2 Plan
+|Rank | Requirement | Comment |
+| high |  |  |
+|  |  |  |
+|  |  |  |
+| medium |  |  |
+|  |  |  |
+|  |  |  |
+| low | Interact with NPC | Could be omitted |
+end title
+@enduml
+```
