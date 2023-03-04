@@ -71,6 +71,128 @@ class Controller {
 }
 @enduml
 ```
+
+```PlantUML
+@startuml
+
+class Grid {
+    ship_location : int
+    islands_met : int
+    --
+    +toString() : String
+    +toStringHelper(ASurrounding x) : String
+    +addResourceArea(): void
+    +move() : String
+}
+Grid ->  "\nlist of surroundings\n{ordered}" ASurrounding : \t\t\t\t
+Grid -> "\nlist of islands\n{ordered}" Island : \t\t\t\t
+
+abstract class ASurrounding {
+    description: String
+    symbol : String
+    --
+    +getSymbol() : String
+}
+ASurrounding <|-- Island
+ASurrounding <|-- ResourceArea
+
+class ResourceArea {
+    +getSymbol() : String
+    +displayCards(): String
+}
+
+class Island {
+    onMap : boolean
+    found: boolean
+    name : String
+    --
+    +setStory(StoryScene s) : void
+    +toString() : String
+    +displayCards() : String
+    +displayEnding(char c) : String
+    +getSymbol() : String
+}
+
+Island -> "Contains a single" StoryScene : \t\t\t\t
+
+class Map {
+    +toString() : String
+    +addIsland() : void 
+}
+Map ->  "\nlist of islands" Island : \t\t\t\t
+
+class StoryScene {
+    text : String
+}
+
+class Ship {
+    health : int
+    --
+    -update_health(amount : int) : void
+    +toString() : String 
+}
+
+class Inventory {
+    rope : int
+    wood : int 
+    medicine : int
+    --
+    +addToInventory(ResourceArea r) : void
+    +removeInventory(char c) : void
+    +isFull(): Boolean
+    +toString() : String
+}
+
+class Obstacle {
+    text : String
+    options : String []
+    results : String []
+    code : int
+    --
+    +toString(): String
+    +returnObsEnding(char x) : String
+}
+
+class Library {
+    --
+    +getIslands() : Island
+    +getScenes(): StoryScene []
+}
+
+Library -> "\nlist of all StoryScenes" StoryScene : \t\t\t\t
+Library -> "\nlist of all Obstacles" Obstacle : \t\t\t\t
+Library -> "\nlist of all Islands" Island : \t\t\t\t
+
+class UserInterface {
+    +run_game()
+}
+
+class Controller {
+    --
+    +isValid() : boolean
+    +respondInput() : String
+    +makeMove(): String
+    +addressResource(char choice): boolean
+    +callRemoveInventory(char c): void
+    +addressIsland(char choice): String
+    +addToMap(): void
+    +generateObstacle: String
+    +performSolutionA(int x): void
+    +performSolutionB(int x): void
+    +addressObstacle(char c): String
+}
+UserInterface -> Controller
+Controller -> UserInterface
+Controller -> "\ncontains" Library : \t\t\t\t
+Controller -> "\ncontains" Ship : \t\t\t\t
+Controller -> "\ncontains" Inventory : \t\t\t\t
+Controller -> "\ncontains" Map : \t\t\t\t
+Controller -> "\ncontains" Grid : \t\t\t\t
+
+
+@enduml
+```
+
 ## Sequence Diagrams:
 
 ### Movement

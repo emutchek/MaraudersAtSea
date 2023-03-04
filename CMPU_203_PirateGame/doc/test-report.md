@@ -4,11 +4,12 @@
 <ul>
 <li>User input: 'W'</li>
 <li>Result:</li>
-|X| | |
-| | | |
-| | | |
-| | | |
-| |Δ| |
+<p>|X| | |</p>
+<p>| | | |</p>
+<p>| | | |</p>
+<p>| | | |</p>
+<p>| |Δ| |
+</p>
 <li>Correctness: The grid printed as expected.</li>
 
 <li>User input: 'W'</li>
