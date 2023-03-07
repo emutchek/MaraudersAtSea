@@ -141,4 +141,11 @@ public class Controller {
         else {performSolutionB(tempObs.code);}
         return tempObs.returnObsEnding(c);
     }
+
+    public boolean gameOver(){
+        if (s.health <= 0){
+            return true;
+        }
+        else {return false;}
+    }
 }

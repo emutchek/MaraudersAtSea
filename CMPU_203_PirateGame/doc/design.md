@@ -150,7 +150,7 @@ endref
 ref over UI 
 Encounter Obstacle
 endref
-controller ->> ship : gameOver()
+UI ->> controller : gameOver()
 @enduml
 ```
 

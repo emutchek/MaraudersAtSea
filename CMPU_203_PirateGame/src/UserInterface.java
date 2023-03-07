@@ -136,7 +136,9 @@ public class UserInterface {
                 //execute their choice
                 System.out.println(c.addressObstacle(inObs));
             }
-
+            if (c.gameOver()){
+                break;
+            }
         }
             System.out.println("Thank you for playing [PirateGame]! We hope you enjoyed");
             //print out game stats, like whether they "won" or not/how much they filled up map
