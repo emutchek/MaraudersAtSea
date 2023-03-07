@@ -136,7 +136,6 @@ actor User as user
 participant ": UserInterface" as UI
 participant ": Controller" as controller
 participant ": Grid" as grid
-participant ": Ship" as ship
 user -->> UI **: enters move
 UI ->> controller **: isValid()
 UI ->> controller : respondInput()
