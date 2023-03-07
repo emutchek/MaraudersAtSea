@@ -1,16 +1,73 @@
 import java.util.ArrayList;
 public class Library {
+    StoryScene [] all_stories = {new StoryScene("\n THE ISLE OF GRAVES \n" + "Pirate captain Eurydice receives a " +
+            "letter from her former boss, " +
+            "requesting she take her crew and set off to do a charting mission of the Eastern Islands, " +
+            "a mysterious far-flung territory guarded by dangerous waters. ", "\n”What do you think, sailor? " +
+            "Do we go?(Q)”\n", new String[]{"“Aye! We’ll rally the crew and give no quarter”", "“We can’t cross the " +
+            "Eastern Islands, we’ll be fish food!”\n"}, new String[]{"You round up all the crew, restock the ship," +
+            "and set course for the Eastern Islands.", "“Don’t be such a lily-livered wench. We’re going.” \n\n" +
+            "You round up all the crew, restock the ship, and set course for the Eastern Islands."}),
 
-    StoryScene [] all_stories = {
-            new StoryScene("\nOne afternoon, on a tiny island filled with the boldest, drunkest and strongest pirates \n" +
-                    "in all the land, a young woman chews on the end of her quill. She frowns at the piece of parchment \n" +
-                    "before her, skimming the words again. “Dear Eurydice…. Urgent favor to request… powerful new client \n" +
-                    "who’s in a hurry… Know we can count on you given our past… A thorough depiction of the Eastern islands \n" +
-                    "and any creatures who may inhabit them… Send the map back to this address in no less than two months’ \n" +
-                    "time… Your old friend.” It was unsigned, but she recognized the handwriting of her old mentor. There \n" +
-                    "was no telling what shifty client he was working with this time.You lean against the counter, twirling \n" +
-                    "a knife absentmindedly. You’ve heard of this mysterious mentor, and the shady people he worked with. \n" +
-                    "But the whole crew knows that she can never let things go. She turns to you. (Island)",
+            new StoryScene("\n THE PITT \n" + "The crew make it to the edge of the territory of the Eastern Islands. " +
+                    "They stop to explore, but end up stuck in a pit and resorting to petty arguments.",
+                    "N/A", new String[]{"N/A", "N/A"}, new String[]{"N/A", "N/A"}),
+
+            new StoryScene("\n ORANGE EXTRAVAGANZA \n" + "The crew reach another island, where Meels " +
+            "spots an orange tree and the crew gets caught by a local while helping themselves to the " +
+            "fruit.", "\n Do you think we should heed the man's warning? (Q)\n", new String[]{"We will remain vigilant +" +
+                    "about our actions, but we must forge ahead.", "Yes, uh, we will keep that in mind."},
+                    new String[]{"The man nods gravely and invites you in for a meal.", "The man looks disappointed, nods," +
+                            " and walks away without another word."}),
+
+            new StoryScene("\n ROCKY RAPIDS \n" + "During a particularly bad storm, Cas takes a tumble and gets " +
+                    "hurt. Tensions are high " + "and Ish has to put their surgery skills to good use. ",
+                    "N/A", new String[]{"N/A", "N/A"}, new String[]{"N/A", "N/A"}),
+
+            new StoryScene("\n THE SHIP \n" + "Cas and Amira have a falling-out and come to better understand each " +
+                    "other.", "N/A", new String[]{"N/A", "N/A"}, new String[]{"N/A", "N/A"}),
+
+            new StoryScene("\n THE EYE OF THE STORM \n" + "Meels and Eurydice had gone off to explore another " +
+                    "island, and come back with signs of other foreign explorers who had come before them, sponsored by " +
+                    "a company called Eastern Helion Expansion (EHE). Cas knows EHE to be an antagonistic group who've " +
+                    "recently exploded with unexplained profits",
+                    "Do you stick around here to comb for more evidence or press on in order to" +
+                            " meet the deadline?", new String[]{"We keep going - we can't lose sight of why we're here",
+                    "Let's do some research, who knows what we'll find?"}, new String[]{"", "While deciphering old ship" +
+                    "manifests, Amira realizes that the owners of EHE previously operated under a different name and did" +
+                    "business with Eurydice's mentor."}),
+
+            new StoryScene("\n THE GROTTO \n" + "Ish and Orlic set off on a hike to search for more food.", "N/A",
+                    new String[]{"N/A","N/A"}, new String[]{"N/A","N/A"}),
+
+            new StoryScene ("\n THE CAVES \n" + "The crew encounters a pair of natives in the middle of fishing who" +
+                    "agree to show them the area. They explore a large cave system and make camp together ashore for the" +
+                    "night. Amira chatters enthusiastically with the fishers about their culture, and they patiently " +
+                    "describe a secret text they carry with them with information on a sacred grove of trees with " +
+                    "magical properties.", "Night falls and everyone falls asleep. You see this sacred text tucked" +
+                    "in the local woman's satchel. Do you take a peek?", new String[]{"I'll look quickly - no one will " +
+                    "know.","It's sacred, I should leave it alone."}, new String[]{"You find a simple map sketched in the" +
+                    "first few pages, marking a location that seems to be just one island north of here.","You pass a" +
+                    "peaceful night."}),
+
+            new StoryScene ("\n THE GROVE \n" + "Following the map, the crew drops anchor besides an island" +
+                    " densely packed with strange-looking trees. Orlic, Eurydice and Amira take out a boat to explore" +
+                    "further, and Amira notices traces of a thick brown substance that resembles an incredibly rare fuel " +
+                    "her country has experimented with to make cutting-edge technology.", "Do you fill a vial with" +
+                    "the tree sap or head back to the ship?", new String[]{"Yes, we need a sample to prove what we've seen.",
+                    "No, best leave it be."}, new String[]{"You safely stow the substance in the ship hold.","You head" +
+                    "back to the ship and sail away."}),
+
+            new StoryScene (" \n THE MEETING PLACE \n" + "The next morning, the locals invite the crew to attend a " +
+                    "neary festival with them. Everyone dresses in their finest ", "", new String[]{"",""}, new String[]{"",""})
+
+    } ;
+    StoryScene [] all_stories1 = {
+            new StoryScene("\nPirate captain Eurydice recieves a letter from her former boss, " +
+                    "requesting she take her crew and set off to do a charting mission of the Eastern Islands, " +
+                    "a mysterious far-flung group of islands gPirate captain Eurydice recieves a letter from her former boss," +
+                    " requesting she take her crew and set off to do a charting mission of the Eastern Islands, " +
+                    "a mysterious far-flung group of islands gaurded by dangerous waters. aurded by dangerous waters.\n",
                     "\n”What do you think, sailor? Do we go?(Q)”\n",
                     new String[]{"“Aye! We’ll rally the crew and give no quarter”", "“We can’t cross the Eastern Islands, we’ll be fish food!”\n"},
                     new String[]{"\nA few blocks down the street, a tearful redheaded girl runs out of the tavern. Cassiopeia \n" +
@@ -27,6 +84,7 @@ public class Library {
                             "at the market, and Amira’s waiting for a letter, and I haven’t even seen Orlic since she \n" +
                             "stole that man’s tooth.” Eurydice winced. “Just do your best. I’m going to have a drink. \n" +
                             "Anchors up by sunrise.”\n"}),
+
             new StoryScene("\nAfter a week of sailing, the crew reached the first unexplored island. Everyone was \n" +
                     "so sick of Meels’ flute playing that they all volunteered to take the dinghy and start trekking \n" +
                     "across the beach. Amira, the ship cartographer, had been so focused on her calculations that she \n" +

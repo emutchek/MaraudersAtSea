@@ -1,76 +1,3 @@
-```PlantUML
-@startuml
-
-class Grid {
-    ship_location : int
-    islands_met : int
-    grid : String [][]
-    --
-    +toString() : String
-    +populateGrid() : void
-    +move() : String
-    +atSurrounding() : Boolean
-}
-Grid ->  "\nlist of surroundings\n{ordered}" ASurrounding : \t\t\t\t
-
-abstract class ASurrounding {
-    symbol : String
-    --
-    +getSymbol() : String
-}
-ASurrounding <|-- Island
-ASurrounding <|-- ResourceArea
-
-class ResourceArea {
-    +toString() : String
-}
-
-class Island {
-    onMap : boolean
-    found: boolean
-    --
-    +setStory() : void
-    +toString() : String
-    +displayCards() : String
-}
-
-Island -> "Contains a single" StoryScene : \t\t\t\t
-
-class Map {
-    +toString() : String
-    +addIsland() : void 
-}
-Map ->  "\nlist of islands" Island : \t\t\t\t
-
-class StoryScene {
-    text : String
-}
-
-class Ship {
-    health : int
-    --
-    -update_health(amount : int) : void
-    +toString() : String 
-}
-
-class Inventory {
-    rope : int
-    wood : int 
-    --
-    +displayInventory() : void
-    -update_inventory(rope : int, wood : int) : void
-}
-
-class UserInterface {
-    +run_game()
-}
-
-class Controller {
-    +isValid() : boolean
-    +respondInput() : String
-}
-@enduml
-```
 
 ```PlantUML
 @startuml
@@ -123,6 +50,12 @@ Map ->  "\nlist of islands" Island : \t\t\t\t
 
 class StoryScene {
     text : String
+    question : String
+    options : String[]
+    endings : String[]
+    --
+    +toString() : String
+    +returnEnding(char x) : String
 }
 
 class Ship {
@@ -203,32 +136,85 @@ actor User as user
 participant ": UserInterface" as UI
 participant ": Controller" as controller
 participant ": Grid" as grid
-participant ": Island" as island
+participant ": Ship" as ship
 user -->> UI **: enters move
 UI ->> controller **: isValid()
-UI ->> controller **: respondInput()
+UI ->> controller : respondInput()
+UI ->> controller : makeMove()
 controller ->> grid **: move()
-ref over grid
-Display Story
+grid ->> grid : addResourceArea()
+ref over controller
+Encounter Island
+Encounter Resource Area
 endref
+ref over UI 
+Encounter Obstacle
+endref
+controller ->> ship : gameOver()
 @enduml
 ```
 
-### Display Story
+### Encounter Island
 ```PlantUML
 @startuml
-mainframe sd Display Story
+mainframe sd Encounter Island
 hide footbox
+actor User as user
+participant ": UserInterface" as UI
+participant ": Controller" as controller
 participant ": Island" as island
-alt IsIsland
-    island -> storyscene: callStoryScene
-else !IsIsland
-end
+participant ": Map" as map
+controller ->> island : displayCards()
+UI ->> user : print question
+user ->> UI : enters response
+UI ->> controller : addressIsland()
+controller ->> island : displayEnding()
+user ->> UI : choose to add island to map
+UI ->> controller : addtoMap()
+controller ->> map : addIsland()
+
+@enduml
+```
+## Encounter Resource Area
+```PlantUML
+@startuml
+mainframe sd Encounter Resource Area
+hide footbox
+actor User as user
+participant ": UserInterface" as UI
+participant ": Controller" as controller
+participant ": Inventory" as inv
+UI ->> controller : addressResource()
+controller ->> inv : addtoInventory()
+controller ->> inv : isFull()
+user ->> UI : if full, choose to remove
+UI ->> controller : callRemoveInventory()
+controller ->> inv : removeInventory()
+
 @enduml
 ```
 
-
-
+## Encounter Obstacle
+```PlantUML
+@startuml
+mainframe sd Encounter Obstacle
+hide footbox
+actor User as user
+participant ": UserInterface" as UI
+participant ": Controller" as controller
+participant ": Inventory" as inv
+participant ": Ship" as ship
+participant ": Obstacle" as obs
+UI ->> controller : generateObstacle()
+user ->> UI : respond to Obstacle
+UI ->> controller : addressObstacle()
+controller ->> controller : performSolutionA()
+controller ->> controller : performSolutionB()
+controller ->> inv : removeInventory()
+controller ->> ship : updateHealth()
+controller ->> obs : returnObsEnding()
+@enduml
+```
 
 
 
