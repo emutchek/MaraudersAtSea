@@ -50,9 +50,9 @@ public class Controller {
         ASurrounding left = g.grid[g.ship_location][0];
         ASurrounding right = g.grid[g.ship_location][1];
         String ret = g.toString();
-        //check if the ship is next to an island
+        //check if the ship is next to an island, print cards
         if (left instanceof Island || right instanceof Island) {
-            ret += (g.all_islands[g.islandsMet]).displayCards();
+            ret += (g.all_islands[g.islandsMet]).toString() + (g.all_islands[g.islandsMet]).displayCards();
             g.islandsMet++;
         }
         //check if ship is next to a resource area
@@ -102,7 +102,7 @@ public class Controller {
     }
 
     public String generateObstacle() {
-        if(Math.random() <= 0.2) {
+        if(Math.random() < 0.05) {
             int randIndex = (int)(Math.random() * 2);
             tempObs = lib.all_obstacles.get(randIndex);
             //lib.all_obstacles.remove(tempObs);

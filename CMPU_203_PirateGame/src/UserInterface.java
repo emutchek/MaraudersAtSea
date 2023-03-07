@@ -6,8 +6,15 @@ import java.util.Scanner;
 public class UserInterface {
     public static void main(String[] args) {
         Controller c = new Controller();
-        System.out.println("Welcome to PirateGame, a pirate adventure game where you will set off with" +
-                " your crew and explore the unknown. \n");
+        System.out.println("\nWelcome to Marauders at Sea, an adventure that will test your mettle and heart.\n" +
+        "Every pirate needs a good crew, so you'll be traveling with the very best.\n\n" +
+                "EURYDICE, the brave captain\n" +
+                "CASSEIOPIA 'CAS', the dashing first mate\n" +
+                "AMIRA, the clever map maker\n" +
+                "AMELIA 'MEELS', the French cook\n" +
+                "ISHA 'ISH', the peaceful surgeon\n" +
+                "ORLIC, the oddball gunner" +
+                "\n\nStay safe out there, sailor. All hands hoay!");
 
         while (true) {
             char act;
