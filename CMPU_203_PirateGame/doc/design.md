@@ -174,7 +174,7 @@ controller ->> map : addIsland()
 
 @enduml
 ```
-## Encounter Resource Area
+### Encounter Resource Area
 ```PlantUML
 @startuml
 mainframe sd Encounter Resource Area
@@ -193,7 +193,7 @@ controller ->> inv : removeInventory()
 @enduml
 ```
 
-## Encounter Obstacle
+### Encounter Obstacle
 ```PlantUML
 @startuml
 mainframe sd Encounter Obstacle
