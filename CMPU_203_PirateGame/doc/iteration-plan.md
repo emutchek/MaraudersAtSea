@@ -19,12 +19,8 @@ end title
 title
 Iteration 2 Plan
 |Rank | Requirement | Comment |
-| high |  |  |
-|  |  |  |
-|  |  |  |
-| medium |  |  |
-|  |  |  |
-|  |  |  |
+| high | Respond to Story | Critical and risky. Create a greater impact for user decisions.|
+| medium | Manage Game | Necessary for other functionality. |
 | low | Interact with NPC | Could be omitted |
 end title
 @enduml
