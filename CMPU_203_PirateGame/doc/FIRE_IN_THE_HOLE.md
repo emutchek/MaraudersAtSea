@@ -4,8 +4,8 @@
 <li>Add params/return values to sequence diagrams</li>
 <li>Is there a point to the ship class? Either delete or make it container
 for inventory/map?</li>
-<li>Make it so the last island ends the game, and then remove the 'move' method from grid (this stops the
-game when you reach the last few squares)</li>
+<li>Fix the ending</li>
+<li>At one point I picked a story option and did not get a follow-up ending to that decision</li>
 <li>Only one solution to the obstacle uses resources, the other automatically docks health</li>
 </ul>
 

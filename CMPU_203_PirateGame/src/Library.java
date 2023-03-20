@@ -98,10 +98,10 @@ public class Library {
 
     public Library() {
         all_obstacles.add(
-                new Obstacle("-----☠ PLAGUE ALERT ☠-----\n Meels woke up with a fever this morning, which \n" +
-                "wasn't that concerning, until her finger turned purple and she erupted in boils. They must have incurred \n" +
-                "the wrath of an angry spirit... or maybe it was the brownish drinking water that Amira forgot to change.\n" +
-                "What do you do?",
+                new Obstacle("-----☠ PLAGUE ALERT ☠-----\n " +
+                        "Meels woke up with a fever this morning, which wasn't that concerning, until her finger turned \n" +
+                        "purple and she erupted in boils. We must have incurred the wrath of an angry spirit... or \n" +
+                        "maybe it was the brownish drinking water that Amira forgot to change.\nWhat do you do?",
                 new String[]{"Give Meels a vial of medicine and keep her quarantined",
                         "People get sick all the time! Let's play limbo on the deck"},
                 new String[]{"Good call - she's feeling much better.",
@@ -128,8 +128,8 @@ public class Library {
             new Island("\nMeeting-Place"),
             new Island("\nBeach"),
             new Island("\nThe Border"),
-            new Island(""),
-            new Island(""),
+            new Island("\nEnding 1"),
+            new Island("\nEnding 2"),
     };
 
     public Island [] getIslands () {

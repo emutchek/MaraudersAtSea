@@ -28,6 +28,8 @@ public class Grid {
                 {null, null},
                 {null, null},
                 {all_islands[1], null},
+                {null, null},
+                {null, null},
                 {null, all_islands[2]},
                 {null, null},
                 {null, null},
@@ -54,6 +56,20 @@ public class Grid {
                 {null, null},
                 {null, null},
                 {all_islands[9], null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {all_islands[10], null},
+                {null, null},
+                {all_islands[11], null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, all_islands[12]},
+                {null, all_islands[13]},
+                {null, null},
+                {null, null},
                 {null, null},
                 {null, null},
                 {null, null},
@@ -98,13 +114,33 @@ public class Grid {
         }
     }
 
-    public Boolean move(){
+    /**
+     * Executes forward movement
+     * - increments ship location
+     * - spawns resource area sometimes
+     * - returns island information if ship is at an island
+     * - returns resource area information if ship is at an RA
+     * @return
+     */
+    public String executeMove() {
         this.ship_location++;
-        if(this.ship_location >= this.grid.length - 5) {
-            return false;
-        }
         addRA();
-        return true;
+        ASurrounding left = grid[ship_location][0];
+        ASurrounding right = grid[ship_location][1];
+        String ret = toString();
+        //check if the ship is next to an island, add cards to return String
+        if (left instanceof Island || right instanceof Island) {
+            ret += (all_islands[islandsMet]).toString() + (all_islands[islandsMet]).displayCards();
+            islandsMet++;
+        }
+        //check if ship is next to a resource area
+        else if (left instanceof ResourceArea) {
+            ret += ((ResourceArea) left).displayCards();
+        } else if (right instanceof ResourceArea) {
+            ret += ((ResourceArea) right).displayCards();
+        }
+
+        return ret;
     }
 
 }

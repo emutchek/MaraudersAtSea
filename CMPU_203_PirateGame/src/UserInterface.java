@@ -42,7 +42,7 @@ public class UserInterface {
             }
 
             if (res.equals("null")) {
-                break; //user typed quit or reached end of map - leave game
+                break; //user typed quit - leave game
             } else {
                 System.out.println(res);
                 if (act == 'I'){
