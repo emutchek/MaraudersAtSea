@@ -1,6 +1,11 @@
 ### Random to dos/reminders
-<li>Add vironium to glossary </li>
-<li>Pause screen, map, inventory, health button must always be accessible, even when story card is up</li>
+<ul>
+<li>Add javadoc</li>
+<li>Add params/return values to sequence diagrams</li>
+<li>Is there a point to the ship class? Either delete or make it container
+for inventory/map?</li>
+<li>Make it so the last island ends the game lol this is important</li>
+</ul>
 
 ### Doubt Meter
 <p>Things like peeking at the diary and interrogating locals about the grove will
@@ -16,18 +21,4 @@ In the non-alternate timeline, there is one more opportunity to increase the dou
 At the end, if the doubt meter is above 0, they have a choice whether to send in the letter.
 Otherwise, it gets sent automatically.</p>
 
-### Stuff to figure out
-<ul>
-<li>Make move knows whether we're at an island, but all it does if we are is print story cards, 
-and we want it to trigger a scanner multiple choice moment </li>
-<li>Make it so the last island ends the game lol this is important</li>
-</ul>
 
-
-UI class has a generic A B scanner method to be used AFTER you've already asked the user something
-
-if make move result, which is stored in res, contains a ? then after printing res, the UI does
-its A B scanner class method
-
-
-Eventually, ideally, they get some resolution to the choice they made

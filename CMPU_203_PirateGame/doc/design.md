@@ -11,8 +11,8 @@ class Grid {
     +addResourceArea(): void
     +move() : String
 }
-Grid ->  "\nlist of surroundings\n{ordered}" ASurrounding : \t\t\t\t
-Grid -> "\nlist of islands\n{ordered}" Island : \t\t\t\t
+Grid ->  "\nlist of surroundings 'grid'\n{ordered}" ASurrounding : \t\t\t\t
+Grid -> "\nlist of islands 'all_islands'\n{ordered}" Island : \t\t\t\t
 
 abstract class ASurrounding {
     description: String
@@ -40,13 +40,13 @@ class Island {
     +getSymbol() : String
 }
 
-Island -> "Contains a single" StoryScene : \t\t\t\t
+Island -> "Contains 'story'" StoryScene : \t\t\t\t
 
 class Map {
     +toString() : String
     +addIsland() : void 
 }
-Map ->  "\nlist of islands" Island : \t\t\t\t
+Map ->  "\nlist of islands 'all_islands'" Island : \t\t\t\t
 
 class StoryScene {
     text : String
@@ -92,9 +92,9 @@ class Library {
     +getScenes(): StoryScene []
 }
 
-Library -> "\nlist of all StoryScenes" StoryScene : \t\t\t\t
-Library -> "\nlist of all Obstacles" Obstacle : \t\t\t\t
-Library -> "\nlist of all Islands" Island : \t\t\t\t
+Library -> "\nlist 'all_stories'" StoryScene : \t\t\t\t
+Library -> "\nlist 'all_obstacles'" Obstacle : \t\t\t\t
+Library -> "\nlist 'all_islands'" Island : \t\t\t\t
 
 class UserInterface {
     +run_game()
@@ -116,11 +116,11 @@ class Controller {
 }
 UserInterface -> Controller
 Controller -> UserInterface
-Controller -> "\ncontains" Library : \t\t\t\t
-Controller -> "\ncontains" Ship : \t\t\t\t
-Controller -> "\ncontains" Inventory : \t\t\t\t
-Controller -> "\ncontains" Map : \t\t\t\t
-Controller -> "\ncontains" Grid : \t\t\t\t
+Controller -> "\ncontains 'lib''" Library : \t\t\t\t
+Controller -> "\ncontains 's'" Ship : \t\t\t\t
+Controller -> "\ncontains 'inv'" Inventory : \t\t\t\t
+Controller -> "\ncontains 'm'" Map : \t\t\t\t
+Controller -> "\ncontains 'g'" Grid : \t\t\t\t
 
 
 @enduml
@@ -163,7 +163,10 @@ participant ": UserInterface" as UI
 participant ": Controller" as controller
 participant ": Island" as island
 participant ": Map" as map
+participant ": StoryScene" as SS
 controller ->> island : displayCards()
+island ->> SS : toString()
+SS ->> UI : print story()
 UI ->> user : print question
 user ->> UI : enters response
 UI ->> controller : addressIsland()
@@ -184,11 +187,14 @@ participant ": UserInterface" as UI
 participant ": Controller" as controller
 participant ": Inventory" as inv
 UI ->> controller : addressResource()
-controller ->> inv : addtoInventory()
-controller ->> inv : isFull()
-user ->> UI : if full, choose to remove
+alt isFull
+controller ->> UI : ask user to remove
 UI ->> controller : callRemoveInventory()
 controller ->> inv : removeInventory()
+else !isFull
+controller ->> inv : addtoInventory()
+
+end
 
 @enduml
 ```
