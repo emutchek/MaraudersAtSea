@@ -27,13 +27,13 @@ public class Inventory {
     public void removeInventory(char c) {
         switch (c) {
             case 'R':
-                rope-=10;
+                rope-=30;
                 break;
             case 'M':
-                medicine-=10;
+                medicine-=30;
                 break;
             case 'W':
-                wood-=10;
+                wood-=30;
                 break;
         }
     }

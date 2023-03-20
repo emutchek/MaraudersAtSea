@@ -102,7 +102,7 @@ public class Controller {
     }
 
     public String generateObstacle() {
-        if(Math.random() < 0.05) {
+        if(Math.random() < 0.15) {
             int randIndex = (int)(Math.random() * 2);
             tempObs = lib.all_obstacles.get(randIndex);
             //lib.all_obstacles.remove(tempObs);
