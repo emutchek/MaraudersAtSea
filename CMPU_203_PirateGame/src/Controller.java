@@ -167,6 +167,6 @@ public class Controller {
     }
 
     public boolean gameOver(){
-        return (s.health <= 0 || g.islandsMet >= 13);
+        return (s.health <= 0 || g.islandsMet >= 11);
     }
 }

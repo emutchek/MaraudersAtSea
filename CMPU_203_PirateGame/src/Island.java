@@ -6,6 +6,7 @@
 public class Island extends ASurrounding{
     StoryScene story;
 
+
     boolean found;
     boolean onMap;
     String name;
@@ -18,11 +19,13 @@ public class Island extends ASurrounding{
 
     public String toString(){return name;}
 
-    public void setStory(StoryScene s) {
+    public void setStory(StoryScene s){
         this.story = s;
     }
 
-    public String displayEnding(char x){return story.returnEnding(x);}
+    public String displayEnding(char x){
+        return story.returnEnding(x);
+    }
 
     public String getSymbol() {return symbol;}
 

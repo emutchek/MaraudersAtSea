@@ -61,14 +61,6 @@ public class Library {
                     new String[]{"Yes, we need a sample to prove what we've seen.", "No, best leave it be."},
                     new String[]{"\nYou safely stow the substance in the ship hold.","\nYou head back to the ship and sail away."}),
 
-            new StoryScene ("\nThe next morning, the locals invite the crew to attend a \n" +
-                    "nearby festival with them. Everyone dresses in their finest and joins milling crowds for a night \n" +
-                    "of music and dance. They get to chatting with some of the inhabitants, who mention that there \n" +
-                    "are hostile forces planning something bad for the Eastern Islands.(Island)",
-                    "Do you warn them about what you know?(Q)", new String[]{"We'll tell them everything we know.",
-                    "Better keep it to ourselves - we don't know how they'll react."}, new String[]{"The locals thank " +
-                    "you for the information and urge you to keep in touch","After the party you head back to the ship."}),
-
             new StoryScene ("\nCas and Amira bond while exploring another island. (Island)",
                     "", new String[]{"",""}, new String[]{"",""}),
 
@@ -83,17 +75,36 @@ public class Library {
 
             new StoryScene ("\nCongratulations! The crew has made it home safely. \nEPILOGUE\n\nSix months later, " +
                     "Eurydice finally relents to Amira's requests to put together an expedition and visit their friends \n" +
-                    "in the Eastern Islands. They stock up plenty of fruit this time and enjoy calm waters on the voyage. \n" +
-                    " The inhabitants of the islands are glad to see them, and share news about EHE. The crew is confident" +
-                    "that they did the right thing. \nTHE END",
-                    "", new String[]{"",""}, new String[]{"",""}),
-
-            new StoryScene ("\nCongratulations! The crew has made it home safely. \nEPILOGUE\n\nSix months later, " +
-                    "Eurydice finally relents to Amira's requests to put together an expedition and visit their friends \n" +
                     "in the Eastern Islands. They stock up plenty of fruit this time and enjoy calm waters on the voyage.\n" +
                     " When they arrive, they learn what has happened with EHE. \nTHE END",
                     "", new String[]{"",""}, new String[]{"",""}),
     } ;
+
+    StoryScene[] all_secstories = {
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            new StoryScene ("\nThe next morning, the locals invite the crew to attend a \n" +
+                    "nearby festival with them. Everyone dresses in their finest and joins milling crowds for a night \n" +
+                    "of music and dance. They get to chatting with some of the inhabitants, who mention that there \n" +
+                    "are hostile forces planning something bad for the Eastern Islands.(Island)",
+                    "Do you warn them about what you know?(Q)", new String[]{"We'll tell them everything we know.",
+                    "Better keep it to ourselves - we don't know how they'll react."}, new String[]{"The locals thank " +
+                    "you for the information and urge you to keep in touch","After the party you head back to the ship."}),
+            null,
+            null,
+            new StoryScene ("\nCongratulations! The crew has made it home safely. \nEPILOGUE\n\nSix months later, " +
+                    "Eurydice finally relents to Amira's requests to put together an expedition and visit their friends \n" +
+                    "in the Eastern Islands. They stock up plenty of fruit this time and enjoy calm waters on the voyage. \n" +
+                    " The inhabitants of the islands are glad to see them, and share news about EHE. The crew is confident" +
+                    "that they did the right thing. \nTHE END",
+                    "", new String[]{"",""}, new String[]{"",""}),
+    };
 
     ArrayList<Obstacle> all_obstacles = new ArrayList<Obstacle>();
 
@@ -146,12 +157,10 @@ public class Library {
             new Island("\nDunes"),
             new Island("\nGrotto"),
             new Island("\nCaves"),
-            new Island("\nThe Grove"),
-            new Island("\nMeeting-Place"),
+            new Island("\nThe Grove/The Meeting Place"),
             new Island("\nBeach"),
             new Island("\nThe Border"),
-            new Island("\nEnding 1"),
-            new Island("\nEnding 2"),
+            new Island("\nEnding"),
     };
 
     /**
@@ -159,8 +168,13 @@ public class Library {
      * @return edited list of islands
      */
     public Island [] getIslands () {
-        for (int i = 0; i < 14; i++) {
-            all_islands[i].setStory(all_stories[i]);
+        for (int i = 0; i < 12; i++) {
+            if ((i == 8) || (i==11)){
+                all_islands[i].setStory(all_secstories[i]);
+            }
+            else {
+                all_islands[i].setStory(all_stories[i]);
+            }
         }
         return all_islands;
     }
