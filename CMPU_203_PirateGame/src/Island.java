@@ -5,8 +5,6 @@
  */
 public class Island extends ASurrounding{
     StoryScene story;
-
-
     boolean found;
     boolean onMap;
     String name;

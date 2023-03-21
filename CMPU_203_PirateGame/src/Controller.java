@@ -4,8 +4,8 @@ public class Controller {
     Ship s = new Ship();
     Inventory inv = new Inventory();
 
-    Map m = new Map(lib.getIslands());
-    Grid g = new Grid(lib.getIslands());
+    Map m = new Map(lib.all_islands);
+    Grid g = new Grid(lib.all_islands);
 
     Obstacle tempObs = new Obstacle();
 
@@ -24,6 +24,7 @@ public class Controller {
         invOps.add("W");
         invOps.add("R");
         invOps.add("C");
+        lib.setIslands();
     }
 
     /**
@@ -53,7 +54,23 @@ public class Controller {
         }
     }
 
+    public void adjustStories() {
+        if(g.islandsMet == 7){
+            if(doubt >= 2){
+                //change The Grove story text to be the Meeting Place text
+                g.all_islands[8].story = lib.all_secstories[8];
+            }
+        }
+        if(g.islandsMet == 9) {
+            if(doubt < 2) {
+                //remove the question from you've got mail
+                g.all_islands[10].story.question = "N/A";
+            }
+        }
+    }
+
     public String makeMove() {
+        this.adjustStories();
         return g.executeMove();
     }
 
@@ -94,6 +111,10 @@ public class Controller {
     public String addressIsland(char choice) {
        if (choice == 'A') {
             doubt++;
+           //if they choose not to send in the map, they get shown the good ending regardless of their doubt
+           if(g.islandsMet == 11) {
+               g.all_islands[11].story = lib.all_secstories[11];
+           }
         }
         return g.all_islands[g.islandsMet-1].displayEnding(choice);
     }
@@ -107,7 +128,7 @@ public class Controller {
      * @return text of an obstacle, or null
      */
     public String generateObstacle() {
-        if(Math.random() < 0.10) {
+        if(Math.random() < 0.0) {
             int randIndex = (int)(Math.random() * 5);
             tempObs = lib.all_obstacles.get(randIndex);
             //lib.all_obstacles.remove(tempObs);
@@ -167,6 +188,6 @@ public class Controller {
     }
 
     public boolean gameOver(){
-        return (s.health <= 0 || g.islandsMet >= 11);
+        return (s.health <= 0 || g.islandsMet >= 12);
     }
 }

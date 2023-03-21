@@ -62,12 +62,6 @@ public class Grid {
                 {null, null},
                 {all_islands[10], null},
                 {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
                 {all_islands[11], null},
                 {null, null},
                 {null, null},
@@ -139,7 +133,8 @@ public class Grid {
         addRA();
         ASurrounding left = grid[ship_location][0];
         ASurrounding right = grid[ship_location][1];
-        String ret = toString();
+        //prints picture of grid
+        String ret = this.toString();
         //check if the ship is next to an island, add cards to return String
         if (left instanceof Island || right instanceof Island) {
             ret += (all_islands[islandsMet]).toString() + (all_islands[islandsMet]).displayCards();

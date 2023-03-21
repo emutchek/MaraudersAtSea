@@ -5,11 +5,11 @@ public class Library {
             "requesting she take her crew and set off to do a charting mission of the Eastern Islands, \n" +
             "a mysterious far-flung territory guarded by dangerous waters.(Island)",
                     "\n”What do you think, sailor? Do we go?(Q)”\n",
-                    new String[]{"“Aye! We’ll rally the crew and give no quarter”", "“We can’t cross the " +
-            "Eastern Islands, we’ll be fish food!”\n"},
-                    new String[]{"You round up all the crew, restock the ship, " +
-            "and set course for the Eastern Islands.", "“Don’t be such a lily-livered wench. We’re going.” " +
-            "You round up all the crew, restock the ship, and set course for the Eastern Islands."}),
+                    new String[]{"“We can’t cross the Eastern Islands, we’ll be fish food!”",
+                            "“Aye! We’ll rally the crew and give no quarter”"},
+                    new String[]{"“Don’t be such a lily-livered wench. We’re going.”\n" +
+                            "You round up all the crew, restock the ship, and set course for the Eastern Islands.",
+                            "You round up all the crew, restock the ship, and set course for the Eastern Islands."}),
 
             new StoryScene("\nThe crew make it to the edge of the territory of the Eastern Islands. \n" +
                     "They stop to explore, but end up stuck in a pit and resorting to petty arguments.(Island)",
@@ -18,7 +18,8 @@ public class Library {
             new StoryScene("\nThe crew reach another island, where Meels spots an orange tree and the crew \n" +
                     "gets caught by a local while helping themselves to the fruit.(Island)",
                     "\nDo you think we should heed the man's warning? (Q)\n",
-                    new String[]{"We will remain vigilant about our actions, but we must forge ahead.", "Yes, uh, we will keep that in mind."},
+                    new String[]{"We will remain vigilant about our actions, but we must forge ahead.",
+                            "Yes, uh, we will keep that in mind."},
                     new String[]{"\nThe man nods gravely and invites you in for a meal.", "\nThe man looks disappointed, nods," +
                             " and walks away without another word."}),
 
@@ -34,11 +35,11 @@ public class Library {
                     "Eastern Helion Expansion (EHE). Cas knows EHE to be an antagonistic group who've recently exploded \n" +
                     "with unexplained profits. (Island)",
                     "\nDo you stick around here to comb for more evidence or press on in order to meet the deadline?(Q)",
-                    new String[]{"We keep going - we can't lose sight of why we're here",
-                    "Let's do some research, who knows what we'll find?"},
-                    new String[]{"The ship sails on",
-                            "While deciphering old ship manifests, Amira realizes that the owners of EHE \n" +
-                            "previously operated under a different name and did business with Eurydice's mentor."}),
+                    new String[]{"Let's do some research, who knows what we'll find?",
+                            "We keep going - we can't lose sight of why we're here"},
+                    new String[]{"While deciphering old ship manifests, Amira realizes that the owners of EHE \n" +
+                            "previously operated under a different name and did business with Eurydice's mentor.",
+                            "The ship sails on"}),
 
             new StoryScene("\nIsh and Orlic set off on a hike to search for more food.(Island)", "N/A",
                     new String[]{"N/A","N/A"}, new String[]{"N/A","N/A"}),
@@ -49,34 +50,35 @@ public class Library {
                     "describe a secret text they carry with them with information on a sacred grove of trees with \n" +
                     "magical properties. (Island)", "Night falls and everyone falls asleep. You see this sacred text tucked \n" +
                     "in the local woman's satchel. Do you take a peek? (Q)",
-                    new String[]{"I'll look quickly - no one will know.","It's sacred, I should leave it alone."},
-                    new String[]{"\nYou find a simple map sketched in the first few pages, marking a location that seems \n" +
-                            "to be just one island north of here.","\nYou pass a peaceful night."}),
+                    new String[]{"It's sacred, I should leave it alone.", "I'll look quickly - no one will know."},
+                    new String[]{"\nYou pass a peaceful night.",
+                            "\nYou find a simple map sketched in the first few pages, marking a location that seems \n" +
+                            "to be just one island north of here."}),
 
             new StoryScene ("\nFollowing the map, the crew drops anchor besides an island \n" +
                     "densely packed with strange-looking trees. Orlic, Eurydice and Amira take out a boat to explore \n" +
                     "further, and Amira notices traces of a thick brown substance that resembles an incredibly rare fuel \n" +
                     "her country has experimented with to make cutting-edge technology.(Island)", "Do you fill a vial with \n" +
                     "the tree sap or head back to the ship?(Q)",
-                    new String[]{"Yes, we need a sample to prove what we've seen.", "No, best leave it be."},
-                    new String[]{"\nYou safely stow the substance in the ship hold.","\nYou head back to the ship and sail away."}),
+                    new String[]{"No, best leave it be.","Yes, we need a sample to prove what we've seen."},
+                    new String[]{"\nYou head back to the ship and sail away.","\nYou safely stow the substance in the ship hold."}),
 
             new StoryScene ("\nCas and Amira bond while exploring another island. (Island)",
                     "", new String[]{"",""}, new String[]{"",""}),
 
             new StoryScene ("\nEurydice receives a letter via bird from her mentor. It demands that \n" +
                     "the crew send the map immediately, being sure to highlight any potential obstacles to further \n" +
-                    "exploration and expansion into the area. It's clear that plans are about to be underway.(Island)",
-                    "\nDo you send the map?(Q)",
-                    new String[]{"Yes, time is running out!","No, I don't think it's a good idea"},
-                    new String[]{"\nEurydice carefully packages up all of your notes on everything you've seen, sending " +
-                            "the bird back into the horizon.","\nThe crew readies their things to start sailing home, the map" +
-                            "locked safely into the ship vault."}),
+                    "exploration and expansion into the area. It's clear that plans are about to be underway. It's time" +
+                    "to send the map (Island)",
+                    "\nDo you want to go through with handing the map over to the mentor and whoever they're working with?(Q)",
+                    new String[]{"No, I don't think it's a good idea","Yes, time is running out!"},
+                    new String[]{"\nThe crew readies their things to start sailing home, the map" +
+                            "locked safely into the ship vault.","\nEurydice carefully packages up all of your notes on everything you've seen, sending " +
+                            "the bird back into the horizon."}),
 
-            new StoryScene ("\nCongratulations! The crew has made it home safely. \nEPILOGUE\n\nSix months later, " +
+            new StoryScene ("\nThe crew has made it home safely. \nEPILOGUE\n\nSix months later, " +
                     "Eurydice finally relents to Amira's requests to put together an expedition and visit their friends \n" +
-                    "in the Eastern Islands. They stock up plenty of fruit this time and enjoy calm waters on the voyage.\n" +
-                    " When they arrive, they learn what has happened with EHE. \nTHE END",
+                    "in the Eastern Islands. When they arrive, they learn what has happened with EHE. \nTHE END",
                     "", new String[]{"",""}, new String[]{"",""}),
     } ;
 
@@ -101,7 +103,7 @@ public class Library {
             new StoryScene ("\nCongratulations! The crew has made it home safely. \nEPILOGUE\n\nSix months later, " +
                     "Eurydice finally relents to Amira's requests to put together an expedition and visit their friends \n" +
                     "in the Eastern Islands. They stock up plenty of fruit this time and enjoy calm waters on the voyage. \n" +
-                    " The inhabitants of the islands are glad to see them, and share news about EHE. The crew is confident" +
+                    "The inhabitants of the islands are glad to see them, and share news about EHE. The crew is confident" +
                     "that they did the right thing. \nTHE END",
                     "", new String[]{"",""}, new String[]{"",""}),
     };
@@ -127,10 +129,10 @@ public class Library {
                                 "It looks like that did the trick... for now"},1));
         all_obstacles.add(
                 new Obstacle("----- IS OUR WOODEN SHIP ON FIRE??? -----\n" +
-                        "Isha's foot is caught and she's stuck by the flames, but the inventory is about to catch fire!",
+                        "Isha's foot is caught and they're stuck by the flames, but the inventory is about to catch fire!",
                         new String[]{"Ish will be fine, save the booty!",
                                 "Run and help her!"},
-                        new String[]{"Isha's ankle sustains minor burns, so she'll be on bed rest for awhile (-10 HEALTH)",
+                        new String[]{"Isha's ankle sustains minor burns, so they'll be on bed rest for awhile (-10 HEALTH)",
                                 "Phew, we all made it! Looks like a few things got a little, uh... crispy"},2));
         all_obstacles.add(
                 new Obstacle("----- (WO)MAN OVERBOARD -----\n" +
@@ -167,14 +169,9 @@ public class Library {
      * Sets the StoryScene field in each island object
      * @return edited list of islands
      */
-    public Island [] getIslands () {
+    public Island [] setIslands () {
         for (int i = 0; i < 12; i++) {
-            if ((i == 8) || (i==11)){
-                all_islands[i].setStory(all_secstories[i]);
-            }
-            else {
-                all_islands[i].setStory(all_stories[i]);
-            }
+            all_islands[i].setStory(all_stories[i]);
         }
         return all_islands;
     }
