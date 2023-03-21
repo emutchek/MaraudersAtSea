@@ -32,23 +32,29 @@ public class UserInterface {
                 }
             } //if loop ends, user has entered valid action
 
-            String res = "";
+            String res;
+            //forward move
             if (act == 'W') {
-                //do all the associated move stuff
                 res = c.makeMove();
             }
+            //all other actions
             else {
                 res = c.respondInput(act);
             }
-
+            //user typed quit - leave game
             if (res.equals("null")) {
-                break; //user typed quit - leave game
+                break;
             } else {
                 System.out.println(res);
+                /*
+                  Inventory printing:
+                  - displays current resource totals
+                  - prompts user to pick something to throw overboard
+                 */
                 if (act == 'I'){
                     char inInv;
                     while(true){
-                        System.out.println("Do you want to remove something from inventory? (R) for rope, " +
+                        System.out.println("Do you want to throw something overboard? (R) for rope, " +
                                         "(W) for wood, (M) for medicine, or (C) for cancel");
                         Scanner input = new Scanner(System.in);
                         inInv = input.next().charAt(0);
@@ -64,9 +70,9 @@ public class UserInterface {
                     }
                 }
             }
-            //if they've reached a resource area or an island WITH A QUESTION
+            //prompt user for their decision if they've reached a resource area or an island WITH A QUESTION
             if (res.contains("(Q)")) {
-                char choice = ' ';
+                char choice ;
                 while (true) {
                     System.out.println("Choose action A or B");
                     Scanner input = new Scanner(System.in);
@@ -77,11 +83,15 @@ public class UserInterface {
                         System.out.println("Invalid Action");
                     }
                 }
-                //if they're at a resource
+                /*
+                  Resource area printing:
+                  - calls controller to determine if there's room in the inventory
+                  - if not, execute removal procedure
+                  - prints updated inventory
+                 */
                 if (res.contains("Oh")) {
-                    //updates inventory if there's space, or enters if statement if there isn't
                     if (!c.addressResource(choice)) {
-                        System.out.println("Damn! Looks like we can't squeeze this in. We could throw something " +
+                        System.out.println("Damn! We can't squeeze this in. We could throw something " +
                                 "overboard if you want... (R) for rope, (W) for wood, (M) for medicine, or (C) to cancel");
                         char i;
                         while (true) {
@@ -104,14 +114,18 @@ public class UserInterface {
                         System.out.println("Updated inventory: \n" + c.inv);
                     }
                 }
-                //if they're at an island with a question
+                //if they're at an island with a question, call on controller to execute the choice they made (A or B)
                 else {
                     System.out.println(c.addressIsland(choice));
                 }
              }
-            //for all islands, even if there's no question, ask the user if they want to add to map
+            /*
+              General island printing:
+              - ask user to add island to the map with Y or N
+              - if they add it, print updated map
+             */
             if(res.contains("(Island)")){
-                char inMap = ' ';
+                char inMap;
                 while (true) {
                     System.out.println("\nDo you want to add this island to the map? Y or N");
                     Scanner input = new Scanner(System.in);
@@ -127,10 +141,15 @@ public class UserInterface {
                     System.out.println(c.m);
                 }
             }
+            /*
+              Obstacle generation
+              - if controller provides something, print it out and prompt user to choose a solution A or B
+              - print result
+             */
             String obsText = c.generateObstacle();
             if(obsText != null) {
                 System.out.println(obsText);
-                char inObs = ' ';
+                char inObs;
                 while (true) {
                     Scanner input = new Scanner(System.in);
                     inObs = input.next().charAt(0);
@@ -148,6 +167,5 @@ public class UserInterface {
             }
         }
             System.out.println("Thank you for playing [PirateGame]! We hope you enjoyed");
-            //print out game stats, like whether they "won" or not/how much they filled up map
     }
 }

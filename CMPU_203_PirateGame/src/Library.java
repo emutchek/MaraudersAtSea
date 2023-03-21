@@ -36,7 +36,8 @@ public class Library {
                     "\nDo you stick around here to comb for more evidence or press on in order to meet the deadline?(Q)",
                     new String[]{"We keep going - we can't lose sight of why we're here",
                     "Let's do some research, who knows what we'll find?"},
-                    new String[]{"", "While deciphering old ship manifests, Amira realizes that the owners of EHE \n" +
+                    new String[]{"The ship sails on",
+                            "While deciphering old ship manifests, Amira realizes that the owners of EHE \n" +
                             "previously operated under a different name and did business with Eurydice's mentor."}),
 
             new StoryScene("\nIsh and Orlic set off on a hike to search for more food.(Island)", "N/A",
@@ -102,10 +103,10 @@ public class Library {
                         "Meels woke up with a fever this morning, which wasn't that concerning, until her finger turned \n" +
                         "purple and she erupted in boils. We must have incurred the wrath of an angry spirit... or \n" +
                         "maybe it was the brownish drinking water that Amira forgot to change.\nWhat do you do?",
-                new String[]{"Give Meels a vial of medicine and keep her quarantined",
-                        "People get sick all the time! Let's play limbo on the deck"},
-                new String[]{"Good call - she's feeling much better.",
-                        "Now everyone's sick and there's no one to get fresh water! (-10 HEALTH)"},
+                new String[]{"People get sick all the time! Let's play limbo on the deck",
+                        "Give Meels a vial of medicine and keep her quarantined"},
+                new String[]{"Now everyone's sick and there's no one to get fresh water! (-10 HEALTH)",
+                        "Good call - she's feeling much better."},
                         0));
         all_obstacles.add(
                 new Obstacle("----- SHIP MALFUNCTION -----\nUm... is that big wooden pole supposed to be in two pieces?",
@@ -113,6 +114,27 @@ public class Library {
                                 "We better use some of our wood to construct a new mast here on the deck"},
                         new String[]{"Orlic thought you wanted her to build a swing - this ship won't be sailing anytime soon (-10 HEALTH)",
                                 "It looks like that did the trick... for now"},1));
+        all_obstacles.add(
+                new Obstacle("----- IS OUR WOODEN SHIP ON FIRE??? -----\n" +
+                        "Isha's foot is caught and she's stuck by the flames, but the inventory is about to catch fire!",
+                        new String[]{"Ish will be fine, save the booty!",
+                                "Run and help her!"},
+                        new String[]{"Isha's ankle sustains minor burns, so she'll be on bed rest for awhile (-10 HEALTH)",
+                                "Phew, we all made it! Looks like a few things got a little, uh... crispy"},2));
+        all_obstacles.add(
+                new Obstacle("----- (WO)MAN OVERBOARD -----\n" +
+                        "Meels used the plank as a runway again and fell right off the edge!",
+                        new String[]{"We'll lower Cas down by her ankles to snatch her up",
+                                "Lower some rope over the edge for her to grab on"},
+                        new String[]{"Cas has so many weapons strapped to her that she falls in too, and both get pneumonia damn (-10 HEALTH)",
+                                "She clambers back up gratefully"},2));
+        all_obstacles.add(
+                new Obstacle("----- SOUND OF SIRENS -----\n" +
+                        "As the ship enters a rocky area, a pair of beautiful sirens on a cliff bewitch half the crew",
+                        new String[]{"Avast ye and steer hard to port!",
+                                "Grab your fellow pirates and tie them to the masts before they jump over"},
+                        new String[]{"Ah son of a biscuit eater, we hit a rock! (-10 HEALTH)",
+                                "You save all your hearties and the ship sails on"},3));
     }
 
     Island [] all_islands = {
@@ -132,6 +154,10 @@ public class Library {
             new Island("\nEnding 2"),
     };
 
+    /**
+     * Sets the StoryScene field in each island object
+     * @return edited list of islands
+     */
     public Island [] getIslands () {
         for (int i = 0; i < 14; i++) {
             all_islands[i].setStory(all_stories[i]);

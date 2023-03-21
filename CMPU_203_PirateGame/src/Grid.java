@@ -79,6 +79,9 @@ public class Grid {
         };
     }
 
+    /**
+     * @return graphical representation of the grid filled with symbols
+     */
     public String toString() {
         String s = "";
         for(int r = this.ship_location + 4; r >= ship_location; r--) {
@@ -101,9 +104,14 @@ public class Grid {
         }
     }
 
+    /**
+     * Inserts resource areas at the top of the grid
+     * - 1/3 chance the row is filled
+     * - 50/50 chance it's on left/right
+     */
     public void addRA(){
         if ((this.grid[ship_location + 4][0] == null) && (this.grid[ship_location + 4][1] == null)){
-            if (Math.random() < 0.33){
+            if (Math.random() < 0.25){
                 if (Math.random() < 0.5){
                     this.grid[ship_location +4 ][0] = new ResourceArea();
                 }
@@ -117,10 +125,8 @@ public class Grid {
     /**
      * Executes forward movement
      * - increments ship location
-     * - spawns resource area sometimes
-     * - returns island information if ship is at an island
-     * - returns resource area information if ship is at an RA
-     * @return
+     * - spawns resource area sometimes with call to addRA()
+     * @return resource area/island information if ship is at one, else ""
      */
     public String executeMove() {
         this.ship_location++;

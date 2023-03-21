@@ -2,12 +2,12 @@ public class Inventory {
     int rope;
     int wood;
     int medicine;
-    static int max = 170;
+    static int max = 90;
 
     public Inventory(){
-        rope = 50;
-        wood = 50;
-        medicine = 50;
+        rope = 20;
+        wood = 20;
+        medicine = 20;
     }
 
     public void addToInventory(ResourceArea r){
@@ -27,13 +27,13 @@ public class Inventory {
     public void removeInventory(char c) {
         switch (c) {
             case 'R':
-                rope-=30;
+                rope-=10;
                 break;
             case 'M':
-                medicine-=30;
+                medicine-=10;
                 break;
             case 'W':
-                wood-=30;
+                wood-=10;
                 break;
         }
     }
