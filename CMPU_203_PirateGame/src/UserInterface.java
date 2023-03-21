@@ -24,7 +24,7 @@ public class UserInterface {
                 System.out.println("\nEnter Action \nM(check map), W(move forward), H(check health), I(check inventory), " +
                         "Q(quit)");
                 Scanner input = new Scanner(System.in);
-                act = input.next().charAt(0);
+                act = Character.toUpperCase(input.next().charAt(0));
                 if (c.isValid(c.moveOps,act)) {
                     break;
                 } else {
@@ -57,7 +57,7 @@ public class UserInterface {
                         System.out.println("Do you want to throw something overboard? (R) for rope, " +
                                         "(W) for wood, (M) for medicine, or (C) for cancel");
                         Scanner input = new Scanner(System.in);
-                        inInv = input.next().charAt(0);
+                        inInv = Character.toUpperCase(input.next().charAt(0));
                         if (c.isValid(c.invOps,inInv)) {
                             break;
                         } else {
@@ -76,7 +76,7 @@ public class UserInterface {
                 while (true) {
                     System.out.println("Choose action A or B");
                     Scanner input = new Scanner(System.in);
-                    choice = input.next().charAt(0);
+                    choice = Character.toUpperCase(input.next().charAt(0));
                     if (choice == 'A' || choice == 'B') {
                         break;
                     } else {
@@ -129,7 +129,7 @@ public class UserInterface {
                 while (true) {
                     System.out.println("\nDo you want to add this island to the map? Y or N");
                     Scanner input = new Scanner(System.in);
-                    inMap = input.next().charAt(0);
+                    inMap = Character.toUpperCase(input.next().charAt(0));
                     if (inMap == 'Y' || inMap == 'N') {
                         break;
                     } else {
@@ -152,7 +152,7 @@ public class UserInterface {
                 char inObs;
                 while (true) {
                     Scanner input = new Scanner(System.in);
-                    inObs = input.next().charAt(0);
+                    inObs = Character.toUpperCase(input.next().charAt(0));
                     if (inObs == 'A' || inObs == 'B') {
                         break;
                     } else {
@@ -162,10 +162,12 @@ public class UserInterface {
                 //execute their choice
                 System.out.println(c.addressObstacle(inObs));
             }
-            if (c.gameOver()){
+            String gameOver = c.gameOver();
+            if (!gameOver.equals("false")){
+                System.out.println(gameOver);
                 break;
             }
         }
-            System.out.println("Thank you for playing [PirateGame]! We hope you enjoyed");
+            System.out.println("Thank you for playing Marauders at Sea! We hope you enjoyed");
     }
 }

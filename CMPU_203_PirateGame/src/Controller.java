@@ -128,7 +128,7 @@ public class Controller {
      * @return text of an obstacle, or null
      */
     public String generateObstacle() {
-        if(Math.random() < 0.0) {
+        if(Math.random() < 0.2) {
             int randIndex = (int)(Math.random() * 5);
             tempObs = lib.all_obstacles.get(randIndex);
             //lib.all_obstacles.remove(tempObs);
@@ -140,40 +140,51 @@ public class Controller {
     /**
      * Carries out effects of poor decisions by decrementing ship health
      */
-    public void performSolutionA() {
-        s.updateHealth(-10);
+    public char performSolutionA() {
+        s.updateHealth(-25);
+        return 'A';
     }
 
     /**
      * Carries out effects of positive decisions by updating inventory totals
      * @param x index of which obstacle the user is facing
      */
-    public void performSolutionB (int x) {
+    public char performSolutionB (int x) {
         switch (x) {
             case 0:
-                if(inv.medicine == 0) {performSolutionA();}
-                inv.removeInventory('M');
+                if(inv.medicine == 0) {return performSolutionA();}
+                else {
+                    inv.removeInventory('M');
+                    s.updateHealth(15);
+                }
                 break;
 
             case 1:
-                if(inv.wood < 10) {performSolutionA();}
-                inv.removeInventory('W');
+                if(inv.wood < 10) {return performSolutionA();}
+                else {
+                    inv.removeInventory('W');
+                }
                 break;
 
             case 2:
-                if(inv.medicine == 0 || inv.rope == 0 || inv.wood == 0) {performSolutionA();}
-                inv.removeInventory('R');
-                inv.removeInventory('W');
-                inv.removeInventory('M');
+                if(inv.medicine == 0 || inv.rope == 0 || inv.wood == 0) {return performSolutionA();}
+                else {
+                    inv.removeInventory('R');
+                    inv.removeInventory('W');
+                    inv.removeInventory('M');
+                }
                 break;
 
             case 3:
                 case4:
-                if(inv.rope == 0) {performSolutionA();}
-                inv.removeInventory('R');
+                if(inv.rope == 0) {return performSolutionA();}
+                else {
+                    inv.removeInventory('R');
+                }
                 break;
 
         }
+        return 'B';
     }
 
     /**
@@ -182,12 +193,24 @@ public class Controller {
      * @return the text to be displayed after the user makes their choice
      */
     public String addressObstacle(char c) {
-        if(c == 'A') {performSolutionA();}
-        else {performSolutionB(tempObs.code);}
+        if(c == 'A') {
+            c = performSolutionA();
+        }
+        else {
+            c = performSolutionB(tempObs.code);
+        }
         return tempObs.returnObsEnding(c);
     }
 
-    public boolean gameOver(){
-        return (s.health <= 0 || g.islandsMet >= 12);
+    public String gameOver(){
+        String ret = "false";
+        if (s.health <= 0) {
+            ret = "Your ship has taken too much damage. " +
+                    "You and your crew have taken residence in Davy Jones' locker. :(";
+        }
+        if (g.islandsMet >= 12) {
+            ret = "";
+        }
+        return ret;
     }
 }

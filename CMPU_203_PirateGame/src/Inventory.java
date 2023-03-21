@@ -5,9 +5,9 @@ public class Inventory {
     static int max = 90;
 
     public Inventory(){
-        rope = 20;
-        wood = 20;
-        medicine = 20;
+        rope = 0;
+        wood = 0;
+        medicine = 0;
     }
 
     public void addToInventory(ResourceArea r){
@@ -27,13 +27,19 @@ public class Inventory {
     public void removeInventory(char c) {
         switch (c) {
             case 'R':
-                rope-=10;
+                if (rope != 0) {
+                    rope -= 10;
+                }
                 break;
             case 'M':
-                medicine-=10;
+                if (medicine != 0) {
+                    medicine -= 10;
+                }
                 break;
             case 'W':
-                wood-=10;
+                if (wood != 0) {
+                    wood -= 10;
+                }
                 break;
         }
     }

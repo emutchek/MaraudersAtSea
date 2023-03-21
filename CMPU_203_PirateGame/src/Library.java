@@ -68,7 +68,7 @@ public class Library {
 
             new StoryScene ("\nEurydice receives a letter via bird from her mentor. It demands that \n" +
                     "the crew send the map immediately, being sure to highlight any potential obstacles to further \n" +
-                    "exploration and expansion into the area. It's clear that plans are about to be underway. It's time" +
+                    "exploration and expansion into the area. It's clear that plans are about to be underway. It's time " +
                     "to send the map (Island)",
                     "\nDo you want to go through with handing the map over to the mentor and whoever they're working with?(Q)",
                     new String[]{"No, I don't think it's a good idea","Yes, time is running out!"},
@@ -103,7 +103,7 @@ public class Library {
             new StoryScene ("\nCongratulations! The crew has made it home safely. \nEPILOGUE\n\nSix months later, " +
                     "Eurydice finally relents to Amira's requests to put together an expedition and visit their friends \n" +
                     "in the Eastern Islands. They stock up plenty of fruit this time and enjoy calm waters on the voyage. \n" +
-                    "The inhabitants of the islands are glad to see them, and share news about EHE. The crew is confident" +
+                    "The inhabitants of the islands are glad to see them, and share news about EHE. The crew is confident " +
                     "that they did the right thing. \nTHE END",
                     "", new String[]{"",""}, new String[]{"",""}),
     };
@@ -117,36 +117,36 @@ public class Library {
                         "purple and she erupted in boils. We must have incurred the wrath of an angry spirit... or \n" +
                         "maybe it was the brownish drinking water that Amira forgot to change.\nWhat do you do?",
                 new String[]{"People get sick all the time! Let's play limbo on the deck",
-                        "Give Meels a vial of medicine and keep her quarantined"},
-                new String[]{"Now everyone's sick and there's no one to get fresh water! (-10 HEALTH)",
+                        "Give Meels a vial of medicine and keep her quarantined [requires 10oz of medicine]"},
+                new String[]{"Now everyone's sick and there's no one to get fresh water! (-25 HEALTH)",
                         "Good call - she's feeling much better."},
                         0));
         all_obstacles.add(
                 new Obstacle("----- SHIP MALFUNCTION -----\nUm... is that big wooden pole supposed to be in two pieces?",
                         new String[]{"Orlic comes up with a spool of rope and wooden spoon and offers to help",
-                                "We better use some of our wood to construct a new mast here on the deck"},
-                        new String[]{"Orlic thought you wanted her to build a swing - this ship won't be sailing anytime soon (-10 HEALTH)",
+                                "We better use some of our wood to construct a new mast here on the deck [requires 10 logs of wood]"},
+                        new String[]{"Orlic thought you wanted her to build a swing - this ship won't be sailing anytime soon (-25 HEALTH)",
                                 "It looks like that did the trick... for now"},1));
         all_obstacles.add(
                 new Obstacle("----- IS OUR WOODEN SHIP ON FIRE??? -----\n" +
                         "Isha's foot is caught and they're stuck by the flames, but the inventory is about to catch fire!",
                         new String[]{"Ish will be fine, save the booty!",
-                                "Run and help her!"},
-                        new String[]{"Isha's ankle sustains minor burns, so they'll be on bed rest for awhile (-10 HEALTH)",
+                                "Run and help them!"},
+                        new String[]{"Isha's ankle sustains minor burns, so they'll be on bed rest for awhile (-25 HEALTH)",
                                 "Phew, we all made it! Looks like a few things got a little, uh... crispy"},2));
         all_obstacles.add(
                 new Obstacle("----- (WO)MAN OVERBOARD -----\n" +
                         "Meels used the plank as a runway again and fell right off the edge!",
                         new String[]{"We'll lower Cas down by her ankles to snatch her up",
-                                "Lower some rope over the edge for her to grab on"},
-                        new String[]{"Cas has so many weapons strapped to her that she falls in too, and both get pneumonia damn (-10 HEALTH)",
+                                "Lower some rope over the edge for her to grab on [requires 10 feet of rope]"},
+                        new String[]{"Cas has so many weapons strapped to her that she falls in too, and both get pneumonia damn (-25 HEALTH)",
                                 "She clambers back up gratefully"},2));
         all_obstacles.add(
                 new Obstacle("----- SOUND OF SIRENS -----\n" +
                         "As the ship enters a rocky area, a pair of beautiful sirens on a cliff bewitch half the crew",
                         new String[]{"Avast ye and steer hard to port!",
-                                "Grab your fellow pirates and tie them to the masts before they jump over"},
-                        new String[]{"Ah son of a biscuit eater, we hit a rock! (-10 HEALTH)",
+                                "Grab your fellow pirates and tie them to the masts before they jump over [requires 10 feet of rope]"},
+                        new String[]{"Ah son of a biscuit eater, we hit a rock! (-25 HEALTH)",
                                 "You save all your hearties and the ship sails on"},3));
     }
 
