@@ -128,7 +128,7 @@ public class Controller {
      * @return text of an obstacle, or null
      */
     public String generateObstacle() {
-        if(Math.random() < 0.2) {
+        if(Math.random() <= 0.1) {
             int randIndex = (int)(Math.random() * 5);
             tempObs = lib.all_obstacles.get(randIndex);
             //lib.all_obstacles.remove(tempObs);
@@ -146,12 +146,14 @@ public class Controller {
     }
 
     /**
-     * Carries out effects of positive decisions by updating inventory totals
+     * Carries out effects of when user chooses to address obstacle by consuming resources
+     * If they don't have the resources required, it executes the other option automatically
      * @param x index of which obstacle the user is facing
      */
     public char performSolutionB (int x) {
         switch (x) {
             case 0:
+            case 1:
                 if(inv.medicine == 0) {return performSolutionA();}
                 else {
                     inv.removeInventory('M');
@@ -159,38 +161,39 @@ public class Controller {
                 }
                 break;
 
-            case 1:
+            case 2:
+            case 3:
                 if(inv.wood < 10) {return performSolutionA();}
                 else {
                     inv.removeInventory('W');
                 }
                 break;
 
-            case 2:
-                if(inv.medicine == 0 || inv.rope == 0 || inv.wood == 0) {return performSolutionA();}
-                else {
-                    inv.removeInventory('R');
-                    inv.removeInventory('W');
-                    inv.removeInventory('M');
-                }
-                break;
-
-            case 3:
-                case4:
+            case 4:
+            case 5:
                 if(inv.rope == 0) {return performSolutionA();}
                 else {
                     inv.removeInventory('R');
                 }
                 break;
 
+            case 6:
+            if(inv.medicine == 0 || inv.rope == 0 || inv.wood == 0) {return performSolutionA();}
+            else {
+                inv.removeInventory('R');
+                inv.removeInventory('W');
+                inv.removeInventory('M');
+            }
+            break;
+
         }
         return 'B';
     }
 
     /**
-     *
+     * Takes in whichever solution the user wants to do and executes it
      * @param c the user's desired solution, A or B
-     * @return the text to be displayed after the user makes their choice
+     * @return the text to be displayed based on which choice the user made
      */
     public String addressObstacle(char c) {
         if(c == 'A') {

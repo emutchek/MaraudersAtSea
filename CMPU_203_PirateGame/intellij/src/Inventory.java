@@ -5,9 +5,9 @@ public class Inventory {
     static int max = 90;
 
     public Inventory(){
-        rope = 0;
-        wood = 0;
-        medicine = 0;
+        rope = 20;
+        wood = 20;
+        medicine = 20;
     }
 
     public void addToInventory(ResourceArea r){

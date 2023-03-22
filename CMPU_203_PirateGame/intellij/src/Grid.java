@@ -60,7 +60,7 @@ public class Grid {
                 {null, null},
                 {null, null},
                 {null, null},
-                {all_islands[10], null},
+                {null,all_islands[10]},
                 {null, null},
                 {all_islands[11], null},
                 {null, null},
@@ -106,7 +106,7 @@ public class Grid {
 
     /**
      * Inserts resource areas at the top of the grid
-     * - 1/3 chance the row is filled
+     * - 1/4 chance that something is added
      * - 50/50 chance it's on left/right
      */
     public void addRA(){
