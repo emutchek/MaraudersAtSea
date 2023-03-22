@@ -3,7 +3,7 @@ public class Library {
     StoryScene [] all_stories = {
             new StoryScene("\nPirate captain Eurydice receives a letter from her former boss \n" +
             "requesting she take her crew and set off to do a charting mission of the Eastern Islands, \n" +
-            "a mysterious far-flung territory guarded by dangerous waters.(Island)",
+            "a mysterious far-flung territory guarded by dangerous waters.",
                     "\n”What do you think, sailor? Do we go?(Q)”\n",
                     new String[]{"“We can’t cross the Eastern Islands, we’ll be fish food!”",
                             "“Aye! We’ll rally the crew and give no quarter”"},
@@ -69,7 +69,7 @@ public class Library {
             new StoryScene ("\nEurydice receives a letter via bird from her mentor. It demands that \n" +
                     "the crew send the map immediately, being sure to highlight any potential obstacles to further \n" +
                     "exploration and expansion into the area. It's clear that plans are about to be underway. It's time " +
-                    "to send the map (Island)",
+                    "to send the map",
                     "\nDo you want to go through with handing the map over to the mentor and whoever they're working with?(Q)",
                     new String[]{"No, I don't think it's a good idea","Yes, time is running out!"},
                     new String[]{"\nThe crew readies their things to start sailing home, the map" +
@@ -122,32 +122,50 @@ public class Library {
                         "Good call - she's feeling much better."},
                         0));
         all_obstacles.add(
+                new Obstacle("----- WHY IS THE TOOTH FAIRY HERE? -----\n" +
+                        "It seems like just eating hard tack and jerky is not the new keto after all, and now everyone has scurvy!",
+                        new String[]{"Everyone knows that you cure scurvy by chewing licorice root",
+                                "We'll divide our medicine stores evenly among everywhere [requires 10 oz of medicine]"},
+                        new String[]{"Actually, I'm pretty sure Orlic's the one who said that... the crew remains weak \n" +
+                                "until they're able to find fruit at the next island (-25 HEALTH)",
+                                "The crew is bolstered enough to carry on"},1));
+        all_obstacles.add(
                 new Obstacle("----- SHIP MALFUNCTION -----\nUm... is that big wooden pole supposed to be in two pieces?",
                         new String[]{"Orlic comes up with a spool of rope and wooden spoon and offers to help",
                                 "We better use some of our wood to construct a new mast here on the deck [requires 10 logs of wood]"},
                         new String[]{"Orlic thought you wanted her to build a swing - this ship won't be sailing anytime soon (-25 HEALTH)",
-                                "It looks like that did the trick... for now"},1));
+                                "It looks like that did the trick... for now"},2));
         all_obstacles.add(
-                new Obstacle("----- IS OUR WOODEN SHIP ON FIRE??? -----\n" +
-                        "Isha's foot is caught and they're stuck by the flames, but the inventory is about to catch fire!",
-                        new String[]{"Ish will be fine, save the booty!",
-                                "Run and help them!"},
-                        new String[]{"Isha's ankle sustains minor burns, so they'll be on bed rest for awhile (-25 HEALTH)",
-                                "Phew, we all made it! Looks like a few things got a little, uh... crispy"},2));
+                new Obstacle("----- WATER RISING -----\n" +
+                        "It looks like an old repair in the bilge sprung a leak, and the water is already ankle deep!",
+                        new String[]{"Grab a bucket - we'll bail it out one trip at a time",
+                                "Use a hammer and nails to put new planks over the leak and seal it up [requires 10 logs of wood]"},
+                        new String[]{"Good job! You remove three buckets of water... but the leak got bigger and the water's up to\n" +
+                                "your waist - we'll have to seal off the lower decks (-25 HEALTH)",
+                                "It worked! And now we have a hot tub! ... a warm, smelly hot tub..."},3));
+
         all_obstacles.add(
                 new Obstacle("----- (WO)MAN OVERBOARD -----\n" +
                         "Meels used the plank as a runway again and fell right off the edge!",
                         new String[]{"We'll lower Cas down by her ankles to snatch her up",
                                 "Lower some rope over the edge for her to grab on [requires 10 feet of rope]"},
                         new String[]{"Cas has so many weapons strapped to her that she falls in too, and both get pneumonia damn (-25 HEALTH)",
-                                "She clambers back up gratefully"},2));
+                                "She clambers back up gratefully"},4));
         all_obstacles.add(
                 new Obstacle("----- SOUND OF SIRENS -----\n" +
                         "As the ship enters a rocky area, a pair of beautiful sirens on a cliff bewitch half the crew",
                         new String[]{"Avast ye and steer hard to port!",
                                 "Grab your fellow pirates and tie them to the masts before they jump over [requires 10 feet of rope]"},
                         new String[]{"Ah son of a biscuit eater, we hit a rock! (-25 HEALTH)",
-                                "You save all your hearties and the ship sails on"},3));
+                                "You save all your hearties and the ship sails on"},5));
+        all_obstacles.add(
+                new Obstacle("----- IS OUR WOODEN SHIP ON FIRE??? -----\n" +
+                        "Isha's foot is caught and they're stuck by the flames, but the inventory is about to catch fire!",
+                        new String[]{"Ish will be fine, save the booty!",
+                                "Run and help them!"},
+                        new String[]{"Isha's ankle sustains minor burns, so they'll be on bed rest for awhile (-25 HEALTH)",
+                                "Phew, we all made it! Looks like a few things got a little, uh... crispy"},6));
+
     }
 
     Island [] all_islands = {

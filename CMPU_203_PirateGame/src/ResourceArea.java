@@ -5,7 +5,7 @@ public class ResourceArea extends ASurrounding {
         double x = Math.random();
         if (x <= 0.33) {
             description = "rope";
-        } else if (x <= 0.66) {
+        } else if (x <= 0.67) {
             description = "wood";
         } else {
             description = "medicine";
