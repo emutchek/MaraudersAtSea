@@ -140,9 +140,25 @@ public class Controller {
     /**
      * Carries out effects of poor decisions by decrementing ship health
      */
-    public char performSolutionA() {
-        s.updateHealth(-25);
-        return 'A';
+    public char performSolutionA(int x) {
+        switch (x) {
+            //(wo)man overboard
+            case 4:
+                return 'A';
+            break;
+            case 5:
+                if(inv.medicine == 0) {
+                    inv.removeInventory('M');
+                    return 'A';
+                }
+                else {performSolutionB(x);}
+                break;
+            default:
+                s.updateHealth(-25);
+                return 'A';
+            break;
+        }
+
     }
 
     /**
@@ -157,7 +173,7 @@ public class Controller {
                 if(inv.medicine == 0) {return performSolutionA();}
                 else {
                     inv.removeInventory('M');
-                    s.updateHealth(15);
+                    s.updateHealth(25);
                 }
                 break;
 
@@ -170,22 +186,25 @@ public class Controller {
                 break;
 
             case 4:
-            case 5:
                 if(inv.rope == 0) {return performSolutionA();}
                 else {
                     inv.removeInventory('R');
                 }
                 break;
 
+                break;
             case 6:
-            if(inv.medicine == 0 || inv.rope == 0 || inv.wood == 0) {return performSolutionA();}
-            else {
-                inv.removeInventory('R');
-                inv.removeInventory('W');
-                inv.removeInventory('M');
-            }
+                if(inv.medicine == 0 || inv.rope == 0 || inv.wood == 0) {return performSolutionA();}
+                else {
+                    inv.removeInventory('R');
+                    inv.removeInventory('W');
+                    inv.removeInventory('M');
+                }
             break;
-
+            //cases where B was wrong - 4 (woman overboard), 5 (sound of sirens)
+            default:
+                s.updateHealth(-25);
+                break;
         }
         return 'B';
     }
@@ -197,7 +216,7 @@ public class Controller {
      */
     public String addressObstacle(char c) {
         if(c == 'A') {
-            c = performSolutionA();
+            c = performSolutionA(tempObs.code);
         }
         else {
             c = performSolutionB(tempObs.code);

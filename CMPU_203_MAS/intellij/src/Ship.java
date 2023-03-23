@@ -6,7 +6,9 @@ public class Ship {
     }
 
     public void updateHealth(int amt){
-        health = health+amt;
+        if(health <= 75) {
+            health = health+amt;
+        }
     }
 
     public String toString(){

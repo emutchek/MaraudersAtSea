@@ -16,8 +16,10 @@ public class Library {
                     "N/A", new String[]{"N/A", "N/A"}, new String[]{"N/A", "N/A"}),
 
             new StoryScene("\nThe crew reach another island, where Meels spots an orange tree and the crew \n" +
-                    "gets caught by a local while helping themselves to the fruit.(Island)",
-                    "\nDo you think we should heed the man's warning? (Q)\n",
+                    "gets caught by a local while helping themselves to the fruit. \n " +
+                    "He asks what you're doing here. You explain your mission to make a map, and he \n" +
+                    "warns you that no good will come of it and you should leave. (Island)",
+                    "\nWhat do you say? (Q)\n",
                     new String[]{"We will remain vigilant about our actions, but we must forge ahead.",
                             "Yes, uh, we will keep that in mind."},
                     new String[]{"\nThe man nods gravely and invites you in for a meal.", "\nThe man looks disappointed, nods," +
@@ -117,7 +119,7 @@ public class Library {
                         "purple and she erupted in boils. We must have incurred the wrath of an angry spirit... or \n" +
                         "maybe it was the brownish drinking water that Amira forgot to change.\nWhat do you do?",
                 new String[]{"People get sick all the time! Let's play limbo on the deck",
-                        "Give Meels a vial of medicine and keep her quarantined [requires 10oz of medicine]"},
+                        "Give Meels a vial of medicine and keep her quarantined [requires 10 vials of medicine]"},
                 new String[]{"Now everyone's sick and there's no one to get fresh water! (-25 HEALTH)",
                         "Good call - she's feeling much better."},
                         0));
@@ -125,7 +127,7 @@ public class Library {
                 new Obstacle("----- WHY IS THE TOOTH FAIRY HERE? -----\n" +
                         "It seems like just eating hard tack and jerky is not the new keto after all, and now everyone has scurvy!",
                         new String[]{"Everyone knows that you cure scurvy by chewing licorice root",
-                                "We'll divide our medicine stores evenly among everywhere [requires 10 oz of medicine]"},
+                                "We'll divide our medicine stores evenly among everywhere [requires 10 vials of medicine]"},
                         new String[]{"Actually, I'm pretty sure Orlic's the one who said that... the crew remains weak \n" +
                                 "until they're able to find fruit at the next island (-25 HEALTH)",
                                 "The crew is bolstered enough to carry on"},1));
@@ -154,10 +156,12 @@ public class Library {
         all_obstacles.add(
                 new Obstacle("----- SOUND OF SIRENS -----\n" +
                         "As the ship enters a rocky area, a pair of beautiful sirens on a cliff bewitch half the crew",
-                        new String[]{"Avast ye and steer hard to port!",
+                        new String[]{"Amira suggests that we use the cork stoppers from the medicine vials \nto plug their ears [requires 10 vials of medicine]",
                                 "Grab your fellow pirates and tie them to the masts before they jump over [requires 10 feet of rope]"},
-                        new String[]{"Ah son of a biscuit eater, we hit a rock! (-25 HEALTH)",
-                                "You save all your hearties and the ship sails on"},5));
+                        new String[]{"'I CAN'T HEAR THEM ANYMORE! WHAT HAPPENED TO THE BEAUTIFUL WOMEN?' Cas yells. Guess it worked!",
+                                "As Cas brandishes a sword and cuts away the rope, you realize that you may \n" +
+                                        "have miscalculated how many weapons these pirates have, and the the crew hits \n" +
+                                        "a rock as they distractedly swerve away (-25 HEALTH)"},5));
         all_obstacles.add(
                 new Obstacle("----- IS OUR WOODEN SHIP ON FIRE??? -----\n" +
                         "Isha's foot is caught and they're stuck by the flames, but the inventory is about to catch fire!",
