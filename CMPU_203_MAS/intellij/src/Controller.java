@@ -75,7 +75,7 @@ public class Controller {
     }
 
     /**
-     * Adds any resource that the ship is adjacent to to the inventory
+     * Adds any resource that the ship is adjacent to the inventory
      * @param choice user's input, A or B
      * @return whether inventory is full
      */
@@ -144,21 +144,19 @@ public class Controller {
         switch (x) {
             //(wo)man overboard
             case 4:
-                return 'A';
-            break;
+                break;
             case 5:
                 if(inv.medicine == 0) {
                     inv.removeInventory('M');
-                    return 'A';
+                    break;
                 }
                 else {performSolutionB(x);}
                 break;
             default:
                 s.updateHealth(-25);
-                return 'A';
             break;
         }
-
+        return 'A';
     }
 
     /**
@@ -170,7 +168,7 @@ public class Controller {
         switch (x) {
             case 0:
             case 1:
-                if(inv.medicine == 0) {return performSolutionA();}
+                if(inv.medicine == 0) {return performSolutionA(x);}
                 else {
                     inv.removeInventory('M');
                     s.updateHealth(25);
@@ -179,22 +177,20 @@ public class Controller {
 
             case 2:
             case 3:
-                if(inv.wood < 10) {return performSolutionA();}
+                if(inv.wood < 10) {return performSolutionA(x);}
                 else {
                     inv.removeInventory('W');
                 }
                 break;
 
             case 4:
-                if(inv.rope == 0) {return performSolutionA();}
+                if(inv.rope == 0) {return performSolutionA(x);}
                 else {
                     inv.removeInventory('R');
                 }
                 break;
-
-                break;
             case 6:
-                if(inv.medicine == 0 || inv.rope == 0 || inv.wood == 0) {return performSolutionA();}
+                if(inv.medicine == 0 || inv.rope == 0 || inv.wood == 0) {return performSolutionA(x);}
                 else {
                     inv.removeInventory('R');
                     inv.removeInventory('W');

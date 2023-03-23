@@ -96,7 +96,7 @@ public class UserInterface {
                         char i;
                         while (true) {
                             Scanner input = new Scanner(System.in);
-                            i = input.next().charAt(0);
+                            i = Character.toUpperCase(input.next().charAt(0));
                             if (c.isValid(c.invOps,i)) {
                                 break;
                             } else {
