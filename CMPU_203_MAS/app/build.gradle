@@ -6,6 +6,18 @@ android {
     namespace 'edu.vassar.cmpu203.maraudersatsea'
     compileSdk 33
 
+    dataBinding{
+        enabled true
+    }
+
+    viewBinding{
+        enabled true
+    }
+
+    buildFeatures{
+        viewBinding true
+    }
+
     defaultConfig {
         applicationId "edu.vassar.cmpu203.maraudersatsea"
         minSdk 30
