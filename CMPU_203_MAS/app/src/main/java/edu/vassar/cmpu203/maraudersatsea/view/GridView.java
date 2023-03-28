@@ -36,7 +36,7 @@ public class GridView implements IGridView{
         // add click listener to add item button
         this.binding.inventoryButton.setOnClickListener(new View.OnClickListener() {
             /**
-             * Listener method to be called when the add item button is clicked.
+             * Listener method to be called when the inventory button is clicked.
              *
              * @param view the view that was clicked on
              */
