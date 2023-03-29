@@ -16,7 +16,7 @@ public interface IGridView {
      * to the view should implement.
      */
     interface Listener {
-
+        void onMove();
 
     }
 

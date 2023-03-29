@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Marauders_at_Sea</string>
+    <string name="inventory_button">Inventory</string>
+    <string name="move_button">Move</string>
 </resources>

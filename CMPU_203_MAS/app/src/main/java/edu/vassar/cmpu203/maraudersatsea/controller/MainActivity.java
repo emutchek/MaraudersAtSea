@@ -18,4 +18,11 @@ public class MainActivity extends AppCompatActivity implements IGridView.Listene
         gridview = new GridView(this, this);
         setContentView(R.layout.activity_main);
     }
+
+    /**
+     * React to the user moving forward
+     */
+    void onMove() {
+
+    }
 }
