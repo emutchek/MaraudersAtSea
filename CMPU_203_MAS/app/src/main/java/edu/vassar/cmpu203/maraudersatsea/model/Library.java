@@ -174,7 +174,7 @@ public class Library {
 
     }
 
-    Island [] all_islands = {
+    public Island [] all_islands = {
             new Island("\nThe Isle of Graves"),
             new Island("\nThe Pitt"),
             new Island("\nOrange Forests"),

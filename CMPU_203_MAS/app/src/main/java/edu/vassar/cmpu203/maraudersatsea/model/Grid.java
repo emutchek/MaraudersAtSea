@@ -1,5 +1,7 @@
 package edu.vassar.cmpu203.maraudersatsea.model;
 
+import java.util.ArrayList;
+
 /*
  * A class to represent the grid on which the pirate ship navigates through
  * the world. The ship always remains at the bottom, and the scenery changes
@@ -130,16 +132,16 @@ public class Grid {
      * - spawns resource area sometimes with call to addRA()
      * @return resource area/island information if ship is at one, else ""
      */
-    public String executeMove() {
+    public String moveDisplayCards() {
         this.ship_location++;
         addRA();
         ASurrounding left = grid[ship_location][0];
         ASurrounding right = grid[ship_location][1];
         //prints picture of grid
-        //String ret = this.toString();
+        String ret = "";
         //check if the ship is next to an island, add cards to return String
         if (left instanceof Island || right instanceof Island) {
-            ret += (all_islands[islandsMet]).toString() + (all_islands[islandsMet]).displayCards();
+            ret += (all_islands[islandsMet]).displayCards();
             islandsMet++;
         }
         //check if ship is next to a resource area
@@ -150,6 +152,31 @@ public class Grid {
         }
 
         return ret;
+    }
+
+    public int surroundingType(ASurrounding s){
+        if (s instanceof Island){
+            return 1;
+        }
+        else if (s instanceof ResourceArea){
+            return 2;
+        }
+        else{
+            return 0;
+        }
+    }
+
+    /**
+     * Returns integer indicating appropriate image
+     * 0- ocean; 1- island; 2-Resource Area
+     */
+    public ArrayList<Integer> moveView(){
+        ArrayList<Integer> gridImages = new ArrayList<>();
+        for(int r = this.ship_location + 4; r >= ship_location; r--) {
+                gridImages.add(surroundingType(this.grid[r][0]));
+                gridImages.add(surroundingType(this.grid[r][1]));
+        }
+        return gridImages;
     }
 
 }

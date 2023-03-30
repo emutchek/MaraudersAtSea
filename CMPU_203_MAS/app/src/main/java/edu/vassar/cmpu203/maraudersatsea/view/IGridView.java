@@ -4,6 +4,8 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 
+import java.util.ArrayList;
+
 import edu.vassar.cmpu203.maraudersatsea.model.Grid;
 
 /**
@@ -16,7 +18,8 @@ public interface IGridView {
      * to the view should implement.
      */
     interface Listener {
-        void onMove();
+        String onMoveDisplayCards();
+        ArrayList<Integer> onMoveView();
 
     }
 
