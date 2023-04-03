@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity implements IGridView.Listene
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         gridview = new GridView(this, this);
-        setContentView(R.layout.activity_main);
+        setContentView(gridview.getRootView());
         this.lib = new Library();
         this.grid = new Grid(lib.all_islands);
     }

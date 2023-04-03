@@ -47,6 +47,7 @@ public class GridView implements IGridView {
              */
             @Override
             public void onClick(View view) {
+                Snackbar.make(view, "Got here", Snackbar.LENGTH_LONG).show();
 
             }
         }
@@ -62,8 +63,8 @@ public class GridView implements IGridView {
             public void onClick(View view) {
                 GridView.this.binding.s4L.setImageResource(getImage(1));
                 updateGridView(GridView.this.listener.onMoveView());
-                String surroundingText = GridView.this.listener.onMoveDisplayCards();
-                Snackbar.make(view, surroundingText, Snackbar.LENGTH_LONG).show();
+                //String surroundingText = GridView.this.listener.onMoveDisplayCards();
+                //Snackbar.make(view, surroundingText, Snackbar.LENGTH_LONG).show();
             }
         }
         );
