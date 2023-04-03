@@ -53,8 +53,7 @@
                 android:id="@+id/s4L"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:contentDescription="@string/app_name"
-                app:srcCompat="@color/teal_700" />
+                android:contentDescription="@string/app_name" />
 
             <ImageView
                 android:id="@+id/ocean4"

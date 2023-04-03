@@ -61,7 +61,7 @@ public class GridView implements IGridView {
              */
             @Override
             public void onClick(View view) {
-                GridView.this.binding.s4L.setImageResource(getImage(1));
+              //  GridView.this.binding.s4L.setImageResource(getImage(1));
                 updateGridView(GridView.this.listener.onMoveView());
                 //String surroundingText = GridView.this.listener.onMoveDisplayCards();
                 //Snackbar.make(view, surroundingText, Snackbar.LENGTH_LONG).show();
@@ -102,6 +102,7 @@ public class GridView implements IGridView {
         this.binding.s2L.setImageResource(getImage(lst.indexOf(4)));
         this.binding.s2R.setImageResource(getImage(lst.indexOf(5)));
         this.binding.s1L.setImageResource(getImage(lst.indexOf(6)));
+
         this.binding.s1R.setImageResource(getImage(lst.indexOf(7)));
         this.binding.s0L.setImageResource(getImage(lst.indexOf(8)));
         this.binding.s0R.setImageResource(getImage(lst.indexOf(9)));
