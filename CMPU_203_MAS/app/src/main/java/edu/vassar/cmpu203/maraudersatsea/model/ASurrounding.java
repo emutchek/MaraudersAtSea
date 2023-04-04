@@ -1,14 +1,18 @@
 package edu.vassar.cmpu203.maraudersatsea.model;
 
+import edu.vassar.cmpu203.maraudersatsea.R;
+
 /*
  * An abstract class to represent any physical object or landmass that
  * the ship passes by, represented as Island objects and ResourceAreas objects.
  */
-public abstract class ASurrounding {
+public class ASurrounding {
     String description;
-    String symbol;
+    int symbol = R.color.teal_700;
 
-    public abstract String getSymbol();
+    public int getSymbol(){
+        return symbol;
+    }
 
 }
 

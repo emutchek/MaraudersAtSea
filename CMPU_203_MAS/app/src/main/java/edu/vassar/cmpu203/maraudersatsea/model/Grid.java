@@ -10,103 +10,105 @@ import java.util.ArrayList;
 public class Grid {
     int ship_location = 0; //0-33
     int islandsMet = 0;
-    ASurrounding [][] grid;
+    public ASurrounding [][] grid;
     Island[] all_islands;
+
+    public int getShipLocation() {return ship_location;}
+    public void executeMove() {
+        ship_location++;
+        addRA();
+        ASurrounding left = grid[ship_location][0];
+        ASurrounding right = grid[ship_location][1];
+
+        if (left instanceof Island || right instanceof Island) {
+            //switch fragment here
+            islandsMet++;
+        }
+        //check if ship is next to a resource area
+        else if (left instanceof ResourceArea) {
+            //switch fragment here
+        } else if (right instanceof ResourceArea) {
+            //switch fragment here
+        }
+    }
 
 
     public Grid(Island[]islands) {
         this.all_islands = islands;
+        ASurrounding blank = new ASurrounding();
         grid = new ASurrounding[][]{
-                {null, null},
-                {all_islands[0], null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {all_islands[1], null},
-                {null, null},
-                {null, null},
-                {null, all_islands[2]},
-                {null, null},
-                {null, null},
-                {all_islands[3], null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, all_islands[4]},
-                {null, null},
-                {null, null},
-                {null, null},
-                {all_islands[5], null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {all_islands[6], null},
-                {null, null},
-                {null, null},
-                {null, all_islands[7]},
-                {null, null},
-                {null, all_islands[8]},
-                {null, null},
-                {null, null},
-                {null, null},
-                {all_islands[9], null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null,all_islands[10]},
-                {null, null},
-                {all_islands[11], null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
+                {blank, blank},
+                {all_islands[0], blank},
+                {blank, blank},
+                {blank, blank},
+                {blank, blank},
+                {blank, blank},
+                {blank, blank},
+                {blank, blank},
+                {blank, blank},
+                {blank, blank},
+                {blank, blank},
+                {blank, blank},
+                {blank, blank},
+                {blank, blank},
+                {all_islands[1], blank},
+                {blank, blank},
+                {blank, blank},
+                {blank, all_islands[2]},
+                {blank, blank},
+                {blank, blank},
+                {all_islands[3], blank},
+                {blank, blank},
+                {blank, blank},
+                {blank, blank},
+                {blank, blank},
+                {blank, all_islands[4]},
+                {blank, blank},
+                {blank, blank},
+                {blank, blank},
+                {all_islands[5], blank},
+                {blank, blank},
+                {blank, blank},
+                {blank, blank},
+                {all_islands[6], blank},
+                {blank, blank},
+                {blank, blank},
+                {blank, all_islands[7]},
+                {blank, blank},
+                {blank, all_islands[8]},
+                {blank, blank},
+                {blank, blank},
+                {blank, blank},
+                {all_islands[9], blank},
+                {blank, blank},
+                {blank, blank},
+                {blank, blank},
+                {blank, blank},
+                {blank,all_islands[10]},
+                {blank, blank},
+                {all_islands[11], blank},
+                {blank, blank},
+                {blank, blank},
+                {blank, blank},
+                {blank, blank},
+                {blank, blank},
+                {blank, blank},
+                {blank, blank},
+                {blank, blank},
+                {blank, blank},
+                {blank, blank},
+                {blank, blank},
+                {blank, blank},
+                {blank, blank},
         };
     }
 
     /**
      * @return graphical representation of the grid filled with symbols
      */
-    public String toString() {
-        String s = "";
-        for(int r = this.ship_location + 4; r >= ship_location; r--) {
-            if(r != ship_location) {
-                s += "|" + toStringHelper(this.grid[r][0]) + "| |" + toStringHelper(this.grid[r][1]) + "|\n";
-            }
-            else {
-                s += "|" + toStringHelper(this.grid[r][0]) + "|Δ|" + toStringHelper(this.grid[r][1]) + "|\n";
-            }
-        }
-        return s;
-    }
 
-    private String toStringHelper(ASurrounding x){
-        if (x == null){
-            return " ";
-        }
-        else{
-            return x.getSymbol();
-        }
-    }
+
+
 
     /**
      * Inserts resource areas at the top of the grid
@@ -152,31 +154,6 @@ public class Grid {
         }
 
         return ret;
-    }
-
-    public int surroundingType(ASurrounding s){
-        if (s instanceof Island){
-            return 1;
-        }
-        else if (s instanceof ResourceArea){
-            return 2;
-        }
-        else{
-            return 0;
-        }
-    }
-
-    /**
-     * Returns integer indicating appropriate image
-     * 0- ocean; 1- island; 2-Resource Area
-     */
-    public ArrayList<Integer> moveView(){
-        ArrayList<Integer> gridImages = new ArrayList<>();
-        for(int r = this.ship_location + 4; r >= ship_location; r--) {
-                gridImages.add(surroundingType(this.grid[r][0]));
-                gridImages.add(surroundingType(this.grid[r][1]));
-        }
-        return gridImages;
     }
 
 }

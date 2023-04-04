@@ -4,19 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import com.google.android.material.snackbar.Snackbar;
-
-import java.util.ArrayList;
-
-import edu.vassar.cmpu203.maraudersatsea.R;
 import edu.vassar.cmpu203.maraudersatsea.model.Grid;
 import edu.vassar.cmpu203.maraudersatsea.model.Library;
-import edu.vassar.cmpu203.maraudersatsea.view.GridView;
 import edu.vassar.cmpu203.maraudersatsea.view.GridViewFragment;
 import edu.vassar.cmpu203.maraudersatsea.view.IGridView;
 import edu.vassar.cmpu203.maraudersatsea.view.IMainView;
 import edu.vassar.cmpu203.maraudersatsea.view.MainView;
-
 
 public class MainActivity extends AppCompatActivity implements IGridView.Listener{
     IMainView mainview;
@@ -36,17 +29,10 @@ public class MainActivity extends AppCompatActivity implements IGridView.Listene
     /**
      * Returns the display cards of any surroundings the user encounters
      */
-    public String onMoveDisplayCards() {
-        String surroundingText = grid.moveDisplayCards();
-        return surroundingText;
+    public Grid onMove() {
+       grid.executeMove();
+        return grid;
     }
 
-    /**
-     * Returns integer indicating appropriate image
-     * 0- ocean; 1- island; 2-Resource Area
-     */
-    public ArrayList onMoveView() {
-        ArrayList<Integer> numbers = grid.moveView();
-        return numbers;
-    }
+
 }

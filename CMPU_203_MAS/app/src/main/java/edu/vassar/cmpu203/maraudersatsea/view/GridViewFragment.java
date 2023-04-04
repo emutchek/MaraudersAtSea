@@ -12,20 +12,13 @@ import java.util.ArrayList;
 
 import edu.vassar.cmpu203.maraudersatsea.R;
 import edu.vassar.cmpu203.maraudersatsea.databinding.FragmentGridViewBinding;
+import edu.vassar.cmpu203.maraudersatsea.model.ASurrounding;
+import edu.vassar.cmpu203.maraudersatsea.model.Grid;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link GridViewFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class GridViewFragment extends Fragment implements IGridView{
 
    private FragmentGridViewBinding binding;
    private Listener listener;
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
     public GridViewFragment(Listener listener) {
         this.listener = listener;
@@ -52,11 +45,26 @@ public class GridViewFragment extends Fragment implements IGridView{
                 //updateGridView(GridView.this.listener.onMoveView());
                 //String surroundingText = GridView.this.listener.onMoveDisplayCards();
                 //Snackbar.make(view, surroundingText, Snackbar.LENGTH_LONG).show();
+                Grid grid = GridViewFragment.this.listener.onMove();
+                updateGridView(grid);
             }
-        }
+        });
         super.onCreate(savedInstanceState);
 
     }
-
+    public void updateGridView(Grid grid){
+        ASurrounding[][] arr = grid.grid;
+        int loc = grid.getShipLocation();
+        this.binding.s4L.setImageResource(arr[loc+4][0].getSymbol());
+        this.binding.s4R.setImageResource(arr[loc+4][1].getSymbol());
+        this.binding.s3L.setImageResource(arr[loc+3][0].getSymbol());
+        this.binding.s3R.setImageResource(arr[loc+3][1].getSymbol());
+        this.binding.s2L.setImageResource(arr[loc+2][0].getSymbol());
+        this.binding.s2R.setImageResource(arr[loc+2][1].getSymbol());
+        this.binding.s1L.setImageResource(arr[loc+1][0].getSymbol());
+        this.binding.s1R.setImageResource(arr[loc+1][1].getSymbol());
+        this.binding.s0L.setImageResource(arr[loc][0].getSymbol());
+        this.binding.s0R.setImageResource(arr[loc][1].getSymbol());
+    }
 
 }

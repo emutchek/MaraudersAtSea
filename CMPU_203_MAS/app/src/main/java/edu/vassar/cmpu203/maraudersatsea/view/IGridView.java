@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 
 import java.util.ArrayList;
 
+import edu.vassar.cmpu203.maraudersatsea.model.ASurrounding;
 import edu.vassar.cmpu203.maraudersatsea.model.Grid;
 
 /**
@@ -18,11 +19,6 @@ public interface IGridView {
      * to the view should implement.
      */
     interface Listener {
-        String onMoveDisplayCards();
-        ArrayList<Integer> onMoveView();
-
+        Grid onMove();
     }
-
-
-
 }
