@@ -71,25 +71,15 @@ public class GridView implements IGridView {
 
     }
 
-    /**
-     * Returns the view at the root of the screen's graphical component hierarchy.
-     *
-     * @return the view at the root of the screen's graphical component hierarchy.
-     */
-    @Override
-    public View getRootView() {
-        return this.binding.getRoot();
-    }
-
     /*
     Returns the drawable associated with the int
      */
     public int getImage(int n){
         switch(n){
             case (1):
-                return R.drawable._6e97c34ac4de846e68cce0326fd76cd;
+                return R.drawable.island;
             case(2):
-                return R.color.purple_700;
+                return R.drawable.barrel1;
             default:
                 return R.color.teal_700;
         }
@@ -102,7 +92,6 @@ public class GridView implements IGridView {
         this.binding.s2L.setImageResource(getImage(lst.indexOf(4)));
         this.binding.s2R.setImageResource(getImage(lst.indexOf(5)));
         this.binding.s1L.setImageResource(getImage(lst.indexOf(6)));
-
         this.binding.s1R.setImageResource(getImage(lst.indexOf(7)));
         this.binding.s0L.setImageResource(getImage(lst.indexOf(8)));
         this.binding.s0R.setImageResource(getImage(lst.indexOf(9)));

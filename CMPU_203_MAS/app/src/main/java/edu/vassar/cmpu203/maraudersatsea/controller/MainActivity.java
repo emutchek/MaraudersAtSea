@@ -12,19 +12,23 @@ import edu.vassar.cmpu203.maraudersatsea.R;
 import edu.vassar.cmpu203.maraudersatsea.model.Grid;
 import edu.vassar.cmpu203.maraudersatsea.model.Library;
 import edu.vassar.cmpu203.maraudersatsea.view.GridView;
+import edu.vassar.cmpu203.maraudersatsea.view.GridViewFragment;
 import edu.vassar.cmpu203.maraudersatsea.view.IGridView;
+import edu.vassar.cmpu203.maraudersatsea.view.IMainView;
+import edu.vassar.cmpu203.maraudersatsea.view.MainView;
 
 
 public class MainActivity extends AppCompatActivity implements IGridView.Listener{
-    IGridView gridview;
+    IMainView mainview;
     private Grid grid;
     private Library lib;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        gridview = new GridView(this, this);
-        setContentView(gridview.getRootView());
+        mainview = new MainView(this);
+        setContentView(mainview.getRootView());
+        this.mainview.displayFragment(new GridViewFragment(this), true, "gridView");
         this.lib = new Library();
         this.grid = new Grid(lib.all_islands);
     }

@@ -23,12 +23,6 @@ public interface IGridView {
 
     }
 
-    /**
-     * Returns the view at the root of the screen's graphical component hierarchy.
-     *
-     * @return the view at the root of the screen's graphical component hierarchy.
-     */
-    View getRootView();
 
 
 }
