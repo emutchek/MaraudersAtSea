@@ -4,7 +4,7 @@ import edu.vassar.cmpu203.maraudersatsea.R;
 public class ResourceArea extends ASurrounding {
 
     public ResourceArea() {
-        symbol = R.drawable.barrel1;
+        symbol = R.drawable.ra_pic;
         double x = Math.random();
         if (x <= 0.33) {
             description = "rope";

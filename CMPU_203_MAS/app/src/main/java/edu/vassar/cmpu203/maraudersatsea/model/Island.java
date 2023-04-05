@@ -13,7 +13,7 @@ public class Island extends ASurrounding{
     String name;
 
     public Island(String n) {
-        symbol = R.drawable.island;
+        symbol = R.drawable.island_pic;
         onMap = false;
         name = n;
     }
