@@ -13,22 +13,26 @@ public class Grid {
     public ASurrounding [][] grid;
     Island[] all_islands;
 
-    public int getShipLocation() {return ship_location;}
-    public void executeMove() {
+
+
+    public int getShipLocation() {
+        return ship_location;
+    }
+    public ASurrounding executeMove() {
         ship_location++;
         addRA();
         ASurrounding left = grid[ship_location][0];
         ASurrounding right = grid[ship_location][1];
 
-        if (left instanceof Island || right instanceof Island) {
-            //switch fragment here
-            islandsMet++;
+        if(left instanceof Island || right instanceof Island) {islandsMet++;}
+        if (left instanceof Island || left instanceof ResourceArea) {
+            return left;
         }
-        //check if ship is next to a resource area
-        else if (left instanceof ResourceArea) {
-            //switch fragment here
-        } else if (right instanceof ResourceArea) {
-            //switch fragment here
+        else if (right instanceof Island || right instanceof ResourceArea) {
+            return right;
+        }
+        else {
+            return new ASurrounding();
         }
     }
 

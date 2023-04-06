@@ -2,6 +2,8 @@
     <string name="app_name">Marauders_at_Sea</string>
     <string name="inventory_button">Inventory</string>
     <string name="move_button">Move</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="story_optionA_button">Going to execute option A</string>
+    <string name="story_optionB_button">Going to execute option B</string>
+    <string name="story_default">One afternoon, on a tiny island filled with the boldest, drunkest and strongest pirates in all the land, a young woman. It was unsigned, but she recognized the handwriting of her old mentor. There was no telling what shifty client he was working with this time.She turns to you. (Island)
+</string>
 </resources>

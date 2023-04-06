@@ -20,6 +20,8 @@ public class Island extends ASurrounding{
 
     public String toString(){return name;}
 
+    public StoryScene getStoryScene() {return story;}
+
     public void setStory(StoryScene s){
         this.story = s;
     }

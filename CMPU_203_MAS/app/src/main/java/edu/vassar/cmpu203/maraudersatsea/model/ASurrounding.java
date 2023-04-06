@@ -8,7 +8,7 @@ import edu.vassar.cmpu203.maraudersatsea.R;
  */
 public class ASurrounding {
     String description;
-    int symbol = R.color.teal_700;
+    int symbol = (R.color.trans);
 
     public int getSymbol(){
         return symbol;

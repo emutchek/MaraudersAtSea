@@ -6,23 +6,30 @@ package edu.vassar.cmpu203.maraudersatsea.model;
  * how to proceed.
  */
 public class StoryScene {
-    String text;
+    String text1;
+    String text2;
     String question;
-    String [] options;
-    String [] endings;
+    public String [] options;
+    public String [] endings;
 
-    public StoryScene(String text, String q, String[] o, String[] e) {
-        this.text = text;
+    public StoryScene(String text1, String text2, String q, String[] o, String[] e) {
+        this.text1 = text1;
+        this.text2 = text2;
         this.question = q;
         this.options = o;
         this.endings = e;
     }
 
-    public String toString() {
-        if(this.question.contains("?")) {
-            return text + "\n" + question + "\nA: " + options[0] + "\nor\nB: " + options[1];
-        }
-        return text;
+    public String getText1() {
+        return text1;
+    }
+
+    public String getText2() {
+        return text2;
+    }
+
+    public String getQuestion() {
+        return question;
     }
 
     public String returnEnding(char x){
