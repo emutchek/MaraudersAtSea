@@ -112,7 +112,9 @@ public class Grid {
      */
 
 
-
+    public boolean isBlank(ASurrounding s1){
+        return (!(s1 instanceof Island) && !(s1 instanceof ResourceArea));
+    }
 
     /**
      * Inserts resource areas at the top of the grid
@@ -120,7 +122,8 @@ public class Grid {
      * - 50/50 chance it's on left/right
      */
     public void addRA(){
-        if ((this.grid[ship_location + 4][0] == null) && (this.grid[ship_location + 4][1] == null)){
+        ASurrounding blank = new ASurrounding();
+        if (isBlank(this.grid[ship_location + 4][0]) && isBlank(this.grid[ship_location + 4][1])){
             if (Math.random() < 0.25){
                 if (Math.random() < 0.5){
                     this.grid[ship_location +4 ][0] = new ResourceArea();
@@ -130,34 +133,6 @@ public class Grid {
                 }
             }
         }
-    }
-
-    /**
-     * Executes forward movement
-     * - increments ship location
-     * - spawns resource area sometimes with call to addRA()
-     * @return resource area/island information if ship is at one, else ""
-     */
-    public String moveDisplayCards() {
-        this.ship_location++;
-        addRA();
-        ASurrounding left = grid[ship_location][0];
-        ASurrounding right = grid[ship_location][1];
-        //prints picture of grid
-        String ret = "";
-        //check if the ship is next to an island, add cards to return String
-        if (left instanceof Island || right instanceof Island) {
-            ret += (all_islands[islandsMet]).displayCards();
-            islandsMet++;
-        }
-        //check if ship is next to a resource area
-        else if (left instanceof ResourceArea) {
-            ret += ((ResourceArea) left).displayCards();
-        } else if (right instanceof ResourceArea) {
-            ret += ((ResourceArea) right).displayCards();
-        }
-
-        return ret;
     }
 
 }
