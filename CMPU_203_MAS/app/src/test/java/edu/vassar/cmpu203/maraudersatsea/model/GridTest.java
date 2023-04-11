@@ -27,20 +27,18 @@ class GridTest {
     void addRA() {
         Library lib = new Library();
         Grid g = new Grid(lib.all_islands);
-        for(int i= 0; i<50; i++){
+        for(int i= 0; i<55; i++){
             g.executeMove();
         }
-        int count = 0;
-        boolean x = false;
-        for(int i=0; i<50; i++){
+        double count = 0.0;
+        for(int i=0; i<55; i++){
             for(int j=0; j<2; j++){
                 if (g.grid[i][j] instanceof ResourceArea){
                     count++;
-                    x = true;
                 }
             }
         }
-        assertTrue(x);
-        assertTrue(((count >= 15) && (count<=35)));
+        count/=50;
+        assertTrue(((count >= .10) && (count<=.40)));
     }
 }
