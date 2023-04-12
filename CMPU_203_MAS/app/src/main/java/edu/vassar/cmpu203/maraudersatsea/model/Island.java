@@ -18,21 +18,14 @@ public class Island extends ASurrounding{
         name = n;
     }
 
-    public String toString(){return name;}
-
     public StoryScene getStoryScene() {return story;}
 
     public void setStory(StoryScene s){
         this.story = s;
     }
 
-    public String displayEnding(char x){
-        return story.returnEnding(x);
-    }
-
     public int getSymbol() {return symbol;}
 
-    public String displayCards() {
-        return story.toString();
-    }
+    public String toString() {return name;}
+
 }

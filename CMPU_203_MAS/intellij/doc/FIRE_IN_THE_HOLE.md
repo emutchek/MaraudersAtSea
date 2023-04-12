@@ -3,9 +3,9 @@
 <li>ASurrounding: only getters/setters</li>
 <li>Grid: done</li>
 <li>Inventory: done</li>
-<li>Island: </li>
-<li>Library: </li>
-<li>Map: </li>
+<li>Island: only getters/setters</li>
+<li>Library: done</li>
+<li>Map: done</li>
 <li>Obstacle: </li>
 <li>ResourceArea: </li>
 <li>Ship: </li>
