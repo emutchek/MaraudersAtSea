@@ -14,6 +14,7 @@ import androidx.test.espresso.matcher.ViewMatchers;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import org.hamcrest.Matcher;
+import org.hamcrest.Matchers;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 //import static org.junit.jupiter.api.Assertions.*;
@@ -32,14 +33,19 @@ public class GridViewFragmentTest {
 
         gridVi.check(ViewAssertions
                 .matches(ViewMatchers
-                        .withId(R.drawable.island)));
+                        .withTagValue(Matchers.equalTo(R.drawable.island))));
 
         Espresso.onView(ViewMatchers.withId(R.id.moveButton)).perform(ViewActions.click());
+        //wait for two seconds
+        SystemClock.sleep(2000);
         Espresso.onView(ViewMatchers.withId(R.id.nextButton)).perform(ViewActions.click());
+        SystemClock.sleep(2000);
         Espresso.onView(ViewMatchers.withId(R.id.nextButton)).perform(ViewActions.click());
+        SystemClock.sleep(2000);
         Espresso.onView(ViewMatchers.withId(R.id.storyOptionA)).perform(ViewActions.click());
+        SystemClock.sleep(2000);
         Espresso.onView(ViewMatchers.withId(R.id.exitButton)).perform(ViewActions.click());
-
+        SystemClock.sleep(2000);
         Matcher<View> matcher2 = ViewMatchers.withId(R.id.s0L);
         gridVi = Espresso.onView(matcher2);
 

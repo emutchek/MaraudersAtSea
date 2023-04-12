@@ -60,15 +60,45 @@ public class MainActivity extends AppCompatActivity implements IGridView.Listene
     public void updateGridView(){
         ASurrounding[][] arr = grid.grid;
         int loc = grid.getShipLocation();
-        curGame.binding.s4L.setImageResource(arr[loc+4][0].getSymbol());
-        curGame.binding.s4R.setImageResource(arr[loc+4][1].getSymbol());
-        curGame.binding.s3L.setImageResource(arr[loc+3][0].getSymbol());
-        curGame.binding.s3R.setImageResource(arr[loc+3][1].getSymbol());
-        curGame.binding.s2L.setImageResource(arr[loc+2][0].getSymbol());
-        curGame.binding.s2R.setImageResource(arr[loc+2][1].getSymbol());
-        curGame.binding.s1L.setImageResource(arr[loc+1][0].getSymbol());
-        curGame.binding.s1R.setImageResource(arr[loc+1][1].getSymbol());
-        curGame.binding.s0L.setImageResource(arr[loc][0].getSymbol());
-        curGame.binding.s0R.setImageResource(arr[loc][1].getSymbol());
+
+        //set image and tag for s4L and s4R
+        int idDrawable = arr[loc+4][0].getSymbol();
+        curGame.binding.s4L.setImageResource(idDrawable);
+        curGame.binding.s4L.setTag(idDrawable);
+        idDrawable = arr[loc+4][1].getSymbol();
+        curGame.binding.s4R.setImageResource(idDrawable);
+        curGame.binding.s4R.setTag(idDrawable);
+
+        //set image and tag for s3L and s3R
+        idDrawable = arr[loc+3][0].getSymbol();
+        curGame.binding.s3L.setImageResource(idDrawable);
+        curGame.binding.s3L.setTag(idDrawable);
+        idDrawable = arr[loc+3][1].getSymbol();
+        curGame.binding.s3R.setImageResource(idDrawable);
+        curGame.binding.s3R.setTag(idDrawable);
+
+        //set image and tag for s2L and s2R
+        idDrawable = arr[loc+2][0].getSymbol();
+        curGame.binding.s2L.setImageResource(idDrawable);
+        curGame.binding.s2L.setTag(idDrawable);
+        idDrawable = arr[loc+2][1].getSymbol();
+        curGame.binding.s2R.setImageResource(idDrawable);
+        curGame.binding.s2R.setTag(idDrawable);
+
+        //set image and tag for s1L and s1R
+        idDrawable = arr[loc+1][0].getSymbol();
+        curGame.binding.s1L.setImageResource(idDrawable);
+        curGame.binding.s1L.setTag(idDrawable);
+        idDrawable = arr[loc+1][1].getSymbol();
+        curGame.binding.s1R.setImageResource(idDrawable);
+        curGame.binding.s1R.setTag(idDrawable);
+
+        //set image and tag for s0L and s0R
+        idDrawable = arr[loc][0].getSymbol();
+        curGame.binding.s0L.setImageResource(idDrawable);
+        curGame.binding.s0L.setTag(idDrawable);
+        idDrawable = arr[loc][1].getSymbol();
+        curGame.binding.s0R.setImageResource(idDrawable);
+        curGame.binding.s0R.setTag(idDrawable);
     }
 }
