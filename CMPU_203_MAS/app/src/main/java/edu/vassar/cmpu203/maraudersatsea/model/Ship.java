@@ -8,8 +8,14 @@ public class Ship {
     }
 
     public void updateHealth(int amt){
-        if(health <= 75) {
-            health = health+amt;
+        int temphealth = this.health+amt;
+        if(temphealth <= 100 && temphealth >= 0) {
+            health = temphealth;
+        } else if (temphealth < 0) {
+            health = 0;
+        }
+        else if (temphealth > 100){
+            health = 100;
         }
     }
 
