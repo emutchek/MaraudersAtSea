@@ -21,6 +21,9 @@ public interface IGridView {
         Grid onMove();
         void addressAdjacent();
 
-        void updateGridView();
+        Grid getGrid();
+
     }
+
+
 }
