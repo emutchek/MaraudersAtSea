@@ -8,7 +8,10 @@ class GridTest {
 
     @Test
     /**
-     * Tests executeMove() method in grid class by creating a grid and moving forward.
+     * Tests executeMove() method in grid class by:
+     * -verifying initial position is 0
+     * -executing move, verifying that first island was identified and position changed
+     * -executing 40 moves forward to verify that island 9 was identified, as an example
      */
     void executeMove() {
         Library lib = new Library();
@@ -23,6 +26,12 @@ class GridTest {
         assertEquals(res, lib.all_islands[9], "9th island not returned");
     }
 
+    /**
+     * Tests addRA() method in grid class by:
+     * -executing 55 moves forward, which calls add resource area each time
+     * -examining the 2d array in grid and counting how many RAs were made
+     * -verifying that the creation rate is around 25%
+     */
     @Test
     void addRA() {
         Library lib = new Library();

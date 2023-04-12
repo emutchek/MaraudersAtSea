@@ -1,13 +1,25 @@
+### JUnit
+<ul>
+<li>ASurrounding: only getters/setters</li>
+<li>Grid: done</li>
+<li>Inventory: done</li>
+<li>Island: </li>
+<li>Library: </li>
+<li>Map: </li>
+<li>Obstacle: </li>
+<li>ResourceArea: </li>
+<li>Ship: </li>
+<li>StoryScene: </li>
+
+
+</ul>
+
+
 ### Random to dos/reminders
 <ul>
-<li>Add javadoc</li>
 <li>For the obstacles, A is always the wrong choice</li>
-<li>Add params/return values to sequence diagrams</li>
-<li>Is there a point to the ship class? Either delete or make it container
-for inventory/map?</li>
+<li>Is there a point to the ship class? Either delete or make it container for inventory/map?</li>
 <li>Fix the ending</li>
-
-<li>Only one solution to the obstacle uses resources, the other automatically docks health</li>
 </ul>
 
 ### Doubt Meter
