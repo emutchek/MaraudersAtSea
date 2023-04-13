@@ -35,7 +35,7 @@ public class GridViewFragmentTest {
                 .matches(ViewMatchers
                         .withTagValue(Matchers.equalTo(R.drawable.island))));
         Espresso.onView(ViewMatchers.withId(R.id.moveButton)).perform(ViewActions.click());
-        gridVi.perform(ViewActions.scrollTo());
+        //gridVi.perform(ViewActions.scrollTo());
         Espresso.onView(ViewMatchers.withId(R.id.nextButton)).perform(ViewActions.click());
         Espresso.onView(ViewMatchers.withId(R.id.nextButton)).perform(ViewActions.click());
         Espresso.onView(ViewMatchers.withId(R.id.storyOptionA)).perform(ViewActions.click());
