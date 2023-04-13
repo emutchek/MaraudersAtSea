@@ -38,22 +38,22 @@
                 android:id="@+id/s4L"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:contentDescription="@string/app_name"
-                android:background="@android:color/transparent"/>
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/app_name" />
 
             <ImageView
                 android:id="@+id/ocean4"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:contentDescription="@string/app_name"
-                android:background="@android:color/transparent"/>
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/app_name" />
 
             <ImageView
                 android:id="@+id/s4R"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:contentDescription="@string/app_name"
-                android:background="@android:color/transparent" />
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/app_name" />
         </TableRow>
 
         <TableRow
@@ -64,22 +64,22 @@
                 android:id="@+id/s3L"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:contentDescription="@string/app_name"
-                android:background="@android:color/transparent" />
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/app_name" />
 
             <ImageView
                 android:id="@+id/ocean3"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:contentDescription="@string/app_name"
-                android:background="@android:color/transparent"/>
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/app_name" />
 
             <ImageView
                 android:id="@+id/s3R"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:contentDescription="@string/app_name"
-                android:background="@android:color/transparent" />
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/app_name" />
         </TableRow>
 
         <TableRow
@@ -90,22 +90,22 @@
                 android:id="@+id/s2L"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:contentDescription="@string/app_name"
-                android:background="@android:color/transparent" />
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/app_name" />
 
             <ImageView
                 android:id="@+id/ocean2"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:contentDescription="@string/app_name"
-                android:background="@android:color/transparent" />
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/app_name" />
 
             <ImageView
                 android:id="@+id/s2R"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:contentDescription="@string/app_name"
-                android:background="@android:color/transparent" />
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/app_name" />
         </TableRow>
 
         <TableRow
@@ -116,22 +116,22 @@
                 android:id="@+id/s1L"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:contentDescription="@string/app_name"
-                android:background="@android:color/transparent" />
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/app_name" />
 
             <ImageView
                 android:id="@+id/ocean1"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:contentDescription="@string/app_name"
-                android:background="@android:color/transparent" />
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/app_name" />
 
             <ImageView
                 android:id="@+id/s1R"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:contentDescription="@string/app_name"
-                android:background="@android:color/transparent" />
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/app_name" />
         </TableRow>
 
         <TableRow
@@ -142,8 +142,8 @@
                 android:id="@+id/s0L"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:contentDescription="@string/app_name"
-                android:background="@android:color/transparent" />
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/app_name" />
 
             <ImageView
                 android:id="@+id/ship"
@@ -156,8 +156,8 @@
                 android:id="@+id/s0R"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:contentDescription="@string/app_name"
-                android:background="@android:color/transparent" />
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/app_name" />
         </TableRow>
 
     </TableLayout>
