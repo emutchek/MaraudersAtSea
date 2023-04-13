@@ -10,5 +10,5 @@ Iteration 2 Functionality Implemented:
     <ul>
     <li>Note: Limited functionality due to an error associated with the view hierarchy/layout. The test is unable to find/interact with any Views associated with the StoryViewFragment class. This error does not limit playability, only the testing.  </li>
     </ul>
-
+<li>Limited functionality: It isn't possible to interact with resource areas, inventory, map, health, or obstacles as of yet. Coming soon...  </li>
 </ul>
