@@ -24,10 +24,11 @@ public class StoryViewFragmentTest {
     @org.junit.Rule
     public ActivityScenarioRule<MainActivity> activityRule = new ActivityScenarioRule<>(MainActivity.class);
 
-    @Test
+    @org.junit.Test
     public void testRead(){
-        Matcher<View> matcher = ViewMatchers.withId(R.id.storyOptionA);
+        Matcher<View> matcher = ViewMatchers.withId(R.id.nextButton);
         ViewInteraction storyVi = Espresso.onView(matcher);
+
         Espresso.onView(matcher).perform(ViewActions.click());
     }
 

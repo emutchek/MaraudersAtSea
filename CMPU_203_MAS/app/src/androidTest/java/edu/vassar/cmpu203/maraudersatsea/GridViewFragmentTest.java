@@ -26,7 +26,6 @@ public class GridViewFragmentTest {
 
     @Test
     public void testMove (){
-        // match a view by id
         Matcher<View> matcher = ViewMatchers.withId(R.id.s1L);
 
         ViewInteraction gridVi = Espresso.onView(matcher);

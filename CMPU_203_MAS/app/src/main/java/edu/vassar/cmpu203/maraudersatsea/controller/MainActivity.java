@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements IGridView.Listene
         if (this.adj instanceof Island) {
             Island island = (Island) this.adj;
             StoryViewFragment storyViewFragment = new StoryViewFragment(island.getStoryScene(), this);
-            this.mainview.displayFragment(storyViewFragment, false, "storyscene");
+            this.mainview.displayFragment(storyViewFragment, true, "storyscene");
         }
     }
     public void onSceneDone() {

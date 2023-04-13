@@ -7,7 +7,6 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 
@@ -19,7 +18,7 @@ import edu.vassar.cmpu203.maraudersatsea.model.StoryScene;
 
 public class StoryViewFragment extends Fragment implements IStoryView{
 
-    private FragmentStoryViewBinding binding;
+    public FragmentStoryViewBinding binding;
     private Listener listener;
 
     private StoryScene scene;
