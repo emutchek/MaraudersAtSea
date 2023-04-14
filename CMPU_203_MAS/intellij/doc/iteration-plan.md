@@ -17,3 +17,11 @@
 | High   | Respond to Story  | Critical and risky. Create a greater impact for user decisions. |
 | Medium | Manage Game       | Necessary for other functionality.                              |
 | Low    | Interact with NPC | Could be omitted                                                |
+
+### Iteration 3 Plan
+| Rank   | Description                  | Comment                                                                     |
+|--------|------------------------------|-----------------------------------------------------------------------------|
+| High   | Finish Move to Android       | Critical. Add inventory, obstacle, map, and health functionality.           |
+| High   | Finish Android Tests         | Critical. Finish android testing for the current fragments and future ones. |
+| Medium | Implement Alternate Timeline | Executes consequences of user's decisions.                                  |
+| Low    | Improve UI                   | Edit sizes, colors, and alignments of buttons and images.                   |
