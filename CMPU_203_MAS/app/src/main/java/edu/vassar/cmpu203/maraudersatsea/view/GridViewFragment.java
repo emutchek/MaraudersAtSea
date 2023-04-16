@@ -17,12 +17,14 @@ import edu.vassar.cmpu203.maraudersatsea.model.Grid;
 
 public class GridViewFragment extends Fragment implements IGridView{
 
-   public FragmentGridViewBinding binding;
+   private FragmentGridViewBinding binding;
    private Listener listener;
 
     public GridViewFragment(Listener listener) {
         this.listener = listener;
     }
+
+    public GridViewFragment(){}
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
