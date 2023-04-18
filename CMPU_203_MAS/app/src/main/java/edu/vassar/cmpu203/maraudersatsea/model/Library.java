@@ -68,7 +68,7 @@ public class Library {
                     new String[]{"You head back to the ship and sail away.","You safely stow the substance in the ship hold."}),
 
             new StoryScene ("Cas and Amira bond while"," exploring another island. (Island)",
-                    "", new String[]{"",""}, new String[]{"",""}),
+                    "N/A", new String[]{"N/A","N/A"}, new String[]{"N/A","N/A"}),
 
             new StoryScene ("Eurydice receives a letter via bird from her mentor. It demands that " +
                     "the crew send the map immediately, being sure to highlight any potential obstacles to further " ,
@@ -83,7 +83,7 @@ public class Library {
             new StoryScene ("The crew has made it home safely. EPILOGUESix months later, " +
                     "Eurydice finally relents to Amira's requests to put together an expedition and visit their friends " ,
                     "in the Eastern Islands. When they arrive, they learn what has happened with EHE. THE END",
-                    "", new String[]{"",""}, new String[]{"",""}),
+                    "N/A", new String[]{"N/A","N/A"}, new String[]{"N/A","N/A"}),
     } ;
 
     StoryScene[] all_secstories = {
@@ -109,7 +109,7 @@ public class Library {
                     "in the Eastern Islands. They stock up plenty of fruit this time and enjoy calm waters on the voyage. " +
                     "The inhabitants of the islands are glad to see them, and share news about EHE. The crew is confident " +
                     "that they did the right thing. THE END",
-                    "", new String[]{"",""}, new String[]{"",""}),
+                    "N/A", new String[]{"N/A","N/A"}, new String[]{"N/A","N/A"}),
     };
 
     ArrayList<Obstacle> all_obstacles = new ArrayList<Obstacle>();
