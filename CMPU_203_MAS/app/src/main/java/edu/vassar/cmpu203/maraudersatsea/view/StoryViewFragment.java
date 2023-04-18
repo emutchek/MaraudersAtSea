@@ -2,6 +2,8 @@ package edu.vassar.cmpu203.maraudersatsea.view;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -23,7 +25,8 @@ public class StoryViewFragment extends Fragment implements IStoryView{
 
     private StoryScene scene;
 
-    int curScene = 1;
+    private int curScene = 1;
+    //private final static String SCENE_LOC = "sceneLocation";
 
     public StoryViewFragment(StoryScene scene, Listener listener) {
         this.listener = listener;
@@ -36,6 +39,27 @@ public class StoryViewFragment extends Fragment implements IStoryView{
         this.binding = FragmentStoryViewBinding.inflate(inflater);
         return this.binding.getRoot();
     }
+
+/*
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt(this.SCENE_LOC, this.curScene);
+    }
+    @Override
+    public void onViewStateRestored(@Nullable Bundle saveInstanceState){
+        super.onViewStateRestored(saveInstanceState);
+
+        if (saveInstanceState != null) this.curScene = saveInstanceState.getInt(SCENE_LOC, curScene);
+
+    }
+    public static Bundle makeArgsBundle(int location) {
+        Bundle args = new Bundle();
+        args.putInt(SCENE_LOC, curScene);
+        return args;
+    }
+*/
 
     public void optionButtons(Boolean flip) {
         this.binding.storyOptionA.setEnabled(flip);
@@ -88,11 +112,17 @@ public class StoryViewFragment extends Fragment implements IStoryView{
                 }
                 //if both scenes have been shown
                 else if(curScene == 2) {
-                    StoryViewFragment.this.binding.sceneText.setText(scene.getQuestion());
-                    //remove next button when options appear
-                    flipButton(StoryViewFragment.this.binding.nextButton, false);
-                    //enable and appear options
-                    optionButtons(true);
+                    if(scene.getQuestion().equals("N/A")){
+                        flipButton(StoryViewFragment.this.binding.nextButton, false);
+                        flipButton(StoryViewFragment.this.binding.exitButton, true);
+                    }
+                    else {
+                        StoryViewFragment.this.binding.sceneText.setText(scene.getQuestion());
+                        //remove next button when options appear
+                        flipButton(StoryViewFragment.this.binding.nextButton, false);
+                        //enable and appear options
+                        optionButtons(true);
+                    }
                 }
             }
         });
