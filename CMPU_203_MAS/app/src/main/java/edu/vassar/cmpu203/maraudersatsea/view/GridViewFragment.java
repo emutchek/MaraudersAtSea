@@ -2,6 +2,8 @@ package edu.vassar.cmpu203.maraudersatsea.view;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -19,12 +21,30 @@ public class GridViewFragment extends Fragment implements IGridView{
 
    private FragmentGridViewBinding binding;
    private Listener listener;
+   private static int LOCATION = 0;
+   private final static String LOCATION_STR = "location";
 
     public GridViewFragment(Listener listener) {
         this.listener = listener;
     }
 
-    public GridViewFragment(){}
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt(this.LOCATION_STR, this.LOCATION);
+    }
+    @Override
+    public void onViewStateRestored(@Nullable Bundle saveInstanceState){
+        super.onViewStateRestored(saveInstanceState);
+
+        if (saveInstanceState != null) this.LOCATION = saveInstanceState.getInt(LOCATION_STR, LOCATION);
+
+    }
+    public static Bundle makeArgsBundle(int location) {
+        Bundle args = new Bundle();
+        args.putInt(LOCATION_STR, LOCATION);
+        return args;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

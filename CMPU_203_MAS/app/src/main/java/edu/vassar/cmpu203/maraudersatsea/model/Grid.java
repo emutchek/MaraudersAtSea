@@ -1,5 +1,6 @@
 package edu.vassar.cmpu203.maraudersatsea.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /*
@@ -7,7 +8,7 @@ import java.util.ArrayList;
  * the world. The ship always remains at the bottom, and the scenery changes
  * around it.
  */
-public class Grid {
+public class Grid implements Serializable {
     int ship_location = 0; //0-33
     int islandsMet = 0;
     public ASurrounding [][] grid;
