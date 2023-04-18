@@ -7,7 +7,7 @@ public class Library {
                     "requesting she take her crew and set off to do a charting mission of the Eastern Islands, " ,
                     "a mysterious far-flung territory guarded by dangerous waters.",
                     "”What do you think, sailor? Do we go?(Q)”",
-                    new String[]{"“We can’t cross the Eastern Islands, we’ll be fish food!”",
+                    new String[]{"“We can't cross the Eastern Islands, we'll be fish food!“",
                             "“Aye! We’ll rally the crew and give no quarter”"},
                     new String[]{"“Don’t be such a lily-livered wench. We’re going.”" +
                             "You round up all the crew, restock the ship, and set course for the Eastern Islands.",

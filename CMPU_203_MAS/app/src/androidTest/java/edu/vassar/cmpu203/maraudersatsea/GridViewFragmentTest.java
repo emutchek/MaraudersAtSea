@@ -44,7 +44,7 @@ public class GridViewFragmentTest {
 
         gridVi.check(ViewAssertions
                 .matches(ViewMatchers
-                        .withId(R.drawable.island)));
+                        .withTagValue(Matchers.equalTo(R.drawable.island))));
 
         //note for later:
         //.withClassName(Matchers.containsString("ImageView"));
