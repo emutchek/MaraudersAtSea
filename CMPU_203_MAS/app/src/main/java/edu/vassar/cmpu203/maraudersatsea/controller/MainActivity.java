@@ -7,20 +7,26 @@ import android.os.Bundle;
 
 import edu.vassar.cmpu203.maraudersatsea.model.ASurrounding;
 import edu.vassar.cmpu203.maraudersatsea.model.Grid;
+import edu.vassar.cmpu203.maraudersatsea.model.Inventory;
 import edu.vassar.cmpu203.maraudersatsea.model.Island;
 import edu.vassar.cmpu203.maraudersatsea.model.Library;
 import edu.vassar.cmpu203.maraudersatsea.view.GridViewFragment;
 import edu.vassar.cmpu203.maraudersatsea.view.IGridView;
 import edu.vassar.cmpu203.maraudersatsea.view.IMainView;
+import edu.vassar.cmpu203.maraudersatsea.view.IResourceArea;
 import edu.vassar.cmpu203.maraudersatsea.view.IStoryView;
 import edu.vassar.cmpu203.maraudersatsea.view.MainView;
 import edu.vassar.cmpu203.maraudersatsea.view.MaraudersFragFactory;
 import edu.vassar.cmpu203.maraudersatsea.view.StoryViewFragment;
+import edu.vassar.cmpu203.maraudersatsea.view.ResourceAreaFragment;
 
-public class MainActivity extends AppCompatActivity implements IGridView.Listener, IStoryView.Listener{
+
+public class MainActivity extends AppCompatActivity implements IGridView.Listener, IStoryView.Listener
+, IResourceArea.Listener {
     IMainView mainview;
     public Grid curGrid;
     private Library lib;
+    public Inventory inv;
     public ASurrounding adj;
     public GridViewFragment curFrag;
 
@@ -36,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements IGridView.Listene
 
         this.lib = new Library();
         lib.setIslands();
+        this.inv = new Inventory();
 
         //not rebuilding - display from start
         if(savedInstanceState == null){
@@ -63,6 +70,8 @@ public class MainActivity extends AppCompatActivity implements IGridView.Listene
 
     public Grid getGrid() {return curGrid;}
 
+    public Inventory getInv() {return inv;}
+
     //if ship is next to island, pass that island's story scene to the fragment so it can display
     //all the proper text
     public void addressAdjacent() {
@@ -71,6 +80,7 @@ public class MainActivity extends AppCompatActivity implements IGridView.Listene
             StoryViewFragment storyViewFragment = new StoryViewFragment(island.getStoryScene(), this);
             this.mainview.displayFragment(storyViewFragment, true, "storyscene");
         }
+
     }
     public void onSceneDone() {
         Bundle args = GridViewFragment.makeArgsBundle(curGrid.getShipLocation());
@@ -78,4 +88,5 @@ public class MainActivity extends AppCompatActivity implements IGridView.Listene
         gridviewfragment.setArguments(args);
         this.mainview.displayFragment(gridviewfragment, true, "gridview");
     }
+
 }

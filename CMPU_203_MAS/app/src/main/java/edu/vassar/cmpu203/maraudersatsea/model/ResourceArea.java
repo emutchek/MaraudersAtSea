@@ -20,7 +20,7 @@ public class ResourceArea extends ASurrounding {
     }
 
     public String displayCards(){
-        return "Oh look! Some " + description + ". Do you want to grab it? A for yes, B for no (Q)";
+        return "Oh look! Some " + description + ". Do you want to grab it? (Q)";
     }
 
 }

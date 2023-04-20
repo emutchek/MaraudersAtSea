@@ -2,6 +2,8 @@
     <string name="app_name">Marauders_at_Sea</string>
     <string name="inventory">Inventory: 20 rope, 20 wood, 20 medicine</string>
     <string name="health">Health: 100</string>
+    <string name="RAfound">You found something!</string>
+    <string name="pickup">Pick up!</string>
     <string name="move_button">Sail</string>
     <string name="story_optionA_button">Going to execute option A</string>
     <string name="story_optionB_button">Going to execute option B</string>

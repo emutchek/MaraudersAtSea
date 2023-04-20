@@ -13,7 +13,6 @@ import android.widget.ImageButton;
 
 
 import edu.vassar.cmpu203.maraudersatsea.R;
-import edu.vassar.cmpu203.maraudersatsea.databinding.FragmentGridViewBinding;
 import edu.vassar.cmpu203.maraudersatsea.databinding.FragmentStoryViewBinding;
 import edu.vassar.cmpu203.maraudersatsea.model.StoryScene;
 
