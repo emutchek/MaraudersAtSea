@@ -79,12 +79,11 @@ public class ResourceAreaFragment extends Fragment implements IResourceArea {
                     ResourceAreaFragment.this.binding.rope.setVisibility(View.VISIBLE);
                     ResourceAreaFragment.this.binding.wood.setVisibility(View.VISIBLE);
                     ResourceAreaFragment.this.binding.medicine.setVisibility(View.VISIBLE);
-                    //call update inventory screen
                 }
                 else{
                     ResourceAreaFragment.this.binding.RAfound.setText("You successfully picked it up!");
                     listener.getInv().addToInventory(RA);
-                    //call update inventory screen
+                    listener.updateInfoBar();
                 }
             }
         });
@@ -99,6 +98,7 @@ public class ResourceAreaFragment extends Fragment implements IResourceArea {
             @Override
             public void onClick(View view) {
                 throwResource('R');
+                listener.updateInfoBar();
             }
         });
 
@@ -110,7 +110,9 @@ public class ResourceAreaFragment extends Fragment implements IResourceArea {
              */
             @Override
             public void onClick(View view) {
+
                 throwResource('W');
+                listener.updateInfoBar();
             }
         });
 
@@ -123,6 +125,7 @@ public class ResourceAreaFragment extends Fragment implements IResourceArea {
             @Override
             public void onClick(View view) {
                 throwResource('M');
+                listener.updateInfoBar();
             }
         });
 

@@ -1,8 +1,8 @@
 package edu.vassar.cmpu203.maraudersatsea.model;
 public class Inventory {
-    int rope;
-    int wood;
-    int medicine;
+    public int rope;
+    public int wood;
+    public int medicine;
     static int max = 90;
 
     public Inventory(){

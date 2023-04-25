@@ -112,7 +112,7 @@ public class Library {
                     "N/A", new String[]{"N/A","N/A"}, new String[]{"N/A","N/A"}),
     };
 
-    ArrayList<Obstacle> all_obstacles = new ArrayList<Obstacle>();
+    public ArrayList<Obstacle> all_obstacles = new ArrayList<Obstacle>();
 
     public Library() {
         all_obstacles.add(

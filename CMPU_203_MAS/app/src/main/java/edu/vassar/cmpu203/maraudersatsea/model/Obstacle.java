@@ -4,7 +4,7 @@ public class Obstacle {
     String text;
     String [] options;
     String [] results;
-    int code;
+    public int code;
     //0: disease - option A means use medicine + gain health, option B means lose health
     //1: mast break - option A means use rope + lose health, option B means use wood + gain health
 
@@ -28,6 +28,12 @@ public class Obstacle {
         else{
             return this.results[1];
         }
+    }
+
+    public String getText(){return text;}
+
+    public String[] getOptions(){
+        return options;
     }
 
 
