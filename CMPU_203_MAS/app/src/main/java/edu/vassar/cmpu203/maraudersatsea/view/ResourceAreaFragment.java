@@ -38,6 +38,7 @@ public class ResourceAreaFragment extends Fragment implements IResourceArea {
                              Bundle savedInstanceState) {
         this.binding = FragmentRaViewBinding.inflate(inflater);
         return this.binding.getRoot();
+
     }
 
     public void flipButton(ImageButton b, Boolean flip) {
@@ -61,6 +62,8 @@ public class ResourceAreaFragment extends Fragment implements IResourceArea {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         this.binding.RAfound.setText(RA.displayCards());
+        int idDrawable = RA.getResourceSymbol();
+        this.binding.imageView.setImageResource(idDrawable);
 
         this.binding.grabRA.setOnClickListener(new View.OnClickListener(){
             /**

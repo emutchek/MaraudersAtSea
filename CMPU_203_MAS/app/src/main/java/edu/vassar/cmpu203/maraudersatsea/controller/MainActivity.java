@@ -10,6 +10,8 @@ import edu.vassar.cmpu203.maraudersatsea.model.Grid;
 import edu.vassar.cmpu203.maraudersatsea.model.Inventory;
 import edu.vassar.cmpu203.maraudersatsea.model.Island;
 import edu.vassar.cmpu203.maraudersatsea.model.Library;
+import edu.vassar.cmpu203.maraudersatsea.model.ResourceArea;
+import edu.vassar.cmpu203.maraudersatsea.model.Ship;
 import edu.vassar.cmpu203.maraudersatsea.view.GridViewFragment;
 import edu.vassar.cmpu203.maraudersatsea.view.IGridView;
 import edu.vassar.cmpu203.maraudersatsea.view.IMainView;
@@ -27,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements IGridView.Listene
     public Grid curGrid;
     private Library lib;
     public Inventory inv;
+    public Ship ship;
     public ASurrounding adj;
     public GridViewFragment curFrag;
 
@@ -43,11 +46,13 @@ public class MainActivity extends AppCompatActivity implements IGridView.Listene
         this.lib = new Library();
         lib.setIslands();
         this.inv = new Inventory();
+        this.ship = new Ship();
 
         //not rebuilding - display from start
         if(savedInstanceState == null){
             this.curGrid = new Grid(lib.all_islands);
             this.mainview.displayFragment(new GridViewFragment(this), true, "gridview");
+            this.mainview.refreshStats(inv.toString(), ship.toString());
         }
         //retrieve old grid
         else{
@@ -80,6 +85,11 @@ public class MainActivity extends AppCompatActivity implements IGridView.Listene
             StoryViewFragment storyViewFragment = new StoryViewFragment(island.getStoryScene(), this);
             this.mainview.displayFragment(storyViewFragment, true, "storyscene");
         }
+        if(this.adj instanceof ResourceArea) {
+            ResourceArea ra = (ResourceArea) this.adj;
+            ResourceAreaFragment raFragment = new ResourceAreaFragment(ra, this);
+            this.mainview.displayFragment(raFragment, true, "resourcearea");
+        }
 
     }
     public void onSceneDone() {
@@ -87,6 +97,7 @@ public class MainActivity extends AppCompatActivity implements IGridView.Listene
         GridViewFragment gridviewfragment = new GridViewFragment(this);
         gridviewfragment.setArguments(args);
         this.mainview.displayFragment(gridviewfragment, true, "gridview");
+        this.mainview.refreshStats(inv.toString(), ship.toString());
     }
 
 }

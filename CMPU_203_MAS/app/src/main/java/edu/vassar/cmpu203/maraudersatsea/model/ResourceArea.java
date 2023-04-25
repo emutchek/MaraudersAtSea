@@ -19,6 +19,16 @@ public class ResourceArea extends ASurrounding {
         return symbol;
     }
 
+    public int getResourceSymbol() {
+        if (this.description.equals("rope")) {
+            return R.drawable.rope;
+        }
+        if (this.description.equals("wood")) {
+            return R.drawable.wood;
+        }
+        else return R.drawable.health;
+    }
+
     public String displayCards(){
         return "Oh look! Some " + description + ". Do you want to grab it? (Q)";
     }

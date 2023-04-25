@@ -9,6 +9,8 @@ import androidx.fragment.app.FragmentTransaction;
 
 import edu.vassar.cmpu203.maraudersatsea.databinding.ActivityMainBinding;
 import edu.vassar.cmpu203.maraudersatsea.databinding.FragmentGridViewBinding;
+import edu.vassar.cmpu203.maraudersatsea.model.Inventory;
+import edu.vassar.cmpu203.maraudersatsea.model.Ship;
 
 /**
  * An implementation of the application's screen template.
@@ -51,5 +53,12 @@ public class MainView implements IMainView{
         if (reversible) ft.addToBackStack(name);
         ft.commit(); // execute transaction
     }
+
+    public void refreshStats(String inv, String ship) {
+        this.binding.inventory.setText(inv);
+        this.binding.health.setText(ship);
+
+    }
+
 }
 

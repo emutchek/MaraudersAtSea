@@ -39,27 +39,6 @@ public class StoryViewFragment extends Fragment implements IStoryView{
         return this.binding.getRoot();
     }
 
-/*
-
-    @Override
-    public void onSaveInstanceState(@NonNull Bundle outState) {
-        super.onSaveInstanceState(outState);
-        outState.putInt(this.SCENE_LOC, this.curScene);
-    }
-    @Override
-    public void onViewStateRestored(@Nullable Bundle saveInstanceState){
-        super.onViewStateRestored(saveInstanceState);
-
-        if (saveInstanceState != null) this.curScene = saveInstanceState.getInt(SCENE_LOC, curScene);
-
-    }
-    public static Bundle makeArgsBundle(int location) {
-        Bundle args = new Bundle();
-        args.putInt(SCENE_LOC, curScene);
-        return args;
-    }
-*/
-
     public void optionButtons(Boolean flip) {
         this.binding.storyOptionA.setEnabled(flip);
         this.binding.storyOptionB.setEnabled(flip);
@@ -159,6 +138,7 @@ public class StoryViewFragment extends Fragment implements IStoryView{
              */
             @Override
             public void onClick(View view) {
+
                 StoryViewFragment.this.listener.onSceneDone();
             }
         });
