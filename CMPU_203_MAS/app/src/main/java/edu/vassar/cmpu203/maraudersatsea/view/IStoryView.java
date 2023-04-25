@@ -19,5 +19,6 @@ public interface IStoryView {
      */
     interface Listener {
         void onSceneDone();
+        void addressIsland();
     }
 }

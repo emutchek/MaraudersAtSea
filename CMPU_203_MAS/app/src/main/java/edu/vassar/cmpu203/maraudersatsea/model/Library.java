@@ -86,7 +86,7 @@ public class Library {
                     "N/A", new String[]{"N/A","N/A"}, new String[]{"N/A","N/A"}),
     } ;
 
-    StoryScene[] all_secstories = {
+    public StoryScene[] all_secstories = {
             null,
             null,
             null,

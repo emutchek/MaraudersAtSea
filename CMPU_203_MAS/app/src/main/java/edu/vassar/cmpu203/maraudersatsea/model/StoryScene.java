@@ -10,7 +10,7 @@ import java.io.Serializable;
 public class StoryScene implements Serializable {
     String text1;
     String text2;
-    String question;
+    public String question;
     public String [] options;
     public String [] endings;
 

@@ -10,9 +10,9 @@ import java.util.ArrayList;
  */
 public class Grid implements Serializable {
     int ship_location = 0; //0-33
-    int islandsMet = 0;
+    public int islandsMet = 0;
     public ASurrounding [][] grid;
-    Island[] all_islands;
+    public Island[] all_islands;
 
 
 
@@ -125,7 +125,7 @@ public class Grid implements Serializable {
     public void addRA(){
         ASurrounding blank = new ASurrounding();
         if (isBlank(this.grid[ship_location + 4][0]) && isBlank(this.grid[ship_location + 4][1])){
-            if (Math.random() < 0.25){
+            if (Math.random() < 0.1){
                 if (Math.random() < 0.5){
                     this.grid[ship_location +4 ][0] = new ResourceArea();
                 }

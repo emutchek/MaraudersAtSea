@@ -7,7 +7,7 @@ import edu.vassar.cmpu203.maraudersatsea.R;
  * with it. Islands are plottable on the map.
  */
 public class Island extends ASurrounding{
-    StoryScene story;
+    public StoryScene story;
     boolean found;
     boolean onMap;
     String name;

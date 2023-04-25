@@ -34,6 +34,8 @@ public class MainActivity extends AppCompatActivity implements IGridView.Listene
     public Inventory inv;
     public Ship ship;
     Obstacle tempObs = new Obstacle();
+    public int doubt = 0;
+
     public ASurrounding adj;
     public GridViewFragment curFrag;
 
@@ -73,6 +75,7 @@ public class MainActivity extends AppCompatActivity implements IGridView.Listene
      * Returns the display cards of any surroundings the user encounters
      */
     public Grid onMove() {
+        this.adjustStories();
        this.adj = curGrid.executeMove();
        return curGrid;
     }
@@ -80,6 +83,21 @@ public class MainActivity extends AppCompatActivity implements IGridView.Listene
     public Grid getGrid() {return curGrid;}
 
     public Inventory getInv() {return inv;}
+
+    public void adjustStories() {
+        if(curGrid.islandsMet == 7){
+            if(doubt >= 2){
+                //change The Grove story text to be the Meeting Place text
+                curGrid.all_islands[8].setStory(lib.all_secstories[8]);
+            }
+        }
+        if(curGrid.islandsMet == 9) {
+            if(doubt < 2) {
+                //remove the question from you've got mail
+                curGrid.all_islands[10].story.question = "N/A";
+            }
+        }
+    }
 
     //if ship is next to island, pass that island's story scene to the fragment so it can display
     //all the proper text
@@ -103,13 +121,20 @@ public class MainActivity extends AppCompatActivity implements IGridView.Listene
         }
 
     }
+    public void addressIsland() {
+        doubt++;
+        //if they choose not to send in the map, they get shown the good ending regardless of their doubt
+        if(curGrid.islandsMet == 11) {
+            curGrid.all_islands[11].story = lib.all_secstories[11];
+        }
+    }
 
     /**
      * Chooses random obstacle from the list, 10% of the time
      * @return text of an obstacle, or null
      */
     public void generateObstacle() {
-        if(Math.random() <= 0.5) {
+        if(Math.random() <= 0.2) {
             int randIndex = (int)(Math.random() * 5);
             tempObs = lib.all_obstacles.get(randIndex);
             //lib.all_obstacles.remove(tempObs);

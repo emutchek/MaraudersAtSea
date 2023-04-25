@@ -115,6 +115,7 @@ public class StoryViewFragment extends Fragment implements IStoryView{
                 StoryViewFragment.this.binding.sceneText.setText(scene.endings[0]);
                 optionButtons(false);
                 flipButton(StoryViewFragment.this.binding.exitButton, true);
+                StoryViewFragment.this.listener.addressIsland();
             }
         });
         this.binding.storyOptionB.setOnClickListener(new View.OnClickListener(){
