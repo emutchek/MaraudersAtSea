@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="123dp"
-        android:layout_height="89dp"
+        android:layout_width="234dp"
+        android:layout_height="170dp"
         android:layout_marginStart="135dp"
         android:layout_marginEnd="135dp"
         app:layout_constraintBottom_toTopOf="@+id/RAfound"
@@ -25,12 +25,13 @@
         android:layout_marginStart="336dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="600dp"
+        android:backgroundTint="@color/trans"
         android:contentDescription="exit button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/btn_dialog" />
+        app:srcCompat="@drawable/exitbutton" />
 
     <TextView
         android:id="@+id/RAfound"
@@ -75,7 +76,7 @@
             android:contentDescription="rope button"
             android:visibility="invisible"
             app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/rope" />
+            app:srcCompat="@drawable/ropebutton" />
 
         <ImageButton
             android:id="@+id/wood"
@@ -84,7 +85,7 @@
             android:layout_weight="1.0"
             android:contentDescription="wood button"
             android:visibility="invisible"
-            app:srcCompat="@drawable/wood" />
+            app:srcCompat="@drawable/woodbutton" />
 
         <ImageButton
             android:id="@+id/medicine"
@@ -93,6 +94,6 @@
             android:layout_weight="1.0"
             android:contentDescription="medicine button"
             android:visibility="invisible"
-            app:srcCompat="@drawable/health" />
+            app:srcCompat="@drawable/medbutton" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
