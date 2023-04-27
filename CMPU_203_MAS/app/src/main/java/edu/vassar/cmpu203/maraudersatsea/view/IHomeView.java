@@ -19,5 +19,6 @@ public interface IHomeView {
      */
     interface Listener {
         void onSceneDone();
+        String gameOver();
     }
 }

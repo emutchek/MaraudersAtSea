@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import edu.vassar.cmpu203.maraudersatsea.R;
 import edu.vassar.cmpu203.maraudersatsea.model.ASurrounding;
 import edu.vassar.cmpu203.maraudersatsea.model.Grid;
 import edu.vassar.cmpu203.maraudersatsea.model.Inventory;
@@ -239,6 +240,21 @@ public class MainActivity extends AppCompatActivity implements IGridView.Listene
         this.mainview.displayFragment(gridviewfragment, true, "gridview");
         updateInfoBar();
         tempObs = null;
+        String gameStatus = gameOver();
+        if (!gameStatus.equals("continue")){
+            HomeViewFragment homeviewfragment = new HomeViewFragment(this);
+            this.mainview.displayFragment(homeviewfragment, false, "homeview");
+        }
+    }
+
+    public String gameOver(){
+        if (ship.health <= 0) {
+            return "died";
+        }
+        else if (curGrid.islandsMet >= 12) {
+            return "over";
+        }
+        return "continue";
     }
 
 }

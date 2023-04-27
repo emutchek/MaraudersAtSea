@@ -33,9 +33,10 @@
             android:layout_weight="1"
             android:fontFamily="serif-monospace"
             android:text="@string/inventory"
+            android:textAlignment="gravity"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
         <TextView

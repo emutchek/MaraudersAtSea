@@ -1,12 +1,13 @@
 <resources>
     <string name="app_name">Marauders_at_Sea</string>
-    <string name="inventory">Inventory: 20 rope, 20 wood, 20 medicine</string>
+    <string name="inventory">    INVENTORY: \nRope: 20 spools \nWood: 20 logs \nMedicine: 20 vials</string>
     <string name="health">Health: 100</string>
     <string name="welcome">Marauders at Sea</string>
     <string name="RAfound">You found something!</string>
     <string name="pickup">Pick up!</string>
     <string name="move_button">Sail</string>
     <string name="playButton">Play</string>
+    <string name="feedthefish">You and your crew fought hard, but the ship has capsized. \nPress play to restart.</string>
     <string name="characters">"Every pirate needs a good crew, so you'll be traveling with the very best:
         EURYDICE, the brave captainCASSEIOPIA 'CAS', the dashing first mate
         AMIRA, the clever map maker

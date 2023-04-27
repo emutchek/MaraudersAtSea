@@ -38,7 +38,8 @@ public class HomeViewFragment extends Fragment implements IHomeView{
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-
+        String gameStatus = HomeViewFragment.this.listener.gameOver();
+        endGame(gameStatus);
 
         this.binding.playButton.setOnClickListener(new View.OnClickListener(){
             /**
@@ -53,5 +54,16 @@ public class HomeViewFragment extends Fragment implements IHomeView{
         });
 
 
+    }
+
+    public void endGame(String message){
+        if (message.equals("died")){
+            this.binding.EndText.setVisibility(View.VISIBLE);
+            this.binding.welcomeMessage.setVisibility(View.INVISIBLE);
+        }
+        else{
+            this.binding.EndText.setVisibility(View.INVISIBLE);
+            this.binding.welcomeMessage.setVisibility(View.VISIBLE);
+        }
     }
 }

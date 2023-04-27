@@ -50,6 +50,6 @@ public class Inventory {
     }
 
     public String toString(){
-        return "INVENTORY: \n" + "Rope: " + rope + " ft\nWood: " + wood + " logs\nMedicine: " + medicine + " vials";
+        return "INVENTORY: \n" + "Rope: " + rope + " spools\nWood: " + wood + " logs\nMedicine: " + medicine + " vials";
     }
 }
