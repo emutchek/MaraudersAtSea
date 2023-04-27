@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/flag"
+    android:backgroundTint="@color/black"
     tools:context=".controller.MainActivity">
 
 
@@ -12,11 +14,11 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="336dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="24dp"
         android:backgroundTint="@color/trans"
         android:contentDescription="exit button"
-        android:src="@drawable/exitbutton"
+        android:src="@android:drawable/btn_dialog"
         app:layout_constraintBottom_toTopOf="@+id/sceneText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -24,17 +26,29 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/sceneText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/skull" />
+
     <TextView
         android:id="@+id/sceneText"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
         android:layout_marginBottom="200dp"
-        android:fontFamily="sans-serif-smallcaps"
-        android:text="@string/story_default"
+        android:fontFamily="sans-serif-condensed"
+        android:text="@string/obstacle"
         android:textAlignment="center"
-        android:textSize="30sp"
+        android:textAllCaps="true"
+        android:textColor="#B5A7A7"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,31 +57,29 @@
 
     <LinearLayout
         android:id="@+id/optionButtons"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="match_parent"
-        android:layout_marginStart="30dp"
         android:layout_marginTop="400dp"
-        android:layout_marginEnd="30dp"
         android:layout_marginBottom="100dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
+
+
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sceneText"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toBottomOf="@+id/sceneText">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/storyOptionA"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1.0"
-            android:background="#773F51B5"
-            android:fontFamily="serif-monospace"
+            android:background="#781818"
+            android:fontFamily="sans-serif"
             android:text="@string/story_optionA_button"
             android:textAllCaps="false"
-            android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textColor="#CABDBD"
+            android:textSize="18sp"
             android:textStyle="bold"
             android:visibility="visible" />
 
@@ -76,12 +88,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1.0"
-            android:background="#773F51B5"
-            android:fontFamily="serif-monospace"
+            android:background="#781818"
+            android:fontFamily="sans-serif"
             android:text="@string/story_optionB_button"
             android:textAllCaps="false"
-            android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textColor="#CABDBD"
+            android:textSize="18sp"
             android:textStyle="bold"
             android:visibility="visible" />
     </LinearLayout>

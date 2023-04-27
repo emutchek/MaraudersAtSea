@@ -244,6 +244,7 @@ public class MainActivity extends AppCompatActivity implements IGridView.Listene
         if (!gameStatus.equals("continue")){
             HomeViewFragment homeviewfragment = new HomeViewFragment(this);
             this.mainview.displayFragment(homeviewfragment, false, "homeview");
+            this.mainview.removeInfoBar();
         }
     }
 

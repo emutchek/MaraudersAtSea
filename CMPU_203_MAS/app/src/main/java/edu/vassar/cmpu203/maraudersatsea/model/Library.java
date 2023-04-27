@@ -4,10 +4,10 @@ import java.util.ArrayList;
 public class Library {
     StoryScene [] all_stories = {
             new StoryScene("Welcome to Marauders at Sea, an adventure that will test your mettle and heart." +
-                    "Every pirate needs a good crew, so you'll be traveling with the very best." +
-                    "EURYDICE, the brave captain" + "CASSEIOPIA 'CAS', the dashing first mate" +
-                    "AMIRA, the clever map maker" + "AMELIA 'MEELS', the French cook" + "ISHA 'ISH', the peaceful surgeon" +
-                    "ORLIC, the oddball gunner" + "Stay safe out there, sailor. All hands hoay!" ,
+                    "Every pirate needs a good crew, so you'll be traveling with the very best. " +
+                    "\nEURYDICE, the brave captain, " + "\nCASSEIOPIA 'CAS', the dashing first mate, " +
+                    "\nAMIRA, the clever map maker, " + "\nAMELIA 'MEELS', the French cook, " + "\nISHA 'ISH', the peaceful surgeon, " +
+                    "\nORLIC, the oddball gunner" + "\nStay safe out there, sailor. All hands hoay!" ,
                     "Pirate captain Eurydice receives a letter from her former boss " +
                             "requesting she take her crew and set off to do a charting mission of the Eastern Islands," +
                             "a mysterious far-flung territory guarded by dangerous waters.",
@@ -121,8 +121,8 @@ public class Library {
 
     public Library() {
         all_obstacles.add(
-                new Obstacle("-----☠ PLAGUE ALERT ☠----- " +
-                        "Meels woke up with a fever this morning, which wasn't that concerning, until her finger turned " +
+                new Obstacle("☠ PLAGUE ALERT ☠" +
+                        "\nMeels woke up with a fever this morning, which wasn't that concerning, until her finger turned " +
                         "purple and she erupted in boils. We must have incurred the wrath of an angry spirit... or " +
                         "maybe it was the brownish drinking water that Amira forgot to change.What do you do?",
                         new String[]{"People get sick all the time! Let's play limbo on the deck",
@@ -131,22 +131,22 @@ public class Library {
                                 "Good call - she's feeling much better."},
                         0));
         all_obstacles.add(
-                new Obstacle("----- WHY IS THE TOOTH FAIRY HERE? -----" +
-                        "It seems like just eating hard tack and jerky is not the new keto after all, and now everyone has scurvy!",
+                new Obstacle("WHY IS THE TOOTH FAIRY HERE?" +
+                        "\nIt seems like just eating hard tack and jerky is not the new keto after all, and now everyone has scurvy!",
                         new String[]{"Everyone knows that you cure scurvy by chewing licorice root",
                                 "We'll divide our medicine stores evenly among everywhere [requires 10 vials of medicine]"},
                         new String[]{"Actually, I'm pretty sure Orlic's the one who said that... the crew remains weak " +
                                 "until they're able to find fruit at the next island (-25 HEALTH)",
                                 "The crew is bolstered enough to carry on"},1));
         all_obstacles.add(
-                new Obstacle("----- SHIP MALFUNCTION -----Um... is that big wooden pole supposed to be in two pieces?",
+                new Obstacle("SHIP MALFUNCTION \nUm... is that big wooden pole supposed to be in two pieces?",
                         new String[]{"Orlic comes up with a spool of rope and wooden spoon and offers to help",
                                 "We better use some of our wood to construct a new mast here on the deck [requires 10 logs of wood]"},
                         new String[]{"Orlic thought you wanted her to build a swing - this ship won't be sailing anytime soon (-25 HEALTH)",
                                 "It looks like that did the trick... for now"},2));
         all_obstacles.add(
-                new Obstacle("----- WATER RISING -----" +
-                        "It looks like an old repair in the bilge sprung a leak, and the water is already ankle deep!",
+                new Obstacle("WATER RISING" +
+                        "\nIt looks like an old repair in the bilge sprung a leak, and the water is already ankle deep!",
                         new String[]{"Grab a bucket - we'll bail it out one trip at a time",
                                 "Use a hammer and nails to put new planks over the leak and seal it up [requires 10 logs of wood]"},
                         new String[]{"Good job! You remove three buckets of water... but the leak got bigger and the water's up to" +
@@ -154,15 +154,15 @@ public class Library {
                                 "It worked! And now we have a hot tub! ... a warm, smelly hot tub..."},3));
 
         all_obstacles.add(
-                new Obstacle("----- (WO)MAN OVERBOARD -----" +
-                        "Meels used the plank as a runway again and fell right off the edge!",
+                new Obstacle("(WO)MAN OVERBOARD" +
+                        "\nMeels used the plank as a runway again and fell right off the edge!",
                         new String[]{"We'll lower Cas down by her ankles to snatch her up",
                                 "Lower some rope over the edge for her to grab on [requires 10 feet of rope]"},
                         new String[]{"Cas has so many weapons strapped to her that she falls in too, and both get pneumonia damn (-25 HEALTH)",
                                 "She clambers back up gratefully"},4));
         all_obstacles.add(
-                new Obstacle("----- SOUND OF SIRENS -----" +
-                        "As the ship enters a rocky area, a pair of beautiful sirens on a cliff bewitch half the crew",
+                new Obstacle("SOUND OF SIRENS" +
+                        "\nAs the ship enters a rocky area, a pair of beautiful sirens on a cliff bewitch half the crew",
                         new String[]{"Amira suggests that we use the cork stoppers from the medicine vials to plug their ears [requires 10 vials of medicine]",
                                 "Grab your fellow pirates and tie them to the masts before they jump over [requires 10 feet of rope]"},
                         new String[]{"'I CAN'T HEAR THEM ANYMORE! WHAT HAPPENED TO THE BEAUTIFUL WOMEN?' Cas yells. Guess it worked!",
@@ -170,8 +170,8 @@ public class Library {
                                         "have miscalculated how many weapons these pirates have, and the the crew hits " +
                                         "a rock as they distractedly swerve away (-25 HEALTH)"},5));
         all_obstacles.add(
-                new Obstacle("----- IS OUR WOODEN SHIP ON FIRE??? -----" +
-                        "Isha's foot is caught and they're stuck by the flames, but the inventory is about to catch fire!",
+                new Obstacle("IS OUR WOODEN SHIP ON FIRE???" +
+                        "\nIsha's foot is caught and they're stuck by the flames, but the inventory is about to catch fire!",
                         new String[]{"Ish will be fine, save the booty!",
                                 "Run and help them!"},
                         new String[]{"Isha's ankle sustains minor burns, so they'll be on bed rest for awhile (-25 HEALTH)",

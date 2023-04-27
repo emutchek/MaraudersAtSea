@@ -41,6 +41,7 @@ public class HomeViewFragment extends Fragment implements IHomeView{
         String gameStatus = HomeViewFragment.this.listener.gameOver();
         endGame(gameStatus);
 
+
         this.binding.playButton.setOnClickListener(new View.OnClickListener(){
             /**
              * Listener method to be called when the option a button is clicked.
