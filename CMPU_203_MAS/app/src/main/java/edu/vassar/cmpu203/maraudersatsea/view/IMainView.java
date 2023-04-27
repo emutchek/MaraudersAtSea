@@ -9,4 +9,5 @@ public interface IMainView {
     public void displayFragment(Fragment fragment, boolean reversible, String name);
 
     public void refreshStats(String inv, String ship);
+    public void removeInfoBar();
 }

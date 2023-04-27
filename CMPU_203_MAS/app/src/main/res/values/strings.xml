@@ -2,9 +2,18 @@
     <string name="app_name">Marauders_at_Sea</string>
     <string name="inventory">Inventory: 20 rope, 20 wood, 20 medicine</string>
     <string name="health">Health: 100</string>
+    <string name="welcome">Marauders at Sea</string>
     <string name="RAfound">You found something!</string>
     <string name="pickup">Pick up!</string>
     <string name="move_button">Sail</string>
+    <string name="playButton">Play</string>
+    <string name="characters">"Every pirate needs a good crew, so you'll be traveling with the very best:
+        EURYDICE, the brave captainCASSEIOPIA 'CAS', the dashing first mate
+        AMIRA, the clever map maker
+        AMELIA 'MEELS', the French cook
+        ISHA 'ISH', the peaceful surgeon
+        ORLIC, the oddball gunner
+        Stay safe out there, sailor. All hands hoay!</string>
     <string name="story_optionA_button">Going to execute option A</string>
     <string name="story_optionB_button">Going to execute option B</string>
     <string name="story_default">One afternoon, on a tiny island filled with the boldest, drunkest and strongest pirates in all the land, a young woman. It was unsigned, but she recognized the handwriting of her old mentor. There was no telling what shifty client he was working with this time.She turns to you. (Island)

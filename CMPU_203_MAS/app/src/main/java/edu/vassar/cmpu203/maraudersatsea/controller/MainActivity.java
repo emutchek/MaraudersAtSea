@@ -14,7 +14,9 @@ import edu.vassar.cmpu203.maraudersatsea.model.Obstacle;
 import edu.vassar.cmpu203.maraudersatsea.model.ResourceArea;
 import edu.vassar.cmpu203.maraudersatsea.model.Ship;
 import edu.vassar.cmpu203.maraudersatsea.view.GridViewFragment;
+import edu.vassar.cmpu203.maraudersatsea.view.HomeViewFragment;
 import edu.vassar.cmpu203.maraudersatsea.view.IGridView;
+import edu.vassar.cmpu203.maraudersatsea.view.IHomeView;
 import edu.vassar.cmpu203.maraudersatsea.view.IMainView;
 import edu.vassar.cmpu203.maraudersatsea.view.IObstacleView;
 import edu.vassar.cmpu203.maraudersatsea.view.IResourceArea;
@@ -27,7 +29,7 @@ import edu.vassar.cmpu203.maraudersatsea.view.ResourceAreaFragment;
 
 
 public class MainActivity extends AppCompatActivity implements IGridView.Listener, IStoryView.Listener
-, IResourceArea.Listener, IObstacleView.Listener {
+, IResourceArea.Listener, IObstacleView.Listener, IHomeView.Listener {
     IMainView mainview;
     public Grid curGrid;
     private Library lib;
@@ -38,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements IGridView.Listene
 
     public ASurrounding adj;
     public GridViewFragment curFrag;
+
 
     private static final String CUR_GAME = "curGame";
 
@@ -54,6 +57,21 @@ public class MainActivity extends AppCompatActivity implements IGridView.Listene
         this.inv = new Inventory();
         this.ship = new Ship();
 
+        this.mainview.displayFragment(new HomeViewFragment(this),true,"homeview");
+
+        //not rebuilding - display from start
+        if(savedInstanceState == null){
+            this.curGrid = new Grid(lib.all_islands);
+            this.mainview.refreshStats(inv.toString(), ship.toString());
+        }
+        //retrieve old grid
+        else{
+            this.curGrid = (Grid) savedInstanceState.getSerializable(CUR_GAME);
+        }
+        this.mainview.removeInfoBar();
+    }
+
+    public void launchGrid(Bundle savedInstanceState) {
         //not rebuilding - display from start
         if(savedInstanceState == null){
             this.curGrid = new Grid(lib.all_islands);

@@ -3,9 +3,14 @@ package edu.vassar.cmpu203.maraudersatsea.model;
 import java.util.ArrayList;
 public class Library {
     StoryScene [] all_stories = {
-            new StoryScene("Pirate captain Eurydice receives a letter from her former boss " +
-                    "requesting she take her crew and set off to do a charting mission of the Eastern Islands, " ,
-                    "a mysterious far-flung territory guarded by dangerous waters.",
+            new StoryScene("Welcome to Marauders at Sea, an adventure that will test your mettle and heart." +
+                    "Every pirate needs a good crew, so you'll be traveling with the very best." +
+                    "EURYDICE, the brave captain" + "CASSEIOPIA 'CAS', the dashing first mate" +
+                    "AMIRA, the clever map maker" + "AMELIA 'MEELS', the French cook" + "ISHA 'ISH', the peaceful surgeon" +
+                    "ORLIC, the oddball gunner" + "Stay safe out there, sailor. All hands hoay!" ,
+                    "Pirate captain Eurydice receives a letter from her former boss " +
+                            "requesting she take her crew and set off to do a charting mission of the Eastern Islands," +
+                            "a mysterious far-flung territory guarded by dangerous waters.",
                     "”What do you think, sailor? Do we go?(Q)”",
                     new String[]{"“We can't cross the Eastern Islands, we'll be fish food!“",
                             "“Aye! We’ll rally the crew and give no quarter”"},

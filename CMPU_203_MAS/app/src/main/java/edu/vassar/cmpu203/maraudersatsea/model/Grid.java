@@ -125,7 +125,7 @@ public class Grid implements Serializable {
     public void addRA(){
         ASurrounding blank = new ASurrounding();
         if (isBlank(this.grid[ship_location + 4][0]) && isBlank(this.grid[ship_location + 4][1])){
-            if (Math.random() < 0.1){
+            if (Math.random() < 0.3){
                 if (Math.random() < 0.5){
                     this.grid[ship_location +4 ][0] = new ResourceArea();
                 }
