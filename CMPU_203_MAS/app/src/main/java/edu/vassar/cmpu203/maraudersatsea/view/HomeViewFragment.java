@@ -50,6 +50,7 @@ public class HomeViewFragment extends Fragment implements IHomeView{
              */
             @Override
             public void onClick(View view) {
+                HomeViewFragment.this.listener.restart();
                 HomeViewFragment.this.listener.onSceneDone();
             }
         });

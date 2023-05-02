@@ -44,9 +44,11 @@ public class ResourceAreaFragment extends Fragment implements IResourceArea {
     public void flipButton(ImageButton b, Boolean flip) {
         if(flip){
             b.setVisibility(View.VISIBLE);
+            b.setEnabled(true);
         }
         else {
             b.setVisibility(View.INVISIBLE);
+            b.setEnabled(false);
         }
         b.setEnabled(flip);
     }
@@ -59,12 +61,32 @@ public class ResourceAreaFragment extends Fragment implements IResourceArea {
         listener.getInv().removeInventory(c);
         listener.getInv().addToInventory(RA);
     }
+    /*
+    Shows the resources that are currently aboard that could be thrown out to make room for
+    a new one.
+     */
+    public void showOptions(Inventory inv){
+        if (inv.yesRope()){
+            flipButton(ResourceAreaFragment.this.binding.rope, true);
+        }
+        if (inv.yesWood()){
+            flipButton(ResourceAreaFragment.this.binding.wood, true);
+
+        }
+        if (inv.yesMedicine()){
+            flipButton(ResourceAreaFragment.this.binding.medicine, true);
+
+        }
+    }
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         this.binding.RAfound.setText(RA.displayCards());
         int idDrawable = RA.getResourceSymbol();
         this.binding.imageView.setImageResource(idDrawable);
-
+        //sets all the throwout buttons to not appear at first
+        flipButton(ResourceAreaFragment.this.binding.rope, false);
+        flipButton(ResourceAreaFragment.this.binding.wood, false);
+        flipButton(ResourceAreaFragment.this.binding.medicine, false);
         this.binding.grabRA.setOnClickListener(new View.OnClickListener(){
             /**
              * Listener method to be called when the grab/pickup button is clicked.
@@ -74,15 +96,14 @@ public class ResourceAreaFragment extends Fragment implements IResourceArea {
             @Override
             public void onClick(View view) {
                 ResourceAreaFragment.this.binding.grabRA.setVisibility(View.INVISIBLE);
-                if (listener.getInv().isFull()){
+                Inventory inv = listener.getInv();
+                if (inv.isFull()){
                     ResourceAreaFragment.this.binding.RAfound.setText("Oh no! Your inventory is full. Do you want to throw something overboard to make room?");
-                    ResourceAreaFragment.this.binding.rope.setVisibility(View.VISIBLE);
-                    ResourceAreaFragment.this.binding.wood.setVisibility(View.VISIBLE);
-                    ResourceAreaFragment.this.binding.medicine.setVisibility(View.VISIBLE);
+                    showOptions(inv);
                 }
                 else{
                     ResourceAreaFragment.this.binding.RAfound.setText("You successfully picked it up!");
-                    listener.getInv().addToInventory(RA);
+                    inv.addToInventory(RA);
                     listener.updateInfoBar();
                 }
             }

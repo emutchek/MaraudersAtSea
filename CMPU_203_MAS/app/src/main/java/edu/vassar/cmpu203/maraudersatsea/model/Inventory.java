@@ -52,4 +52,16 @@ public class Inventory {
     public String toString(){
         return "INVENTORY: \n" + "Rope: " + rope + " spools\nWood: " + wood + " logs\nMedicine: " + medicine + " vials";
     }
+
+    public boolean yesRope(){
+        return rope > 0;
+    }
+
+    public boolean yesWood(){
+        return wood > 0;
+    }
+
+    public boolean yesMedicine(){
+        return medicine > 0;
+    }
 }

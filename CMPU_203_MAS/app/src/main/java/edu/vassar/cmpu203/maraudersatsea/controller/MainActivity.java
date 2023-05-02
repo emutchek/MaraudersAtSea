@@ -72,19 +72,6 @@ public class MainActivity extends AppCompatActivity implements IGridView.Listene
         this.mainview.removeInfoBar();
     }
 
-    public void launchGrid(Bundle savedInstanceState) {
-        //not rebuilding - display from start
-        if(savedInstanceState == null){
-            this.curGrid = new Grid(lib.all_islands);
-            this.mainview.displayFragment(new GridViewFragment(this), true, "gridview");
-            this.mainview.refreshStats(inv.toString(), ship.toString());
-        }
-        //retrieve old grid
-        else{
-            this.curGrid = (Grid) savedInstanceState.getSerializable(CUR_GAME);
-        }
-    }
-
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putSerializable(CUR_GAME, this.curGrid);
@@ -153,7 +140,7 @@ public class MainActivity extends AppCompatActivity implements IGridView.Listene
      * @return text of an obstacle, or null
      */
     public void generateObstacle() {
-        if(Math.random() <= 0.2) {
+        if(Math.random() <= 0.3) {
             int randIndex = (int)(Math.random() * 5);
             tempObs = lib.all_obstacles.get(randIndex);
             //lib.all_obstacles.remove(tempObs);
@@ -256,6 +243,19 @@ public class MainActivity extends AppCompatActivity implements IGridView.Listene
             return "over";
         }
         return "continue";
+    }
+/*
+* Method that resets the state of the game when a player finishes and wants
+* to play again.
+ */
+    public void restart(){
+        this.lib = new Library();
+        lib.setIslands();
+        this.inv = new Inventory();
+        this.ship = new Ship();
+        this.curGrid = new Grid(lib.all_islands);
+        this.mainview.refreshStats(inv.toString(), ship.toString());
+        doubt = 0;
     }
 
 }

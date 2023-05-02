@@ -33,6 +33,8 @@ public class ResourceArea extends ASurrounding {
         return "Oh look! Some " + description + ". Do you want to grab it? (Q)";
     }
 
+
+
 }
 
 
