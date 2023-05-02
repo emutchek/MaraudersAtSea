@@ -20,6 +20,7 @@ public interface IGridView {
     interface Listener {
         Grid onMove();
         void addressAdjacent();
+        void openMap();
 
         Grid getGrid();
 

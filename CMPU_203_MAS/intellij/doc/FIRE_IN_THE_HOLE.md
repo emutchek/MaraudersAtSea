@@ -19,8 +19,7 @@
 <ul>
 <li>For the storyscenes, A is always the wrong choice</li>
 <li>Is there a point to the ship class? Either delete or make it container for inventory/map?</li>
-<li>If someone chooses to throw over a resource they have none of, it still works-- instead, should reprompt them.</li>
-<li>Second play-through is not giving... in its flop era fr</li>
+
 <li></li>
 </ul>
 

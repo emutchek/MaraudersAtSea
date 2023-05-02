@@ -8,6 +8,7 @@
     <string name="move_button">Sail</string>
     <string name="obstacle">It looks like an old repair in the bilge sprung a leak, and the water is already ankle deep!</string>
     <string name="playButton">Play</string>
+    <string name="mapButton">Map</string>
     <string name="feedthefish">You and your crew fought hard, but the ship has capsized. \nPress play to restart.</string>
     <string name="characters">"Every pirate needs a good crew, so you'll be traveling with the very best:
         EURYDICE, the brave captainCASSEIOPIA 'CAS', the dashing first mate

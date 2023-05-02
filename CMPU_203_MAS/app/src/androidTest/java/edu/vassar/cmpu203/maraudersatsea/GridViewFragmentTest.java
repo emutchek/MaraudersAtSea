@@ -1,12 +1,9 @@
 package edu.vassar.cmpu203.maraudersatsea;
 import edu.vassar.cmpu203.maraudersatsea.controller.MainActivity;
-import android.os.SystemClock;
+
 import android.view.View;
-import android.widget.TextView;
 
 import androidx.test.espresso.Espresso;
-import androidx.test.espresso.ViewAction;
-import androidx.test.espresso.ViewAssertion;
 import androidx.test.espresso.ViewInteraction;
 import androidx.test.espresso.action.ViewActions;
 import androidx.test.espresso.assertion.ViewAssertions;

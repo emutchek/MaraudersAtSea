@@ -108,11 +108,10 @@ public class Grid implements Serializable {
         };
     }
 
+
     /**
-     * @return graphical representation of the grid filled with symbols
+     * Determines whether the ship is next to something or not
      */
-
-
     public boolean isBlank(ASurrounding s1){
         return (!(s1 instanceof Island) && !(s1 instanceof ResourceArea));
     }
@@ -125,7 +124,7 @@ public class Grid implements Serializable {
     public void addRA(){
         ASurrounding blank = new ASurrounding();
         if (isBlank(this.grid[ship_location + 4][0]) && isBlank(this.grid[ship_location + 4][1])){
-            if (Math.random() < 0.2){
+            if (Math.random() < 0.25){
                 if (Math.random() < 0.5){
                     this.grid[ship_location +4 ][0] = new ResourceArea();
                 }

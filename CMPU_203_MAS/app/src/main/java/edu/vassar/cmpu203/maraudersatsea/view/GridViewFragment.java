@@ -71,6 +71,17 @@ public class GridViewFragment extends Fragment implements IGridView{
                 GridViewFragment.this.listener.addressAdjacent();
             }
         });
+        this.binding.mapButton.setOnClickListener(new View.OnClickListener(){
+            /**
+             * Listener method to be called when the map button is clicked.
+             *
+             * @param view the view that was clicked on
+             */
+            @Override
+            public void onClick(View view) {
+                GridViewFragment.this.listener.openMap();
+            }
+        });
         super.onCreate(savedInstanceState);
     }
 
