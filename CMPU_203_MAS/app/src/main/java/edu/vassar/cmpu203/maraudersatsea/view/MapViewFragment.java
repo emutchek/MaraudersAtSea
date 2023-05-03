@@ -38,8 +38,8 @@ public class MapViewFragment extends Fragment implements IMapView {
     public void displayMap() {
         switch (this.listener.getGrid().islandsMet) {
             case 0: this.binding.mapImage.setImageResource(R.drawable.eastern_islands__mas_);
-            case 1: this.binding.mapImage.setImageResource(R.drawable.eastern_islands__mas_);
-            case 2: this.binding.mapImage.setImageResource(R.drawable.eastern_islands__mas_);
+            case 1: this.binding.mapImage.setImageResource(R.drawable.smallbarrel);
+            case 2: this.binding.mapImage.setImageResource(R.drawable.parchment);
             case 3: this.binding.mapImage.setImageResource(R.drawable.eastern_islands__mas_);
             case 4: this.binding.mapImage.setImageResource(R.drawable.eastern_islands__mas_);
             case 5: this.binding.mapImage.setImageResource(R.drawable.eastern_islands__mas_);
