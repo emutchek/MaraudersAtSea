@@ -36,20 +36,22 @@ public class MapViewFragment extends Fragment implements IMapView {
     }
 
     public void displayMap() {
-        switch (this.listener.getGrid().islandsMet) {
-            case 0: this.binding.mapImage.setImageResource(R.drawable.eastern_islands__mas_);
-            case 1: this.binding.mapImage.setImageResource(R.drawable.smallbarrel);
-            case 2: this.binding.mapImage.setImageResource(R.drawable.parchment);
-            case 3: this.binding.mapImage.setImageResource(R.drawable.eastern_islands__mas_);
-            case 4: this.binding.mapImage.setImageResource(R.drawable.eastern_islands__mas_);
-            case 5: this.binding.mapImage.setImageResource(R.drawable.eastern_islands__mas_);
-            case 6: this.binding.mapImage.setImageResource(R.drawable.eastern_islands__mas_);
-            case 7: this.binding.mapImage.setImageResource(R.drawable.eastern_islands__mas_);
-            case 8: this.binding.mapImage.setImageResource(R.drawable.eastern_islands__mas_);
-            case 9: this.binding.mapImage.setImageResource(R.drawable.eastern_islands__mas_);
-            case 10: this.binding.mapImage.setImageResource(R.drawable.eastern_islands__mas_);
-            case 11: this.binding.mapImage.setImageResource(R.drawable.eastern_islands__mas_);
-            case 12: this.binding.mapImage.setImageResource(R.drawable.eastern_islands__mas_);
+        int x = this.listener.getGrid().islandsMet;
+
+        switch (x) {
+            case 0: this.binding.mapImage.setImageResource(R.drawable.kraken); break;
+            case 1: this.binding.mapImage.setImageResource(R.drawable.smallbarrel); break;
+            case 2: this.binding.mapImage.setImageResource(R.drawable.parchment); break;
+            case 3: this.binding.mapImage.setImageResource(R.drawable.eastern_islands__mas_); break;
+            case 4: this.binding.mapImage.setImageResource(R.drawable.eastern_islands__mas_); break;
+            case 5: this.binding.mapImage.setImageResource(R.drawable.eastern_islands__mas_); break;
+            case 6: this.binding.mapImage.setImageResource(R.drawable.eastern_islands__mas_); break;
+            case 7: this.binding.mapImage.setImageResource(R.drawable.eastern_islands__mas_); break;
+            case 8: this.binding.mapImage.setImageResource(R.drawable.eastern_islands__mas_); break;
+            case 9: this.binding.mapImage.setImageResource(R.drawable.eastern_islands__mas_); break;
+            case 10: this.binding.mapImage.setImageResource(R.drawable.eastern_islands__mas_); break;
+            case 11: this.binding.mapImage.setImageResource(R.drawable.eastern_islands__mas_); break;
+            case 12: this.binding.mapImage.setImageResource(R.drawable.eastern_islands__mas_); break;
         }
     }
 
