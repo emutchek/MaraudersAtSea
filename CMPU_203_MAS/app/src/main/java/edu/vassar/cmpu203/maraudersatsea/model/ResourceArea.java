@@ -15,6 +15,11 @@ public class ResourceArea extends ASurrounding {
         }
     }
 
+    public ResourceArea(String description){
+        symbol = R.drawable.smallbarrel;
+        this.description = description;
+    }
+
     public int getSymbol() {
         return symbol;
     }
@@ -32,7 +37,6 @@ public class ResourceArea extends ASurrounding {
     public String displayCards(){
         return "Oh look! Some " + description + ". Do you want to grab it? (Q)";
     }
-
 
 
 }

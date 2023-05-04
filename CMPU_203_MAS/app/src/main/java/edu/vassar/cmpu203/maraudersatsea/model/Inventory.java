@@ -3,7 +3,7 @@ public class Inventory {
     public int rope;
     public int wood;
     public int medicine;
-    static int max = 60;
+    static int max = 90;
 
     public Inventory(){
         rope = 20;

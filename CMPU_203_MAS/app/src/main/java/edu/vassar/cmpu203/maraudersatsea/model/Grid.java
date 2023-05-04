@@ -41,10 +41,11 @@ public class Grid implements Serializable {
     public Grid(Island[]islands) {
         this.all_islands = islands;
         ASurrounding blank = new ASurrounding();
+        ResourceArea ra = new ResourceArea("medicine");
         grid = new ASurrounding[][]{
                 {blank, blank},
                 {all_islands[0], blank},
-                {blank, blank},
+                {ra, blank},
                 {blank, blank},
                 {blank, blank},
                 {blank, blank},

@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Marauders_at_Sea</string>
-    <string name="inventory">    INVENTORY: \nRope: 20 spools \nWood: 20 logs \nMedicine: 20 vials</string>
+    <string name="inventory">INVENTORY: \nRope: 20 spools \nWood: 20 logs \nMedicine: 20 vials</string>
     <string name="health">Health: 100</string>
     <string name="welcome">Marauders at Sea</string>
     <string name="RAfound">You found something!</string>
@@ -21,6 +21,7 @@
     <string name="story_optionB_button">Use a hammer and nails to put new planks over the leak and seal it up [requires 10 logs of wood]</string>
     <string name="story_default">One afternoon, on a tiny island filled with the boldest, drunkest and strongest pirates in all the land, a young woman. It was unsigned, but she recognized the handwriting of her old mentor. There was no telling what shifty client he was working with this time.She turns to you. (Island)
     </string>
-
+    <string name="RAFull">"Oh no! Your inventory is full. Do you want to throw something overboard to make room?"</string>
+    <string name="RAPickedUp">"You successfully picked it up!"</string>
 
 </resources>

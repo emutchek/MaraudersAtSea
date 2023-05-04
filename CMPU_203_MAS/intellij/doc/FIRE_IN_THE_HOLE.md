@@ -19,6 +19,7 @@
 <ul>
 <li>For the storyscenes, A is always the wrong choice</li>
 <li>Is there a point to the ship class? Either delete or make it container for inventory/map?</li>
+<li>go see rui about the exit button not appearing on the espresso test for resource area</li>
 
 <li></li>
 </ul>
