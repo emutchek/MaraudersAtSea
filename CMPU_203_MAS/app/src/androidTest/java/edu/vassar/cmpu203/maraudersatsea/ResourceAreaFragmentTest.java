@@ -1,10 +1,7 @@
 package edu.vassar.cmpu203.maraudersatsea;
-import android.os.SystemClock;
 import android.view.View;
 
 import edu.vassar.cmpu203.maraudersatsea.controller.MainActivity;
-import edu.vassar.cmpu203.maraudersatsea.model.Grid;
-import edu.vassar.cmpu203.maraudersatsea.model.Island;
 import edu.vassar.cmpu203.maraudersatsea.model.Library;
 
 import androidx.test.espresso.Espresso;
