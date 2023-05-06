@@ -128,99 +128,294 @@ Controller -> "\ncontains 'g'" Grid : \t\t\t\t
 
 ## Sequence Diagrams:
 
-### Movement
+### General helper frame
+```PlantUML
+@startuml
+hide footbox
+mainframe sd OnSceneDone
+
+participant ": Old GridViewFragment" as ogvf
+participant ": MainActivity" as ma
+participant ": GridViewFragment" as gvf
+participant ": HomeViewFragment" as hvf
+
+ma -> ogvf : makeArgsBundle(ship location)
+ma -->> gvf **: create(this)
+gvf -> gvf : setArguments(bundle)
+ma -> gvf : displayFragment(GridViewFragment, true, name)
+ma -> ma : updateInfoBar()
+ma -> ma : gameOver()
+alt gameOver
+ma -->> hvf **: create(this)
+ma -> hvf : displayFragment(HomeViewFragment, false, name)
+ma -> ma : removeInfoBar()
+end
+
+@enduml
+```
+
+
+### Helper frame 1 for move
+```PlantUML
+@startuml
+hide footbox
+mainframe sd MakeMove
+participant ": MainActivity" as ma
+participant ": Grid" as grid
+
+ma -> ma : adjustStories()
+ma -> grid : executeMove()
+ma <<-- grid **: Grid
+@enduml
+```
+
+### Helper frame 2 for move
+```PlantUML
+@startuml
+hide footbox
+mainframe sd AddressAdjacent
+participant ": MainActivity" as ma
+
+alt instanceOfIsland
+ref over ma
+EncounterIsland
+end ref
+else instanceOfRA
+ref over ma
+EncounterRA
+end ref
+else instanceOfObstacle
+ref over ma
+GenerateObstacle
+end ref
+end
+
+@enduml
+```
+
+### Move
 ```PlantUML
 @startuml
 hide footbox
 actor User as user
-participant ": UserInterface" as UI
-participant ": Controller" as controller
+participant ": GridViewFragment" as gvf
+participant ": MainActivity" as ma
 participant ": Grid" as grid
-user -->> UI **: enters move
-UI ->> controller **: isValid()
-UI ->> controller : respondInput()
-UI ->> controller : makeMove()
-controller ->> grid **: move()
-grid ->> grid : addResourceArea()
-ref over controller
-Encounter Island
-Encounter Resource Area
-endref
-ref over UI 
-Encounter Obstacle
-endref
-UI ->> controller : gameOver()
+
+user -> gvf : presses sail button
+gvf -> ma : onMove
+ref over ma
+MakeMove
+end ref
+grid <<-- ma **: create()
+gvf -> gvf : updateGridView(Grid)
+gvf -> ma : addressAdjacent()
+ref over ma
+AddressAdjacent
+end ref
+
+@enduml
+```
+
+### Open Map
+```PlantUML
+@startuml
+hide footbox
+actor User as user
+participant ": GridViewFragment" as gvf
+participant ": MainActivity" as ma
+participant ": MapViewFragment" as mvf
+
+user -> gvf : presses map button
+gvf -> ma : openMap()
+ma -->> mvf** : create (Map, this)
+ma -> ma : displayFragment (MapViewFragment, true, name)
+mvf -> ma : getGrid()
+mvf <-- ma : location
+mvf -> mvf : update binding
+user -> mvf : presses exit button
+mvf -> ma : onSceneDone()
+ref over ma
+OnSceneDone
+end ref
+
 @enduml
 ```
 
 ### Encounter Island
 ```PlantUML
 @startuml
-mainframe sd Encounter Island
+mainframe sd EncounterIsland
 hide footbox
-actor User as user
-participant ": UserInterface" as UI
-participant ": Controller" as controller
+
+participant ": MainActivity" as ma
 participant ": Island" as island
+participant ": StoryViewFragment" as svf
 participant ": Map" as map
-participant ": StoryScene" as SS
-controller ->> island : displayCards()
-island ->> SS : toString()
-SS ->> UI : print story()
-UI ->> user : print question
-user ->> UI : enters response
-UI ->> controller : addressIsland()
-controller ->> island : displayEnding()
-user ->> UI : choose to add island to map
-UI ->> controller : addtoMap()
-controller ->> map : addIsland()
+
+ma -->> island ** : create ()
+alt notAtEnd
+ma -> map : addIsland(islandsMet)
+end
+ma -->> svf ** : create (StoryScene, this)
+ma -> svf : displayFragment(StoryViewFragment, this, name)
+ref over svf
+EncounterStory
+end ref
 
 @enduml
 ```
+
+### Helper frame 1 for Encounter Story
+```PlantUML
+@startuml
+mainframe sd QuestionButtons
+hide footbox
+participant ": StoryViewFragment" as svf
+participant ": StoryScene" as ss
+ss -> ss : getQuestion()
+alt noQuestion
+svf -> svf : update binding
+end
+@enduml
+```
+
+### Helper frame 2 for Encounter Story
+```PlantUML
+@startuml
+mainframe sd ExecuteStoryChoice
+hide footbox
+actor User as user
+participant ": StoryViewFragment" as svf
+participant ": StoryScene" as ss
+participant ": MainActivity" as ma
+alt A
+user -> svf : presses A
+svf -> ss : getEnding()
+svf <-- ss : ending
+svf -> svf : update binding
+else B
+user -> svf : presses B
+svf -> ss : getEnding()
+svf <-- ss : ending
+svf -> svf : update binding
+end
+svf -> ma : addressIsland()
+ma -> ma : adjusts plot variables
+@enduml
+```
+
+### Encounter Story
+```PlantUML
+@startuml
+mainframe sd EncounterStory
+hide footbox
+actor User as user
+participant ": StoryViewFragment" as svf
+participant ": StoryScene" as ss
+participant ": MainActivity" as ma
+
+
+svf -> svf : update binding
+user -> svf : press next button
+alt moreScenes
+svf -> ss : getText2()
+svf <-- ss : text2
+svf -> svf : update binding
+ref over svf
+QuestionButtons
+end ref
+else !moreScenes
+ref over svf
+QuestionButtons
+end ref
+svf -> ss : getQuestion()
+svf <-- ss : question
+svf -> svf : update binding
+end
+ref over svf
+ExecuteStoryChoice
+end ref
+user -> svf : presses exit button
+svf -> ma : onSceneDone()
+ref over ma
+OnSceneDone
+end ref
+
+
+@endUML
+```
+
 ### Encounter Resource Area
 ```PlantUML
 @startuml
-mainframe sd Encounter Resource Area
+mainframe sd EncounterRA
 hide footbox
-actor User as user
-participant ": UserInterface" as UI
-participant ": Controller" as controller
+participant ": MainActivity" as ma
+participant ": ResourceArea" as ra
 participant ": Inventory" as inv
-UI ->> controller : addressResource()
-alt isFull
-controller ->> UI : ask user to remove
-UI ->> controller : callRemoveInventory()
-controller ->> inv : removeInventory()
-else !isFull
-controller ->> inv : addtoInventory()
+participant ": ResourceAreaFragment" as raf
 
+actor User as user
+
+
+ma -->> ra **: create()
+ma -->> raf **: create(ResourceArea, this)
+ma -> raf : displayFragment(ResourceAreaFragment, true, name)
+user -> raf : press pickup button
+alt inventoryFull
+raf -> raf : update binding
+raf -> ma : getInv()
+raf <-- ma : Inventory
+raf -> raf : showOptions(Inventory)
+user -> raf : presses item button
+raf -> inv : removeInventory (item)
+raf -> inv : addToInventory (ResourceArea)
+raf -> ma : updateInfoBar()
 end
-
+user -> raf : presses exit button
+raf -> ma : onSceneDone()
+ref over ma
+OnSceneDone
+end ref
 @enduml
 ```
 
-### Encounter Obstacle
+### Generate Obstacle
 ```PlantUML
 @startuml
-mainframe sd Encounter Obstacle
 hide footbox
+
+participant ": Library" as lib
+participant ": MainActivity" as ma
+participant ": Obstacle" as o
+participant ": ObstacleViewFragment" as ovf
 actor User as user
-participant ": UserInterface" as UI
-participant ": Controller" as controller
-participant ": Inventory" as inv
-participant ": Ship" as ship
-participant ": Obstacle" as obs
-UI ->> controller : generateObstacle()
-user ->> UI : respond to Obstacle
-UI ->> controller : addressObstacle()
-controller ->> controller : performSolutionA()
-controller ->> controller : performSolutionB()
-controller ->> inv : removeInventory()
-controller ->> ship : updateHealth()
-controller ->> obs : returnObsEnding()
+
+alt 1/4 chance
+ma -> lib : get obstacle
+ma -->> ovf **: create(Obstacle, this)
+ma -> ovf : displayFragment(ObstacleAreaFragment, true, name)
+
+alt A
+user -> ovf : press option A
+ovf -> o : returnObsEnding('A')
+ovf <-- o : ending A
+ovf -> ovf : update binding
+ovf -> ma : performSolutionA()
+end
+alt B
+user -> ovf : press option B
+ovf -> o : returnObsEnding('B')
+ovf <-- o : ending B
+ovf -> ovf : update binding
+ovf -> ma : performSolutionB()
+end
+user -> ovf : presses exit button
+ovf -> ma : onSceneDone()
+ref over ma
+OnSceneDone
+end ref
+end
 @enduml
 ```
-
-
-
-
