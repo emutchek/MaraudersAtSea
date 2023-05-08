@@ -58,7 +58,7 @@ public class ObstacleViewFragment extends Fragment implements IObstacleView {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        this.binding.sceneText.setText(obs.getText());
+        this.binding.obstacleText.setText(obs.getText());
         flipButton(this.binding.exitObs, false);
 
         this.binding.storyOptionA.setText(obs.getOptions()[0]);
@@ -72,7 +72,7 @@ public class ObstacleViewFragment extends Fragment implements IObstacleView {
              */
             @Override
             public void onClick(View view) {
-                ObstacleViewFragment.this.binding.sceneText.setText(obs.returnObsEnding('A'));
+                ObstacleViewFragment.this.binding.obstacleText.setText(obs.returnObsEnding('A'));
                 optionButtons(false);
                 flipButton(ObstacleViewFragment.this.binding.exitObs, true);
                 ObstacleViewFragment.this.listener.performSolutionA(obs.code);
@@ -86,7 +86,7 @@ public class ObstacleViewFragment extends Fragment implements IObstacleView {
              */
             @Override
             public void onClick(View view) {
-                ObstacleViewFragment.this.binding.sceneText.setText(obs.returnObsEnding('B'));
+                ObstacleViewFragment.this.binding.obstacleText.setText(obs.returnObsEnding('B'));
                 optionButtons(false);
                 flipButton(ObstacleViewFragment.this.binding.exitObs, true);
                 ObstacleViewFragment.this.listener.performSolutionB(obs.code);

@@ -26,12 +26,13 @@ public class GridViewFragmentTest {
         Matcher<View> matcher = ViewMatchers.withId(R.id.s1L);
 
         ViewInteraction gridVi = Espresso.onView(matcher);
+        Espresso.onView(ViewMatchers.withId(R.id.playButton)).perform(ViewActions.click());
+
 
         gridVi.check(ViewAssertions
                 .matches(ViewMatchers
                         .withTagValue(Matchers.equalTo(R.drawable.island))));
         Espresso.onView(ViewMatchers.withId(R.id.moveButton)).perform(ViewActions.click());
-        //gridVi.perform(ViewActions.scrollTo());
         Espresso.onView(ViewMatchers.withId(R.id.nextButton)).perform(ViewActions.click());
         Espresso.onView(ViewMatchers.withId(R.id.nextButton)).perform(ViewActions.click());
         Espresso.onView(ViewMatchers.withId(R.id.storyOptionA)).perform(ViewActions.click());

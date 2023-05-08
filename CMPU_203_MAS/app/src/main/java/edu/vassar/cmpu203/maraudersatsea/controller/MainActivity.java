@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import edu.vassar.cmpu203.maraudersatsea.R;
 import edu.vassar.cmpu203.maraudersatsea.model.ASurrounding;
 import edu.vassar.cmpu203.maraudersatsea.model.Grid;
 import edu.vassar.cmpu203.maraudersatsea.model.Inventory;
@@ -14,7 +13,6 @@ import edu.vassar.cmpu203.maraudersatsea.model.Library;
 import edu.vassar.cmpu203.maraudersatsea.model.Map;
 import edu.vassar.cmpu203.maraudersatsea.model.Obstacle;
 import edu.vassar.cmpu203.maraudersatsea.model.ResourceArea;
-import edu.vassar.cmpu203.maraudersatsea.model.Ship;
 import edu.vassar.cmpu203.maraudersatsea.view.GridViewFragment;
 import edu.vassar.cmpu203.maraudersatsea.view.HomeViewFragment;
 import edu.vassar.cmpu203.maraudersatsea.view.IGridView;
@@ -154,6 +152,8 @@ public class MainActivity extends AppCompatActivity implements IGridView.Listene
         }
         else{
             this.generateObstacle();
+            //hard codes an obstacle into
+            if(curGrid.getShipLocation() == 2) {guaranteeObstacle();}
             if (tempObs != null){
                 ObstacleViewFragment obsFragment = new ObstacleViewFragment(tempObs, this);
                 this.mainview.displayFragment(obsFragment, false, "obstacle");
@@ -195,6 +195,10 @@ public class MainActivity extends AppCompatActivity implements IGridView.Listene
         else{
             tempObs = null;
         }
+    }
+
+    public void guaranteeObstacle() {
+        tempObs = lib.all_obstacles.get(0);
     }
     /**
      * Carries out effects of user's solution to an obstacle

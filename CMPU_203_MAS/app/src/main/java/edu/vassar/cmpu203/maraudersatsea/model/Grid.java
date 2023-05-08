@@ -45,8 +45,8 @@ public class Grid implements Serializable {
         grid = new ASurrounding[][]{
                 {blank, blank},
                 {all_islands[0], blank},
-                {ra, blank},
                 {blank, blank},
+                {blank, ra},
                 {blank, blank},
                 {blank, blank},
                 {blank, blank},

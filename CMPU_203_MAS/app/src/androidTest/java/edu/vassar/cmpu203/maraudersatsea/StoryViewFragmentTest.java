@@ -27,6 +27,7 @@ public class StoryViewFragmentTest {
         Matcher<View> matcher = ViewMatchers.withId(R.id.sceneText);
 
         ViewInteraction storyVi = Espresso.onView(matcher);
+        Espresso.onView(ViewMatchers.withId(R.id.playButton)).perform(ViewActions.click());
 
         Espresso.onView(ViewMatchers.withId(R.id.moveButton)).perform(ViewActions.click());
         //check first text
@@ -44,8 +45,8 @@ public class StoryViewFragmentTest {
         ViewInteraction storyVi2 = Espresso.onView(matcher2);
         Matcher<View> matcher3 = ViewMatchers.withId(R.id.storyOptionB);
         ViewInteraction storyVi3 = Espresso.onView(matcher3);
-        storyVi2.check(ViewAssertions.matches(ViewMatchers.withText(lib.all_islands[0].getStoryScene().options[0].toUpperCase())));
-        storyVi3.check(ViewAssertions.matches(ViewMatchers.withText(lib.all_islands[0].getStoryScene().options[1].toUpperCase())));
+        storyVi2.check(ViewAssertions.matches(ViewMatchers.withText(lib.all_islands[0].getStoryScene().options[0])));
+        storyVi3.check(ViewAssertions.matches(ViewMatchers.withText(lib.all_islands[0].getStoryScene().options[1])));
 
         //check response and ending
         Espresso.onView(ViewMatchers.withId(R.id.storyOptionA)).perform(ViewActions.click());

@@ -1,6 +1,5 @@
 package edu.vassar.cmpu203.maraudersatsea.view;
 
-import android.os.Bundle;
 import android.view.View;
 
 import androidx.fragment.app.Fragment;
@@ -9,10 +8,6 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import edu.vassar.cmpu203.maraudersatsea.databinding.ActivityMainBinding;
-import edu.vassar.cmpu203.maraudersatsea.databinding.FragmentGridViewBinding;
-import edu.vassar.cmpu203.maraudersatsea.model.Grid;
-import edu.vassar.cmpu203.maraudersatsea.model.Inventory;
-import edu.vassar.cmpu203.maraudersatsea.model.Ship;
 
 /**
  * An implementation of the application's screen template.
