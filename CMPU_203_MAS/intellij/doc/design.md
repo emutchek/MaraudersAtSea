@@ -1,4 +1,6 @@
 
+## Model/Controller Design Class Diagram:
+
 ```PlantUML
 @startuml
 
@@ -6,25 +8,26 @@ class Grid {
     ship_location : int
     islands_met : int
     --
-    +toString() : String
-    +toStringHelper(ASurrounding x) : String
-    +addResourceArea(): void
-    +move() : String
+    +executeMove() : ASurrounding
+    +isBlank(a1 : ASurrounding) : Boolean
+    +addRA() : void
+    +getShipLocation() : int
 }
 Grid ->  "\nlist of surroundings 'grid'\n{ordered}" ASurrounding : \t\t\t\t
 Grid -> "\nlist of islands 'all_islands'\n{ordered}" Island : \t\t\t\t
 
 abstract class ASurrounding {
     description: String
-    symbol : String
+    symbol : int
     --
-    +getSymbol() : String
+    +getSymbol() : int
 }
 ASurrounding <|-- Island
 ASurrounding <|-- ResourceArea
 
 class ResourceArea {
-    +getSymbol() : String
+    +getSymbol() : int
+    +getResourceSymbol() : int
     +displayCards(): String
 }
 
@@ -33,47 +36,45 @@ class Island {
     found: boolean
     name : String
     --
-    +setStory(StoryScene s) : void
+    +setStory(s : StoryScene ) : void
     +toString() : String
-    +displayCards() : String
-    +displayEnding(char c) : String
-    +getSymbol() : String
+    +getSymbol() : int
+    +getStoryScene() : StoryScene
 }
 
 Island -> "Contains 'story'" StoryScene : \t\t\t\t
 
 class Map {
-    +toString() : String
-    +addIsland() : void 
+    +addIsland(int x) : void
 }
 Map ->  "\nlist of islands 'all_islands'" Island : \t\t\t\t
 
 class StoryScene {
-    text : String
+    text1 : String
+    text2 : String
     question : String
     options : String[]
     endings : String[]
     --
-    +toString() : String
-    +returnEnding(char x) : String
-}
-
-class Ship {
-    health : int
-    --
-    -update_health(amount : int) : void
-    +toString() : String 
+    +getText1() : String
+    +getText2() : String
+    +getQuestion() : String
+    +returnEnding(x : char) : String
 }
 
 class Inventory {
     rope : int
-    wood : int 
+    wood : int
     medicine : int
+    {static}max : int
     --
-    +addToInventory(ResourceArea r) : void
-    +removeInventory(char c) : void
+    +addToInventory(r : ResourceArea) : void
+    +removeInventory(c : char) : void
     +isFull(): Boolean
     +toString() : String
+    +yesRope() : Boolean
+    +yesWood() : Boolean
+    +yesMedicine() : Boolean
 }
 
 class Obstacle {
@@ -83,7 +84,9 @@ class Obstacle {
     code : int
     --
     +toString(): String
-    +returnObsEnding(char x) : String
+    +returnObsEnding(x : char) : String
+    +getText() : String
+    +getOptions() : String[]
 }
 
 class Library {
@@ -96,32 +99,155 @@ Library -> "\nlist 'all_stories'" StoryScene : \t\t\t\t
 Library -> "\nlist 'all_obstacles'" Obstacle : \t\t\t\t
 Library -> "\nlist 'all_islands'" Island : \t\t\t\t
 
-class UserInterface {
-    +run_game()
-}
 
-class Controller {
+class MainActivity {
+    doubt : int
+    health : int
     --
-    +isValid() : boolean
-    +respondInput() : String
-    +makeMove(): String
-    +addressResource(char choice): boolean
-    +callRemoveInventory(char c): void
-    +addressIsland(char choice): String
-    +addToMap(): void
-    +generateObstacle: String
-    +performSolutionA(int x): void
-    +performSolutionB(int x): void
-    +addressObstacle(char c): String
+    #onCreate(savedInstanceState : Bundle) : void
+    #onSaveInstanceState(outstate : Bundle) : void
+    +updateHealth(amt : int) : void
+    +shipString() : String
+    +onMove() : Grid
+    +getGrid() : Grid
+    +getInv() : Inventory
+    +adjustStories() : void
+    +addressAdjacent() : void
+    +addressIsland() : void
+    +openMap() : void
+    +generateObstacle() : void
+    +guaranteeObstacle() : void
+    +performSolutionA(x : int) : void
+    +performSolutionB(x : int) : void\
+    +updateInfoBar() : void
+    +onSceneDone() : void
+    +gameOver() : String
+    +restart() : void
 }
-UserInterface -> Controller
-Controller -> UserInterface
-Controller -> "\ncontains 'lib''" Library : \t\t\t\t
-Controller -> "\ncontains 's'" Ship : \t\t\t\t
-Controller -> "\ncontains 'inv'" Inventory : \t\t\t\t
-Controller -> "\ncontains 'm'" Map : \t\t\t\t
-Controller -> "\ncontains 'g'" Grid : \t\t\t\t
 
+MainActivity -> "\ncontains 'lib''" Library : \t\t\t\t
+MainActivity -> "\ncontains 'inv'" Inventory : \t\t\t\t
+MainActivity -> "\ncontains 'm'" Map : \t\t\t\t
+MainActivity -> "\ncontains 'g'" Grid : \t\t\t\t
+MainActivity -> "\ncontains 'tempObs'" Obstacle : \t\t\t\t
+MainActivity -> "\ncontains 'adj'" ASurrounding : \t\t\t\t
+
+
+@enduml
+```
+
+## View Design Class Diagram:
+
+```PlantUML
+@startuml
+
+class GridViewFragment {
+    FragmentGridViewBinding : binding
+    listener : Listener
+    {static}LOCATION : int
+    {static}LOCATION_STR : String
+    --
+    +onSaveInstanceState(outstate : Bundle) : void
+    +onViewStateRestored(saveInstanceState : Bundle) : void
+    +makeArgsBundle(location : int) : {static}Bundle
+    +onCreateView(inflater : LayoutInflater, container : ViewGroup, savedInstanceState : Bundle) : View
+    +onViewCreated(view : View, savedInstanceState : Bundle) : void
+    +updateGridView(grid : Grid) : void
+
+}
+class HomeViewFragment {
+    +binding : FragmentHomeViewBinding
+    listener : Listener
+    --
+    +onCreateView(inflater : LayoutInflater, container : ViewGroup, savedInstanceState : Bundle) : View
+    +onViewCreated(view : View, savedInstanceState : Bundle) : void
+    +endGame(message : String) : void
+}
+class MainView {
+    fmanager : FragmentManager
+    binding : ActivityMainBinding
+    --
+    +getRootView() : View
+    +displayFragment(fragment : Fragment, reversible : Boolean, name : String) : void
+    +refreshStats(inv : String, ship : String) : void
+    +removeInfoBar() : void
+}
+class MapViewFragment {
+    +binding : FragmentMapViewBinding
+    listener : Listener
+    map : Map
+    --
+    +onCreateView(inflater : LayoutInflater, container : ViewGroup, savedInstanceState : Bundle) : View
+    +onViewCreated(view : View, savedInstanceState : Bundle) : void
+    +displayMap() : void
+}
+class ObstacleViewFragment {
+    +binding : FragmentObstacleViewBinding
+    listener : Listener
+    obs : Obstacle
+    --
+    +onCreateView(inflater : LayoutInflater, container : ViewGroup, savedInstanceState : Bundle) : View
+    +onViewCreated(view : View, savedInstanceState : Bundle) : void
+    +optionButtons(flip : Boolean) : void
+    +flipButton(b : ImageButton, flip : Boolean) : void
+}
+class ResourceAreaFragment {
+    +binding : FragmentRaViewBinding
+    listener : Listener
+    RA : ResourceArea
+    --
+    +flipButton(b : ImageButton, flip : Boolean) : void
+    +throwResource(c : char) : void
+    +showOptions(inv : Inventory) : void
+    +onCreateView(inflater : LayoutInflater, container : ViewGroup, savedInstanceState : Bundle) : View
+    +onViewCreated(view : View, savedInstanceState : Bundle) : void
+}
+class StoryViewFragment {
+    +binding : FragmentStoryViewBinding
+    listener : Listener
+    scene : StoryScene
+    curScene : int
+    --
+    +optionButtons(flip : Boolean) : void
+    +flipButton(b : ImageButton, flip : Boolean) : void
+    +onCreateView(inflater : LayoutInflater, container : ViewGroup, savedInstanceState : Bundle) : View
+    +onViewCreated(view : View, savedInstanceState : Bundle) : void
+}
+class MaraudersFragFactory {
+    {static}VIEW_PACKAGE : String
+    controller : MainActivity
+    --
+    instantiate(classLoader : ClassLoader, className : String) : Fragment
+}
+
+interface IGridView {
+    Listener : interface
+}
+interface IHomeView {
+    Listener : interface
+}
+interface IMainView {
+    Listener : interface
+}
+interface IMapView {
+    Listener : interface
+}
+interface IObstacleView {
+    Listener : interface
+}
+interface IResourceAreaView {
+    Listener : interface
+}
+interface IStoryView {
+    Listener : interface
+}
+IGridView <|.. GridViewFragment
+IHomeView <|.. HomeViewFragment
+IMainView <|.. MainView
+IMapView <|.. MapViewFragment
+IObstacleView <|.. ObstacleViewFragment
+IResourceAreaView <|.. ResourceAreaFragment
+IStoryView <|.. StoryViewFragment
 
 @enduml
 ```

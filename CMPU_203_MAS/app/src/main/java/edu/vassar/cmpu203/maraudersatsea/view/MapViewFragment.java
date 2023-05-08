@@ -39,8 +39,8 @@ public class MapViewFragment extends Fragment implements IMapView {
         int x = this.listener.getGrid().islandsMet;
         switch (x) {
             case 0: {
-                this.binding.mapImage.setImageResource(R.drawable.kraken);
-                this.binding.mapImage.setTag(R.drawable.kraken);
+                this.binding.mapImage.setImageResource(R.drawable.island0);
+                this.binding.mapImage.setTag(R.drawable.island0);
                 break;
             }
             case 1: {
