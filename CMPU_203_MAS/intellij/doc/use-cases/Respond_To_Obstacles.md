@@ -27,7 +27,6 @@ of getting an obstacle (assuming they aren't moving into a surrounding).</li>
 <li>The obstacle card has closed and been replaced with the regular grid interface.</li>
 <li>Any resources that were used have been permanently removed from the inventory.</li>
 <li>The function to launch obstacles at random times has been reset.</li>
-<li>The obstacle card has been marked as used and removed from the deck.</li>
 <li>If the user was unable to overcome the obstacle, the game ends.</li>
 </ul>
 
@@ -45,10 +44,9 @@ start
 |User|
 :select from choices;
 |System|
+:display options;
 if (requires resource) then (yes)
     :execute Manage Inventory;
-else if (involves conversation) then (yes)
-    :execute Interact with NPC;
 endif
 if (health empty) then (yes)
     |User|

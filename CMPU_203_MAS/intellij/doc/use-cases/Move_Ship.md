@@ -39,12 +39,9 @@ title Move Ship
 
 |User|
 start
-:Give movement command;
+:Press move button;
 
 |System|
-if (valid move?) then (no)
-end
-else (yes)
 :move forward;
 if (at a landmark?) then (yes)
 :Interact_Surroundings;

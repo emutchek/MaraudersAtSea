@@ -39,9 +39,10 @@ public class MainActivity extends AppCompatActivity implements IGridView.Listene
     private Library lib;
     public Map map;
     public Inventory inv;
-    public Ship ship;
     Obstacle tempObs = new Obstacle();
     public int doubt = 0;
+
+    public int health = 100;
 
     public ASurrounding adj;
     public GridViewFragment curFrag;
@@ -61,14 +62,13 @@ public class MainActivity extends AppCompatActivity implements IGridView.Listene
         this.map = new Map(this.lib.all_islands);
         lib.setIslands();
         this.inv = new Inventory();
-        this.ship = new Ship();
 
         this.mainview.displayFragment(new HomeViewFragment(this),true,"homeview");
 
         //not rebuilding - display from start
         if(savedInstanceState == null){
             this.curGrid = new Grid(lib.all_islands);
-            this.mainview.refreshStats(inv.toString(), ship.toString());
+            this.mainview.refreshStats(inv.toString(), shipString());
         }
         //retrieve old grid
         else{
@@ -80,6 +80,23 @@ public class MainActivity extends AppCompatActivity implements IGridView.Listene
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putSerializable(CUR_GAME, this.curGrid);
+    }
+
+
+    public void updateHealth(int amt){
+        int temphealth = this.health+amt;
+        if(temphealth <= 100 && temphealth >= 0) {
+            health = temphealth;
+        } else if (temphealth < 0) {
+            health = 0;
+        }
+        else if (temphealth > 100){
+            health = 100;
+        }
+    }
+
+    public String shipString(){
+        return "Ship health: " + health;
     }
 
     /**
@@ -198,7 +215,7 @@ public class MainActivity extends AppCompatActivity implements IGridView.Listene
                 else {performSolutionB(x);}
                 break;
             default:
-                ship.updateHealth(-25);
+                updateHealth(-25);
                 break;
         }
         updateInfoBar();
@@ -218,7 +235,7 @@ public class MainActivity extends AppCompatActivity implements IGridView.Listene
                 if(inv.medicine == 0) {performSolutionA(x);}
                 else {
                     inv.removeInventory('M');
-                    ship.updateHealth(25);
+                    updateHealth(25);
                 }
                 break;
 
@@ -246,7 +263,7 @@ public class MainActivity extends AppCompatActivity implements IGridView.Listene
                 break;
             //cases where B was wrong - 4 (woman overboard), 5 (sound of sirens)
             default:
-                ship.updateHealth(-25);
+                updateHealth(-25);
                 break;
         }
         updateInfoBar();
@@ -255,7 +272,7 @@ public class MainActivity extends AppCompatActivity implements IGridView.Listene
     /**
      * Updates the inventory and health at the bottom of screen with more up-to-date numbers
      */
-    public void updateInfoBar(){this.mainview.refreshStats(inv.toString(), ship.toString());}
+    public void updateInfoBar(){this.mainview.refreshStats(inv.toString(), shipString());}
 
     /**
      * Transitions out of a pop-up back into the regular grid view
@@ -284,7 +301,7 @@ public class MainActivity extends AppCompatActivity implements IGridView.Listene
      * @return a string indicating whether to keep going, show the lose message, or show home screen
      */
     public String gameOver(){
-        if (ship.health <= 0) {
+        if (health <= 0) {
             return "died";
         }
         else if (curGrid.islandsMet >= 12) {
@@ -300,9 +317,8 @@ public class MainActivity extends AppCompatActivity implements IGridView.Listene
         this.lib = new Library();
         lib.setIslands();
         this.inv = new Inventory();
-        this.ship = new Ship();
         this.curGrid = new Grid(lib.all_islands);
-        this.mainview.refreshStats(inv.toString(), ship.toString());
+        this.mainview.refreshStats(inv.toString(), shipString());
         doubt = 0;
     }
 

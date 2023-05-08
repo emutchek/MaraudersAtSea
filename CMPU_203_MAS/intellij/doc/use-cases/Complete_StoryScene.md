@@ -42,7 +42,7 @@ start
 while (more cards?) is (yes)
     :display story card;
     |User|
-    :swipe card;
+    :press next button;
 
 |System|
 if (action required) then (yes)

@@ -51,7 +51,6 @@ endwhile
 while (add an item?) is (yes)
     |System|
     :add item;
-    :erase item from world map;
 endwhile
 |User|
 :close inventory;
