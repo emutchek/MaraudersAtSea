@@ -49,6 +49,7 @@ public class ResourceAreaFragmentTest {
         Matcher<View> matcher2 = ViewMatchers.withId(R.id.inventory);
         ViewInteraction RAView2 = Espresso.onView(matcher2);
         RAView2.check(ViewAssertions.matches(ViewMatchers.withText("INVENTORY: \nRope: 20 spools\nWood: 20 logs\nMedicine: 30 vials")));
+        Espresso.onView(ViewMatchers.withId(R.id.exitRA)).perform(ViewActions.click());
 
     }
 

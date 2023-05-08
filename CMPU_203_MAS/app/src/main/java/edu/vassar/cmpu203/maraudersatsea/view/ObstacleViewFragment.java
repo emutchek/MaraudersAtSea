@@ -59,7 +59,7 @@ public class ObstacleViewFragment extends Fragment implements IObstacleView {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         this.binding.sceneText.setText(obs.getText());
-        flipButton(this.binding.exitButton, false);
+        flipButton(this.binding.exitObs, false);
 
         this.binding.storyOptionA.setText(obs.getOptions()[0]);
         this.binding.storyOptionB.setText(obs.getOptions()[1]);
@@ -74,7 +74,7 @@ public class ObstacleViewFragment extends Fragment implements IObstacleView {
             public void onClick(View view) {
                 ObstacleViewFragment.this.binding.sceneText.setText(obs.returnObsEnding('A'));
                 optionButtons(false);
-                flipButton(ObstacleViewFragment.this.binding.exitButton, true);
+                flipButton(ObstacleViewFragment.this.binding.exitObs, true);
                 ObstacleViewFragment.this.listener.performSolutionA(obs.code);
             }
         });
@@ -88,11 +88,11 @@ public class ObstacleViewFragment extends Fragment implements IObstacleView {
             public void onClick(View view) {
                 ObstacleViewFragment.this.binding.sceneText.setText(obs.returnObsEnding('B'));
                 optionButtons(false);
-                flipButton(ObstacleViewFragment.this.binding.exitButton, true);
+                flipButton(ObstacleViewFragment.this.binding.exitObs, true);
                 ObstacleViewFragment.this.listener.performSolutionB(obs.code);
             }
         });
-        this.binding.exitButton.setOnClickListener(new View.OnClickListener() {
+        this.binding.exitObs.setOnClickListener(new View.OnClickListener() {
             /**
              * Listener method to be called when the exit button is clicked.
              *

@@ -10,7 +10,7 @@
 
 
     <ImageButton
-        android:id="@+id/exitButton"
+        android:id="@+id/exitObs"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="336dp"

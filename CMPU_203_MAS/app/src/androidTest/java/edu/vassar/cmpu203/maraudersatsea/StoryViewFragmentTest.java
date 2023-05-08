@@ -50,7 +50,7 @@ public class StoryViewFragmentTest {
         //check response and ending
         Espresso.onView(ViewMatchers.withId(R.id.storyOptionA)).perform(ViewActions.click());
         storyVi.check(ViewAssertions.matches(ViewMatchers.withText(lib.all_islands[0].getStoryScene().endings[0])));
-        Espresso.onView(ViewMatchers.withId(R.id.exitButton)).perform(ViewActions.click());
+        //Espresso.onView(ViewMatchers.withId(R.id.exitButton)).perform(ViewActions.click());
     }
 
 }

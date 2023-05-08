@@ -82,6 +82,7 @@ public class ResourceAreaFragment extends Fragment implements IResourceArea {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         this.binding.RAfound.setText(RA.displayCards());
         int idDrawable = RA.getResourceSymbol();
+        this.binding.exitRA.setVisibility(View.VISIBLE);
         this.binding.imageView.setImageResource(idDrawable);
         //sets all the throwout buttons to not appear at first
         flipButton(ResourceAreaFragment.this.binding.rope, false);
