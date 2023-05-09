@@ -39,29 +39,70 @@ public class MapViewFragment extends Fragment implements IMapView {
         int x = this.listener.getGrid().islandsMet;
         switch (x) {
             case 0: {
+                this.binding.mapImage.setImageResource(R.drawable.pre_islandmap);
+                this.binding.mapImage.setTag(R.drawable.pre_islandmap);
+                break;
+            }
+            case 1: {
                 this.binding.mapImage.setImageResource(R.drawable.island0);
                 this.binding.mapImage.setTag(R.drawable.island0);
                 break;
             }
-            case 1: {
-                this.binding.mapImage.setImageResource(R.drawable.smallbarrel);
-                this.binding.mapImage.setTag(R.drawable.smallbarrel);
-                break;
-            }
             case 2: {
-                this.binding.mapImage.setImageResource(R.drawable.parchment);
-                this.binding.mapImage.setTag(R.drawable.parchment);
+                this.binding.mapImage.setImageResource(R.drawable.island1);
+                this.binding.mapImage.setTag(R.drawable.island1);
                 break;
             }
-            case 4: this.binding.mapImage.setImageResource(R.drawable.eastern_islands__mas_); break;
-            case 5: this.binding.mapImage.setImageResource(R.drawable.eastern_islands__mas_); break;
-            case 6: this.binding.mapImage.setImageResource(R.drawable.eastern_islands__mas_); break;
-            case 7: this.binding.mapImage.setImageResource(R.drawable.eastern_islands__mas_); break;
-            case 8: this.binding.mapImage.setImageResource(R.drawable.eastern_islands__mas_); break;
-            case 9: this.binding.mapImage.setImageResource(R.drawable.eastern_islands__mas_); break;
-            case 10: this.binding.mapImage.setImageResource(R.drawable.eastern_islands__mas_); break;
-            case 11: this.binding.mapImage.setImageResource(R.drawable.eastern_islands__mas_); break;
-            case 12: this.binding.mapImage.setImageResource(R.drawable.eastern_islands__mas_); break;
+            case 3: {
+                this.binding.mapImage.setImageResource(R.drawable.island2);
+                this.binding.mapImage.setTag(R.drawable.island2);
+                break;
+            }
+            case 4: {
+                this.binding.mapImage.setImageResource(R.drawable.island3);
+                this.binding.mapImage.setTag(R.drawable.island3);
+                break;
+            }
+            case 5:{
+                this.binding.mapImage.setImageResource(R.drawable.island4);
+                this.binding.mapImage.setTag(R.drawable.island4);
+                break;
+            }
+            case 6: {
+                this.binding.mapImage.setImageResource(R.drawable.island5);
+                this.binding.mapImage.setTag(R.drawable.island5);
+                break;
+            }
+            case 7: {
+                this.binding.mapImage.setImageResource(R.drawable.island6);
+                this.binding.mapImage.setTag(R.drawable.island6);
+                break;
+            }
+            case 8: {
+                this.binding.mapImage.setImageResource(R.drawable.island7);
+                this.binding.mapImage.setTag(R.drawable.island7);
+                break;
+            }
+            case 9: {
+                this.binding.mapImage.setImageResource(R.drawable.island8);
+                this.binding.mapImage.setTag(R.drawable.island8);
+                break;
+            }
+            case 10: {
+                this.binding.mapImage.setImageResource(R.drawable.island9);
+                this.binding.mapImage.setTag(R.drawable.island9);
+                break;
+            }
+            case 11: {
+                this.binding.mapImage.setImageResource(R.drawable.island10);
+                this.binding.mapImage.setTag(R.drawable.island10);
+                break;
+            }
+            case 12: {
+                this.binding.mapImage.setImageResource(R.drawable.island11);
+                this.binding.mapImage.setTag(R.drawable.island11);
+                break;
+            }
         }
     }
 
