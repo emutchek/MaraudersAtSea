@@ -31,7 +31,7 @@
     flex-flow: column wrap; /*three rows*/
     justify-content: center;
     align-items: center;
-    height: 500px; /*total size of grid*/
+    height: 510px; /*total size of grid, accounting for border*/
     width: 300px;
 }
 .gridImage { /*Make barrels and islands small, centered*/
@@ -41,16 +41,23 @@
 .grid { /*grid squares*/
     width: 100px;
     height: 100px;
-    outline: 1px solid white;
-    outline-style: dashed;
+    border: 1px dashed white;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+/*Erase top and bottom middle grid borders*/
+#gridTop {border-top: 0px;}
+#gridBottom {border-bottom: 0px;}
+
 p { /*inventory,health,etc. text*/
     font-size: 1.4em;
     font-family: monospace;
     color: white;
+}
+#healthBar {
+    width: 50px;
 }
 #map { /*place directly on top of grid*/
     display: none;
@@ -67,3 +74,4 @@ p { /*inventory,health,etc. text*/
     float: right;
     flex-flow: column;
 }
+

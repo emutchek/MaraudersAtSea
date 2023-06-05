@@ -9,16 +9,17 @@
   
  
 </head>
-<body>
+<body onload="eraseBorders()">
 
 
-  <img src="https://dsm01pap001files.storage.live.com/y4m90jCHm9OXMErC2VaJ1XnclyFa-cJfZMZLKl9eBiWsNOhLRDb1T8RpHJFvy1uXERuvPKfoZY-dWdU4k8y2rooqioD-na5ZR3zakbEjhS8h9003NdBplIlOHmbPRjbNEJMhW_C1qodxw8eFNZeE22aqnrIbMtGDhBLHnyGXEA3UbTTQZNDZtAGWxZeknkEPpJSqtPUN3CXWbEg-UK_w7q6VeDSn0zY6xnqiDvbOgNgunc?encodeFailures=1&width=1627&height=762"
+  <img src="https://dsm01pap001files.storage.live.com/y4mnIfqeGiYUiBZem69VVXEquxWKrweEsrB-s0Y738B7lQI2ZUknGyT-IPSsF6d7TEA2XIrDTxmc4aXrI4eRP9YKRQmSFpYnjBNjCc3RNXiIsRUGqCU6kciSSSVIUFzIb4xQQlicpyfpxew60TbKnEPC2P3cqQM0LHQx_s0Ig6F-ShM3_6lN8bciNjb9XF2zemLWKdUrwp6XQt9VjFVRWU8WhoqwO7Y4jbYXEkHSx-TN_Q?encodeFailures=1&width=1627&height=762"
   id="logo">
 
   <div id="buttonsContainer">
     <button id="sailButton" 
     onmouseover="animation('sailButton','black','white')"
-    onmouseout="animation('sailButton','white','black')">
+    onmouseout="animation('sailButton','white','black')"
+    onclick="healthDisplay()">
     Sail</button>
     <button id="mapButton" 
     onmouseover="animation('mapButton','black','white')" 
@@ -36,18 +37,19 @@
     <div id="l3" class="grid"></div>
     <div id="l2" class="grid"></div>
     <div id="l1" class="grid">
-      <img src="https://th.bing.com/th/id/R.7f0ef37a91d01abb1dd5e32c23f9acea?rik=J2HzGvOc3cG1eQ&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fhome-island-png-1091.png&ehk=RG5R4bGncRKxujUaLSfc91FHuHJLz4JSycpDI965h3g%3d&risl=&pid=ImgRaw&r=0"
+      <img src="https://dsm01pap001files.storage.live.com/y4mwpEiMtZ0GbkdmFmTLQSPdqpBBeWCTkvhhM-Z6C49n-uHrBb7S7Q2O11jBlfopx3lbpjkxGQZ_wWQRuw17gDQbepwce_MKZAB9UyRfU8z-MPWAmi7EJ5G95UK2DllnLzFaSimr2S9x16ZkGAY79rvKW2AMe7xSjR-2n1Oe6LD90Zqk8LRQ0M0zFnBEJaGICCC8f9SKHRwlc5CeWVmyF__8OqEW28kr2Kuuqlu2NQBJU0?encodeFailures=1&width=400&height=307"
       class="gridImage"> <!-- island -->
     </div>
     <div id="l0" class="grid"></div>
 
+    <div class="grid" class="middleGrid" id="gridTop"></div>
     <div class="grid" class="middleGrid"></div>
     <div class="grid" class="middleGrid"></div>
     <div class="grid" class="middleGrid"></div>
-    <div class="grid" class="middleGrid"></div>
-    <div class="grid" class="middleGrid">
-      <img src="https://dsm01pap001files.storage.live.com/y4m3W3_gxFyE0M7ELN92UIt4B1XtzWJ0EdLk9ikUo7IAVpHO41TMmy7tWpRbagENN3Aq1LI590qAGJ3M-vqpV9XCSRChqyrqFxHm1Ls0hIpNy0MQHMMR9M_20oY1BCxjl51yeSVDE7UCaLuNG7js6KLQO751O59W6gULnKR1yt_j9qBBwgOrwm0r156k4LGZ0_UUu56Ur4wzhOMFXeJkGyAG17za46c8uyoOU6zdyPn20o?encodeFailures=1&width=320&height=617"
-      class="gridImage"> <!--ship-->
+    <div class="grid" class="middleGrid" id="gridBottom">
+      <img src="https://dsm01pap001files.storage.live.com/y4mTZTFrKSjtcjVm0Fg8t4U6HGzdtrGv5rDzrWd8GRYHI3sUORa89beh7CbNRYtJyJv06o5IRfMfAr5R08rKFTlj_wXT8afJ22Vmr82IZRm38Mf3mdMUyIn6CqvBsSAYf5qa-ZSEZzhkKxa9DL6XoXP4A_FQ7C9vpRrKY3TSqzAyQ77BmEpHveXfbRArhgrQq8zq1txO90EipFLdw4c5g8FOoYfcOc455W2776rMsU6IK8?encodeFailures=1&width=320&height=617"
+      class="gridImage"
+      > <!--ship-->
     </div>
 
     <div id="r4" class="grid"></div>
@@ -61,7 +63,7 @@
  
     <div id="statsContainer">
       <p><b>INVENTORY:</b><br><br>10 vials of medicine<br>10 spools of rope<br>10 planks of wood</p>
-      <p><b>HEALTH:</b><br>100/100</p>
+      <img id="healthBar" src="https://dsm01pap001files.storage.live.com/y4mLxWGC9fL6uSCFV2kXaeR6NgxuRJCL0JGEzHXIUG33RHYzpSY2jowwc9aUYdw66h7EuZ5TIOY2T30omGTtPiVKYH83CMopc-5ZjyKKGG3t2gKf4r9zwU50Qyr3PJXzxIyqoDUmnpPzF2vqCU1ZnczolKMfGsW0CBZ3Y-xO_nDqkxC7cXxa3qQRxt3TkRSCs1N2wR97WXECvTG4c_2vFDamDQmR8H-nwAsgi9lvQDwleM?encodeFailures=1&width=272&height=881">
     </div>
 
  
