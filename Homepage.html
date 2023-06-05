@@ -4,7 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <link href="Style.css" rel="stylesheet" type="text/css" />
+  <script src="javascript.js"></script>
   <title>my-website</title>
+  
  
 </head>
 <body>
@@ -13,14 +15,23 @@
   <img src="https://dsm01pap001files.storage.live.com/y4m90jCHm9OXMErC2VaJ1XnclyFa-cJfZMZLKl9eBiWsNOhLRDb1T8RpHJFvy1uXERuvPKfoZY-dWdU4k8y2rooqioD-na5ZR3zakbEjhS8h9003NdBplIlOHmbPRjbNEJMhW_C1qodxw8eFNZeE22aqnrIbMtGDhBLHnyGXEA3UbTTQZNDZtAGWxZeknkEPpJSqtPUN3CXWbEg-UK_w7q6VeDSn0zY6xnqiDvbOgNgunc?encodeFailures=1&width=1627&height=762"
   id="logo">
 
-
   <div id="buttonsContainer">
-    <button onClick="sail()">Sail</button>
-    <button onClick="openMap()">Map</button>
+    <button id="sailButton" 
+    onmouseover="animation('sailButton','black','white')"
+    onmouseout="animation('sailButton','white','black')">
+    Sail</button>
+    <button id="mapButton" 
+    onmouseover="animation('mapButton','black','white')" 
+    onmouseout="animation('mapButton','white','black')"
+    onclick="workMap()">
+    Map</button>
   </div>
 
+  <img src="https://dsm01pap001files.storage.live.com/y4mUsS5miFXPxoOYF5llBVMHSjyX25w2SegCY27UpBk85-uevkDbQ3bQn27MMiLIOSp0ftg5kjXx-CXLE7Z1TGgXHFMZDifwme0Uplg4hxMdfFbeSXmKwryOIzzMTXdA280GcAtUKZ58soJHgC73DhYYXcemsIXJUmD6bMFfnfWczk7TAbfcE3dHsRH6XOPICe3GGV1IdHbrFHzmfiJkVqJuM5NbKysv0D4g5Euf1nlD2o?encodeFailures=1&width=507&height=881"
+    id="map">
 
   <div id="gridContainer">
+
     <div id="l4" class="grid"></div>
     <div id="l3" class="grid"></div>
     <div id="l2" class="grid"></div>
@@ -29,7 +40,6 @@
       class="gridImage"> <!-- island -->
     </div>
     <div id="l0" class="grid"></div>
-
 
     <div class="grid" class="middleGrid"></div>
     <div class="grid" class="middleGrid"></div>
@@ -40,7 +50,6 @@
       class="gridImage"> <!--ship-->
     </div>
 
-
     <div id="r4" class="grid"></div>
     <div id="r3" class="grid"></div>
     <div id="r2" class="grid">
@@ -50,10 +59,11 @@
     <div id="r1" class="grid"></div>
     <div id="r0" class="grid"></div>
  
-  <div id="statsContainer">
-    <p><b>INVENTORY:</b><br><br>10 vials of medicine<br>10 spools of rope<br>10 planks of wood</p>
-    <p><b>HEALTH:</b><br>100/100</p>
-  </div>
+    <div id="statsContainer">
+      <p><b>INVENTORY:</b><br><br>10 vials of medicine<br>10 spools of rope<br>10 planks of wood</p>
+      <p><b>HEALTH:</b><br>100/100</p>
+    </div>
+
  
    </div> <!--end grid container-->
 

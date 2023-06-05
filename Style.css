@@ -52,6 +52,15 @@ p { /*inventory,health,etc. text*/
     font-family: monospace;
     color: white;
 }
+#map { /*place directly on top of grid*/
+    display: none;
+    position: fixed;
+    z-index: 2;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 42.1%;
+}
 #statsContainer { /*put stats info beside grid*/
     margin-left: 25px;
     display: flex;
