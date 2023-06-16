@@ -11,7 +11,7 @@ In the future ideas:
 - interact with NPC
 
 Iteration 1:
-- grid that randomly generates JUST TEXT as you reach islands, obstacles, and resource areas
+- grid that randomly generates JUST TEXT as you reach islands and resource areas
 - can move ship (low-level interaction- recognize but nothing further)
 - key plot-point islands always show up, filler episodes are rotated in from a larger pool
 
@@ -19,7 +19,7 @@ Iteration 2:
 - convert all on-screen text to reading in a file
 - create inventory, ability to pick up resource area items (much higher cap, more messing around)
 - track health
-- make decisions when meeting obstacles, consume resources
+- generate obstacles, consume resources
 
 Iteration 3:
 - 'doubt' system
