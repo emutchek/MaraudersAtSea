@@ -3,27 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport"  content="width=device-width">
-  <link href="Style.css" rel="stylesheet" type="text/css" />
+  <link href="Style.css" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="javascript.js"></script>
-  <title>my-website</title>
-  
- 
 </head>
-<body onload="eraseBorders()">
-
 
   <img src="https://dsm01pap001files.storage.live.com/y4mnIfqeGiYUiBZem69VVXEquxWKrweEsrB-s0Y738B7lQI2ZUknGyT-IPSsF6d7TEA2XIrDTxmc4aXrI4eRP9YKRQmSFpYnjBNjCc3RNXiIsRUGqCU6kciSSSVIUFzIb4xQQlicpyfpxew60TbKnEPC2P3cqQM0LHQx_s0Ig6F-ShM3_6lN8bciNjb9XF2zemLWKdUrwp6XQt9VjFVRWU8WhoqwO7Y4jbYXEkHSx-TN_Q?encodeFailures=1&width=1627&height=762"
   id="logo">
 
   <div id="buttonsContainer">
     <button id="sailButton" 
-    onmouseover="animation('sailButton','black','white')"
-    onmouseout="animation('sailButton','white','black')"
-    onclick="healthDisplay()">
+    onmouseover="buttonAnimation('sailButton','black','white')"
+    onmouseout="buttonAnimation('sailButton','white','black')">
     Sail</button>
     <button id="mapButton" 
-    onmouseover="animation('mapButton','black','white')" 
-    onmouseout="animation('mapButton','white','black')"
+    onmouseover="buttonAnimation('mapButton','black','white')" 
+    onmouseout="buttonAnimation('mapButton','white','black')"
     onclick="workMap()">
     Map</button>
   </div>
@@ -47,9 +42,7 @@
     <div class="grid" class="middleGrid"></div>
     <div class="grid" class="middleGrid"></div>
     <div class="grid" class="middleGrid" id="gridBottom">
-      <img src="https://dsm01pap001files.storage.live.com/y4mTZTFrKSjtcjVm0Fg8t4U6HGzdtrGv5rDzrWd8GRYHI3sUORa89beh7CbNRYtJyJv06o5IRfMfAr5R08rKFTlj_wXT8afJ22Vmr82IZRm38Mf3mdMUyIn6CqvBsSAYf5qa-ZSEZzhkKxa9DL6XoXP4A_FQ7C9vpRrKY3TSqzAyQ77BmEpHveXfbRArhgrQq8zq1txO90EipFLdw4c5g8FOoYfcOc455W2776rMsU6IK8?encodeFailures=1&width=320&height=617"
-      class="gridImage"
-      > <!--ship-->
+      <img src="./images/website_pics/ship.jpg" class="gridImage"> <!--ship-->
     </div>
 
     <div id="r4" class="grid"></div>
