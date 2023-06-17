@@ -1,10 +1,11 @@
 
 function workMap() {
-    let map = $("#map");
-    if(map.style.display == "none") {
-        map.style.display="block";
+    if ($("#map").css("display")=="none") {
+        $("#map").show();
     }
-    else {map.style.display="none";}
+    else {
+        $("#map").hide();
+    }
   }
 
 function buttonAnimation(button,back,text) {
