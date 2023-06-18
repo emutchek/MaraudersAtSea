@@ -1,4 +1,7 @@
 
+let health = 100;
+const gridImages = ["./website_pics/barrel.png","./website_pics/island.png"];
+
 function workMap() {
     if ($("#map").css("display")=="none") {
         $("#map").show();
@@ -13,7 +16,22 @@ function buttonAnimation(button,back,text) {
     document.getElementById(button).style.color=text;
 }
 
-let health = 100;
+function displayNewRow(row) {
+    if(row[0] instanceof Island) {
+        $('#l4').append('<img src="./website_pics/island.png" class="gridImage">');
+    }
+    else if(row[1] instanceof Island) {
+        $('#r4').append('<img src="./website_pics/island.png" class="gridImage">');
+    }
+    else if(row[0] instanceof RA) {
+        $('#l4').append('<img src="./website_pics/barrel.png" class="gridImage">');
+    }
+    else if(row[1] instanceof RA) {
+        $('#r4').append('<img src="./website_pics/barrel.png" class="gridImage">');
+    }
+}
+
+
 /* function healthDisplay() {
     switch (health){
         case 100: document.getElementById("healthBar").src = ; break;

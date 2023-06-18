@@ -5,7 +5,8 @@
   <meta name="viewport"  content="width=device-width">
   <link href="Style.css" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-  <script src="javascript.js"></script>
+  <script src="view.js"></script>
+  <script src="controller.js"></script>
 </head>
 
   <h1>MARAUDERS AT SEA</h1>
@@ -13,7 +14,8 @@
   <div id="buttonsContainer">
     <button id="sailButton" 
     onmouseover="buttonAnimation('sailButton','black','white')"
-    onmouseout="buttonAnimation('sailButton','white','black')">
+    onmouseout="buttonAnimation('sailButton','white','black')"
+    onclick="generateRow()">
     Sail</button>
     <button id="mapButton" 
     onmouseover="buttonAnimation('mapButton','black','white')" 
@@ -29,9 +31,7 @@
     <div id="l4" class="grid"></div>
     <div id="l3" class="grid"></div>
     <div id="l2" class="grid"></div>
-    <div id="l1" class="grid">
-      <img src="./website_pics/island.png" class="gridImage"> <!-- island -->
-    </div>
+    <div id="l1" class="grid"></div>
     <div id="l0" class="grid"></div>
 
     <div class="grid" class="middleGrid" id="gridTop"></div>
@@ -44,9 +44,7 @@
 
     <div id="r4" class="grid"></div>
     <div id="r3" class="grid"></div>
-    <div id="r2" class="grid">
-      <img src="./website_pics/barrel.png" class="gridImage"> <!-- barrel -->
-    </div> 
+    <div id="r2" class="grid"></div> 
     <div id="r1" class="grid"></div>
     <div id="r0" class="grid"></div>
  
