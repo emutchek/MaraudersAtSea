@@ -17,12 +17,24 @@ function generateRow () {
     if(x < 0.15) {                        //15% chance of island
         grid[4][side] = new Island();
     }
-    else if(x < 0.48) {                   //33% chance of RA
+    else if(x < 0.40) {                   //~1/3 chance of RA
         grid[4][side] = new RA();
     }
-    displayNewRow(grid[4]);
 }
 
+// update grid array to shift everything down
+function shiftRows() {
+    for(let i = 0; i < 4; i++) {
+        grid[i] = grid[i+1];
+    }
+}
+
+// generate new row for the top, move down others
+function sail () {
+    shiftRows();
+    generateRow();
+    updateGrid();
+}
 /*
 Island:
  - empty field (50% of time) = filler island, can go anywhere in story

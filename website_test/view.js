@@ -2,34 +2,54 @@
 let health = 100;
 const gridImages = ["./website_pics/barrel.png","./website_pics/island.png"];
 
+// toggles map when user presses 'map' button
 function workMap() {
     if ($("#map").css("display")=="none") {
         $("#map").show();
     }
-    else {
-        $("#map").hide();
-    }
+    else $("#map").hide();
   }
 
+// turns 'sail' and 'map' buttons black when you hover over them
 function buttonAnimation(button,back,text) {
     document.getElementById(button).style.backgroundColor=back;
     document.getElementById(button).style.color=text;
 }
 
-function displayNewRow(row) {
+// takes in an array of surrounding objects (row), displays them in row 'num'
+function displayNewRow(row, num) {
+    let left = `#l${num}`;
+    let right = `#r${num}`;
     if(row[0] instanceof Island) {
-        $('#l4').append('<img src="./website_pics/island.png" class="gridImage">');
+        $(left).append('<img src="./website_pics/island.png" class="gridImage">');
     }
     else if(row[1] instanceof Island) {
-        $('#r4').append('<img src="./website_pics/island.png" class="gridImage">');
+        $(right).append('<img src="./website_pics/island.png" class="gridImage">');
     }
     else if(row[0] instanceof RA) {
-        $('#l4').append('<img src="./website_pics/barrel.png" class="gridImage">');
+        $(left).append('<img src="./website_pics/barrel.png" class="gridImage">');
     }
     else if(row[1] instanceof RA) {
-        $('#r4').append('<img src="./website_pics/barrel.png" class="gridImage">');
+        $(right).append('<img src="./website_pics/barrel.png" class="gridImage">');
     }
 }
+
+function updateGrid() {
+    $(".gridImage").not("#ship").remove(); // clear everything off
+    for(let i = 1; i < 5; i++) {
+        displayNewRow(grid[i],i);
+    }
+}
+
+/*
+0 -> 1
+1 -> 2
+2 -> 3
+3 -> 4
+4 -> n/a
+
+
+*/
 
 
 /* function healthDisplay() {
