@@ -64,12 +64,6 @@ p { /*inventory,health,etc. text*/
     z-index: 2;
     height: 500px;
     position: fixed;
-    /* position: fixed;
-    z-index: 2;
-    width: 300px;
-    margin-left: auto;
-    margin-right: auto;
-    left: 42.1%; */
 }
 #statsContainer { /*put stats info beside grid*/
     margin-left: 25px;
