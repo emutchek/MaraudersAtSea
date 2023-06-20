@@ -1,4 +1,4 @@
-//each inner array represents a single row of 2 objects, left and right
+//Each inner array represents a single row of 2 objects, left and right
 const grid = [[{},{}],[{},{}],[{},{}],[{},{}],[{},{}]];
 
 //Represents the next plot island to be put on grid, NOT how many user has read
@@ -6,34 +6,34 @@ var islandsPut = 0;
 
 const resourceTypes = ["Wood","Rope","Medicine"];
 
-/*
-Fills 2 spots w/ island, RA, or nothing
- - indicate somewhere that island is on board so that the correct story
-    can be displayed
-*/
+// Fills the top row of the grid (subarray 4) w/ islands, RAs, or nothing
 function generateRow () {
-    let side = Math.round(Math.random()); //picks 0 (left) or 1 (right)
+    let side = Math.round(Math.random()); // picks 0 (left) or 1 (right)
     let x = Math.random();
-    if(x < 0.15) {                        //15% chance of island
+    if(x < 0.20) {                        // 20% chance of island
         grid[4][side] = new Island();
+        console.log(`added ${grid[4][side]}`);
     }
-    else if(x < 0.40) {                   //~1/3 chance of RA
+    if(x > 0.10 && x < 0.40) {            // 30% chance of RA (10% chance of both)
         grid[4][side] = new RA();
+        console.log(`added ${grid[4][side]}`);
     }
 }
 
-// update grid array to shift everything down
+// Updates grid array to shift everything down, clear out top row
 function shiftRows() {
     for(let i = 0; i < 4; i++) {
-        grid[i] = grid[i+1];
+        temp = grid[i+1]
+        grid[i] = temp;
     }
+    grid[4] = [{},{}];
 }
 
 // generate new row for the top, move down others
 function sail () {
     shiftRows();
     generateRow();
-    updateGrid();
+    paintGrid();
 }
 /*
 Island:
@@ -48,6 +48,7 @@ class Island {
         islandsPut++;
       }
     }   
+    toString() {return "island"};
 }
 /*
 Resource Area:
@@ -58,4 +59,8 @@ class RA {
       let idx = Math.round(Math.random()*3); 
       this.type = resourceTypes[idx];
     }
+    toString() {return "RA"};
+
 }
+
+/*  */
