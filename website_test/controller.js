@@ -4,23 +4,29 @@ const grid = [[{},{}],[{},{}],[{},{}],[{},{}],[{},{}]];
 //Represents the next plot island to be put on grid, NOT how many user has read
 var islandsPut = 0; 
 
-const resourceTypes = ["Wood","Rope","Medicine"];
+const resourceTypes = ["wood","rope","medicine"];
+
+var health = 100;
+
+// Helper function to describe what's next to ship - returns the island number, resource type, or false
+function shipBesideWhat() {
+    if(grid[0][0] instanceof Island) return grid[0][0].number
+    if(grid[0][1] instanceof Island) return grid[0][1].number
+    if(grid[0][0] instanceof RA) return grid[0][0].type
+    if(grid[0][1] instanceof RA) return grid[0][1].type
+    return false
+}
 
 // Fills the top row of the grid (subarray 4) w/ islands, RAs, or nothing
 function generateRow () {
-    let side = Math.round(Math.random()); // picks 0 (left) or 1 (right)
+    let side = Math.round(Math.random());                 // picks 0 (left) or 1 (right)
     let x = Math.random();
-    if(x < 0.20) {                        // 20% chance of island
-        grid[4][side] = new Island();
-        console.log(`added ${grid[4][side]}`);
-    }
-    if(x > 0.10 && x < 0.40) {            // 30% chance of RA (10% chance of both)
-        grid[4][side] = new RA();
-        console.log(`added ${grid[4][side]}`);
-    }
+                                                         
+    if(x < 0.20) grid[4][side] = new Island();            // 20% chance of island
+    if(x >= 0.20 && x < 0.50) grid[4][side] = new RA();   // 30% chance of RA 
 }
 
-// Updates grid array to shift everything down, clear out top row
+// Updates grid array to shift everything down, leaves top row blank
 function shiftRows() {
     for(let i = 0; i < 4; i++) {
         temp = grid[i+1]
@@ -29,24 +35,28 @@ function shiftRows() {
     grid[4] = [{},{}];
 }
 
-// generate new row for the top, move down others
 function sail () {
     shiftRows();
     generateRow();
     paintGrid();
+    displayEncounterText();
+    gameOver();
 }
+
 /*
 Island:
- - empty field (50% of time) = filler island, can go anywhere in story
- - number assigned (50% of time) = position in the story 
+ - if the 'number' field is -1, it's a filler island and can go anywhere in the game;
+   the other 50% of the time, a number is assigned to indicate its position in the story 
+   (ex. island 0 corresponds to story scene 0)
 */
 class Island {
     constructor() {
-      let isFiller = Math.round(Math.random());
-      if(isFiller === 0) {
-        this.number = islandsPut;
+      let isFiller = Math.round(Math.random()); 
+      if(isFiller === 0) {                              
+        this.number = islandsPut;                    
         islandsPut++;
       }
+      else this.number = -1;
     }   
     toString() {return "island"};
 }
@@ -60,7 +70,12 @@ class RA {
       this.type = resourceTypes[idx];
     }
     toString() {return "RA"};
-
 }
 
-/*  */
+/* console.log(`
+[${grid[4][0]},${grid[4][1]}],
+[${grid[3][0]},${grid[3][1]}],
+[${grid[2][0]},${grid[2][1]}],
+[${grid[1][0]},${grid[1][1]}],
+[${grid[0][0]},${grid[0][1]}],
+`) */
