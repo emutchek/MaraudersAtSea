@@ -77,13 +77,16 @@ function updateInventory(type,amt) {
   switch(type) {
     case("medicine"): 
       if(inventory.medicine === 0 && amt < 0) return false;
-      inventory.medicine = inventory.medicine + amt; break;
+      inventory.medicine = inventory.medicine + amt; 
+      highlightResource("medicine"); break;
     case("rope"): 
       if(inventory.rope === 0 && amt < 0) return false;
-      inventory.rope = inventory.rope + amt; break;
+      inventory.rope = inventory.rope + amt; 
+      highlightResource("rope"); break;
     case("wood"): 
       if(inventory.wood === 0 && amt < 0) return false;
-      inventory.wood = inventory.wood + amt; break;
+      inventory.wood = inventory.wood + amt; 
+      highlightResource("wood"); break;
   }
   paintInventory();
   return true;

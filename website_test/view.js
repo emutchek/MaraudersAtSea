@@ -99,6 +99,13 @@ function gameOver() {
     }
 }
 
+// When you lose or gain a resource, the text gets bigger and changes color for a second
+function highlightResource (type) {
+    var item = $('ul li').eq(resourceTypes.indexOf(type));
+    item.animate({color: "#b58d30",fontSize: "1.6em"},"slow");
+    item.animate({color: "white",fontSize: "1.4em"},"medium");
+
+}
 
 
 
