@@ -3,7 +3,7 @@ const gridImages = ["./website_pics/barrel.png","./website_pics/island.png"];
 
 // Erases the island/RA stuff for the next move forward
 function resetLeft() {
-    $("#asurroundingText").text(""); 
+    $("#asurroundingText").text(" "); 
     $("#pickupRAButton").css("display","none");
 }
 
@@ -47,6 +47,16 @@ function paintInventory() {
     $('ul li').eq(2).text(`${inventory.wood} planks of wood`);
 }
 
+// Updates photo to reflect which level of health the crew is on
+function paintHealth() {
+    switch (health){
+        case 100: $("#healthBar").attr("src","./website_pics/health1.png"); break;
+        case 75: $("#healthBar").attr("src","./website_pics/health2.png"); break;
+        case 50: $("#healthBar").attr("src","./website_pics/health3.png"); break;
+        default: $("#healthBar").attr("src","./website_pics/health4.png"); break;; 
+    }
+} 
+
 // Displays the red flag container with a description of the obstacle and the two options
 function displayObstacle (descr, opA, opB) {
     // can't move forward or check your map while you're facing an obstacle
@@ -60,9 +70,9 @@ function displayObstacle (descr, opA, opB) {
     $("#obstacleButtonB").text(opB);
 }
 
-// Removes buttons from screen, shows outcome text, enables x button
-function performSolutionA() {
-    $("#obstacleText").text("Outcome A");
+// Remove buttons from screen, shows outcome text, and enables x button
+function displayObstacleResult(message) {
+    $("#obstacleText").text(message);
     $("#obstacleButtonA").css("display","none");
     $("#obstacleButtonB").css("display","none");
     $("#obstacleXButton").css("display","block");
@@ -77,25 +87,18 @@ function closeObstacle() {
     // restores the sail and map button
     $("#mapButton").prop("disabled",false);
     $("#sailButton").prop("disabled",false);
-
 }
 
-// If game is over (you died or reached the ending), disable sail button and show end message
+/* If game is over (you died or reached the ending), disable sail button and show end message
+   Right now the game ends when you reach the 8th plot island (for no real reason)
+*/
 function gameOver() {
-    if (shipBesideWhat() === 3 || health === 0) {
+    if (shipBesideWhat() === 8 || health === 0) {
         $("#sailButton").prop("disabled",true);
         $("#asurroundingText").text("That's the end! You did... something, alright!");
     }
 }
 
-/* function healthDisplay() {
-    switch (health){
-        case 100: document.getElementById("healthBar").src = ; break;
-        case 75: document.getElementById("healthBar").src = ; break;
-        case 50: document.getElementById("healthBar").src = ; break;
-        default: document.getElementById("healthBar").src = ; 
-    }
-} */
 
 
 
