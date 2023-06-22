@@ -25,6 +25,31 @@ h1 {
   padding: 5px;
   margin: 10px;
 }
+#obstacleContainer {
+    display: none;
+    background-color: #993333;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    margin-left: 40%; /*layer exactly on top of grid*/
+    height: 510px; 
+    width: 310px;
+}
+#obstaclePic {
+    margin: auto;
+    display: block;
+    height: 150px;
+}
+#obstacleText {
+    margin: auto;
+    text-align: center;
+    padding: 5px;
+    color: black;
+}
+#obstacleXButton {
+    display: none;
+}
 #gridContainer {
     margin-left: 40%;
     display: flex;
@@ -33,6 +58,7 @@ h1 {
     align-items: center;
     height: 510px; /*total size of grid, accounting for border*/
     width: 300px;
+    position: relative;
 }
 .gridImage { /*Make barrels and islands small, centered*/
     width: 75px;
@@ -51,7 +77,7 @@ h1 {
 #gridTop {border-top: 0px;}
 #gridBottom {border-bottom: 0px;}
 
-p { /*inventory,health,etc. text*/
+p, li{ /*inventory,health,etc. text*/
     font-size: 1.4em;
     font-family: monospace;
     color: white;
@@ -59,7 +85,7 @@ p { /*inventory,health,etc. text*/
 #healthBar {
     width: 50px;
 }
-#map { /*place directly on top of grid*/
+#map { /*place beside grid*/
     display: none;
     z-index: 2;
     height: 500px;
@@ -75,4 +101,7 @@ p { /*inventory,health,etc. text*/
     float: left;
     width: 400px;
     margin-left: 10%;
+}
+#pickupRAButton {
+    display: none;
 }

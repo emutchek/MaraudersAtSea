@@ -7,27 +7,29 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="view.js"></script>
   <script src="controller.js"></script>
+  
 </head>
 
   <h1>MARAUDERS AT SEA</h1>
 
   <div id="buttonsContainer">
-    <button id="sailButton" 
-    onmouseover="buttonAnimation('sailButton','black','white')"
-    onmouseout="buttonAnimation('sailButton','white','black')"
-    onclick="sail()">
-    Sail</button>
-    <button id="mapButton" 
-    onmouseover="buttonAnimation('mapButton','black','white')" 
-    onmouseout="buttonAnimation('mapButton','white','black')"
-    onclick="workMap()">
-    Map</button>
+    <button id="sailButton" onclick="sail()">Sail</button>
+    <button id="mapButton" onclick="workMap()">Map</button>
+  </div>
+
+  <div id="obstacleContainer">
+    <button id="obstacleXButton" onclick="closeObstacle()">X</button>
+    <p id="obstacleText">Test</p>
+    <img src="./website_pics/pirate_flag.png" id="obstaclePic">
+    <button id="obstacleButtonA" onclick="performSolutionA()"></button>
+    <button id="obstacleButtonB" onclick="performSolutionA()"></button> <!--Temporarily assigned same!-->
   </div>
 
   <img src="./website_pics/map.png" id="map">
 
   <div id="textContainer">
     <p id="asurroundingText"></p>
+    <button id="pickupRAButton" onclick="pickupRA()">Pick up</button>
   </div>
 
   <div id="gridContainer">
@@ -53,13 +55,29 @@
     <div id="r0" class="grid"></div>
  
     <div id="statsContainer">
-      <p><b>INVENTORY:</b><br><br>10 vials of medicine<br>10 spools of rope<br>10 planks of wood</p>
+      <div id="inventoryContainer">
+        <p>INVENTORY:</p>
+        <ul>
+          <li>10 vials of medicine</li>
+          <li>10 spools of rope</li>
+          <li>10 planks of wood</li>
+        </ul>
+    </div>
       <img id="healthBar" src="./website_pics/health_bar.png">
     </div>
 
  
    </div> <!--end grid container-->
 
+   <script>
+    $(document).ready (
+      $("button:first").hover(()=>{
+        $(this).css({"background-color": "black","color": "white"});},
+      ()=>{
+        $(this).css({"background-color": "white","color": "black"})})
+    );
+
+   </script>
 </body>
 </html>
 
