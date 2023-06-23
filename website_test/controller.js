@@ -62,7 +62,7 @@ function generateRow () {
                                                          
     if(x < 0.20) grid[4][side] = new Island();            // 20% chance of island
     if(x >= 0.20 && x < 0.50) grid[4][side] = new RA();   // 30% chance of RA
-     
+    if(x > 0.6) grid[4][side] = "mark"                   // 25% chance of wave picture
 }
 
 // Updates grid array to shift everything down, leaves top row blank

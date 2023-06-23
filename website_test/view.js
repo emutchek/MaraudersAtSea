@@ -13,6 +13,11 @@ function freezeShip() {
     $("#sailButton").prop("disabled",true);
 }
 
+function freeShip() {
+    $("#mapButton").prop("disabled",false);
+    $("#sailButton").prop("disabled",false);
+}
+
 // toggles map when user presses 'map' button
 function workMap() {
     if ($("#map").css("display")=="none") {
@@ -26,6 +31,7 @@ function paintGridCell(cell, blockId) {
     $(blockId).empty();
     if(cell instanceof Island) $(blockId).append('<img src="./website_pics/island.png" class="gridImage">');
     else if(cell instanceof RA) $(blockId).append('<img src="./website_pics/barrel.png" class="gridImage">');
+    else if(cell === "mark") $(blockId).append('<img src="./website_pics/wave.png" width="50">');
 }
 
 // Fills all 10 boxes with up-to-date icon
@@ -90,15 +96,13 @@ function closeObstacle() {
     $("#obstacleButtonA").css("display","block");
     $("#obstacleButtonB").css("display","block");
     $("#obstacleContainer").css("display","none");
-
-    // restores the sail and map button
-    $("#mapButton").prop("disabled",false);
-    $("#sailButton").prop("disabled",false);
+    freeShip();
 }
    
 function closeIsland(outcome) {
     $("#asurroundingText").text(outcome);
     $(".storyButtons").css("display","none");
+    freeShip();
 }
 
 /* If game is over (you died or reached the ending), disable sail button and show end message
