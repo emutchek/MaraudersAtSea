@@ -10,18 +10,27 @@ var health = 100;
 
 const inventory = {medicine:10,rope:10,wood:10};
 
-// Temporary container for the current obstacle
-const obstacle = {
-  description:"Meels woke up this morning covered in boils. We must have incurred \
-  the wrath of an angry spirit... or maybe it was the brownish drinking water. What do you do?",
-  optionA:"People get sick all the time! Let's play limbo on the deck",
-  optionB:"Give Meels medicine and keep her quarantined [10 vials of medicine]",
-  outcomeA:"Yeah that doesn't seem to have been the right answer. I'm sure her \
-  blackening flesh will clear up soon though. (-25 Health)",
-  outcomeB:"Good job, she's feeling much better. Now keep sailing!",
-  actionA:"health",
-  actionB:"medicine"}
+class Obstacle {
+  constructor(descr,opA,opB,outcomeA,outcomeB,actionA,actionB) {
+    this.descr = descr;
+    this.opA = opA;
+    this.opB = opB;
+    this.outcomeA = outcomeA;
+    this.outcomeB = outcomeB;
+    this.actionA = actionA;
+    this.actionB = actionB;
+  }
+}
 
+// Temporary container for the current obstacle
+const obstacle = new Obstacle("Meels woke up this morning covered in boils. We must have incurred \
+  the wrath of an angry spirit... or maybe it was the brownish drinking water. What do you do?",
+  "People get sick all the time! Let's play limbo on the deck",
+  "Give Meels medicine and keep her quarantined [10 vials of medicine]",
+  "Yeah that doesn't seem to have been the right answer. I'm sure her \
+  blackening flesh will clear up soon though. (-25 Health)",
+  "Good job, she's feeling much better. Now keep sailing!",
+  "health","medicine");
 
 // Helper function to describe what's next to ship - returns the island number, resource type, or false
 function shipBesideWhat() {
@@ -36,7 +45,7 @@ function shipBesideWhat() {
 function coordinateEncounter () {
   adj = shipBesideWhat();
   if(typeof adj === "number") {
-      displayIsland();
+      generateIsland();
       return true;
   }
   else if(typeof adj === "string") {
@@ -52,7 +61,8 @@ function generateRow () {
     let x = Math.random();
                                                          
     if(x < 0.20) grid[4][side] = new Island();            // 20% chance of island
-    if(x >= 0.20 && x < 0.50) grid[4][side] = new RA();   // 30% chance of RA 
+    if(x >= 0.20 && x < 0.50) grid[4][side] = new RA();   // 30% chance of RA
+     
 }
 
 // Updates grid array to shift everything down, leaves top row blank
@@ -101,8 +111,15 @@ function generateObstacle() {
   let x = Math.random();
   if(x < 0.10) {
     // load text into obstacle object
-    displayObstacle(obstacle.description, obstacle.optionA, obstacle.optionB);
+    displayObstacle(obstacle.descr, obstacle.opA, obstacle.opB);
   }
+}
+
+function generateIsland() {
+  // load text
+  displayIsland("You've reached an island! Here is a fun little anecdote, or \
+  a very serious decision to make you may (definitely) regret!",
+  "Cool, sounds fun", "That doesn't sound good");
 }
 
 /* Refers to obstacle field (top of file) to figure out what this solution does
@@ -133,6 +150,16 @@ function performSolutionB() {
     }
   }
   displayObstacleResult(obstacle.outcomeB);
+}
+
+function pickActionA() {
+  // Log their decision, retrieve corresponding outcome
+  closeIsland("That's the spirit, sailor");
+}
+
+function pickActionB() {
+  // Log their decision, retrieve corresponding outcome
+  closeIsland("Oh, a wise one, eh?");
 }
 
 function sail () {
@@ -174,10 +201,5 @@ class RA {
     toString() {return "RA"};
 }
 
-/* console.log(`
-[${grid[4][0]},${grid[4][1]}],
-[${grid[3][0]},${grid[3][1]}],
-[${grid[2][0]},${grid[2][1]}],
-[${grid[1][0]},${grid[1][1]}],
-[${grid[0][0]},${grid[0][1]}],
-`) */
+
+

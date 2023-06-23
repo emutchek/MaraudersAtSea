@@ -31,6 +31,9 @@
   <div id="textContainer">
     <p id="asurroundingText"></p>
     <button id="pickupRAButton" onclick="pickupRA()">Pick up</button>
+    <button id="storyButtonA" class="storyButtons" onclick="pickActionA()"></button>
+    <button id="storyButtonB" class="storyButtons" onclick="pickActionB()"></button>
+
   </div>
 
   <div id="gridContainer">
@@ -73,9 +76,9 @@
    <script>
     $(document).ready (
       $("button").hover(()=>{
-        this.css({"background-color": "black","color": "white"});},
+        $(this).css({"background-color": "black","color": "white"});},
       ()=>{
-        this.css({"background-color": "white","color": "black"})})
+        $(this).css({"background-color": "white","color": "black"})})
     );
 
    </script>

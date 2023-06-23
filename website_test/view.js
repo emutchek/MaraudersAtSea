@@ -7,6 +7,12 @@ function resetLeft() {
     $("#pickupRAButton").css("display","none");
 }
 
+// Disables map and sail buttons, forcing the user to deal with whatever's happening before moving on
+function freezeShip() {
+    $("#mapButton").prop("disabled",true);
+    $("#sailButton").prop("disabled",true);
+}
+
 // toggles map when user presses 'map' button
 function workMap() {
     if ($("#map").css("display")=="none") {
@@ -30,10 +36,14 @@ function paintGrid() {
     }
 }
 
-function displayIsland() {
-    $("#asurroundingText").text("You've reached an island! Here is a fun little anecdote, or \
-    a very serious decision to make you may (definitely) regret!");
+function displayIsland(descr,opA,opB) {
+    freezeShip();
+    $(".storyButtons").css("display","inline");
+    $("#asurroundingText").text(descr);
+    $("#storyButtonA").text(opA);
+    $("#storyButtonB").text(opB);
 }
+
 function displayRA(raType) {
     $("#asurroundingText").text(`Oh look, some ${raType}! It sure is lucky that somebody \
     happened to leave this just floating around out here...`);
@@ -59,10 +69,7 @@ function paintHealth() {
 
 // Displays the red flag container with a description of the obstacle and the two options
 function displayObstacle (descr, opA, opB) {
-    // can't move forward or check your map while you're facing an obstacle
-    $("#mapButton").prop("disabled",true);
-    $("#sailButton").prop("disabled",true);
-
+    freezeShip();
     $("#obstacleContainer").css("display","block");
     $("#obstacleXButton").css("display","none");
     $("#obstacleText").text(descr);
@@ -88,6 +95,11 @@ function closeObstacle() {
     $("#mapButton").prop("disabled",false);
     $("#sailButton").prop("disabled",false);
 }
+   
+function closeIsland(outcome) {
+    $("#asurroundingText").text(outcome);
+    $(".storyButtons").css("display","none");
+}
 
 /* If game is over (you died or reached the ending), disable sail button and show end message
    Right now the game ends when you reach the 8th plot island (for no real reason)
@@ -104,7 +116,6 @@ function highlightResource (type) {
     var item = $('ul li').eq(resourceTypes.indexOf(type));
     item.animate({color: "#b58d30",fontSize: "1.6em"},"slow");
     item.animate({color: "white",fontSize: "1.4em"},"medium");
-
 }
 
 

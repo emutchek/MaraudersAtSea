@@ -47,7 +47,7 @@ h1 {
     padding: 5px;
     color: black;
 }
-#obstacleXButton {
+#obstacleXButton, #pickupRAButton, .storyButtons {
     display: none;
 }
 #gridContainer {
@@ -102,6 +102,4 @@ p, li{ /*inventory,health,etc. text*/
     width: 400px;
     margin-left: 10%;
 }
-#pickupRAButton {
-    display: none;
-}
+
