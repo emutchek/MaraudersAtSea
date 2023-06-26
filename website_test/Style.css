@@ -47,6 +47,14 @@ h1 {
     padding: 5px;
     color: black;
 }
+#obstacleTitle {
+    color: white;
+    text-align: center;
+    margin: auto;
+    font-size: 1.6em;
+    margin-bottom:10px;
+    
+}
 #obstacleXButton, #pickupRAButton, .storyButtons {
     display: none;
 }

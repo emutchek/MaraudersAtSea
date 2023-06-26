@@ -1,15 +1,11 @@
 
-async function populate() {
+async function fetchObstacle() {
   const requestURL = "./obstacles.json";
   const request = new Request(requestURL);
-
   const response = await fetch(request);
   const obsObj = await response.json();
-  return obsObj;
+
+  let x = Math.floor(Math.random()*7);
+  displayObstacle(obsObj["obstacles"][x])
 }
 
-const obsObj = populate();
-
-console.log("hi");
-
-console.log(obsObj["obstacles"][0]["descr"]);

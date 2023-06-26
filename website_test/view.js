@@ -73,19 +73,24 @@ function paintHealth() {
     }
 } 
 
-// Displays the red flag container with a description of the obstacle and the two options
-function displayObstacle (descr, opA, opB) {
+/* Displays the red flag container with a description of the obstacle and the two options
+    Also saves the obstacle in a global variable so we know what the question was 
+*/
+function displayObstacle (obs) {
+    obstacle = obs;
     freezeShip();
     $("#obstacleContainer").css("display","block");
     $("#obstacleXButton").css("display","none");
-    $("#obstacleText").text(descr);
-    $("#obstacleButtonA").text(opA);
-    $("#obstacleButtonB").text(opB);
+    $("#obstacleTitle").text(obs["title"]);
+    $("#obstacleText").text(obs["descr"]);
+    $("#obstacleButtonA").text(obs["opA"]);
+    $("#obstacleButtonB").text(obs["opB"]);
 }
 
 // Remove buttons from screen, shows outcome text, and enables x button
 function displayObstacleResult(message) {
     $("#obstacleText").text(message);
+    $("#obstacleTitle").text("");
     $("#obstacleButtonA").css("display","none");
     $("#obstacleButtonB").css("display","none");
     $("#obstacleXButton").css("display","block");

@@ -10,27 +10,8 @@ var health = 100;
 
 const inventory = {medicine:10,rope:10,wood:10};
 
-class Obstacle {
-  constructor(descr,opA,opB,outcomeA,outcomeB,actionA,actionB) {
-    this.descr = descr;
-    this.opA = opA;
-    this.opB = opB;
-    this.outcomeA = outcomeA;
-    this.outcomeB = outcomeB;
-    this.actionA = actionA;
-    this.actionB = actionB;
-  }
-}
-
 // Temporary container for the current obstacle
-const obstacle = new Obstacle("Meels woke up this morning covered in boils. We must have incurred \
-  the wrath of an angry spirit... or maybe it was the brownish drinking water. What do you do?",
-  "People get sick all the time! Let's play limbo on the deck",
-  "Give Meels medicine and keep her quarantined [10 vials of medicine]",
-  "Yeah that doesn't seem to have been the right answer. I'm sure her \
-  blackening flesh will clear up soon though. (-25 Health)",
-  "Good job, she's feeling much better. Now keep sailing!",
-  "health","medicine");
+var obstacle;
 
 // Helper function to describe what's next to ship - returns the island number, resource type, or false
 function shipBesideWhat() {
@@ -109,9 +90,8 @@ function updateHealth(amt) {
 // Retrieves description of an obstacle to send to UI, 10% of the time
 function generateObstacle() {
   let x = Math.random();
-  if(x < 0.10) {
-    // load text into obstacle object
-    displayObstacle(obstacle.descr, obstacle.opA, obstacle.opB);
+  if(x < 0.50) {
+    fetchObstacle();
   }
 }
 
