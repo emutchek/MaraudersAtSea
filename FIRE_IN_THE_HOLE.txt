@@ -1,5 +1,6 @@
 Technical to do:
 - make new JUnit tests
+- obstacle labels
 
 
 

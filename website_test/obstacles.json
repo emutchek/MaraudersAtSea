@@ -1,0 +1,58 @@
+{"obstacles":[
+{"descr":"Meels woke up this morning covered in boils. We must have incurred the wrath of an angry spirit... or maybe it was the brownish drinking water. What do you do?",
+"opA":"People get sick all the time! Let's play limbo on the deck",
+"opB":"Give Meels medicine and keep her quarantined [10 vials of medicine]",
+"outcomeA":"Yeah that doesn't seem to have been the right answer. I'm sure her blackening flesh will clear up soon though. (-25 Health)",
+"outcomeB":"Good job, she's feeling much better. Now keep sailing!",
+"actionA":"health",
+"actionB":"medicine"
+},
+{"descr":"It seems like just eating hard tack and jerky is not the new keto after all, and now everyone has scurvy!",
+"opA":"We'll divide our medicine stores evenly [10 vials of medicine]",
+"opB":"Everyone knows that you cure scurvy by chewing licorice root",
+"outcomeA":"The crew is bolstered enough to carry on",
+"outcomeB":"Actually, it was Orlic who said that... the crew remains weak for days (-25 HEALTH)",
+"actionA":"medicine",
+"actionB":"health"
+},
+{"descr":"Um... is that big wooden pole supposed to be in two pieces?",
+"opA":"Orlic comes up with a saw and offers to help",
+"opB":"Construct a new mast here on the deck [10 logs of wood]",
+"outcomeA":"Orlic built a swing instead - this ship won't be sailing anytime soon (-25 HEALTH)",
+"outcomeB":"It looks like that did the trick... for now",
+"actionA":"health",
+"actionB":"wood"
+},
+{"descr":"An old repair in the bilge sprung a leak, and the water is already ankle deep!",
+"opA":"We'll bail it out one trip at a time",
+"opB": "Put new planks over the leak and seal it up [10 logs of wood]",
+"outcomeA":"You remove three buckets of water, but the water's up to your waist - we'll have to seal off the lower decks (-25 HEALTH)",
+"outcomeB": "It worked! And now we have a hot tub! ... a warm, smelly hot tub...",
+"actionA":"health",
+"actionB":"wood"
+},
+{"descr:": "Meels used the plank as a runway again and fell right off the edge!",
+"opA":"We'll lower Cas down by her ankles to snatch her up",
+"opB":"Lower some rope over the edge for her to grab on [10 spools of rope]",
+"outcomeA":"Cas has so many weapons that she falls in too, and both get pneumonia (-25 HEALTH)",
+"outcomeB":"She clambers back up gratefully",
+"actionA":"health",
+"actionB":"rope"
+},
+{"descr":"A pair of beautiful sirens on a cliff bewitch half the crew",
+"opA":"Amira suggests we plug our ears with cork [10 vials of medicine]",
+"opB":"Tie your crewmates to the masts before they jump over [10 spools of rope]",
+"outcomeA":"'I CAN'T HEAR THEM ANYMORE! WHAT HAPPENED TO THE BEAUTIFUL WOMEN?' Cas yells. Guess it worked!",
+"outcomeB":"Cas brandishes a sword and cuts away the rope - you miscalculated how many weapons these pirates have (-25 HEALTH)",
+"actionA":"medicine",
+"actionB":"health"                              
+},
+{"descr":"Isha's foot is caught and they're stuck by the flames, but the inventory is about to catch fire!",
+"opA":"Ish will be fine, save the booty!",
+"opB":"Run and help them!",
+"outcomeA":"Isha's ankle sustains minor burns, so they'll be on bed rest for awhile (-25 HEALTH)",
+"outcomeB":"Phew, we all made it! Looks like a few things got a little, uh... crispy",
+"actionA":"health",
+"actionB":"rope"
+}]
+}
