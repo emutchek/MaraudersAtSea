@@ -5,22 +5,24 @@ Technical to do:
 
 
 In the future ideas:
-- trading posts: money system? betraying your values for capitalism????
 - customize ship appearance, name, etc. at the beginning 
 - Eurydice's journal showing all the story user has encountered so far
 - Island shape corresponds to the story
-- interact with NPC
 
-Iteration 1:
-- grid that randomly generates JUST TEXT as you reach islands and resource areas
-- can move ship (low-level interaction- recognize but nothing further)
-- key plot-point islands always show up, filler episodes are rotated in from a larger pool
 
-Iteration 2:
-- convert all on-screen text to reading in a file
-- create inventory, ability to pick up resource area items (much higher cap, more messing around)
-- track health
-- generate obstacles, consume resources
 
-Iteration 3:
-- 'doubt' system
+Story:
+- introduce money as the incentive to make the map (more money the more detailed it is)
+ ---> why does the player want money? purchase things in inventory? buy fun things (ex. hats)
+ ---> seasonal clothing may help in an obstacle situation
+- the map gets stolen by an EHE lackey, players have no choice about it getting sent in
+- if they make enough good decisions, they're able to help thwart the big attack and join the
+  revolution; if not, they watch the island burn and rot in hell
+- there's a series of main islands that everybody hits, with little detours to rack up doubt meter
+- there's a small chance (~30%) of getting a pure fluff island, unrelated to the tree
+  ---> fluff islands have NO question
+- doubt meter is a ratio; around 75% through the game we determine which ending they'll get
+- every island has a decision, but unless it's a fork in the tree, it affects money/inventory/relationships
+- some sort of traveling salesmen who either gives you deals/tells you stories or steals
+  from you/pranks the ship based on how you treat him -- pop up like an obstacle w/ friendship level
+  (credit uncle rick for the two dwarves from House of Hades, Akmon and Passalos)

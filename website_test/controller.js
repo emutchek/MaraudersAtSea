@@ -90,7 +90,7 @@ function updateHealth(amt) {
 // Retrieves description of an obstacle to send to UI, 10% of the time
 function generateObstacle() {
   let x = Math.random();
-  if(x < 0.50) {
+  if(x < 0.20) {
     fetchObstacle();
   }
 }
