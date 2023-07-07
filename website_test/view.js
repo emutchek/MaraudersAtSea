@@ -67,6 +67,10 @@ function highlightResource (type) {
     item.animate({color: "#b58d30",fontSize: "1.6em"},"slow");
     item.animate({color: "white",fontSize: "1.4em"},"medium");
 }
+
+function openChest() {
+    $("#extendedInventory").css("display")=="block";
+}
 /*
 **************************OBSTACLE/HEALTH TEXT**************************
 */

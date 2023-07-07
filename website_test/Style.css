@@ -15,33 +15,43 @@ h2 {
     font-family:'Courier New', Courier, monospace;
     padding-bottom: 30px;
 }
+button {
+    font-size: 1.4em;
+    font-family: monospace;
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px;
+    margin: 10px;
+}
+p { 
+    font-size: 1.4em;
+    font-family: monospace;
+    color: white;
+}
+/***************LEFT***************/
+#textContainer {
+    float: left;
+    width: 400px;
+    margin-left: 10%;
+}
+#map { /*place beside grid*/
+    display: none;
+    z-index: 2;
+    height: 500px;
+    position: fixed;
+}
+/***************CENTER***************/
 #buttonsContainer {
     display: flex;
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
 }
-#healthBar {
-    width: 50px;
-    position: absolute;
-    top: 30px;
-    right: 30px;
-}
- button {
-  font-size: 1.4em;
-  font-family: monospace;
-  background-color: white;
-  border-radius: 5px;
-  text-align: center;
-  padding: 5px;
-  margin: 10px;
-}
 #obstacleContainer {
     display: none;
     background-color: #993333;
     z-index: 2;
-    width: 100%;
-    height: 100%;
     position: absolute;
     margin-left: 40%; /*layer exactly on top of grid*/
     height: 510px; 
@@ -96,25 +106,47 @@ h2 {
 #gridTop {border-top: 0px;}
 #gridBottom {border-bottom: 0px;}
 
-p{ 
-    font-size: 1.4em;
-    font-family: monospace;
-    color: white;
-}
 
-#map { /*place beside grid*/
-    display: none;
-    z-index: 2;
-    height: 500px;
-    position: fixed;
-}
+/***********************RIGHT***********************/
+
 #inventoryContainer { /*put stats info beside grid*/
     margin-left: 25px;
     display: flex;
     float: right;
     flex-flow: column;
     position: relative;
+    height: 510px; 
+    width: 300px;
 }
+/* #gridContainer {
+    margin-left: 40%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    height: 510px; 
+    width: 300px;
+    position: relative;
+} */
+#extendedInventory {
+    display: block;
+    z-index: 2;
+    float: right;
+    background-color: black;
+    position: absolute;
+    height: 510px; 
+    width: 310px;
+    
+}
+/* #obstacleContainer {
+    display: none;
+    background-color: #993333;
+    z-index: 2;
+    position: absolute;
+    margin-left: 40%; 
+    height: 510px; 
+    width: 310px;
+} */
 .inventoryHoriz {
     display: flex;
     padding-left: 20px;
@@ -126,9 +158,12 @@ p{
 .inventoryPics {
     width: 75px;
 }
-#textContainer {
-    float: left;
-    width: 400px;
-    margin-left: 10%;
+.accessories {
+    width: 100px;
 }
-
+#healthBar {
+    width: 50px;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
