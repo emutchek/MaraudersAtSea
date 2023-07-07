@@ -1,3 +1,6 @@
+/*
+**************************GRID/NAVIGATION**************************
+*/
 
 const gridImages = ["./website_pics/barrel.png","./website_pics/island.png"];
 
@@ -42,14 +45,9 @@ function paintGrid() {
     }
 }
 
-function displayIsland(descr,opA,opB) {
-    freezeShip();
-    $(".storyButtons").css("display","inline");
-    $("#asurroundingText").text(descr);
-    $("#storyButtonA").text(opA);
-    $("#storyButtonB").text(opB);
-}
-
+/*
+**************************INVENTORY/RA**************************
+*/
 function displayRA(raType) {
     $("#asurroundingText").text(`Oh look, some ${raType}! It sure is lucky that somebody \
     happened to leave this just floating around out here...`);
@@ -58,11 +56,20 @@ function displayRA(raType) {
 
 function paintInventory() {
     resetLeft(); // remove the question and button immediately so it's clear that they clicked it
-    $('ul li').eq(0).text(`${inventory.medicine} vials of medicine`);
-    $('ul li').eq(1).text(`${inventory.rope} spools of rope`);
-    $('ul li').eq(2).text(`${inventory.wood} planks of wood`);
+    $('.units').eq(0).text(`${inventory.medicine} vials`);
+    $('.units').eq(1).text(`${inventory.rope} spools`);
+    $('.units').eq(2).text(`${inventory.wood} planks`);
 }
 
+// When you lose or gain a resource, the text gets bigger and changes color for a second
+function highlightResource (type) {
+    var item = $('.units').eq(resourceTypes.indexOf(type));
+    item.animate({color: "#b58d30",fontSize: "1.6em"},"slow");
+    item.animate({color: "white",fontSize: "1.4em"},"medium");
+}
+/*
+**************************OBSTACLE/HEALTH TEXT**************************
+*/
 // Updates photo to reflect which level of health the crew is on
 function paintHealth() {
     switch (health){
@@ -103,13 +110,27 @@ function closeObstacle() {
     $("#obstacleContainer").css("display","none");
     freeShip();
 }
-   
+/*
+**************************ISLAND TEXT**************************
+*/
+
+function displayIsland(descr,opA,opB) {
+    freezeShip();
+    $(".storyButtons").css("display","inline");
+    $("#asurroundingText").text(descr);
+    $("#storyButtonA").text(opA);
+    $("#storyButtonB").text(opB);
+}
+
 function closeIsland(outcome) {
     $("#asurroundingText").text(outcome);
     $(".storyButtons").css("display","none");
     freeShip();
 }
 
+/*
+**************************RANDOM**************************
+*/
 /* If game is over (you died or reached the ending), disable sail button and show end message
    Right now the game ends when you reach the 8th plot island (for no real reason)
 */
@@ -120,12 +141,7 @@ function gameOver() {
     }
 }
 
-// When you lose or gain a resource, the text gets bigger and changes color for a second
-function highlightResource (type) {
-    var item = $('ul li').eq(resourceTypes.indexOf(type));
-    item.animate({color: "#b58d30",fontSize: "1.6em"},"slow");
-    item.animate({color: "white",fontSize: "1.4em"},"medium");
-}
+
 
 
 

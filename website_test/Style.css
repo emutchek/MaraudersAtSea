@@ -10,11 +10,22 @@ h1 {
     font-family:'Courier New', Courier, monospace;
     color: white;
 }
+h2 {
+    color: white;
+    font-family:'Courier New', Courier, monospace;
+    padding-bottom: 30px;
+}
 #buttonsContainer {
     display: flex;
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
+}
+#healthBar {
+    width: 50px;
+    position: absolute;
+    top: 30px;
+    right: 30px;
 }
  button {
   font-size: 1.4em;
@@ -85,25 +96,35 @@ h1 {
 #gridTop {border-top: 0px;}
 #gridBottom {border-bottom: 0px;}
 
-p, li{ /*inventory,health,etc. text*/
+p{ 
     font-size: 1.4em;
     font-family: monospace;
     color: white;
 }
-#healthBar {
-    width: 50px;
-}
+
 #map { /*place beside grid*/
     display: none;
     z-index: 2;
     height: 500px;
     position: fixed;
 }
-#statsContainer { /*put stats info beside grid*/
+#inventoryContainer { /*put stats info beside grid*/
     margin-left: 25px;
     display: flex;
     float: right;
     flex-flow: column;
+    position: relative;
+}
+.inventoryHoriz {
+    display: flex;
+    padding-left: 20px;
+}
+#chest {
+    width: 150px;
+    padding-top: 30px;
+}
+.inventoryPics {
+    width: 75px;
 }
 #textContainer {
     float: left;

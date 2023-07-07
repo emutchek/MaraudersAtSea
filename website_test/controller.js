@@ -1,25 +1,20 @@
+/*
+**************************GRID**************************
+*/
+
 // Each inner array represents a single row of 2 objects, left and right
 const grid = [[{},{}],[{},{}],[{},{}],[{},{}],[{},{}]];
 
 // Represents the next plot island to be put on grid, NOT how many user has read
 var islandsPut = 0; 
 
-const resourceTypes = ["medicine","rope","wood"];
-
-var health = 100;
-
-const inventory = {medicine:10,rope:10,wood:10};
-
-// Temporary container for the current obstacle
-var obstacle;
-
 // Helper function to describe what's next to ship - returns the island number, resource type, or false
 function shipBesideWhat() {
-    if(grid[0][0] instanceof Island) return grid[0][0].number
-    if(grid[0][1] instanceof Island) return grid[0][1].number
-    if(grid[0][0] instanceof RA) return grid[0][0].type
-    if(grid[0][1] instanceof RA) return grid[0][1].type
-    return false
+  if(grid[0][0] instanceof Island) return grid[0][0].number
+  if(grid[0][1] instanceof Island) return grid[0][1].number
+  if(grid[0][0] instanceof RA) return grid[0][0].type
+  if(grid[0][1] instanceof RA) return grid[0][1].type
+  return false
 }
 
 // Calls appropriate function if ship is next to something; otherwise, returns false
@@ -38,21 +33,51 @@ function coordinateEncounter () {
 
 // Fills the top row of the grid (subarray 4) w/ islands, RAs, or nothing
 function generateRow () {
-    let side = Math.round(Math.random());                 // picks 0 (left) or 1 (right)
-    let x = Math.random();
-                                                         
-    if(x < 0.20) grid[4][side] = new Island();            // 20% chance of island
-    if(x >= 0.20 && x < 0.50) grid[4][side] = new RA();   // 30% chance of RA
-    if(x > 0.6) grid[4][side] = "mark"                   // 25% chance of wave picture
+  let side = Math.round(Math.random());                 // picks 0 (left) or 1 (right)
+  let x = Math.random();
+                                                       
+  if(x < 0.20) grid[4][side] = new Island();            // 20% chance of island
+  if(x >= 0.20 && x < 0.50) grid[4][side] = new RA();   // 30% chance of RA
+  if(x > 0.6) grid[4][side] = "mark"                   // 25% chance of wave picture
 }
 
 // Updates grid array to shift everything down, leaves top row blank
 function shiftRows() {
-    for(let i = 0; i < 4; i++) {
-        temp = grid[i+1]
-        grid[i] = temp;
-    }
-    grid[4] = [{},{}];
+  for(let i = 0; i < 4; i++) {
+      temp = grid[i+1]
+      grid[i] = temp;
+  }
+  grid[4] = [{},{}];
+}
+
+function sail () {
+  resetLeft();
+  shiftRows();
+  generateRow();
+  paintGrid();
+  let inEncounter = coordinateEncounter();
+  if(!inEncounter) generateObstacle();
+  gameOver();
+}
+
+/*
+**************************INVENTORY/RA**************************
+*/
+
+const inventory = {medicine:10,rope:10,wood:10};
+const resourceTypes = ["medicine","rope","wood"];
+var doubloons = 50;
+
+/*
+Resource Area:
+ - type of resource (randomly 1 of 3 options)
+*/
+class RA {
+  constructor() {
+    let idx = Math.floor(Math.random()*3); 
+    this.type = resourceTypes[idx];
+  }
+  toString() {return "RA"};
 }
 
 // Identifies what is inside the barrel we're next to, and updates inventory
@@ -82,6 +107,15 @@ function updateInventory(type,amt) {
   paintInventory();
   return true;
 }
+
+/*
+**************************OBSTACLE/HEALTH**************************
+*/
+
+var health = 100;
+// Temporary container for the current obstacle
+var obstacle;
+
 function updateHealth(amt) {
   health = health + amt;
   paintHealth();
@@ -93,13 +127,6 @@ function generateObstacle() {
   if(x < 0.20) {
     fetchObstacle();
   }
-}
-
-function generateIsland() {
-  // load text
-  displayIsland("You've reached an island! Here is a fun little anecdote, or \
-  a very serious decision to make you may (definitely) regret!",
-  "Cool, sounds fun", "That doesn't sound good");
 }
 
 /* Refers to obstacle field (top of file) to figure out what this solution does
@@ -132,6 +159,17 @@ function performSolutionB() {
   displayObstacleResult(obstacle.outcomeB);
 }
 
+/*
+**************************ISLAND**************************
+*/
+
+function generateIsland() {
+  // load text
+  displayIsland("You've reached an island! Here is a fun little anecdote, or \
+  a very serious decision to make you may (definitely) regret!",
+  "Cool, sounds fun", "That doesn't sound good");
+}
+
 function pickActionA() {
   // Log their decision, retrieve corresponding outcome
   closeIsland("That's the spirit, sailor");
@@ -142,26 +180,16 @@ function pickActionB() {
   closeIsland("Oh, a wise one, eh?");
 }
 
-function sail () {
-    resetLeft();
-    shiftRows();
-    generateRow();
-    paintGrid();
-    let inEncounter = coordinateEncounter();
-    if(!inEncounter) generateObstacle();
-    gameOver();
-}
-
 /*
 Island:
  - if the 'number' field is -1, it's a filler island and can go anywhere in the game;
-   the other 50% of the time, a number is assigned to indicate its position in the story 
+   the other 70% of the time, a number is assigned to indicate its position in the story 
    (ex. island 0 corresponds to story scene 0)
 */
 class Island {
     constructor() {
-      let isFiller = Math.round(Math.random()); 
-      if(isFiller === 0) {                              
+      let isFiller = Math.random(); 
+      if(isFiller < 0.7) {                              
         this.number = islandsPut;                    
         islandsPut++;
       }
@@ -169,17 +197,7 @@ class Island {
     }   
     toString() {return "island"};
 }
-/*
-Resource Area:
- - type of resource (randomly 1 of 3 options)
-*/
-class RA {
-    constructor() {
-      let idx = Math.floor(Math.random()*3); 
-      this.type = resourceTypes[idx];
-    }
-    toString() {return "RA"};
-}
+
 
 
 
