@@ -1,4 +1,44 @@
 /*
+**************************GAME MECHANICS**************************
+*/
+
+// Calls appropriate function if ship is next to something; otherwise, returns false
+function coordinateEncounter () {
+  adj = shipBesideWhat();
+  if(typeof adj === "number") {
+      generateIsland();
+      return true;
+  }
+  else if(typeof adj === "string") {
+      displayRA(adj);
+      return true;
+  }
+  return false;
+}
+
+/* 20% of the time, it retrieves description of an obstacle to send to UI
+   10% of the time it summons the traveling salesman */
+function generatePopUp() {
+  let x = Math.random();
+  if(x < 0.20) {
+    fetchObstacle();
+  }
+  else if (x < 0.30) {
+    launchSalesman();
+  }
+}
+
+function sail () {
+  resetLeft();
+  shiftRows();
+  generateRow();
+  paintGrid();
+  let inEncounter = coordinateEncounter();
+  if(!inEncounter) generatePopUp();
+  gameOver();
+}
+
+/*
 **************************GRID**************************
 */
 
@@ -15,20 +55,6 @@ function shipBesideWhat() {
   if(grid[0][0] instanceof RA) return grid[0][0].type
   if(grid[0][1] instanceof RA) return grid[0][1].type
   return false
-}
-
-// Calls appropriate function if ship is next to something; otherwise, returns false
-function coordinateEncounter () {
-  adj = shipBesideWhat();
-  if(typeof adj === "number") {
-      generateIsland();
-      return true;
-  }
-  else if(typeof adj === "string") {
-      displayRA(adj);
-      return true;
-  }
-  return false;
 }
 
 // Fills the top row of the grid (subarray 4) w/ islands, RAs, or nothing
@@ -48,16 +74,6 @@ function shiftRows() {
       grid[i] = temp;
   }
   grid[4] = [{},{}];
-}
-
-function sail () {
-  resetLeft();
-  shiftRows();
-  generateRow();
-  paintGrid();
-  let inEncounter = coordinateEncounter();
-  if(!inEncounter) generateObstacle();
-  gameOver();
 }
 
 /*
@@ -108,6 +124,10 @@ function updateInventory(type,amt) {
   return true;
 }
 
+function launchSalesman() {
+  fetchConversation()
+}
+
 /*
 **************************OBSTACLE/HEALTH**************************
 */
@@ -119,14 +139,6 @@ var obstacle;
 function updateHealth(amt) {
   health = health + amt;
   paintHealth();
-}
-
-// Retrieves description of an obstacle to send to UI, 10% of the time
-function generateObstacle() {
-  let x = Math.random();
-  if(x < 0.20) {
-    fetchObstacle();
-  }
 }
 
 /* Refers to obstacle field (top of file) to figure out what this solution does

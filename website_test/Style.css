@@ -14,6 +14,7 @@ h2 {
     color: white;
     font-family:'Courier New', Courier, monospace;
     padding-bottom: 30px;
+    padding-right: 20px;
 }
 button {
     font-size: 1.4em;
@@ -132,6 +133,9 @@ p {
 #inventoryXButton {
     margin-left: 80%;
 }
+#inv1Header {
+    display: flex;
+}
 #unitsContainer {
     display: flex;
 }
@@ -143,6 +147,9 @@ p {
     width: 150px;
     padding-top: 30px;
     margin-bottom: -20px;
+}
+#coinPic {
+    height: 50px;
 }
 .invMode1Pics {
     width: 75px;

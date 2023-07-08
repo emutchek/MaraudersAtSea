@@ -66,8 +66,7 @@
   <div id="inventoryContainer">
 
     <div id="invMode2">
-      <button id="inventoryXButton" 
-      onclick="openClose('#invMode1','block'); openClose('#invMode2','flex')">X</button>
+      <button id="inventoryXButton" onclick="openClose('#invMode1','block'); openClose('#invMode2','flex')">X</button>
       <img class="invMode2Pics" src="./website_pics/dagger.png">
       <img class="invMode2Pics" src="./website_pics/pink_hat.png">
       <img class="invMode2Pics" src="./website_pics/pink_hat.png">
@@ -79,7 +78,11 @@
     </div>
 
     <div id="invMode1">
-      <h2>Inventory</h2>
+      <div id="inv1Header">
+        <h2>Inventory:</h2>
+        <img src="./website_pics/doubloons.png" id="coinPic">
+        <p id="doubloonsText">50 doubloons</p>
+      </div>
       <div> <!--photos of medicine,rope,wood-->
         <img src="./website_pics/medicine.png" class="invMode1Pics">
         <img src="./website_pics/rope.png" class="middleUnits invMode1Pics">
@@ -90,8 +93,8 @@
         <p class="middleUnits">10 spools</p>
         <p class="invText">10 planks</p>
       </div>
-      <input type="image" src="./website_pics/treasure_chest.png" id="chest" 
-      onclick="openClose('#invMode2','flex'); openClose('#invMode1','block')">
+      <input type="image" src="./website_pics/treasure_chest.png" id="chest"
+        onclick="openClose('#invMode2','flex'); openClose('#invMode1','block')">
       <p>[click to open chest]</p> <!--↑ open chest-->
     </div>
 

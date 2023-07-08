@@ -57,6 +57,7 @@ function paintInventory() {
     $('.units').eq(0).text(`${inventory.medicine} vials`);
     $('.units').eq(1).text(`${inventory.rope} spools`);
     $('.units').eq(2).text(`${inventory.wood} planks`);
+    $("#doubloonsText").text(`${doubloons} doubloons`);
 }
 
 // When you lose or gain a resource, the text gets bigger and changes color for a second
