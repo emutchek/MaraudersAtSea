@@ -17,7 +17,7 @@
 
 <div id="buttonsContainer">
   <button id="sailButton" onclick="sail()">Sail</button>
-  <button id="mapButton" onclick="workMap()">Map</button>
+  <button id="mapButton" onclick="openClose('#map','block')">Map</button>
   <img id="healthBar" src="./website_pics/health1.png">
 </div>
 
@@ -66,22 +66,32 @@
   <div id="inventoryContainer">
 
     <div id="invMode2">
-      <img class="inventoryPics" src="./website_pics/pink_hat.png">
+      <button id="inventoryXButton" 
+      onclick="openClose('#invMode1','block'); openClose('#invMode2','flex')">X</button>
+      <img class="invMode2Pics" src="./website_pics/dagger.png">
+      <img class="invMode2Pics" src="./website_pics/pink_hat.png">
+      <img class="invMode2Pics" src="./website_pics/pink_hat.png">
+      <img class="invMode2Pics" src="./website_pics/pink_hat.png">
+      <img class="invMode2Pics" src="./website_pics/pink_hat.png">
+      <img class="invMode2Pics" src="./website_pics/pink_hat.png">
+      <img class="invMode2Pics" src="./website_pics/pink_hat.png">
+
     </div>
 
     <div id="invMode1">
       <h2>Inventory</h2>
       <div> <!--photos of medicine,rope,wood-->
-        <img src="./website_pics/medicine.png" class="inventoryPics">
-        <img src="./website_pics/rope.png" class="middleUnits inventoryPics">
-        <img src="./website_pics/wood.png" class="inventoryPics">
+        <img src="./website_pics/medicine.png" class="invMode1Pics">
+        <img src="./website_pics/rope.png" class="middleUnits invMode1Pics">
+        <img src="./website_pics/wood.png" class="invMode1Pics">
       </div>
       <div id="unitsContainer"> <!--text beneath medicine,rope,wood-->
         <p class="invText">10 vials</p>
         <p class="middleUnits">10 spools</p>
         <p class="invText">10 planks</p>
       </div>
-      <input type="image" src="./website_pics/treasure_chest.png" id="chest" onclick="openChest()">
+      <input type="image" src="./website_pics/treasure_chest.png" id="chest" 
+      onclick="openClose('#invMode2','flex'); openClose('#invMode1','block')">
       <p>[click to open chest]</p> <!--↑ open chest-->
     </div>
 

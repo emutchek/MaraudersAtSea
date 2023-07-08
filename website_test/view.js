@@ -1,3 +1,9 @@
+function openClose(id,display) {
+    if ($(id).css("display")=="none") {
+        $(id).css("display",display);
+    }
+    else $(id).hide();
+}
 /*
 **************************GRID/NAVIGATION**************************
 */
@@ -20,14 +26,6 @@ function freeShip() {
     $("#mapButton").prop("disabled",false);
     $("#sailButton").prop("disabled",false);
 }
-
-// toggles map when user presses 'map' button
-function workMap() {
-    if ($("#map").css("display")=="none") {
-        $("#map").show();
-    }
-    else $("#map").hide();
-  }
 
 // Takes in an object and displays the correct picture - island, barrel, or blank
 function paintGridCell(cell, blockId) {
@@ -68,9 +66,6 @@ function highlightResource (type) {
     item.animate({color: "white",fontSize: "1.4em"},"medium");
 }
 
-function openChest() {
-    $("#extendedInventory").css("display")=="block";
-}
 /*
 **************************OBSTACLE/HEALTH TEXT**************************
 */

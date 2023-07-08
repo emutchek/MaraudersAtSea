@@ -31,14 +31,11 @@ p {
 }
 #everythingContainer {
     display: flex;
-    
-    
 }
 /***************LEFT***************/
 #textContainer {
     float: left;
     width: 400px;
-    
 }
 #map { /*place beside grid*/
     display: none;
@@ -91,7 +88,6 @@ p {
     align-items: center;
     height: 510px; /*total size of grid, accounting for border*/
     width: 300px;
-    /* position: relative; */
 }
 .gridImage { /*Make barrels and islands small, centered*/
     width: 75px;
@@ -124,9 +120,17 @@ p {
 }
 #invMode2 {
     grid-area: 1 / 1 / 2 / 2;
-    background-color: black;
+    background-image: url('./website_pics/shelves.jpg');
+    display: none;
     width: 300px;
     height: 510px;
+
+    flex-wrap: wrap;
+    align-content: flex-start;
+    align-items: center;
+}
+#inventoryXButton {
+    margin-left: 80%;
 }
 #unitsContainer {
     display: flex;
@@ -140,8 +144,11 @@ p {
     padding-top: 30px;
     margin-bottom: -20px;
 }
-.inventoryPics {
+.invMode1Pics {
     width: 75px;
+}
+.invMode2Pics {
+    width: 100px;
 }
 #healthBar {
     width: 50px;
