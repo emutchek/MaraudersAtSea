@@ -1,48 +1,47 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
-  <meta name="viewport"  content="width=device-width">
+  <meta name="viewport" content="width=device-width">
   <link href="Style.css" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="//cdn.jsdelivr.net/jquery.color-animation/1/mainfile"></script>
   <script src="view.js"></script>
   <script src="controller.js"></script>
   <script src="model.js"></script>
-  
+
 </head>
 
-  <h1>MARAUDERS AT SEA</h1>
+<h1>MARAUDERS AT SEA</h1>
 
-  <div id="buttonsContainer">
-    <button id="sailButton" onclick="sail()">Sail</button>
-    <button id="mapButton" onclick="workMap()">Map</button>
-    <img id="healthBar" src="./website_pics/health1.png">
-  </div>
+<div id="buttonsContainer">
+  <button id="sailButton" onclick="sail()">Sail</button>
+  <button id="mapButton" onclick="workMap()">Map</button>
+  <img id="healthBar" src="./website_pics/health1.png">
+</div>
 
-  <div id="obstacleContainer">
-    <button id="obstacleXButton" onclick="closeObstacle()">X</button>
-    <p id="obstacleTitle">Test</p>
-    <p id="obstacleText">Test</p>
-    <img src="./website_pics/pirate_flag.png" id="obstaclePic">
-    <button id="obstacleButtonA" onclick="performSolutionA()"></button>
-    <button id="obstacleButtonB" onclick="performSolutionB()"></button> 
-  </div>
+<div id="obstacleContainer">
+  <button id="obstacleXButton" onclick="closeObstacle()">X</button>
+  <p id="obstacleTitle">Test</p>
+  <p id="obstacleText">Test</p>
+  <img src="./website_pics/pirate_flag.png" id="obstaclePic">
+  <button id="obstacleButtonA" onclick="performSolutionA()"></button>
+  <button id="obstacleButtonB" onclick="performSolutionB()"></button>
+</div>
 
-  <img src="./website_pics/map.png" id="map">
+<img src="./website_pics/map.png" id="map">
+
+<div id="everythingContainer">
 
   <div id="textContainer">
     <p id="asurroundingText"></p>
     <button id="pickupRAButton" onclick="pickupRA()">Pick up</button>
     <button id="storyButtonA" class="storyButtons" onclick="pickActionA()"></button>
     <button id="storyButtonB" class="storyButtons" onclick="pickActionB()"></button>
-
   </div>
 
- 
-
   <div id="gridContainer">
-
     <div id="l4" class="grid"></div>
     <div id="l3" class="grid"></div>
     <div id="l2" class="grid"></div>
@@ -59,50 +58,48 @@
 
     <div id="r4" class="grid"></div>
     <div id="r3" class="grid"></div>
-    <div id="r2" class="grid"></div> 
+    <div id="r2" class="grid"></div>
     <div id="r1" class="grid"></div>
     <div id="r0" class="grid"></div>
- 
-    <div id="extendedInventory">
-      <img class="accessories" src="./website_pics/pink_hat.png">
-    </div>
-    
-    <div id="inventoryContainer">
-      <h2>Inventory</h2>
-      <div class="inventoryHoriz">
-        <img src="./website_pics/medicine.png" class="inventoryPics">
-        <img src="./website_pics/rope.png" class="inventoryPics">
-        <img src="./website_pics/wood.png" class="inventoryPics">
-      </div>
-      <div class="inventoryHoriz">
-        <p class="units">10 vials</p> <!---medicine-->
-        <p class="units">10 spools</p> <!---rope-->
-        <p class="units">10 planks</p> <!---wood--> 
-      </div>
-      
-      <input type="image" src="./website_pics/treasure_chest.png" id="chest" onclick="openChest()">
-      <p id="chestText">↑ open chest</p>
-    </div> 
-
-    
-    
-
   </div> <!--end grid container-->
 
-  
- 
-   
+  <div id="inventoryContainer">
 
-   <script> //this does not work
-    $(document).ready (
-      $("button").hover(()=>{
-        $(this).css({"background-color": "black","color": "white"});},
-      ()=>{
-        $(this).css({"background-color": "white","color": "black"})})
-    );
+    <div id="invMode2">
+      <img class="inventoryPics" src="./website_pics/pink_hat.png">
+    </div>
 
-   </script>
+    <div id="invMode1">
+      <h2>Inventory</h2>
+      <div> <!--photos of medicine,rope,wood-->
+        <img src="./website_pics/medicine.png" class="inventoryPics">
+        <img src="./website_pics/rope.png" class="middleUnits inventoryPics">
+        <img src="./website_pics/wood.png" class="inventoryPics">
+      </div>
+      <div id="unitsContainer"> <!--text beneath medicine,rope,wood-->
+        <p class="invText">10 vials</p>
+        <p class="middleUnits">10 spools</p>
+        <p class="invText">10 planks</p>
+      </div>
+      <input type="image" src="./website_pics/treasure_chest.png" id="chest" onclick="openChest()">
+      <p>[click to open chest]</p> <!--↑ open chest-->
+    </div>
+
+  </div> <!--end inventory container-->
+</div> <!--end everything container-->
+
+
+<script> //this does not work
+  $(document).ready(
+    $("button").hover(() => {
+      $(this).css({ "background-color": "black", "color": "white" });
+    },
+      () => {
+        $(this).css({ "background-color": "white", "color": "black" })
+      })
+  );
+
+</script>
 </body>
+
 </html>
-
-

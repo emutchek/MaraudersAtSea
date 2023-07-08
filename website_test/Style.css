@@ -29,11 +29,16 @@ p {
     font-family: monospace;
     color: white;
 }
+#everythingContainer {
+    display: flex;
+    
+    
+}
 /***************LEFT***************/
 #textContainer {
     float: left;
     width: 400px;
-    margin-left: 10%;
+    
 }
 #map { /*place beside grid*/
     display: none;
@@ -74,20 +79,19 @@ p {
     margin: auto;
     font-size: 1.6em;
     margin-bottom:10px;
-    
 }
 #obstacleXButton, #pickupRAButton, .storyButtons {
     display: none;
 }
 #gridContainer {
-    margin-left: 40%;
+    margin-left: 13%;
     display: flex;
     flex-flow: column wrap; /*three rows*/
     justify-content: center;
     align-items: center;
     height: 510px; /*total size of grid, accounting for border*/
     width: 300px;
-    position: relative;
+    /* position: relative; */
 }
 .gridImage { /*Make barrels and islands small, centered*/
     width: 75px;
@@ -109,57 +113,35 @@ p {
 
 /***********************RIGHT***********************/
 
-#inventoryContainer { /*put stats info beside grid*/
+#inventoryContainer { 
+    display: grid;
     margin-left: 25px;
-    display: flex;
-    float: right;
-    flex-flow: column;
-    position: relative;
-    height: 510px; 
     width: 300px;
+    height: 500px;
 }
-/* #gridContainer {
-    margin-left: 40%;
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
-    height: 510px; 
-    width: 300px;
-    position: relative;
-} */
-#extendedInventory {
-    display: block;
-    z-index: 2;
-    float: right;
+#invMode1 {
+    grid-area: 1 / 1 / 2 / 2;
+}
+#invMode2 {
+    grid-area: 1 / 1 / 2 / 2;
     background-color: black;
-    position: absolute;
-    height: 510px; 
-    width: 310px;
-    
+    width: 300px;
+    height: 510px;
 }
-/* #obstacleContainer {
-    display: none;
-    background-color: #993333;
-    z-index: 2;
-    position: absolute;
-    margin-left: 40%; 
-    height: 510px; 
-    width: 310px;
-} */
-.inventoryHoriz {
+#unitsContainer {
     display: flex;
+}
+.middleUnits {
     padding-left: 20px;
+    padding-right: 20px;
 }
 #chest {
     width: 150px;
     padding-top: 30px;
+    margin-bottom: -20px;
 }
 .inventoryPics {
     width: 75px;
-}
-.accessories {
-    width: 100px;
 }
 #healthBar {
     width: 50px;
