@@ -21,13 +21,22 @@
   <img id="healthBar" src="./website_pics/health1.png">
 </div>
 
-<div id="obstacleContainer">
+<div class="overlayGrid" id="obstacleContainer">
   <button id="obstacleXButton" onclick="closeObstacle()">X</button>
   <p id="obstacleTitle">Test</p>
   <p id="obstacleText">Test</p>
   <img src="./website_pics/pirate_flag.png" id="obstaclePic">
   <button id="obstacleButtonA" onclick="performSolutionA()"></button>
   <button id="obstacleButtonB" onclick="performSolutionB()"></button>
+</div>
+
+<div class="overlayGrid" id="salesmanContainer">
+  <button id="salesmanXButton" onclick="">X</button>
+  <p id="salesmanTitle">Test</p>
+  <p id="salesmanText">Test</p>
+  <img src="./website_pics/pirate_flag.png" id="obstaclePic">
+  <button id="salesmanButtonA" onclick=""></button>
+  <button id="salesmanButtonB" onclick=""></button>
 </div>
 
 <img src="./website_pics/map.png" id="map">
@@ -81,7 +90,7 @@
       <div id="inv1Header">
         <h2>Inventory:</h2>
         <img src="./website_pics/doubloons.png" id="coinPic">
-        <p id="doubloonsText">50 doubloons</p>
+        <p id="doubloonsText">$50</p>
       </div>
       <div> <!--photos of medicine,rope,wood-->
         <img src="./website_pics/medicine.png" class="invMode1Pics">
@@ -89,9 +98,9 @@
         <img src="./website_pics/wood.png" class="invMode1Pics">
       </div>
       <div id="unitsContainer"> <!--text beneath medicine,rope,wood-->
-        <p class="invText">10 vials</p>
-        <p class="middleUnits">10 spools</p>
-        <p class="invText">10 planks</p>
+        <p id="medicineLabel">10 vials</p>
+        <p class="middleUnits" id="ropeLabel">10 spools</p>
+        <p class="invText" id="woodLabel">10 planks</p>
       </div>
       <input type="image" src="./website_pics/treasure_chest.png" id="chest"
         onclick="openClose('#invMode2','flex'); openClose('#invMode1','block')">

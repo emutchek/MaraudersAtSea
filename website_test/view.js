@@ -54,17 +54,23 @@ function displayRA(raType) {
 
 function paintInventory() {
     resetLeft(); // remove the question and button immediately so it's clear that they clicked it
-    $('.units').eq(0).text(`${inventory.medicine} vials`);
-    $('.units').eq(1).text(`${inventory.rope} spools`);
-    $('.units').eq(2).text(`${inventory.wood} planks`);
-    $("#doubloonsText").text(`${doubloons} doubloons`);
+    $('#medicineLabel').text(`${inventory.medicine} vials`);
+    $('#ropeLabel').text(`${inventory.rope} spools`);
+    $('#woodLabel').text(`${inventory.wood} planks`);
+    $("#doubloonsText").text(`$${doubloons}`);
 }
 
 // When you lose or gain a resource, the text gets bigger and changes color for a second
 function highlightResource (type) {
-    var item = $('.units').eq(resourceTypes.indexOf(type));
-    item.animate({color: "#b58d30",fontSize: "1.6em"},"slow");
-    item.animate({color: "white",fontSize: "1.4em"},"medium");
+    var item;
+    switch(type){
+        case "medicine": item = $("#medicineLabel"); break;
+        case "rope": item = $("#ropeLabel"); break;
+        case "wood": item = $("#woodLabel"); break;
+        case "doubloons": item = $("#doubloonsText"); break;
+    }
+    item.animate({color: "#b58d30",fontSize: "1.5em"},"slow");
+    item.animate({color: "black",fontSize: "1.4em"},"medium");
 }
 
 /*

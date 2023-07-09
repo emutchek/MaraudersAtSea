@@ -1,17 +1,19 @@
  html,body {
     height: 100%;
     width: 100%;
-    background-color: rgb(48, 133, 223);
+    background-image: url(./website_pics/waves.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
  }
 h1 {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
     font-family:'Courier New', Courier, monospace;
-    color: white;
+    color: navy;
 }
 h2 {
-    color: white;
+    color: darkcyan;
     font-family:'Courier New', Courier, monospace;
     padding-bottom: 30px;
     padding-right: 20px;
@@ -28,7 +30,6 @@ button {
 p { 
     font-size: 1.4em;
     font-family: monospace;
-    color: white;
 }
 #everythingContainer {
     display: flex;
@@ -51,14 +52,20 @@ p {
     margin-right: auto;
     justify-content: center;
 }
-#obstacleContainer {
+.overlayGrid {
     display: none;
-    background-color: #993333;
     z-index: 2;
     position: absolute;
     margin-left: 40%; /*layer exactly on top of grid*/
     height: 510px; 
     width: 310px;
+}
+#obstacleContainer {
+    background-color: #993333;
+}
+#salesmanContainer {
+    background-color: bisque;
+    /* display: block; */
 }
 #obstaclePic {
     margin: auto;
@@ -97,7 +104,7 @@ p {
 .grid { /*grid squares*/
     width: 100px;
     height: 100px;
-    border: 1px dashed white;
+    border: 1px dashed darkcyan;
     display: flex;
     justify-content: center;
     align-items: center;
