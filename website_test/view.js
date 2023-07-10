@@ -69,7 +69,7 @@ function highlightResource (type) {
         case "wood": item = $("#woodLabel"); break;
         case "doubloons": item = $("#doubloonsText"); break;
     }
-    item.animate({color: "#b58d30",fontSize: "1.5em"},"slow");
+    item.animate({color: "#b58d30",fontSize: "1.6em"},"slow");
     item.animate({color: "black",fontSize: "1.4em"},"medium");
 }
 
