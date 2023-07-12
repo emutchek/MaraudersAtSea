@@ -101,29 +101,28 @@ function displaySale(item) {
     $("#salesmanButtonB").text("No thanks");
 }
 
+//Repeated code to remove buttons and price, add x button
+function clearSaleScreen() {
+    $("#priceText").text("");
+    $("#salesmanButtonA").css("display","none");
+    $("#salesmanButtonB").css("display","none");
+    $("#salesmanXButton").css("display","block");
+}
+
 //User tried to buy something they can't afford - say no, let user close the screen
 function displayPenniless() {
     $("#salesmanText").text("What are you trying to pay me in, seashells?");
     let item = $("#doubloonsText");
     item.animate({color: "red",fontSize: "1.7em"},"slow");
     item.animate({color: "black",fontSize: "1.4em"},"slow");
-    $("#salesmanButtonA").css("display","none");
-    $("#salesmanButtonB").css("display","none");
-    $("#salesmanXButton").css("display","block");
+    clearSaleScreen();
 }
 
 //User successfully bought an item
 function displaySaleOutcome(bought) {
     if (bought) $("#salesmanText").text(item["yes"]);
     else $("#salesmanText").text(item["no"]);
-
-    $("#salesmanButton")
-    //$("#salesmanButtonA").css("display","none");
-    $("#priceText").text("hi");
-    
-    //$("#salesmanPic").css("display","none");  don't want to have to put this back
-    $("#salesmanButtonB").css("display","none");
-    $("#salesmanXButton").css("display","block");
+    clearSaleScreen();
 }
 
 // Puts the buttons & pic back for next time, closes the container (almost same as closeObstacle())

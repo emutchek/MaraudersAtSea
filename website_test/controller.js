@@ -163,8 +163,8 @@ function performSale(aOrB) {
 
 function generateSale() {
   console.log(`ratio is ${rudeness[0]/rudeness[1]}`);
-  if(rudeness[0]/rudeness[1] < 0.34) fetchItem("uselessItems");
-  else if(rudeness[0]/rudeness[1] < 0.67) fetchItem("regularItems");
+  if(rudeness[0]/rudeness[1] < 0.5) fetchItem("uselessItems");
+  else if(rudeness[0]/rudeness[1] < 1) fetchItem("regularItems");
   else fetchItem("onSaleItems");
 }
 
