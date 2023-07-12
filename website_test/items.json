@@ -4,7 +4,7 @@
         "name":"hat",
         "cost":"15",
         "pic":"./website_pics/pink_hat.png",
-        "descr":"'How would you like a bit of bling to protect that noggin?'",
+        "descr":"Hey, how would you like a bit of bling to protect that noggin?'",
         "yes":"'It looks swell on you, lass!'",
         "no":"'Probably for the best - you couldn't pull this off anyway'"
     }
@@ -15,7 +15,7 @@
         "name":"dagger",
         "cost":"60",
         "pic":"./website_pics/dagger.png",
-        "descr":"'This here belonged to a king, once, but I'll give it to you for cheap'",
+        "descr":"Hey, This here belonged to a king once but I'll give it to you for cheap.'",
         "yes":"'Just keep that thing pointed away from me'",
         "no":"'You'll regret it'"
     }
@@ -25,7 +25,7 @@
         "name":"teacup",
         "cost":"40",
         "pic":"./website_pics/teacup.png",
-        "descr":"'Can I interest you in this highly lucrative tea cup?'",
+        "descr":"Hey, can I interest you in this highly lucrative tea cup?'",
         "yes":"'Not the most business savvy pirates, are you?'",
         "no":"He leaves in a huff, nosing around the storeroom for a bit"
     }
@@ -36,8 +36,8 @@
         "greeting":"'Ahoy there, did you know that pirates have unique musical abilities?'",
         "opA":"We're in a bit of a hurry, mate",
         "opB":"What kind of abilities?",
-        "outcomeA":"'Fine, you scallywag.",
-        "outcomeB":"'They can only hit the high C's! Classic.",
+        "outcomeA":"'Fine, you scallywag. ",
+        "outcomeB":"'They can only hit the high C's! Classic. ",
         "rudeOption":"A"
     }
 ]

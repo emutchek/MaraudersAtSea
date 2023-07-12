@@ -31,12 +31,13 @@
 </div>
 
 <div class="overlayGrid" id="salesmanContainer">
-  <button id="salesmanXButton" onclick="">X</button>
+  <button id="salesmanXButton" onclick="closeSale()">X</button>
   <p id="salesmanTitle">Test</p>
   <p id="salesmanText">Test</p>
-  <img src="./website_pics/pirate_flag.png" id="obstaclePic">
-  <button id="salesmanButtonA" onclick=""></button>
-  <button id="salesmanButtonB" onclick=""></button>
+  <p id="priceText"></p>
+  <img src="./website_pics/pirate_flag.png" id="salesmanPic">
+  <button id="salesmanButtonA" onclick="salesmanButtons('A')"></button>
+  <button id="salesmanButtonB" onclick="salesmanButtons('B')"></button>
 </div>
 
 <img src="./website_pics/map.png" id="map">
@@ -75,15 +76,8 @@
   <div id="inventoryContainer">
 
     <div id="invMode2">
-      <button id="inventoryXButton" onclick="openClose('#invMode1','block'); openClose('#invMode2','flex')">X</button>
-      <img class="invMode2Pics" src="./website_pics/dagger.png">
-      <img class="invMode2Pics" src="./website_pics/pink_hat.png">
-      <img class="invMode2Pics" src="./website_pics/pink_hat.png">
-      <img class="invMode2Pics" src="./website_pics/pink_hat.png">
-      <img class="invMode2Pics" src="./website_pics/pink_hat.png">
-      <img class="invMode2Pics" src="./website_pics/pink_hat.png">
-      <img class="invMode2Pics" src="./website_pics/pink_hat.png">
-
+      <button id="inventoryXButton" 
+      onclick="openClose('#invMode1','block'); openClose('#invMode2','flex')">X</button>
     </div>
 
     <div id="invMode1">

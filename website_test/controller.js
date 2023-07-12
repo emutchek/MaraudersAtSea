@@ -16,16 +16,12 @@ function coordinateEncounter () {
   return false;
 }
 
-/* 20% of the time, it retrieves description of an obstacle to send to UI
+/* 10% of the time, it retrieves description of an obstacle to send to UI
    10% of the time it summons the traveling salesman */
 function generatePopUp() {
   let x = Math.random();
-  if(x < 0.20) {
-    fetchObstacle();
-  }
-  else if (x < 0.30) {
-    launchSalesman();
-  }
+  if(x < 0.10) fetchObstacle();
+  else if (x < 0.90) fetchConversation();
 }
 
 function sail () {
@@ -81,8 +77,13 @@ function shiftRows() {
 */
 
 const inventory = {medicine:10,rope:10,wood:10};
+const extraInventory = [];
 const resourceTypes = ["medicine","rope","wood"];
+const rudeness = [1,1];
 var doubloons = 50;
+var conversation;
+var item;
+
 
 /*
 Resource Area:
@@ -119,14 +120,55 @@ function updateInventory(type,amt) {
       if(inventory.wood === 0 && amt < 0) return false;
       inventory.wood = inventory.wood + amt; 
       highlightResource("wood"); break;
+    case("doubloons"):
+      if(doubloons - amt < 0) return false;
+      doubloons -= amt;
+      highlightResource("doubloons"); break;
   }
   paintInventory();
   return true;
 }
 
-function launchSalesman() {
-  fetchConversation()
+/*both option buttons are wired up to one control function
+  looks at screen to see which question you're answering */
+function salesmanButtons(aOrB) {
+  if($("#salesmanPic").attr("src")=="./website_pics/pirate_flag.png") performConvoAnswer(aOrB);
+  else performSale(aOrB);
 }
+
+//the user picks a conversation response, and it updates the gauge of your rudeness
+function performConvoAnswer(aOrB){
+  if (conversation["rudeOption"] == aOrB) rudeness[1] += 1;
+  else rudeness[0] += 1;
+  displayConvoResult(conversation[`outcome${aOrB}`]);
+}
+
+//a yes or no to buying the item he's selling
+function performSale(aOrB) {
+  //they clicked buy
+  if(aOrB=='A') {
+    if(updateInventory("doubloons",item["cost"])) {
+      extraInventory.push(item);
+      $('#invMode2').prepend(`<img class="invMode2Pics" src=${item["pic"]} />`);
+      displaySaleOutcome(true);
+    }
+    //they can't afford the item
+    else displayPenniless();
+  }
+  //they clicked don't buy
+  else {
+    displaySaleOutcome(false);
+  }
+}
+
+function generateSale() {
+  console.log(`ratio is ${rudeness[0]/rudeness[1]}`);
+  if(rudeness[0]/rudeness[1] < 0.34) fetchItem("uselessItems");
+  else if(rudeness[0]/rudeness[1] < 0.67) fetchItem("regularItems");
+  else fetchItem("onSaleItems");
+}
+
+
 
 /*
 **************************OBSTACLE/HEALTH**************************

@@ -64,24 +64,32 @@ p {
     background-color: #993333;
 }
 #salesmanContainer {
-    background-color: bisque;
+    background-color: lightpink;
     /* display: block; */
 }
-#obstaclePic {
+#obstaclePic, #salesmanPic {
     margin: auto;
     display: block;
     height: 150px;
 }
-#obstacleText {
+#obstacleText, #salesmanText {
     margin: auto;
     text-align: center;
     padding: 5px;
     color: black;
 }
-#obstacleTitle {
+#priceText {
+    margin: auto;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 1.8em;
+    color: black;
+}
+#obstacleTitle, #salesmanTitle {
     color: white;
     text-align: center;
     margin: auto;
+    padding-top: 20px;
     font-size: 1.6em;
     margin-bottom:10px;
 }
