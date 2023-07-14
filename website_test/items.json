@@ -7,17 +7,49 @@
         "descr":"Hey, how would you like a bit of bling to protect that noggin?'",
         "yes":"'It looks swell on you, lass!'",
         "no":"'Probably for the best - you couldn't pull this off anyway'"
+    },
+    {
+        "name":"fish hook",
+        "cost":"30",
+        "pic":"./website_pics/hook.png",
+        "descr":"Yo ho ho, any of you wenches want a fish hook? Easy to hang the jib, finding food out here.'",
+        "yes":"'Glad doing business'",
+        "no":"'Don't come crying to me when ye lose an eye then'"
+    },
+    {
+        "name":"bag of fruit",
+        "cost":"15",
+        "pic":"./website_pics/fruit.png",
+        "descr":"Oi, you fancy a little something to ward off the scurvy? Grog only goes so far, eh?'",
+        "yes":"'Enjoy the fruit!'",
+        "no":"'Shiver me timbers, why do I bother coming out to your man-o-war?'"
     }
     
 ],
 "onSaleItems":[
     {
         "name":"dagger",
-        "cost":"60",
+        "cost":"30",
         "pic":"./website_pics/dagger.png",
         "descr":"Hey, This here belonged to a king once but I'll give it to you for cheap.'",
         "yes":"'Just keep that thing pointed away from me'",
         "no":"'You'll regret it'"
+    },
+    {
+        "name":"telescope",
+        "cost":"40",
+        "pic":"./website_pics/spyglass.png",
+        "descr":"I'm not looking to empty all me coffers, but I have quite the booty to move here - anyone need a spy glass?",
+        "yes":"'Look at you lasses, pleased as pie to hornswaggle an old salt'",
+        "no":"'Well don't you scallywags tell anyone who showed it to ye, savvy?'"
+    },
+    {
+        "name":"sextant",
+        "cost":"45",
+        "pic":"./website_pics/sextant.png",
+        "descr":"Hey, I can't leave me hearties to capsize out here - I've got a sextant for cheap if ye have the doubloons.'",
+        "yes":"'Aye, good choice lass. I'm off to take a caulk.'",
+        "no":"'Fine then, feed the fish you scurvy dog'"
     }
 ],
 "uselessItems": [
@@ -25,9 +57,25 @@
         "name":"teacup",
         "cost":"40",
         "pic":"./website_pics/teacup.png",
-        "descr":"Hey, can I interest you in this highly lucrative tea cup?'",
+        "descr":"Afraid there isn't much for the likes of you... how about a lucrative tea cup?'",
         "yes":"'Not the most business savvy pirates, are you?'",
         "no":"He leaves in a huff, nosing around the storeroom for a bit"
+    },
+    {
+        "name":"pair of shoes",
+        "cost":"30",
+        "pic":"./website_pics/boot.png",
+        "descr":"Anyway, shark bait, me thought you sailors could use some slippers for your dance with Jack Ketch... whaddaya say?'",
+        "yes":"'Bunch of bilgesuckers, then, aren't ye?'",
+        "no":"The salesman gives a playful smile, leaps onto a rope ladder hanging off the side of the ship, and disappears from view"
+    },
+    {
+        "name":"waterlogged book",
+        "cost":"20",
+        "pic":"./website_pics/book.png",
+        "descr":"As it just so happens, I've a book you may fancy... well, it used to be a book. It's about a bunch of lily-livered pirates like yerselves.'",
+        "yes":"'Anything to entertain you landlubbers!'",
+        "no":"'You know what, it's on the house,' he winks and strolls over to the storeroom."
     }
 ],
 

@@ -20,8 +20,8 @@ function coordinateEncounter () {
    10% of the time it summons the traveling salesman */
 function generatePopUp() {
   let x = Math.random();
-  if(x < 0.10) fetchObstacle();
-  else if (x < 0.90) fetchConversation();
+  if(x < 0.15) fetchObstacle();
+  else if (x < 0.25) fetchConversation();
 }
 
 function sail () {
@@ -59,8 +59,8 @@ function generateRow () {
   let x = Math.random();
                                                        
   if(x < 0.20) grid[4][side] = new Island();            // 20% chance of island
-  if(x >= 0.20 && x < 0.50) grid[4][side] = new RA();   // 30% chance of RA
-  if(x > 0.6) grid[4][side] = "mark"                   // 25% chance of wave picture
+  if(x >= 0.20 && x < 0.40) grid[4][side] = new RA();   // 20% chance of RA
+  if(x > 0.65) grid[4][side] = "mark"                   // 25% chance of wave picture
 }
 
 // Updates grid array to shift everything down, leaves top row blank
@@ -109,20 +109,20 @@ function pickupRA() {
 function updateInventory(type,amt) {
   switch(type) {
     case("medicine"): 
-      if(inventory.medicine === 0 && amt < 0) return false;
-      inventory.medicine = inventory.medicine + amt; 
+      if(inventory.medicine + amt < 0) return false;
+      inventory.medicine += amt; 
       highlightResource("medicine"); break;
     case("rope"): 
-      if(inventory.rope === 0 && amt < 0) return false;
-      inventory.rope = inventory.rope + amt; 
+      if(inventory.rope + amt < 0) return false;
+      inventory.rope += amt; 
       highlightResource("rope"); break;
     case("wood"): 
-      if(inventory.wood === 0 && amt < 0) return false;
-      inventory.wood = inventory.wood + amt; 
+      if(inventory.wood + amt < 0) return false;
+      inventory.wood += amt; 
       highlightResource("wood"); break;
     case("doubloons"):
-      if(doubloons - amt < 0) return false;
-      doubloons -= amt;
+      if(doubloons + amt < 0) return false;
+      doubloons += amt;
       highlightResource("doubloons"); break;
   }
   paintInventory();
@@ -147,7 +147,7 @@ function performConvoAnswer(aOrB){
 function performSale(aOrB) {
   //they clicked buy
   if(aOrB=='A') {
-    if(updateInventory("doubloons",item["cost"])) {
+    if(updateInventory("doubloons",-item["cost"])) {
       extraInventory.push(item);
       $('#invMode2').prepend(`<img class="invMode2Pics" src=${item["pic"]} />`);
       displaySaleOutcome(true);
@@ -157,7 +157,17 @@ function performSale(aOrB) {
   }
   //they clicked don't buy
   else {
+    securityBreach();
     displaySaleOutcome(false);
+  }
+}
+
+//if the user has been rude to the salesman and rejects their item, he will steal from them
+function securityBreach() {
+  if(rudeness[0]/rudeness[1] < 0.5) {
+    let idx = Math.floor(Math.random()*3); 
+    let type = resourceTypes[idx];
+    updateInventory(type,-10);
   }
 }
 
