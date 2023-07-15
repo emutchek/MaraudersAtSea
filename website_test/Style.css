@@ -70,7 +70,7 @@ p {
 #obstaclePic, #salesmanPic {
     margin: auto;
     display: block;
-    height: 150px;
+    height: 100px;
 }
 #obstacleText, #salesmanText {
     margin: auto;

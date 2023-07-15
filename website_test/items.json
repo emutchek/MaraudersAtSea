@@ -10,7 +10,7 @@
     },
     {
         "name":"fish hook",
-        "cost":"30",
+        "cost":"11",
         "pic":"./website_pics/hook.png",
         "descr":"Yo ho ho, any of you wenches want a fish hook? Easy to hang the jib, finding food out here.'",
         "yes":"'Glad doing business'",
@@ -29,7 +29,7 @@
 "onSaleItems":[
     {
         "name":"dagger",
-        "cost":"30",
+        "cost":"20",
         "pic":"./website_pics/dagger.png",
         "descr":"Hey, This here belonged to a king once but I'll give it to you for cheap.'",
         "yes":"'Just keep that thing pointed away from me'",
@@ -37,7 +37,7 @@
     },
     {
         "name":"telescope",
-        "cost":"40",
+        "cost":"30",
         "pic":"./website_pics/spyglass.png",
         "descr":"I'm not looking to empty all me coffers, but I have quite the booty to move here - anyone need a spy glass?",
         "yes":"'Look at you lasses, pleased as pie to hornswaggle an old salt'",
@@ -45,7 +45,7 @@
     },
     {
         "name":"sextant",
-        "cost":"45",
+        "cost":"40",
         "pic":"./website_pics/sextant.png",
         "descr":"Hey, I can't leave me hearties to capsize out here - I've got a sextant for cheap if ye have the doubloons.'",
         "yes":"'Aye, good choice lass. I'm off to take a caulk.'",
@@ -55,7 +55,7 @@
 "uselessItems": [
     {
         "name":"teacup",
-        "cost":"40",
+        "cost":"11",
         "pic":"./website_pics/teacup.png",
         "descr":"Afraid there isn't much for the likes of you... how about a lucrative tea cup?'",
         "yes":"'Not the most business savvy pirates, are you?'",
@@ -63,7 +63,7 @@
     },
     {
         "name":"pair of shoes",
-        "cost":"30",
+        "cost":"20",
         "pic":"./website_pics/boot.png",
         "descr":"Anyway, shark bait, me thought you sailors could use some slippers for your dance with Jack Ketch... whaddaya say?'",
         "yes":"'Bunch of bilgesuckers, then, aren't ye?'",
@@ -71,7 +71,7 @@
     },
     {
         "name":"waterlogged book",
-        "cost":"20",
+        "cost":"15",
         "pic":"./website_pics/book.png",
         "descr":"As it just so happens, I've a book you may fancy... well, it used to be a book. It's about a bunch of lily-livered pirates like yerselves.'",
         "yes":"'Anything to entertain you landlubbers!'",

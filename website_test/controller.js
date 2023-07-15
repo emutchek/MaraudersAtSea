@@ -150,6 +150,7 @@ function performSale(aOrB) {
     if(updateInventory("doubloons",-item["cost"])) {
       extraInventory.push(item);
       $('#invMode2').prepend(`<img class="invMode2Pics" src=${item["pic"]} />`);
+      console.log(`new items: ${extraInventory.length}`);
       displaySaleOutcome(true);
     }
     //they can't afford the item
@@ -193,14 +194,14 @@ function updateHealth(amt) {
   paintHealth();
 }
 
-/* Refers to obstacle field (top of file) to figure out what this solution does
+/* Refers to global obstacle field to figure out what this solution does
    (e.g. reduces health or consumes resource)
    If they try to use a resource they don't have, it docks health and sends a message explaining why
 */
 function performSolutionA() {
   if(obstacle.actionA === "health") updateHealth(-25);
   else if(resourceTypes.includes(obstacle.actionA)) {
-    let hadEnough = updateInventory(obstacle.actionA,-10);
+    let hadEnough = updateInventory(obstacle.actionA,Number(obstacle.amt));
     if (!hadEnough) {
       updateHealth(-25);
       displayObstacleResult("Genius idea, but we don't actually have any of that :(");
@@ -213,7 +214,7 @@ function performSolutionA() {
 function performSolutionB() {
   if(obstacle.actionB === "health") updateHealth(-25);
   else if(resourceTypes.includes(obstacle.actionB)) {
-    let hadEnough = updateInventory(obstacle.actionB,-10);
+    let hadEnough = updateInventory(obstacle.actionB,Number(obstacle.amt));
     if (!hadEnough) {
       updateHealth(-25);
       displayObstacleResult("Genius idea, but we don't actually have any of that :(");
