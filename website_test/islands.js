@@ -1,5 +1,5 @@
 // code from: https://www.geeksforgeeks.org/implementation-linkedlist-javascript/#
-class Node {
+class Island {
 	// constructor
 	constructor(element) {
 		this.element = element;
@@ -15,7 +15,7 @@ class LinkedList {
 
 	// adds an element at the end of list
 	add(element) {
-		var node = new Node(element);
+		var node = new Island(element);
 		// to store current node
 		var current;
 		if (this.head == null)
@@ -50,5 +50,12 @@ class LinkedList {
 
 var ll = new LinkedList();
 
+// code from: https://stackoverflow.com/questions/38600545/how-to-import-a-text-file-content-to-javascript
+$.get('./islandText.txt',{},function(content){
+    let lines=content.split('n');
+    console.log(`"file.txt" contains ${lines.length} lines`)
+    console.log(`First line : ${lines[0]}`)
+
+});
 
 
