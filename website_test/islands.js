@@ -29,6 +29,12 @@ class Tree {
 				current = current.baseLeft;
 			}
             current.baseLeft = node;
+			current = this.head;
+			while (current.baseLeft) {
+				if (current.right) current = current.right;
+				else current = current.baseLeft;
+			}
+            current.baseLeft = node;
 		}
 		this.size++;
 	}
@@ -72,17 +78,17 @@ tree.add2('8a','8b');
 tree.add1('9');
 tree.add2('10a','10b');
 
-console.log(tree.getNextIsland(true));
-console.log(tree.getNextIsland(true));
-console.log(tree.getNextIsland(true));
-console.log(tree.getNextIsland(true));
-console.log(tree.getNextIsland(true));
-console.log(tree.getNextIsland(true));
-console.log(tree.getNextIsland(true));
-console.log(tree.getNextIsland(true));
-console.log(tree.getNextIsland(true));
-console.log(tree.getNextIsland(true));
-console.log(tree.getNextIsland(true));
+console.log(tree.getNextIsland(true)); // 0->1
+console.log(tree.getNextIsland(false)); // 1->2
+console.log(tree.getNextIsland(true)); // 2->3
+console.log(tree.getNextIsland(false)); // 3->4
+console.log(tree.getNextIsland(true)); // 4->5
+console.log(tree.getNextIsland(true)); // 5->6
+console.log(tree.getNextIsland(true)); // 6->7
+console.log(tree.getNextIsland(true)); // 7->8
+console.log(tree.getNextIsland(true)); // 8->9
+console.log(tree.getNextIsland(true)); // 9->10
+
 
 
 
