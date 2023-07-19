@@ -20,8 +20,8 @@ function coordinateEncounter () {
    10% of the time it summons the traveling salesman */
 function generatePopUp() {
   let x = Math.random();
-  if(x < 0.15) fetchObstacle();
-  else if (x < 0.25) fetchConversation();
+  if(x < 0) fetchObstacle(); //0.15
+  else if (x < 0) fetchConversation(); //0.25
 }
 
 function sail () {
@@ -227,21 +227,27 @@ function performSolutionB() {
 /*
 **************************ISLAND**************************
 */
+const heroism = [0,0];
+var nextIslandType = true;
 
+function earnedGoodEnding() {
+  console.log(`getting good ending: ${heroism[0]>=3} because it's ${heroism[0]}:${heroism[1]}`)
+	return heroism[0]>=3;
+}
 function generateIsland() {
-  // load text
-  displayIsland("You've reached an island! Here is a fun little anecdote, or \
-  a very serious decision to make you may (definitely) regret!",
-  "Cool, sounds fun", "That doesn't sound good");
+  let message = tree.getNextIsland(nextIslandType);
+  nextIslandType = true;
+  displayIsland(message,"option a","option b");
 }
-
-function pickActionA() {
-  // Log their decision, retrieve corresponding outcome
-  closeIsland("That's the spirit, sailor");
-}
-
-function pickActionB() {
-  // Log their decision, retrieve corresponding outcome
+function pickedIsland(aOrB) {
+	if(aOrB=='A') {
+		//heroism[0] += 1;
+		nextIslandType = true;
+	}
+	else {
+		//heroism[1] += 1;
+		nextIslandType = false;
+	}
   closeIsland("Oh, a wise one, eh?");
 }
 

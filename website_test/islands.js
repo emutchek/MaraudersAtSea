@@ -1,4 +1,3 @@
-// code from: https://www.geeksforgeeks.org/implementation-linkedlist-javascript/#
 class IslandNode {
 	// constructor
 	constructor(element) {
@@ -53,6 +52,7 @@ class Tree {
 			this.curIsland = this.head;
 			return this.curIsland.element;
 		}
+		if (this.curIsland.element == '9') aOrDefault = earnedGoodEnding();
 		if (aOrDefault) { // either there's no branch, or they're going to 'a' version
 			this.curIsland = this.curIsland.baseLeft;
 			return this.curIsland.element;
@@ -81,21 +81,6 @@ tree.add('2b','1');
 tree.add('4b','3');
 tree.add('6b','5');
 tree.add('8b','7');
-
-console.log(tree.getNextIsland()); // null->0
-console.log(tree.getNextIsland()); // 0->1
-console.log(tree.getNextIsland(false)); // 1->2
-console.log(tree.getNextIsland()); // 2->3
-console.log(tree.getNextIsland()); // 3->4
-console.log(tree.getNextIsland()); // 4->5
-console.log(tree.getNextIsland()); // 5->6
-console.log(tree.getNextIsland()); // 6->7
-console.log(tree.getNextIsland(false)); // 7->8
-console.log(tree.getNextIsland()); // 8->9
-console.log(tree.getNextIsland()); // 9->10
-console.log(tree.getNextIsland()); // 10b->11b
-
-
 
 
 

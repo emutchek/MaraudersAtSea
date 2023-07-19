@@ -1,11 +1,15 @@
 Technical to do:
-- make new tests - find a javascript testing framework
+- implement filler islands
+- only certain islands should increment doubt meter and let you set nextIslandType to false
+- tried to vary amount of resources you lost, but if you didn't have that much it would take none at all
+- i turned off obstacles!!
 
 
 In the future ideas:
 - customize ship appearance, name, etc. at the beginning 
 - Eurydice's journal showing all the story user has encountered so far
 - Island shape corresponds to the story
+- testing for javascript
 
 
 

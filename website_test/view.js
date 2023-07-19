@@ -199,10 +199,10 @@ function closeIsland(outcome) {
 **************************RANDOM**************************
 */
 /* If game is over (you died or reached the ending), disable sail button and show end message
-   Right now the game ends when you reach the 8th plot island (for no real reason)
+   Right now the game ONLY ends for death
 */
 function gameOver() {
-    if (shipBesideWhat() === 8 || health === 0) {
+    if (health === 0) {
         $("#sailButton").prop("disabled",true);
         $("#asurroundingText").text("That's the end! You did... something, alright!");
     }
