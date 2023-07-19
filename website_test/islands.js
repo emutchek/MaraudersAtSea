@@ -29,12 +29,18 @@ class Tree {
 				current = current.baseLeft;
 			}
             current.baseLeft = node;
-			current = this.head;
-			while (current.baseLeft) {
-				if (current.right) current = current.right;
-				else current = current.baseLeft;
-			}
-            current.baseLeft = node;
+			console.log("set baseLeft of " + current.element + " to " + node.element)
+
+			// current = this.head;
+			// while (current.baseLeft) {
+			// 	if (current.right) 
+			// 		current = current.right;
+			// 	else 
+			// 		current = current.baseLeft;
+			// }
+            // current.baseLeft = new IslandNode('hi');
+			// console.log("set baseLeft of " + current.element + " to hi")
+
 		}
 		this.size++;
 	}
