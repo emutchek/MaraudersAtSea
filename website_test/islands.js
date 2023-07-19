@@ -9,91 +9,94 @@ class IslandNode {
 }
 // BinaryTree class
 class Tree {
-	curIsland;
+	curIsland = null;
 	constructor() {
 		this.head = null;
 		this.size = 0;
 	}
 	// adds a whole-number island to the end of list 
-	add1(element) {
+	add(element, attachTo = '', connect = true) {
 		var node = new IslandNode(element);
-		// to store current node
-		var current;
+		// edge case: inserting first node
 		if (this.head == null) {
 			this.head = node;
-			this.curIsland = node;
+			
+			console.log(node.element);
 		}
-		else {
-			current = this.head;
+		// adding onto end of tree (left side)
+		else if (attachTo == '') {
+			var current = this.head;
 			while (current.baseLeft) {
 				current = current.baseLeft;
 			}
             current.baseLeft = node;
-			console.log("set baseLeft of " + current.element + " to " + node.element)
-
-			// current = this.head;
-			// while (current.baseLeft) {
-			// 	if (current.right) 
-			// 		current = current.right;
-			// 	else 
-			// 		current = current.baseLeft;
-			// }
-            // current.baseLeft = new IslandNode('hi');
-			// console.log("set baseLeft of " + current.element + " to hi")
+			console.log(`${current.element}->${node.element}`);
+		}
+		// inserting a right-side node into middle of tree
+		else {
+			var current = this.head;
+			while (current.baseLeft && current.element != attachTo) {
+				current = current.baseLeft;
+			}
+			node.baseLeft = current.baseLeft.baseLeft; 
+			current.baseRight = node; 
+			//console.log(`current is ${current.element}, current left left is ${current.baseLeft.baseLeft.element}`);
+			
+			console.log(`${current.element}->${node.element}->${node.baseLeft.element}`);
 
 		}
 		this.size++;
 	}
-	// adds two branch islands to the end of list
-	add2(el1,el2) {
-		var node1 = new IslandNode(el1);		
-		var node2 = new IslandNode(el2);
-		var current = this.head;
-		while (current.baseLeft) {
-			current = current.baseLeft;
+	// moves pointer, then returns value
+	getNextIsland(aOrDefault = true) {
+		// return very first island
+		if (this.curIsland == null) {
+			this.curIsland = this.head;
+			return this.curIsland.element;
 		}
-		current.baseLeft = node1;
-		current.right = node2;
-		this.size += 2;
-	}
-	// updates 
-	getNextIsland(aOrDefault) {
 		// either there's no branch, or they're going to 'a' version
-		if (aOrDefault) { 
-			let ans = this.curIsland.baseLeft.element;
+		if (aOrDefault) {
+			  
 			this.curIsland = this.curIsland.baseLeft;
-			return ans;
+			return this.curIsland.element;
 		}
 		// going to 'b' version
-		let ans = this.curIsland.right.element;
-		this.curIsland = this.curIsland.right;
-		return ans;
+		this.curIsland = this.curIsland.baseRight;
+		return this.curIsland.element;
 	}
 }
 
 var tree = new Tree();
-tree.add1('0');
-tree.add1('1');
-tree.add2('2a','2b');
-tree.add1('3');
-tree.add2('4a','4b');
-tree.add1('5');
-tree.add2('6a','6b');
-tree.add1('7');
-tree.add2('8a','8b');
-tree.add1('9');
-tree.add2('10a','10b');
+tree.add('0');
+tree.add('1');
+tree.add('2a');
+tree.add('3');
+tree.add('4a');
+tree.add('5');
+tree.add('6a');
+tree.add('7');
+tree.add('8a');
+tree.add('9');
+tree.add('10a');
+tree.add('11a');
+tree.add('2b','1');
+tree.add('4b','3');
+tree.add('6b','5');
+tree.add('8b','7');
+tree.add('10b','9',false);
+console.log('done adding');
 
-console.log(tree.getNextIsland(true)); // 0->1
+console.log(tree.getNextIsland()); // null->0
+console.log(tree.getNextIsland()); // 0->1
 console.log(tree.getNextIsland(false)); // 1->2
-console.log(tree.getNextIsland(true)); // 2->3
+console.log(tree.getNextIsland()); // 2->3
 console.log(tree.getNextIsland(false)); // 3->4
-console.log(tree.getNextIsland(true)); // 4->5
-console.log(tree.getNextIsland(true)); // 5->6
-console.log(tree.getNextIsland(true)); // 6->7
-console.log(tree.getNextIsland(true)); // 7->8
-console.log(tree.getNextIsland(true)); // 8->9
-console.log(tree.getNextIsland(true)); // 9->10
+console.log(tree.getNextIsland()); // 4->5
+console.log(tree.getNextIsland()); // 5->6
+console.log(tree.getNextIsland()); // 6->7
+console.log(tree.getNextIsland(false)); // 7->8
+console.log(tree.getNextIsland()); // 8->9
+console.log(tree.getNextIsland()); // 9->10
 
 
 
