@@ -14,54 +14,50 @@ class Tree {
 		this.head = null;
 		this.size = 0;
 	}
-	// adds a whole-number island to the end of list 
-	add(element, attachTo = '', connect = true) {
-		var node = new IslandNode(element);
-		// edge case: inserting first node
-		if (this.head == null) {
-			this.head = node;
-			
-			console.log(node.element);
-		}
-		// adding onto end of tree (left side)
-		else if (attachTo == '') {
-			var current = this.head;
-			while (current.baseLeft) {
-				current = current.baseLeft;
-			}
+	addToEnd(left,node) { // navigates to end of tree to add on left, or starts at 9 to add on right
+		var current = this.head;
+		if(left) {
+			while (current.baseLeft) current = current.baseLeft;
             current.baseLeft = node;
-			console.log(`${current.element}->${node.element}`);
 		}
-		// inserting a right-side node into middle of tree
 		else {
+			while (current.baseLeft && current.element != '9') current = current.baseLeft;
+			while (current.baseRight) current = current.baseRight;
+            current.baseRight = node;
+		}
+	}
+	add(element, attachTo = '') {
+		var node = new IslandNode(element);
+		if (this.head == null) { // edge case: inserting first node
+			this.head = node;
+		}
+		else if (attachTo == '' && element.slice(-1)=='b') { // adding onto end of tree (right side)
+			this.addToEnd(false,node);
+		}
+		else if (attachTo == '') { // adding onto end of tree (left side)
+			this.addToEnd(true,node);
+		}
+		else { // inserting a right-side node into the middle of the tree
 			var current = this.head;
 			while (current.baseLeft && current.element != attachTo) {
 				current = current.baseLeft;
 			}
 			node.baseLeft = current.baseLeft.baseLeft; 
 			current.baseRight = node; 
-			//console.log(`current is ${current.element}, current left left is ${current.baseLeft.baseLeft.element}`);
-			
-			console.log(`${current.element}->${node.element}->${node.baseLeft.element}`);
-
 		}
 		this.size++;
 	}
-	// moves pointer, then returns value
-	getNextIsland(aOrDefault = true) {
-		// return very first island
-		if (this.curIsland == null) {
+	
+	getNextIsland(aOrDefault = true) { // moves pointer, then returns value
+		if (this.curIsland == null) { // return very first island
 			this.curIsland = this.head;
 			return this.curIsland.element;
 		}
-		// either there's no branch, or they're going to 'a' version
-		if (aOrDefault) {
-			  
+		if (aOrDefault) { // either there's no branch, or they're going to 'a' version
 			this.curIsland = this.curIsland.baseLeft;
 			return this.curIsland.element;
 		}
-		// going to 'b' version
-		this.curIsland = this.curIsland.baseRight;
+		this.curIsland = this.curIsland.baseRight; // going to 'b' version
 		return this.curIsland.element;
 	}
 }
@@ -79,24 +75,26 @@ tree.add('8a');
 tree.add('9');
 tree.add('10a');
 tree.add('11a');
+tree.add('10b');
+tree.add('11b');
 tree.add('2b','1');
 tree.add('4b','3');
 tree.add('6b','5');
 tree.add('8b','7');
-tree.add('10b','9',false);
-console.log('done adding');
 
 console.log(tree.getNextIsland()); // null->0
 console.log(tree.getNextIsland()); // 0->1
 console.log(tree.getNextIsland(false)); // 1->2
 console.log(tree.getNextIsland()); // 2->3
-console.log(tree.getNextIsland(false)); // 3->4
+console.log(tree.getNextIsland()); // 3->4
 console.log(tree.getNextIsland()); // 4->5
 console.log(tree.getNextIsland()); // 5->6
 console.log(tree.getNextIsland()); // 6->7
 console.log(tree.getNextIsland(false)); // 7->8
 console.log(tree.getNextIsland()); // 8->9
 console.log(tree.getNextIsland()); // 9->10
+console.log(tree.getNextIsland()); // 10b->11b
+
 
 
 
