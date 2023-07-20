@@ -229,6 +229,7 @@ function performSolutionB() {
 */
 const heroism = [0,0];
 var nextIslandType = true;
+var island;
 
 function earnedGoodEnding() {
   console.log(`getting good ending: ${heroism[0]>=3} because it's ${heroism[0]}:${heroism[1]}`)
@@ -240,13 +241,14 @@ function generateIsland() {
   displayIsland(message,"option a","option b");
 }
 function pickedIsland(aOrB) {
+
 	if(aOrB=='A') {
 		//heroism[0] += 1;
-		nextIslandType = true;
+		//nextIslandType = true;
 	}
 	else {
 		//heroism[1] += 1;
-		nextIslandType = false;
+		//nextIslandType = false;
 	}
   closeIsland("Oh, a wise one, eh?");
 }

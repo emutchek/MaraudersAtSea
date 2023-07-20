@@ -48,16 +48,12 @@ class Tree {
 	}
 	
 	getNextIsland(aOrDefault = true) { // moves pointer, then returns value
-		if (this.curIsland == null) { // return very first island
-			this.curIsland = this.head;
-			return this.curIsland.element;
-		}
 		if (this.curIsland.element == '9') aOrDefault = earnedGoodEnding();
-		if (aOrDefault) { // either there's no branch, or they're going to 'a' version
-			this.curIsland = this.curIsland.baseLeft;
-			return this.curIsland.element;
-		}
-		this.curIsland = this.curIsland.baseRight; // going to 'b' version
+		// return very first island
+		if (this.curIsland == null) this.curIsland = this.head;
+		// either there's no branch, or they're going to 'a' version
+		else if (aOrDefault) this.curIsland = this.curIsland.baseLeft;
+		else this.curIsland = this.curIsland.baseRight; // going to 'b' version
 		return this.curIsland.element;
 	}
 }
@@ -82,13 +78,27 @@ tree.add('4b','3');
 tree.add('6b','5');
 tree.add('8b','7');
 
-
+const filledIslands = []; // array of json objects
+const islandsTexts = []; //array of chunks of text
+import emptyIsland from './islands.json' assert { type: 'json' };
+$.get('./islandText.txt',{},function(content){
+	islandsTexts=content.split('|');
+});
 
 // code from: https://stackoverflow.com/questions/38600545/how-to-import-a-text-file-content-to-javascript
-$.get('./islandText.txt',{},function(content){
-    let lines=content.split('n');
-    //console.log(`"file.txt" contains ${lines.length} lines`)
-    //console.log(`First line : ${lines[0]}`)
-});
+function fillIslands () {
+	for(let x=0; x < 1; x++) {
+		let islandTexts=islandsTexts[0].split(':');
+			
+
+			let temp = emptyIsland["islands"][0];
+			console.log(temp["text"]);
+			emptyIsland["text"] = islandText[0];
+			filledIslands.push(emptyIsland);
+		
+	}
+}
+fillIslands()
+//console.log(filledIslands[0]["text"]);
 
 

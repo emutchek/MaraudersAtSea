@@ -1,1 +1,14 @@
-This is line 1\nThis is line 2\nThis is line 3
+This is the text of the island.
+It spans multiple lines.
+:I will go left.
+:I will go right
+:I did the right thing
+:I did the wrong thing
+:branch
+|This is the text of the next island.
+It spans multiple lines.
+:I will go left.
+:I will go right
+:I did the right thing
+:I did the wrong thing
+:branch

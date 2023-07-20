@@ -27,8 +27,6 @@ async function fetchItem(type) {
   const response = await fetch(request);
   const itemObj = await response.json();
 
-  console.log(`getting a ${type} item`);
-  
   let x = Math.floor(Math.random()*3);
   item = itemObj[type][x];
   displaySale(item);
