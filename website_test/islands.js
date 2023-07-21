@@ -1,11 +1,3 @@
-class IslandNode {
-	// constructor
-	constructor(element) {
-		this.element = element;
-		this.baseLeft = null;
-		this.right = null;
-	}
-}
 // BinaryTree class
 class Tree {
 	curIsland = null;
@@ -20,17 +12,16 @@ class Tree {
             current.baseLeft = node;
 		}
 		else {
-			while (current.baseLeft && current.element != '9') current = current.baseLeft;
+			while (current.baseLeft && current.tag != '9') current = current.baseLeft;
 			while (current.baseRight) current = current.baseRight;
             current.baseRight = node;
 		}
 	}
-	add(element, attachTo = '') {
-		var node = new IslandNode(element);
+	add(node, attachTo = '') {
 		if (this.head == null) { // edge case: inserting first node
 			this.head = node;
 		}
-		else if (attachTo == '' && element.slice(-1)=='b') { // adding onto end of tree (right side)
+		else if (attachTo == '' && tag.slice(-1)=='b') { // adding onto end of tree (right side)
 			this.addToEnd(false,node);
 		}
 		else if (attachTo == '') { // adding onto end of tree (left side)
@@ -38,7 +29,7 @@ class Tree {
 		}
 		else { // inserting a right-side node into the middle of the tree
 			var current = this.head;
-			while (current.baseLeft && current.element != attachTo) {
+			while (current.baseLeft && current.tag != attachTo) {
 				current = current.baseLeft;
 			}
 			node.baseLeft = current.baseLeft.baseLeft; 
@@ -48,57 +39,66 @@ class Tree {
 	}
 	
 	getNextIsland(aOrDefault = true) { // moves pointer, then returns value
-		if (this.curIsland.element == '9') aOrDefault = earnedGoodEnding();
+		if (this.curIsland.tag == '9') aOrDefault = earnedGoodEnding();
 		// return very first island
 		if (this.curIsland == null) this.curIsland = this.head;
 		// either there's no branch, or they're going to 'a' version
 		else if (aOrDefault) this.curIsland = this.curIsland.baseLeft;
 		else this.curIsland = this.curIsland.baseRight; // going to 'b' version
-		return this.curIsland.element;
+		return this.curIsland;
 	}
 }
+
+class IslandNode {
+	constructor(){
+		this.baseLeft = null;
+		this.right = null;
+	}
+}
+
+const filledIslands = []; // array of island objects
+//array of chunks of text
+
+$.get('./islandText.txt',{},function(content){
+	saveValue(content.split('|'));
+});
+function saveValue(list) {return list;}
+
+console.log(islandText.length);
+
+function fillIslands () {
+	for(let x = 0; x < 1; x++) {
+		let fieldTexts = islandText[0].split(':');
+		const obj = new IslandNode();
+		obj["tag"] = fieldTexts[0];
+		obj["text"] = fieldTexts[1];
+		obj["opA"] = fieldTexts[2];
+		obj["opB"] = fieldTexts[3];
+		obj["outcomeA"] = fieldTexts[4];
+		obj["outcomeB"] = fieldTexts[5];
+		obj["effectType"] = fieldTexts[6];
+		filledIslands.push(obj);
+	}
+}
+
+fillIslands()
 
 var tree = new Tree();
-tree.add('0');
-tree.add('1');
-tree.add('2a');
-tree.add('3');
-tree.add('4a');
-tree.add('5');
-tree.add('6a');
-tree.add('7');
-tree.add('8a');
-tree.add('9');
-tree.add('10a');
-tree.add('11a');
-tree.add('10b');
-tree.add('11b');
-tree.add('2b','1');
-tree.add('4b','3');
-tree.add('6b','5');
-tree.add('8b','7');
-
-const filledIslands = []; // array of json objects
-const islandsTexts = []; //array of chunks of text
-import emptyIsland from './islands.json' assert { type: 'json' };
-$.get('./islandText.txt',{},function(content){
-	islandsTexts=content.split('|');
-});
-
-// code from: https://stackoverflow.com/questions/38600545/how-to-import-a-text-file-content-to-javascript
-function fillIslands () {
-	for(let x=0; x < 1; x++) {
-		let islandTexts=islandsTexts[0].split(':');
-			
-
-			let temp = emptyIsland["islands"][0];
-			console.log(temp["text"]);
-			emptyIsland["text"] = islandText[0];
-			filledIslands.push(emptyIsland);
-		
-	}
-}
-fillIslands()
-//console.log(filledIslands[0]["text"]);
-
-
+tree.add(filledIslands[0]); //1
+tree.add(filledIslands[1]); //2a
+tree.add(filledIslands[3]); //3
+tree.add(filledIslands[4]); //4a
+tree.add(filledIslands[6]); //5
+tree.add(filledIslands[7]); //6a
+tree.add(filledIslands[9]); //7
+tree.add(filledIslands[10]); //8a
+tree.add(filledIslands[12]); //9
+tree.add(filledIslands[13]); //10a
+tree.add(filledIslands[15]); //11a
+tree.add(filledIslands[14]); //10b
+tree.add(filledIslands[16]); //11b
+tree.add(filledIslands[2],'1'); //2b
+tree.add(filledIslands[5],'3'); //4b
+tree.add(filledIslands[8],'5'); //6b
+tree.add(filledIslands[11],'7'); //8b
+//1, 2a, 3, 4a, 5, 6a, 7, 8a, 9, 10a, 11a, 10b, 11b, (2b,'1'), (4b,'3'), (6b, '5'), (8b,'7')

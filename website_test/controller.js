@@ -5,9 +5,13 @@
 // Calls appropriate function if ship is next to something; otherwise, returns false
 function coordinateEncounter () {
   adj = shipBesideWhat();
-  if(typeof adj === "number") {
-      generateIsland();
+  if(typeof adj === "Island" && adj.isFiller) {
+      generateFillerIsland();
       return true;
+  }
+  else if(typeof adj === "Island") {
+    generateIsland();
+    return true;
   }
   else if(typeof adj === "string") {
       displayRA(adj);
@@ -46,8 +50,8 @@ var islandsPut = 0;
 
 // Helper function to describe what's next to ship - returns the island number, resource type, or false
 function shipBesideWhat() {
-  if(grid[0][0] instanceof Island) return grid[0][0].number
-  if(grid[0][1] instanceof Island) return grid[0][1].number
+  if(grid[0][0] instanceof Island) return grid[0][0]
+  if(grid[0][1] instanceof Island) return grid[0][1]
   if(grid[0][0] instanceof RA) return grid[0][0].type
   if(grid[0][1] instanceof RA) return grid[0][1].type
   return false
@@ -236,7 +240,7 @@ function earnedGoodEnding() {
 	return heroism[0]>=3;
 }
 function generateIsland() {
-  let message = tree.getNextIsland(nextIslandType);
+  const islandObj = tree.getNextIsland(nextIslandType);
   nextIslandType = true;
   displayIsland(message,"option a","option b");
 }
@@ -255,18 +259,12 @@ function pickedIsland(aOrB) {
 
 /*
 Island:
- - if the 'number' field is -1, it's a filler island and can go anywhere in the game;
-   the other 70% of the time, a number is assigned to indicate its position in the story 
-   (ex. island 0 corresponds to story scene 0)
+ - 30% chance of filler island
 */
 class Island {
     constructor() {
-      let isFiller = Math.random(); 
-      if(isFiller < 0.7) {                              
-        this.number = islandsPut;                    
-        islandsPut++;
-      }
-      else this.number = -1;
+      let temp = Math.floor(Math.random()); 
+      if(temp<0.33) this.isFiller = true;                             
     }   
     toString() {return "island"};
 }
