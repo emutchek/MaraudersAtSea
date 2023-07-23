@@ -5,11 +5,12 @@
 // Calls appropriate function if ship is next to something; otherwise, returns false
 function coordinateEncounter () {
   adj = shipBesideWhat();
-  if(typeof adj === "Island" && adj.isFiller) {
-      generateFillerIsland();
+  if(adj instanceof Island && adj.isFiller) {
+      //generateFillerIsland();
       return true;
   }
-  else if(typeof adj === "Island") {
+  else if(adj instanceof Island) {
+    console.log("normal island");
     generateIsland();
     return true;
   }
@@ -233,27 +234,29 @@ function performSolutionB() {
 */
 const heroism = [0,0];
 var nextIslandType = true;
-var island;
+var islandObj;
 
 function earnedGoodEnding() {
-  console.log(`getting good ending: ${heroism[0]>=3} because it's ${heroism[0]}:${heroism[1]}`)
+  console.log(`getting good ending: ${heroism[0]>=3} because it's ${heroism[0]}g:${heroism[1]}b`)
 	return heroism[0]>=3;
 }
 function generateIsland() {
-  const islandObj = tree.getNextIsland(nextIslandType);
+  islandObj = tree.getNextIsland(nextIslandType);
   nextIslandType = true;
-  displayIsland(message,"option a","option b");
+  console.log(`showing island ${islandObj["tag"]}`);
+  displayIsland(islandObj["text"],islandObj["opA"],islandObj["opA"]);
 }
 function pickedIsland(aOrB) {
-
-	if(aOrB=='A') {
-		//heroism[0] += 1;
-		//nextIslandType = true;
-	}
-	else {
-		//heroism[1] += 1;
-		//nextIslandType = false;
-	}
+  if(islandObj["effectType"] === "branch") {
+    if(aOrB=='A') {
+      heroism[0] += 1;
+      nextIslandType = true;
+    }
+    else {
+      heroism[1] += 1;
+      nextIslandType = false;
+    }
+  }
   closeIsland("Oh, a wise one, eh?");
 }
 
@@ -263,8 +266,8 @@ Island:
 */
 class Island {
     constructor() {
-      let temp = Math.floor(Math.random()); 
-      if(temp<0.33) this.isFiller = true;                             
+      let temp = Math.random(); 
+      if(temp<0.0) this.isFiller = true; // put this back to 0.33                         
     }   
     toString() {return "island"};
 }
