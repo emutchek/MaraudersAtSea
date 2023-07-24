@@ -53,7 +53,7 @@ class Tree {
 			else console.log(`${current.tag} - L: ${current.baseLeft.tag}`);
 			current = current.baseLeft;
 		}
-		// to see right side, add this line to the 'else of add fnc:
+		// to see right side, add this line to the 'else' of add fnc:
 		// console.log(`- ${current.tag} - ${node.tag} - ${node.baseLeft.tag}`);
 	}
 }

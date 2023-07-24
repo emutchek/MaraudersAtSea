@@ -10,7 +10,6 @@ function coordinateEncounter () {
       return true;
   }
   else if(adj instanceof Island) {
-    console.log("normal island");
     generateIsland();
     return true;
   }
@@ -244,7 +243,7 @@ function generateIsland() {
   islandObj = tree.getNextIsland(nextIslandType);
   nextIslandType = true;
   console.log(`showing island ${islandObj["tag"]}`);
-  displayIsland(islandObj["text"],islandObj["opA"],islandObj["opA"]);
+  displayIsland(islandObj["text"],islandObj["opA"],islandObj["opB"]);
 }
 function pickedIsland(aOrB) {
   if(islandObj["effectType"] === "branch") {
@@ -256,7 +255,9 @@ function pickedIsland(aOrB) {
       heroism[1] += 1;
       nextIslandType = false;
     }
+    console.log(`updated heroism: ${heroism[0]}g:${heroism[1]}b`);
   }
+  console.log(`going to show left/straight next time: ${nextIslandType}`);
   closeIsland("Oh, a wise one, eh?");
 }
 

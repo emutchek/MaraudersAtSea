@@ -13,7 +13,7 @@ sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit 
 :I will go right
 :I did the right thing
 :I did the wrong thing
-:branch
+:other
 |1
 :This is the text of the island. Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
@@ -45,7 +45,7 @@ sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit 
 :I will go right
 :I did the right thing
 :I did the wrong thing
-:branch
+:other
 |2b
 :This is the text of the island. Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
@@ -61,7 +61,7 @@ sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit 
 :I will go right
 :I did the right thing
 :I did the wrong thing
-:branch
+:other
 |3
 :This is the text of the island. Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
@@ -93,7 +93,7 @@ sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit 
 :I will go right
 :I did the right thing
 :I did the wrong thing
-:branch
+:other
 |4b
 :This is the text of the island. Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
@@ -109,7 +109,7 @@ sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit 
 :I will go right
 :I did the right thing
 :I did the wrong thing
-:branch
+:other
 |5
 :This is the text of the island. Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
@@ -141,7 +141,7 @@ sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit 
 :I will go right
 :I did the right thing
 :I did the wrong thing
-:branch
+:other
 |6b
 :This is the text of the island. Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
@@ -157,7 +157,7 @@ sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit 
 :I will go right
 :I did the right thing
 :I did the wrong thing
-:branch
+:other
 |7
 :This is the text of the island. Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
@@ -189,7 +189,7 @@ sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit 
 :I will go right
 :I did the right thing
 :I did the wrong thing
-:branch
+:other
 |8b
 :This is the text of the island. Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
@@ -205,7 +205,7 @@ sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit 
 :I will go right
 :I did the right thing
 :I did the wrong thing
-:branch
+:other
 |9
 :This is the text of the island. Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
@@ -237,7 +237,7 @@ sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit 
 :I will go right
 :I did the right thing
 :I did the wrong thing
-:branch
+:other
 |10b
 :This is the text of the island. Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
@@ -253,7 +253,7 @@ sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit 
 :I will go right
 :I did the right thing
 :I did the wrong thing
-:branch
+:other
 |11a
 :This is the text of the island. Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
@@ -269,7 +269,7 @@ sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit 
 :I will go right
 :I did the right thing
 :I did the wrong thing
-:branch
+:other
 |11b
 :This is the text of the island. Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
@@ -285,4 +285,4 @@ sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit 
 :I will go right
 :I did the right thing
 :I did the wrong thing
-:branch
+:other
