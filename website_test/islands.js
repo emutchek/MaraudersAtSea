@@ -5,36 +5,30 @@ class Tree {
 		this.head = null;
 		this.size = 0;
 	}
-	addToEnd(left,node) { // navigates to end of tree to add on left, or starts at 9 to add on right
+	add(node, attachTo = '', onLeft = false, middleNode = false) {
 		var current = this.head;
-		if(left) {
+		if (this.head == null) {   // edge case: inserting first node
+			this.head = node;
+		}
+		else if (attachTo == '') { // adding onto end of tree (left side)
 			while (current.baseLeft) current = current.baseLeft;
             current.baseLeft = node;
 		}
-		else {
-			while (current.baseLeft && current.tag != '9') current = current.baseLeft;
-			while (current.baseRight) current = current.baseRight;
-			console.log(`adding ${node.tag} onto right of ${current.tag}`);
-            current.baseRight = node;
-		}   
-	}
-	add(node, attachTo = '') {
-		if (this.head == null) { // edge case: inserting first node
-			this.head = node;
-		}
-		else if (attachTo == '' && node.tag.slice(-1)=='b') { // adding onto end of tree (right side)
-			this.addToEnd(false,node);
-		}
-		else if (attachTo == '') { // adding onto end of tree (left side)
-			this.addToEnd(true,node);
-		}
-		else { // inserting a right-side node into the middle of the tree
-			var current = this.head;
-			while (current.baseLeft && current.tag != attachTo) {
-				current = current.baseLeft;
+		else {                      // attaching onto a specific node
+			if (attachTo.slice(-1)=='b') { // attaching to a node that's on the right 
+				while (current.baseLeft && current.tag != attachTo) {
+					if(current.baseRight) current = current.baseRight;
+					else current = current.baseLeft;
+				}
 			}
-			node.baseLeft = current.baseLeft.baseLeft; 
-			current.baseRight = node; 
+			else {
+				while (current.baseLeft && current.tag != attachTo) current = current.baseLeft;		
+			}
+			if (onLeft) current.baseLeft = node;
+			else {
+				if (middleNode) node.baseLeft = current.baseLeft.baseLeft;  // in the middle of the tree; must connect at bottom
+				current.baseRight = node;
+			}
 		}
 		this.size++;
 	}
@@ -48,14 +42,20 @@ class Tree {
 		return this.curIsland;
 	}
 	printTree() {
+		// round 1:
 		var current = this.head;
 		while(current.baseLeft) {
-			if(current.baseRight) console.log(`${current.tag} - L: ${current.baseLeft.tag}, R: ${current.baseRight.tag}`);
-			else console.log(`${current.tag} - L: ${current.baseLeft.tag}`);
+			if(current.baseRight) console.log(`${current.tag}: L(${current.baseLeft.tag}),R(${current.baseRight.tag})`);
+			else console.log(`${current.tag}: L(${current.baseLeft.tag})`);
 			current = current.baseLeft;
 		}
-		// to see right side, add this line to the 'else' of add fnc:
-		// console.log(`- ${current.tag} - ${node.tag} - ${node.baseLeft.tag}`);
+		current = this.head;
+		//round 2:
+		while(current.baseLeft) {
+			if(current.tag.slice(-1)=='b') console.log(`${current.tag}: L(${current.baseLeft.tag})`);
+			if(current.baseRight) current = current.baseRight;
+			else current = current.baseLeft;
+		}
 	}
 }
 
@@ -70,7 +70,7 @@ const tree = new Tree();
 function loadText(tree) {
 	$.get('./islandText.txt',{},function(content){
 		fillIslands(content.split('|'),tree);
-		tree.printTree();
+		//tree.printTree();
 	});
 }
 // takes in an array of text chunks, parses them into fields for each island
@@ -93,7 +93,7 @@ function fillIslands (islandText,tree) {
 }
 
 loadText(tree);
-
+//node, attach to, on left, middle node
 function fillTree(filledIslands,tree) {
 	tree.add(filledIslands[0]); 
 	tree.add(filledIslands[1]); 
@@ -105,14 +105,14 @@ function fillTree(filledIslands,tree) {
 	tree.add(filledIslands[10]);
 	tree.add(filledIslands[11]); 
 	tree.add(filledIslands[13]);
-	tree.add(filledIslands[14]); 
-	tree.add(filledIslands[15]); 
-	tree.add(filledIslands[16]); 
-	tree.add(filledIslands[17]); 
-	tree.add(filledIslands[3],'1'); 
-	tree.add(filledIslands[6],'3'); 
-	tree.add(filledIslands[9],'5');
-	tree.add(filledIslands[12],'7'); 
+	tree.add(filledIslands[14]);  
+	tree.add(filledIslands[16]); // done with left side
+	tree.add(filledIslands[15],'9',false);
+	tree.add(filledIslands[17], '10b',true); // done with 10b and 11b
+	tree.add(filledIslands[3],'1',false,true); 
+	tree.add(filledIslands[6],'3',false,true); 
+	tree.add(filledIslands[9],'5',false,true);
+	tree.add(filledIslands[12],'7',false,true); 
 }
 /*
 	18 islands total (indices 0-17)
