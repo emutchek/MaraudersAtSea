@@ -86,7 +86,8 @@ function fillIslands (islandText,tree) {
 		obj["opB"] = fieldTexts[3];
 		obj["outcomeA"] = fieldTexts[4];
 		obj["outcomeB"] = fieldTexts[5];
-		obj["effectType"] = fieldTexts[6];
+		obj["effectTypeA"] = fieldTexts[6];
+		obj["effectTypeB"] = fieldTexts[7];
 		filledIslands.push(obj);
 	}
 	fillTree(filledIslands,tree);

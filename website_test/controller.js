@@ -234,11 +234,8 @@ function performSolutionB() {
 const heroism = [0,0];
 var nextIslandType = true;
 var islandObj;
+var choseA;
 
-function earnedGoodEnding() {
-  console.log(`getting good ending: ${heroism[0]>=3} because it's ${heroism[0]}g:${heroism[1]}b`)
-	return heroism[0]>=3;
-}
 function generateIsland() {
   islandObj = tree.getNextIsland(nextIslandType);
   nextIslandType = true;
@@ -246,21 +243,42 @@ function generateIsland() {
   displayIsland(islandObj["text"],islandObj["opA"],islandObj["opB"]);
 }
 function pickedIsland(aOrB) {
-  if(islandObj["effectType"] === "branch") {
-    if(aOrB=='A') {
-      heroism[0] += 1;
-      nextIslandType = true;
-    }
-    else {
-      heroism[1] += 1;
-      nextIslandType = false;
-    }
-    console.log(`updated heroism: ${heroism[0]}g:${heroism[1]}b`);
+  choseA = (aOrB=='A');
+  if(islandObj["effectTypeA"]==="branch") { 
+    branchIsland();
   }
-  console.log(`going to show left/straight next time: ${nextIslandType}`);
-  closeIsland("Oh, a wise one, eh?");
+  else if (choseA) {
+    executeOtherIsland(islandObj["effectTypeA"]);
+    return;
+  }
+  else executeOtherIsland(islandObj["effectTypeB"]);
+  if (choseA) closeIsland(islandObj["outcomeA"]);
+  else closeIsland(islandObj["outcomeB"]);
 }
+function executeOtherIsland(effectType) {
+  switch (effectType) {
+    case "inv": invIsland(); break;
+    case "ship": shipIsland(); break;
+  }
+}
+function branchIsland() {
+  if(choseA) {
+    heroism[0] += 1;
+    nextIslandType = true;
+  }
+  else {
+    heroism[1] += 1;
+    nextIslandType = false;
+  }
+  console.log(`heroism: ${heroism[0]}g:${heroism[1]}b`);
+}
+function invIsland(){}
+function shipIsland(){}
 
+function earnedGoodEnding() {
+  console.log(`getting good ending: ${heroism[0]>=3} because it's ${heroism[0]}g:${heroism[1]}b`)
+	return heroism[0]>=3;
+}
 /*
 Island:
  - 30% chance of filler island

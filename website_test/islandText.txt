@@ -1,288 +1,161 @@
 0
-:This is the text of the island. Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
-irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim 
-id est laborum. It spans multiple lines. Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur 
-sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-:I will go left.
-:I will go right
-:I did the right thing
-:I did the wrong thing
-:other
+:Letter from Eurydice's boss offers $$ in exchange for map; they embark on mission. 
+Take ship Artemis or Baelfire?
+:I will take Artemis.
+:I will take Baelfire.
+:The ship works
+:This ship works too
+:ship
+:ship
 |1
-:This is the text of the island. Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
-irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim 
-id est laborum. It spans multiple lines. Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur 
-sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-:I will go left.
-:I will go right
-:I did the right thing
-:I did the wrong thing
+:First encounter w/ locals; they're worried that more of you are coming. 
+Give them something, or hold back in case they're untrustworthy?
+:Give it to them
+:Do not give it to them
+:They tell you a shortcut
+:You lost a chance to make a friend
 :branch
+:
 |2a
-:This is the text of the island. Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
-irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim 
-id est laborum. It spans multiple lines. Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur 
-sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-:I will go left.
-:I will go right
-:I did the right thing
-:I did the wrong thing
-:other
+:Along the shortcut, you come across a disease-ridden bug attack. 
+Luckily, the route was short and you come across locals with medicine in enough time to cure the crew.
+Ask the locals for help (cost something) or simply steal the medicine needed?
+:I will ask for help.
+:I will just take it
+:I bartered away an item
+:I lost morality points
+:inv
+:rudeness
 |2b
-:This is the text of the island. Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
-irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim 
-id est laborum. It spans multiple lines. Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur 
-sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+:Sea monster
 :I will go left.
 :I will go right
 :I did the right thing
 :I did the wrong thing
-:other
+:inv
+:inv
 |3
-:This is the text of the island. Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
-irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim 
-id est laborum. It spans multiple lines. Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur 
-sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-:I will go left.
-:I will go right
-:I did the right thing
-:I did the wrong thing
+:Inside a cave, you discover bones and an elaborate trap holding unknown riches.
+Go for the treasure, or salvage the skeletons and flee?
+:Grab the skeletons and flee, we'll give them a proper burial
+:The way's been cleared, we have a good shot at the treasure
+:Find EHE dogtags on the bones; realize they match the seal of the letter
+:Abscond w/ $$, but find more bodies within; realize it was a makeshift prison
 :branch
+:
 |4a
-:This is the text of the island. Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
-irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim 
-id est laborum. It spans multiple lines. Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur 
-sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-:I will go left.
-:I will go right
-:I did the right thing
-:I did the wrong thing
-:other
+:You do more research about several (conspiracy) theories about the EHE's "explorations". 
+:I will make some sort of decision
+:I will make some other sort of decision
+:some sort of outcome
+:idk
+:inv
+:inv
 |4b
-:This is the text of the island. Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
-irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim 
-id est laborum. It spans multiple lines. Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur 
-sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+:You look closer at the treasure and realize they seem like personal possessions–jewelry, 
+lockets with art of loved ones, little knicknacks a child might carry with them.
 :I will go left.
 :I will go right
 :I did the right thing
 :I did the wrong thing
-:other
+:inv
+:inv
 |5
-:This is the text of the island. Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
-irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim 
-id est laborum. It spans multiple lines. Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur 
-sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-:I will go left.
-:I will go right
-:I did the right thing
-:I did the wrong thing
+:Go camping w/ locals. They have a diary, and at night, nobody is looking.
+:Don't look, what if they wake up?
+:Peek at their papers.
+:Because they trust you, the locals bring you to the grove
+:Learn about grove & the creatures who protect it
 :branch
+:
 |6a
-:This is the text of the island. Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
-irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim 
-id est laborum. It spans multiple lines. Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur 
-sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-:I will go left.
-:I will go right
-:I did the right thing
-:I did the wrong thing
-:other
+:Locals show you the healing magic of the grove. They ask you not to put it on map.
+:Sure, we'll leave it off
+:We can't afford to make something incomplete
+:Great, you did the right thing
+:Oh no, that was kind of mean of you
+:rudeness
+:rudeness
 |6b
-:This is the text of the island. Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
-irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim 
-id est laborum. It spans multiple lines. Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur 
-sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-:I will go left.
-:I will go right
-:I did the right thing
-:I did the wrong thing
-:other
+:Reach grove by memory; you assume it may be harmful & mark it on the map.
+Do you want to take some as a sample? It's probably worth a lot.
+:No, that's not my job
+:Of course, we struck gold
+:You left it alone, so you get doubt meter points
+:You get a little vial of stolen property yay
+:rudeness
+:inv
 |7
-:This is the text of the island. Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
-irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim 
-id est laborum. It spans multiple lines. Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur 
-sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-:I will go left.
-:I will go right
-:I did the right thing
-:I did the wrong thing
+:Attend local festival, where you hear rumors of incoming attack. Do you tell them what you know?
+:Yes, they deserve to be alert at least
+:No, we don't know how they might respond. They might be warlike.
+:Something about them liking you
+:You lose out on some info in return
 :branch
+:
 |8a
-:This is the text of the island. Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
-irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim 
-id est laborum. It spans multiple lines. Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur 
-sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-:I will go left.
+:No text yet.
+:I will go left
 :I will go right
 :I did the right thing
 :I did the wrong thing
-:other
+:inv
+:inv
 |8b
-:This is the text of the island. Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
-irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim 
-id est laborum. It spans multiple lines. Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur 
-sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-:I will go left.
+:No text yet.
+:I will go left
 :I will go right
 :I did the right thing
 :I did the wrong thing
-:other
+:inv
+:inv
 |9
-:This is the text of the island. Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
-irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim 
-id est laborum. It spans multiple lines. Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur 
-sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+:This is the penultimate island, so the decision should be dramatic, but it's too late for you 
+either way
 :I will go left.
 :I will go right
 :I did the right thing
 :I did the wrong thing
 :branch
+:
 |10a
-:This is the text of the island. Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
-irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim 
-id est laborum. It spans multiple lines. Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur 
-sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-:I will go left.
-:I will go right
-:I did the right thing
-:I did the wrong thing
-:other
+:Map is stolen by lackeys. You are now sure that your mission was past exploratory. 
+Do you turn around to confront your bosses, or try to find some locals to fess up to?
+:We have to tell someone now
+:There may be time to stop them
+:You find some locals who agree to travel with you to a bigger island.
+:You begin proceeding backwards, but are stopped by some locals who insist that you accompany them
+to a big strategy meeting
+:
+:
 |10b
-:This is the text of the island. Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
-irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim 
-id est laborum. It spans multiple lines. Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur 
-sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-:I will go left.
-:I will go right
-:I did the right thing
-:I did the wrong thing
-:other
+:Map is stolen by lackeys. You are now sure that your mission was past exploratory. The lackeys
+force their way onto your ship and insist on escorting you back to the Isle of Pirates so you won't
+interfere with their work. You run into some locals and offer to help them, but they refuse you. You've
+given their enemies the map, and for that they will suffer. Some question
+:Option a
+:Option B
+:outcome a
+:outcome b
+:
+:
 |11a
-:This is the text of the island. Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
-irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim 
-id est laborum. It spans multiple lines. Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur 
-sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-:I will go left.
-:I will go right
-:I did the right thing
-:I did the wrong thing
-:other
+:At the meeting, everyone is upset that you made the map. However, because of the good will you've 
+shown, they choose to give you another chance to prove yourself. You learn that local scouts report 
+an armada approaching to colonize the islands; your crew joins the war effort. Some profound,
+epilogue question.
+:Option A
+:Option B
+:profound ending #1
+:profound ending #1
+:
+:
 |11b
-:This is the text of the island. Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
-irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim 
-id est laborum. It spans multiple lines. Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur 
-sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-:I will go left.
-:I will go right
-:I did the right thing
-:I did the wrong thing
-:other
+:The crew returns home warily; a month later they sail by and see the destruction. Some profound,
+epilogue question.
+:Option A
+:Option B
+:profound ending #1
+:profound ending #1
+:
+:
