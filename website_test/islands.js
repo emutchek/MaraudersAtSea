@@ -14,8 +14,9 @@ class Tree {
 		else {
 			while (current.baseLeft && current.tag != '9') current = current.baseLeft;
 			while (current.baseRight) current = current.baseRight;
+			console.log(`adding ${node.tag} onto right of ${current.tag}`);
             current.baseRight = node;
-		}
+		}   
 	}
 	add(node, attachTo = '') {
 		if (this.head == null) { // edge case: inserting first node
@@ -69,6 +70,7 @@ const tree = new Tree();
 function loadText(tree) {
 	$.get('./islandText.txt',{},function(content){
 		fillIslands(content.split('|'),tree);
+		tree.printTree();
 	});
 }
 // takes in an array of text chunks, parses them into fields for each island
