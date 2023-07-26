@@ -33,11 +33,12 @@ p {
 }
 #everythingContainer {
     display: flex;
+    justify-content: space-evenly;
 }
 /***************LEFT***************/
 #textContainer {
-    float: left;
-    width: 400px;
+    width: 500px;
+    text-align: center;
 }
 #map { /*place beside grid*/
     display: none;
@@ -65,7 +66,6 @@ p {
 }
 #salesmanContainer {
     background-color: lightpink;
-    /* display: block; */
 }
 #obstaclePic, #salesmanPic {
     margin: auto;
@@ -97,13 +97,12 @@ p {
     display: none;
 }
 #gridContainer {
-    margin-left: 13%;
     display: flex;
     flex-flow: column wrap; /*three rows*/
     justify-content: center;
-    align-items: center;
+    align-content: center;
     height: 510px; /*total size of grid, accounting for border*/
-    width: 300px;
+    width: 350px;
 }
 .gridImage { /*Make barrels and islands small, centered*/
     width: 75px;
@@ -127,8 +126,7 @@ p {
 
 #inventoryContainer { 
     display: grid;
-    margin-left: 25px;
-    width: 330px;
+    width: 500px;
     height: 500px;
 }
 #invMode1 {
