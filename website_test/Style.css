@@ -21,8 +21,8 @@ button {
     font-size: 1.4em;
     font-family: monospace;
     background-color: white;
-    border-radius: 5px;
     text-align: center;
+    border-radius: 3px;
     padding: 5px;
     margin: 10px;
 }
@@ -42,15 +42,19 @@ p {
 #asurroundingText {
     font-family: 'Garamond',monospace;
 }
+.storyButtons {
+    font-family: 'Garamond',monospace;
+    background-color: azure;
+    border: none;
+    padding: 20px;
+}
 #map { /*place beside grid*/
     display: none;
     z-index: 2;
     height: 500px;
     position: fixed;
 }
-#restartButton {
-    display: none;
-}
+
 /***************CENTER***************/
 #buttonsContainer {
     display: flex;
@@ -98,7 +102,7 @@ p {
     font-size: 1.6em;
     margin-bottom:10px;
 }
-#obstacleXButton, #pickupRAButton, .storyButtons {
+#obstacleXButton, #pickupRAButton, .storyButtons, #restartButton {
     display: none;
 }
 #gridContainer {

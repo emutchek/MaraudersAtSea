@@ -24,12 +24,11 @@ function coordinateEncounter () {
    10% of the time it summons the traveling salesman */
 function generatePopUp() {
   let x = Math.random();
-  if(x < 0.15) fetchObstacle(); //0.15
-  else if (x < 0.25) fetchConversation(); //0.25
+  if(x < 0) fetchObstacle(); //0.15
+  else if (x < 0) fetchConversation(); //0.25
 }
 
 function sail () {
-  console.log(health);
   addShip(newShipNum);
   resetLeft();
   shiftRows();
@@ -38,7 +37,13 @@ function sail () {
   if(died()) return;
   let inEncounter = coordinateEncounter();
   if(!inEncounter) generatePopUp();
-  
+}
+
+function gameOver() {
+  if (islandObj["tag"]==='10b' || islandObj["tag"]==='11b'){
+    $("#sailButton").prop("disabled",true);
+    $("#restartButton").css("display","block");
+  }
 }
 
 function restart() {
@@ -49,6 +54,7 @@ function restart() {
   extraInventory.length = 0;
   rudeness[0],rudeness[1] = 1;
   doubloons = 50;
+  islandObj = [];
   nextIslandType = true;
   window.location.replace('./welcome.html');
 }
@@ -265,6 +271,7 @@ function pickedIsland(aOrB) {
   else executeOtherIsland(islandObj["effectTypeB"]);
   if (choseA) closeIsland(islandObj["outcomeA"]);
   else closeIsland(islandObj["outcomeB"]);
+  gameOver();
 }
 function executeOtherIsland(effectType) {
   switch (effectType) {
@@ -285,11 +292,11 @@ function branchIsland() {
 }
 function invIsland(){}
 
-
 function earnedGoodEnding() {
   console.log(`getting good ending: ${heroism[0]>=3} because it's ${heroism[0]}g:${heroism[1]}b`)
 	return heroism[0]>=3;
 }
+
 /*
 Island:
  - 30% chance of filler island
