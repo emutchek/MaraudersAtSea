@@ -249,7 +249,6 @@ function pickedIsland(aOrB) {
   }
   else if (choseA) {
     executeOtherIsland(islandObj["effectTypeA"]);
-    return;
   }
   else executeOtherIsland(islandObj["effectTypeB"]);
   if (choseA) closeIsland(islandObj["outcomeA"]);
