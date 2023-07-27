@@ -116,6 +116,9 @@ p {
     justify-content: center;
     align-items: center;
 }
+#ship {
+    width: 150px;
+}
 
 /*Erase top and bottom middle grid borders*/
 #gridTop {border-top: 0px;}

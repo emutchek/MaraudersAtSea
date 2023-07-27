@@ -257,7 +257,7 @@ function pickedIsland(aOrB) {
 function executeOtherIsland(effectType) {
   switch (effectType) {
     case "inv": invIsland(); break;
-    case "ship": shipIsland(); break;
+    
   }
 }
 function branchIsland() {
@@ -272,7 +272,7 @@ function branchIsland() {
   console.log(`heroism: ${heroism[0]}g:${heroism[1]}b`);
 }
 function invIsland(){}
-function shipIsland(){}
+
 
 function earnedGoodEnding() {
   console.log(`getting good ending: ${heroism[0]>=3} because it's ${heroism[0]}g:${heroism[1]}b`)

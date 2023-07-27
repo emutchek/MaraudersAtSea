@@ -1,12 +1,11 @@
 0
 :Letter from Eurydice's boss offers $$ in exchange for map; they embark on mission. 
-Take ship Artemis or Baelfire?
 :I will take Artemis.
 :I will take Baelfire.
 :The ship works
 :This ship works too
-:ship
-:ship
+:other
+:other
 |1
 :First encounter w/ locals; they're worried that more of you are coming. 
 Give them something, or hold back in case they're untrustworthy?

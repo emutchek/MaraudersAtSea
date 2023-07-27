@@ -32,7 +32,7 @@ function paintGridCell(cell, blockId) {
     $(blockId).empty();
     if(cell instanceof Island) $(blockId).append('<img src="./website_pics/island.png" class="gridImage">');
     else if(cell instanceof RA) $(blockId).append('<img src="./website_pics/barrel.png" class="gridImage">');
-    else if(cell === "mark") $(blockId).append('<img src="./website_pics/wave.png" class="gridImage" width="50px !important">');
+    else if(cell === "mark") $(blockId).append('<img src="./website_pics/wave.png" class="gridImage">');
 }
 
 // Fills all 10 boxes with up-to-date icon
@@ -194,6 +194,8 @@ function closeIsland(outcome) {
     $(".storyButtons").css("display","none");
     freeShip();
 }
+
+
 
 /*
 **************************RANDOM**************************
