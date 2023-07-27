@@ -24,18 +24,33 @@ function coordinateEncounter () {
    10% of the time it summons the traveling salesman */
 function generatePopUp() {
   let x = Math.random();
-  if(x < 0) fetchObstacle(); //0.15
-  else if (x < 0) fetchConversation(); //0.25
+  if(x < 0.15) fetchObstacle(); //0.15
+  else if (x < 0.25) fetchConversation(); //0.25
 }
 
 function sail () {
+  console.log(health);
+  addShip(newShipNum);
   resetLeft();
   shiftRows();
   generateRow();
   paintGrid();
+  if(died()) return;
   let inEncounter = coordinateEncounter();
   if(!inEncounter) generatePopUp();
-  gameOver();
+  
+}
+
+function restart() {
+  health = 100;
+  inventory["medicine"] = 10;
+  inventory["rope"] = 10;
+  inventory["wood"] = 10;
+  extraInventory.length = 0;
+  rudeness[0],rudeness[1] = 1;
+  doubloons = 50;
+  nextIslandType = true;
+  window.location.replace('./welcome.html');
 }
 
 /*
@@ -44,9 +59,6 @@ function sail () {
 
 // Each inner array represents a single row of 2 objects, left and right
 const grid = [[{},{}],[{},{}],[{},{}],[{},{}],[{},{}]];
-
-// Represents the next plot island to be put on grid, NOT how many user has read
-var islandsPut = 0; 
 
 // Helper function to describe what's next to ship - returns the island number, resource type, or false
 function shipBesideWhat() {
@@ -189,7 +201,7 @@ function generateSale() {
 **************************OBSTACLE/HEALTH**************************
 */
 
-var health = 100;
+var health = 10;
 // Temporary container for the current obstacle
 var obstacle;
 

@@ -10,7 +10,6 @@ h1 {
     margin-right: auto;
     text-align: center;
     font-family:'Courier New', Courier, monospace;
-    color: navy;
 }
 h2 {
     color: darkcyan;
@@ -40,11 +39,17 @@ p {
     width: 500px;
     text-align: center;
 }
+#asurroundingText {
+    font-family: 'Garamond',monospace;
+}
 #map { /*place beside grid*/
     display: none;
     z-index: 2;
     height: 500px;
     position: fixed;
+}
+#restartButton {
+    display: none;
 }
 /***************CENTER***************/
 #buttonsContainer {
@@ -104,9 +109,12 @@ p {
     height: 510px; /*total size of grid, accounting for border*/
     width: 350px;
 }
-.gridImage { /*Make barrels and islands small, centered*/
+.gridImage { /*Make barrels and islands small*/
     width: 75px;
     height: 75px;
+}
+.wave {
+    width: 50px;
 }
 .grid { /*grid squares*/
     width: 100px;
@@ -117,7 +125,7 @@ p {
     align-items: center;
 }
 #ship {
-    width: 150px;
+    width: 100px;
 }
 
 /*Erase top and bottom middle grid borders*/

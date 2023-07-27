@@ -7,10 +7,7 @@
   <link href="welcome.css" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="//cdn.jsdelivr.net/jquery.color-animation/1/mainfile"></script>
-  <script src="islands.js" ></script>
-  <script src="view.js"></script>
-  <script src="controller.js"></script>
-  <script src="model.js"></script>
+  <script src="view.js" ></script>
 </head>
 
 <div id="everythingContainer">
@@ -32,19 +29,23 @@
     <h2>Select a ship</h2>
     <div id="shipsContainer">
         <div class="ships">
-            <input type="image" src="./website_pics/ship1.png">
+            <input type="image" src="./website_pics/ship1.png" 
+            onclick="window.location.replace('./index.html'); pickedShip('1')">
             <p class="labels">The Artemis</p>
         </div>
         <div class="ships">
-            <input type="image" src="./website_pics/ship2.png">
+            <input type="image" src="./website_pics/ship2.png" 
+            onclick="window.location.replace('./index.html'); pickedShip('2')">
             <p class="labels">The Baelfire</p>
         </div>
         <div class="ships">
-            <input type="image" src="./website_pics/ship3.png">
+            <input type="image" src="./website_pics/ship3.png" 
+            onclick="window.location.replace('./index.html'); pickedShip('3')">
             <p class="labels">The Argo III</p>
         </div>
         <div class="ships">
-            <input type="image" src="./website_pics/ship4.png">
+            <input type="image" src="./website_pics/ship4.png" 
+            onclick="window.location.replace('./index.html'); pickedShip('4')">
             <p class="labels">The Regulus</p>
         </div>
     </div>

@@ -10,6 +10,7 @@ function openClose(id,display) {
 
 const gridImages = ["./website_pics/barrel.png","./website_pics/island.png"];
 
+
 // Erases the island/RA stuff for the next move forward
 function resetLeft() {
     $("#asurroundingText").text(" "); 
@@ -32,7 +33,7 @@ function paintGridCell(cell, blockId) {
     $(blockId).empty();
     if(cell instanceof Island) $(blockId).append('<img src="./website_pics/island.png" class="gridImage">');
     else if(cell instanceof RA) $(blockId).append('<img src="./website_pics/barrel.png" class="gridImage">');
-    else if(cell === "mark") $(blockId).append('<img src="./website_pics/wave.png" class="gridImage">');
+    else if(cell === "mark") $(blockId).append('<img src="./website_pics/wave.png" class="wave">');
 }
 
 // Fills all 10 boxes with up-to-date icon
@@ -43,6 +44,21 @@ function paintGrid() {
     }
 }
 
+// Stores which ship the user wants
+function pickedShip(number) {
+    localStorage.setItem("shipKey", number);
+}
+const newShipNum = localStorage.getItem("shipKey");
+
+// Updates picture of the ship to match what the user requested
+function addShip(number) {
+    switch(number) {
+        case('1'):$("#ship").attr("src","./website_pics/ship1.png"); console.log(number);break;
+        case('2'):$("#ship").attr("src","./website_pics/ship2.png"); console.log(number);break;
+        case('3'):$("#ship").attr("src","./website_pics/ship3.png"); console.log(number);break;
+        default:$("#ship").attr("src","./website_pics/ship4.png"); console.log(number);
+    }
+}
 /*
 **************************INVENTORY/RA**************************
 */
@@ -200,15 +216,19 @@ function closeIsland(outcome) {
 /*
 **************************RANDOM**************************
 */
-/* If game is over (you died or reached the ending), disable sail button and show end message
-   Right now the game ONLY ends for death
+/* If game is over because you died, disable sail button and show end message
 */
-function gameOver() {
-    if (health === 0) {
+function died() {
+    if (health <= 0) {
+        console.log(`died: ${health}`);
         $("#sailButton").prop("disabled",true);
-        $("#asurroundingText").text("That's the end! You did... something, alright!");
+        $("#asurroundingText").text("In your weakened state, the crew is unable to continue sailing. You find yourself too far from land, taking on water fast. The mission must be abandoned. Better luck next time!");
+        $("#restartButton").css("display","block");
+        return true;
     }
 }
+
+
 
 
 
