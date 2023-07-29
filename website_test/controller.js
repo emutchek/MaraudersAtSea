@@ -39,7 +39,7 @@ function sail () {
 }
 
 function gameOver() {
-  if (islandObj["tag"]==='10b' || islandObj["tag"]==='11b'){
+  if (islandObj["tag"]==='11a' || islandObj["tag"]==='11b'){
     $("#sailButton").prop("disabled",true);
     $("#restartButton").css("display","block");
   }
@@ -250,13 +250,15 @@ function performSolutionB() {
 */
 const heroism = [0,0];
 var nextIslandType = true;
+var latestTag;
 var islandObj;
 var choseA;
 
 function generateIsland() {
   islandObj = tree.getNextIsland(nextIslandType);
   nextIslandType = true;
-  console.log(`showing island ${islandObj["tag"]}`);
+  latestTag = Number(islandObj["tag"].replaceAll("b","").replaceAll("a",""));
+  console.log(`latest tag: ${latestTag}`);
   displayIsland(islandObj["text"],islandObj["opA"],islandObj["opB"]);
 }
 function pickedIsland(aOrB) {

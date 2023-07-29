@@ -60,6 +60,24 @@ function addShip(number) {
     }
 }
 $().ready(function(){addShip(newShipNum);});
+
+function paintMap() {
+    switch(latestTag) {
+        case(0): $("#map").attr("src","./website_pics/map0.jpg"); break;
+        case(1): $("#map").attr("src","./website_pics/map1.jpg"); break;
+        case(2): $("#map").attr("src","./website_pics/map2.jpg"); break;
+        case(3): $("#map").attr("src","./website_pics/map3.jpg"); break;
+        case(4): $("#map").attr("src","./website_pics/map4.jpg"); break;
+        case(5): $("#map").attr("src","./website_pics/map5.jpg"); break;
+        case(6): $("#map").attr("src","./website_pics/map6.jpg"); break;
+        case(7): $("#map").attr("src","./website_pics/map7.jpg"); break;
+        case(8): $("#map").attr("src","./website_pics/map8.jpg"); break;
+        case(9): $("#map").attr("src","./website_pics/map9.jpg"); break;
+        case(10): $("#map").attr("src","./website_pics/map10.jpg"); break;
+        case(11): $("#map").attr("src","./website_pics/map11.jpg"); break;
+    }
+    openClose('#map','block');
+}
 /*
 **************************INVENTORY/RA**************************
 */
