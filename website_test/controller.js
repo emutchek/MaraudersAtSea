@@ -29,7 +29,6 @@ function generatePopUp() {
 }
 
 function sail () {
-  addShip(newShipNum);
   resetLeft();
   shiftRows();
   generateRow();

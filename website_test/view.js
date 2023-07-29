@@ -53,12 +53,13 @@ const newShipNum = localStorage.getItem("shipKey");
 // Updates picture of the ship to match what the user requested
 function addShip(number) {
     switch(number) {
-        case('1'):$("#ship").attr("src","./website_pics/ship1.png"); console.log(number);break;
-        case('2'):$("#ship").attr("src","./website_pics/ship2.png"); console.log(number);break;
-        case('3'):$("#ship").attr("src","./website_pics/ship3.png"); console.log(number);break;
-        default:$("#ship").attr("src","./website_pics/ship4.png"); console.log(number);
+        case('1'):$("#gridBottom").append("<img src='./website_pics/ship1.png' class='gridImages' id='ship'>"); break;
+        case('2'):$("#gridBottom").append("<img src='./website_pics/ship2.png' class='gridImages' id='ship'>"); break;
+        case('3'):$("#gridBottom").append("<img src='./website_pics/ship3.png' class='gridImages' id='ship'>"); break;
+        default:$("#gridBottom").append("<img src='./website_pics/ship4.png' class='gridImages' id='ship'>"); break;
     }
 }
+$().ready(function(){addShip(newShipNum);});
 /*
 **************************INVENTORY/RA**************************
 */
