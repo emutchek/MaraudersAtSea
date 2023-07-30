@@ -1,11 +1,22 @@
 0
-:Letter from Eurydice's boss offers $$ in exchange for map; they embark on mission. 
-:I will take Artemis.
-:I will take Baelfire.
+:On the day the crew docked at the Isle of Pirates, everyone was abuzz with news of a king dying in 
+the powerful land of Helion. Of course, pirates did not serve kings, and most had long since left any 
+place called home, but it was good to know who held the keys to treasure. As she opened her mouth to 
+ask what happened, Eurydice was distracted by a harried messenger shoving a dampened letter at her. 
+She slit it open, curious, and saw it had been sent a week ago by the boss of her former thieving crew. 
+He was offering a thousand doubloons for an urgent cartography mission in the Eastern islands (a vast, 
+mysterious territory that any sailor worth her salt knew to avoid). Down the street, a tearful redheaded
+girl ran out of a tavern. Cas popped her head out a second later. “It’s not you, it’s me!” she called 
+helpfully. Passerby stared at Cas flipped her tumbling black curls, and she winked back at them. 
+Eurydice sighed and marched over to fill her in. “You want to leave right now?” Cas exclaimed. “Isha 
+just left for the market, we haven’t stocked up yet!” “If we don’t go now, we may not have time to 
+make a map by this deadline.” Eurydice chews her thumb and turns to you. “What do you think?”
+:We can’t risk losing out on the haul, we should sail now.
+:We should take a couple days to resupply - who knows how long we’ll be gone?
 :The ship works
 :This ship works too
-:other
-:other
+:
+:inv
 |1
 :First encounter w/ locals; they're worried that more of you are coming. 
 Give them something, or hold back in case they're untrustworthy?

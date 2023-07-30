@@ -7,108 +7,112 @@
   <link href="style.css" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="//cdn.jsdelivr.net/jquery.color-animation/1/mainfile"></script>
-  <script src="islands.js" ></script>
-  <script src="view.js" ></script>
+  <script src="islands.js"></script>
+  <script src="view.js"></script>
   <script src="controller.js"></script>
   <script src="model.js"></script>
   <script>
 
   </script>
-  
+
 </head>
 
-<h1>MARAUDERS AT SEA</h1>
+<body>
+  <h1>MARAUDERS AT SEA</h1>
 
-<div id="buttonsContainer">
-  <button id="sailButton" onclick="sail()">Sail</button>
-  <button id="mapButton" onclick="paintMap()">Map</button>
-  <img id="healthBar" src="./website_pics/health1.png">
-</div>
-
-<div class="overlayGrid" id="obstacleContainer">
-  <button id="obstacleXButton" onclick="closeObstacle()">X</button>
-  <p id="obstacleTitle">Test</p>
-  <p id="obstacleText">Test</p>
-  <img src="./website_pics/pirate_flag.png" id="obstaclePic">
-  <button id="obstacleButtonA" onclick="performSolutionA()"></button>
-  <button id="obstacleButtonB" onclick="performSolutionB()"></button>
-</div>
-
-<div class="overlayGrid" id="salesmanContainer">
-  <button id="salesmanXButton" onclick="closeSale()">X</button>
-  <p id="salesmanTitle">Test</p>
-  <p id="salesmanText">Test</p>
-  <p id="priceText"></p>
-  <img src="./website_pics/pirate_flag.png" id="salesmanPic">
-  <button id="salesmanButtonA" onclick="salesmanButtons('A')"></button>
-  <button id="salesmanButtonB" onclick="salesmanButtons('B')"></button>
-</div>
-
-<img src="./website_pics/map0.jpg" id="map">
-
-<div id="everythingContainer">
-
-  <div id="textContainer">
-    <p id="asurroundingText"></p>
-    <button id="pickupRAButton" onclick="pickupRA()">Pick up</button>
-    <button id="restartButton" onclick="restart()">Try again</button>
-    <button id="storyButtonA" class="storyButtons" onclick="pickedIsland('A')"></button>
-    <button id="storyButtonB" class="storyButtons" onclick="pickedIsland('B')"></button>
+  <div class="overlayGrid" id="obstacleContainer">
+    <button id="obstacleXButton" onclick="closeObstacle()">X</button>
+    <p id="obstacleTitle">Test</p>
+    <p id="obstacleText">Test</p>
+    <img src="./website_pics/pirate_flag.png" id="obstaclePic">
+    <button id="obstacleButtonA" onclick="performSolutionA()"></button>
+    <button id="obstacleButtonB" onclick="performSolutionB()"></button>
   </div>
 
-  <div id="gridContainer">
-    <div id="l4" class="grid"></div>
-    <div id="l3" class="grid"></div>
-    <div id="l2" class="grid"></div>
-    <div id="l1" class="grid"></div>
-    <div id="l0" class="grid"></div>
+  <div class="overlayGrid" id="salesmanContainer">
+    <button id="salesmanXButton" onclick="closeSale()">X</button>
+    <p id="salesmanTitle">Test</p>
+    <p id="salesmanText">Test</p>
+    <p id="priceText"></p>
+    <img src="./website_pics/pirate_flag.png" id="salesmanPic">
+    <button id="salesmanButtonA" onclick="salesmanButtons('A')"></button>
+    <button id="salesmanButtonB" onclick="salesmanButtons('B')"></button>
+  </div>
 
-    <div class="grid" class="middleGrid" id="gridTop"></div>
-    <div class="grid" class="middleGrid"></div>
-    <div class="grid" class="middleGrid"></div>
-    <div class="grid" class="middleGrid"></div>
-    <div class="grid" class="middleGrid" id="gridBottom">
-      <!-- <img src="./website_pics/ship.png" class="gridImages" id="ship"> -->
+  <img src="./website_pics/map0.jpg" id="map">
+
+  <div id="everythingContainer">
+
+    <div id="textContainer">
+      <p id="asurroundingText"></p>
+      <button id="pickupRAButton" onclick="pickupRA()">Pick up</button>
+      <button id="restartButton" onclick="restart()">Try again</button>
+      <button id="storyButtonA" class="storyButtons" onclick="pickedIsland('A')"></button>
+      <button id="storyButtonB" class="storyButtons" onclick="pickedIsland('B')"></button>
     </div>
 
-    <div id="r4" class="grid"></div>
-    <div id="r3" class="grid"></div>
-    <div id="r2" class="grid"></div>
-    <div id="r1" class="grid"></div>
-    <div id="r0" class="grid"></div>
-  </div> <!--end grid container-->
+    <div id="gridContainer">
+      <div id="l4" class="grid gridTop gridLeft"></div>
+      <div id="l3" class="grid gridLeft"></div>
+      <div id="l2" class="grid gridLeft"></div>
+      <div id="l1" class="grid gridLeft"></div>
+      <div id="l0" class="grid gridBottom gridLeft"></div>
 
-  <div id="inventoryContainer">
-
-    <div id="invMode2">
-      <button id="inventoryXButton" 
-      onclick="openClose('#invMode1','block'); openClose('#invMode2','flex')">X</button>
-    </div>
-
-    <div id="invMode1">
-      <div id="inv1Header">
-        <h2>Inventory:</h2>
-        <img src="./website_pics/doubloons.png" id="coinPic">
-        <p id="doubloonsText">$50</p>
+      <div class="grid gridTop"></div>
+      <div class="grid"></div>
+      <div class="grid"></div>
+      <div class="grid"></div>
+      <div class="grid gridBottom" id="shipSquare">
+        <!-- <img src="./website_pics/ship.png" class="gridImages" id="ship"> -->
       </div>
-      <div> <!--photos of medicine,rope,wood-->
-        <img src="./website_pics/medicine.png" class="invMode1Pics">
-        <img src="./website_pics/rope.png" class="middleUnits invMode1Pics">
-        <img src="./website_pics/wood.png" class="invMode1Pics">
-      </div>
-      <div id="unitsContainer"> <!--text beneath medicine,rope,wood-->
-        <p id="medicineLabel">10 vials</p>
-        <p class="middleUnits" id="ropeLabel">10 spools</p>
-        <p class="invText" id="woodLabel">10 planks</p>
-      </div>
-      <input type="image" src="./website_pics/treasure_chest.png" id="chest"
-        onclick="openClose('#invMode2','flex'); openClose('#invMode1','block')">
-      <p>[click to open chest]</p> <!--↑ open chest-->
-    </div>
 
-  </div> <!--end inventory container-->
-</div> <!--end everything container-->
+      <div id="r4" class="grid gridTop gridRight"></div>
+      <div id="r3" class="grid gridRight"></div>
+      <div id="r2" class="grid gridRight"></div>
+      <div id="r1" class="grid gridRight"></div>
+      <div id="r0" class="grid gridBottom gridRight"></div>
+
+    </div> <!--end grid container-->
+
+    <div id="inventoryContainer">
+
+      <div id="invMode2">
+        <button id="inventoryXButton" onclick="openClose('#invMode1','block'); openClose('#invMode2','flex')">X</button>
+      </div>
+
+      <div id="invMode1">
+        <div id="inv1Header">
+          <h2>Inventory:</h2>
+          <img src="./website_pics/doubloons.png" id="coinPic">
+          <p id="doubloonsText">$50</p>
+        </div>
+        <div id="resourcePicsContainer"> <!--photos of medicine,rope,wood-->
+          <img src="./website_pics/medicine.png" class="invMode1Pics">
+          <img src="./website_pics/rope.png" class="middleUnits invMode1Pics">
+          <img src="./website_pics/wood.png" class="invMode1Pics">
+        </div>
+        <div id="unitsContainer"> <!--text beneath medicine,rope,wood-->
+          <p id="medicineLabel">10 vials</p>
+          <p class="middleUnits" id="ropeLabel">10 spools</p>
+          <p class="invText" id="woodLabel">10 planks</p>
+        </div>
+        <input type="image" src="./website_pics/treasure_chest.png" id="chest"
+          onclick="openClose('#invMode2','flex'); openClose('#invMode1','block')">
+        <p>[click to open chest]</p> <!--↑ open chest-->
+      </div>
+
+    </div> <!--end inventory container-->
+
+
+  </div> <!--end everything container-->
+  <div id="buttonsContainer">
+    <button id="sailButton" onclick="sail()">Sail</button>
+    <button id="mapButton" onclick="paintMap()">Map</button>
+    <img id="healthBar" src="./website_pics/health1.png">
+  </div>
+
 
 </body>
 <script src="welcome.js"></script>
+
 </html>

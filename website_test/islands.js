@@ -82,12 +82,12 @@ function fillIslands (islandText,tree) {
 		const obj = new IslandNode();
 		obj["tag"] = fieldTexts[0];
 		obj["text"] = fieldTexts[1];
-		obj["opA"] = fieldTexts[2];
-		obj["opB"] = fieldTexts[3];
-		obj["outcomeA"] = fieldTexts[4];
-		obj["outcomeB"] = fieldTexts[5];
-		obj["effectTypeA"] = fieldTexts[6];
-		obj["effectTypeB"] = fieldTexts[7];
+		obj["opGd"] = fieldTexts[2];
+		obj["opBd"] = fieldTexts[3];
+		obj["outcomeGd"] = fieldTexts[4];
+		obj["outcomeBd"] = fieldTexts[5];
+		obj["effectTypeGd"] = fieldTexts[6];
+		obj["effectTypeBd"] = fieldTexts[7];
 		filledIslands.push(obj);
 	}
 	fillTree(filledIslands,tree);

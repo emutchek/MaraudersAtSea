@@ -19,13 +19,13 @@ function resetLeft() {
 
 // Disables map and sail buttons, forcing the user to deal with whatever's happening before moving on
 function freezeShip() {
-    $("#mapButton").prop("disabled",true);
-    $("#sailButton").prop("disabled",true);
+    $("#mapButton").css("display","none");
+    $("#sailButton").css("display","none");
 }
 
 function freeShip() {
-    $("#mapButton").prop("disabled",false);
-    $("#sailButton").prop("disabled",false);
+    $("#mapButton").css("display","block");
+    $("#sailButton").css("display","block");
 }
 
 // Takes in an object and displays the correct picture - island, barrel, or blank
@@ -53,10 +53,10 @@ const newShipNum = localStorage.getItem("shipKey");
 // Updates picture of the ship to match what the user requested
 function addShip(number) {
     switch(number) {
-        case('1'):$("#gridBottom").append("<img src='./website_pics/ship1.png' class='gridImages' id='ship'>"); break;
-        case('2'):$("#gridBottom").append("<img src='./website_pics/ship2.png' class='gridImages' id='ship'>"); break;
-        case('3'):$("#gridBottom").append("<img src='./website_pics/ship3.png' class='gridImages' id='ship'>"); break;
-        default:$("#gridBottom").append("<img src='./website_pics/ship4.png' class='gridImages' id='ship'>"); break;
+        case('1'):$("#shipSquare").append("<img src='./website_pics/ship1.png' class='gridImages' id='ship'>"); break;
+        case('2'):$("#shipSquare").append("<img src='./website_pics/ship2.png' class='gridImages' id='ship'>"); break;
+        case('3'):$("#shipSquare").append("<img src='./website_pics/ship3.png' class='gridImages' id='ship'>"); break;
+        default:$("#shipSquare").append("<img src='./website_pics/ship4.png' class='gridImages' id='ship'>"); break;
     }
 }
 $().ready(function(){addShip(newShipNum);});
@@ -84,7 +84,7 @@ function paintMap() {
 function displayRA(raType) {
     $("#asurroundingText").text(`Oh look, some ${raType}! It sure is lucky that somebody \
     happened to leave this just floating around out here...`);
-    $("#pickupRAButton").css("display","block");
+    $("#pickupRAButton").css("display","flex");
 }
 
 function paintInventory() {
@@ -115,8 +115,8 @@ function displayConvo(convo) {
     $("#salesmanXButton").css("display","none");
     $("#salesmanTitle").text("Oh look! A wandering salesman");
     $("#salesmanText").text(convo["greeting"]);
-    $("#salesmanButtonA").text(convo["opA"]);
-    $("#salesmanButtonB").text(convo["opB"]);
+    $("#salesmanButtonA").text(convo["opGd"]);
+    $("#salesmanButtonB").text(convo["opBd"]);
 }
 
 //Displays the salesman's reaction to your response
@@ -192,8 +192,8 @@ function displayObstacle (obs) {
     $("#obstacleXButton").css("display","none");
     $("#obstacleTitle").text(obs["title"]);
     $("#obstacleText").text(obs["descr"]);
-    $("#obstacleButtonA").text(obs["opA"]);
-    $("#obstacleButtonB").text(obs["opB"]);
+    $("#obstacleButtonA").text(obs["opGd"]);
+    $("#obstacleButtonB").text(obs["opBd"]);
 }
 
 // Remove buttons from screen, shows outcome text, and enables x button
@@ -216,17 +216,28 @@ function closeObstacle() {
 **************************ISLAND TEXT**************************
 */
 
-function displayIsland(descr,opA,opB) {
+var gdOnLeft;
+function displayIsland(descr,opGd,opBd) {
     freezeShip();
     $(".storyButtons").css("display","inline");
+    $("#textContainer").css("margin-top","-75px");
     $("#asurroundingText").text(descr);
-    $("#storyButtonA").text(opA);
-    $("#storyButtonB").text(opB);
+    if(Math.random() > 0.5) {
+        $("#storyButtonA").text(opGd);
+        $("#storyButtonB").text(opBd);
+        gdOnLeft = true;
+    }
+    else {
+        $("#storyButtonB").text(opGd);
+        $("#storyButtonA").text(opBd);
+        gdOnLeft = false;
+    }
 }
 
 function closeIsland(outcome) {
     $("#asurroundingText").text(outcome);
     $(".storyButtons").css("display","none");
+    $("#textContainer").css("margin-top","0px");
     freeShip();
 }
 

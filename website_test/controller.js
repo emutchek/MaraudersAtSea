@@ -229,7 +229,7 @@ function performSolutionA() {
       return;
     }
   }
-  displayObstacleResult(obstacle.outcomeA);
+  displayObstacleResult(obstacle.outcomeGd);
 }
 
 function performSolutionB() {
@@ -242,7 +242,7 @@ function performSolutionB() {
       return;
     }
   }
-  displayObstacleResult(obstacle.outcomeB);
+  displayObstacleResult(obstacle.outcomeBd);
 }
 
 /*
@@ -252,26 +252,26 @@ const heroism = [0,0];
 var nextIslandType = true;
 var latestTag;
 var islandObj;
-var choseA;
+var choseGood;
 
 function generateIsland() {
   islandObj = tree.getNextIsland(nextIslandType);
   nextIslandType = true;
   latestTag = Number(islandObj["tag"].replaceAll("b","").replaceAll("a",""));
   console.log(`latest tag: ${latestTag}`);
-  displayIsland(islandObj["text"],islandObj["opA"],islandObj["opB"]);
+  displayIsland(islandObj["text"],islandObj["opGd"],islandObj["opBd"]);
 }
 function pickedIsland(aOrB) {
-  choseA = (aOrB=='A');
-  if(islandObj["effectTypeA"]==="branch") { 
+  choseGood = (aOrB=='A' && gdOnLeft) || (aOrB=='B' && !gdOnLeft);
+  if(islandObj["outcomeGd"]==="branch") { 
     branchIsland();
   }
-  else if (choseA) {
-    executeOtherIsland(islandObj["effectTypeA"]);
+  else if (choseGood) {
+    executeOtherIsland(islandObj["outcomeGd"]);
   }
-  else executeOtherIsland(islandObj["effectTypeB"]);
-  if (choseA) closeIsland(islandObj["outcomeA"]);
-  else closeIsland(islandObj["outcomeB"]);
+  else executeOtherIsland(islandObj["effectTypeBd"]);
+  if (choseGood) closeIsland(islandObj["outcomeGd"]);
+  else closeIsland(islandObj["outcomeBd"]);
   gameOver();
 }
 function executeOtherIsland(effectType) {
@@ -281,8 +281,8 @@ function executeOtherIsland(effectType) {
   }
 }
 function branchIsland() {
-  if(choseA) {
-    heroism[0] += 1;
+  if(choseGood) {
+    morality[0] += 1;
     nextIslandType = true;
   }
   else {
