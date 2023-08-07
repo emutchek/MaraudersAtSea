@@ -24,8 +24,8 @@ function coordinateEncounter () {
    10% of the time it summons the traveling salesman */
 function generatePopUp() {
   let x = Math.random();
-  if(x < 0) fetchObstacle(); //0.15
-  else if (x < 0) fetchConversation(); //0.25
+  if(x < 0.15) fetchObstacle(); //0.15
+  else if (x < 0.25) fetchConversation(); //0.25
 }
 
 function sail () {
@@ -206,7 +206,7 @@ function generateSale() {
 **************************OBSTACLE/HEALTH**************************
 */
 
-var health = 10;
+var health = 100;
 // Temporary container for the current obstacle
 var obstacle;
 

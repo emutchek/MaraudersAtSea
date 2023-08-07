@@ -115,8 +115,8 @@ function displayConvo(convo) {
     $("#salesmanXButton").css("display","none");
     $("#salesmanTitle").text("Oh look! A wandering salesman");
     $("#salesmanText").text(convo["greeting"]);
-    $("#salesmanButtonA").text(convo["opGd"]);
-    $("#salesmanButtonB").text(convo["opBd"]);
+    $("#salesmanButtonA").text(convo["opA"]);
+    $("#salesmanButtonB").text(convo["opB"]);
 }
 
 //Displays the salesman's reaction to your response

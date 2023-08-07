@@ -1,5 +1,6 @@
 0
-:“It’s not you, it’s me!” she called helpfully. Passerby stared at Cas flipped her tumbling black curls, and she winked back at them.
+:On the day the crew docked at the Isle of Pirates, everyone was abuzz with news of a king dying in the powerful land of Helion. Of course, pirates did not serve kings, and most had long since left any place called home, but it was good to know whose treasures one was plundering. As she opened her mouth to ask what happened, Eurydice was distracted by a harried messenger shoving a dampened letter at her. She slit it open, curious, and saw it had been sent a week ago by the boss of her former thieving crew. He was offering a thousand doubloons for an urgent cartography mission in the Eastern islands (a vast, mysterious territory that any sailor worth her salt knew to avoid). Just then, a tearful redheaded girl ran out of a tavern down the street. Cas popped her head out a second later. 
+“It’s not you, it’s me!” she called helpfully. Passerby stared at Cas flipped her tumbling black curls, and she winked back at them.
 
 Eurydice sighed and marched over to fill her in. 
 
@@ -8,61 +9,181 @@ Eurydice sighed and marched over to fill her in.
 “If we don’t go now, we may not have time to make a map by this deadline.” Eurydice chews her thumb and turns to you. “What do you think?”
 :We can’t risk losing out on the haul, we should sail now.
 :We should take a couple days to resupply - who knows how long we’ll be gone?
-:The ship works
-:This ship works too
-:
+:Cas dropped her shoulders, looking relieved. 
+
+“We still need to focus on resupplying for this job,” Eurydice warned. 
+
+“Yeah, yeah,” Cas drawled. “Go steal-” 
+
+“Buy, Cas!” 
+
+“-sorry, BUY three barrels of rum each-” 
+
+Eurydice knocked her friend upside the head and watched as Cas meandered away, still grinning and reciting her imaginary shopping list. That night, the crew assembled in the tavern to subtly troll for some information. Most of what they heard qualified more as entertainment than legitimate navigational advice. One drunken carouser pounded the counter with all three of his fingers for emphasis: 
+
+“Aye, the people ‘round those parts live with tigers… and they feed ‘em ther young!” He panted, wide-eyed. Orlic stared at his wild nose hair in morbid fascination.
+
+So a few days later, the pirates pushed off the dock warily, setting course for the unknown. 
+:“You’re probably right,” Eurydice sighed. “This kind of booty could be life-changing for Ish’s family.” 
+
+Cas matched her wistful tone: “And for my vintage sword collectio- Ow!” 
+
+Eurydice made a show of shaking off her knuckles and then donned her hat. “Find Ish and tell them to buy as much food as they can. Anchors up in an hour.”
+:inv
 :inv
 |1
-:First encounter w/ locals; they're worried that more of you are coming. 
-Give them something, or hold back in case they're untrustworthy?
-:Give it to them
-:Do not give it to them
-:They tell you a shortcut
-:You lost a chance to make a friend
+:After a full week of sailing, the crew set down at a cozy, inviting shore with a sandy beach. They were already craving fresh food and upon spotting some fruit trees, they piled onshore rather indiscreetly, squabbling over who should tie up the dinghy. As they strained to reach the fruit, a voice came thundering out of nowhere: 
+
+“WHO?” 
+
+They whipped around to see a strange man wielding a spear. His eyes were dark as night, and he wore some sort of cape of beads across his shoulders. 
+Orlic fixed him with a stare. “I think the real question is, who are you?” She nodded like she’d said something very wise, and Eurydice raised her hands and stepped forward. 
+
+“Ignore her. We’re just – hungry travelers, passing through. We didn’t mean to – do you even understand what I’m saying?” 
+
+The man scrutinized her. “We know your language, but we do not welcome your kind here.” He spoke with a confident but lilting accent. 
+
+Amira pushed her glasses up nervously. “We are foreigners, but we’re just here to observe. We don’t want to harm anyone. What’s your name?”
+
+He frowned. “My name is N’Jobu. And if you speak the truth, you won’t mind revealing your tools of… observance” he gestured at the dagger and pouch of blasting powders strapped to Eurydice’s side. The crew exchanged looks.
+
+:Tell her to give him the pouch of chemicals as a gesture of goodwill
+:We can’t let our weapons spread around this place - just place your blade down to show you’re unarmed
+:N’Jobu seems surprised, but he accepts the pouch and deftly tucks it away in his clothes. 
+
+“It’s dangerous for you to be here,” he says urgently. “Not all islands will welcome you. But you and I have no quarrel. You may eat, rest here, on the beaches. Tonight I will see you off,” he stares meaningfully. 
+
+Amira smiles and nods in easy agreement. With the fright wearing off, the pirates start to take in their surroundings. The landscape is full of strange, tubelike plants that seem to grow out of the water. They end up making a slow lap around the island to record for the map. A few hours later, as Ish and Cas begin loading fruit into crates, N’Jobu reappears. 
+
+“Do not sail East tonight. There is a passage that lies South of here, it will bring you around certain… dangers.” 
+
+Eurydice gives a grateful nod, and the crew piles into the dinghy once more.
+:“I see,” he says with a small smile, placing his own spear down. 
+“You are welcome to take food with you, but I cannot offer you shelter here. It is not wise for -” N’Jobu cuts himself off with a faraway gaze, then shakes himself.
+
+“The next island is straight East from here, you will reach it before long.” The meaning is clear, and Eurydice gives a respectful nod. 
+
+“We’ll be on our way then.”
 :branch
 :
 |2a
-:Along the shortcut, you come across a disease-ridden bug attack. 
-Luckily, the route was short and you come across locals with medicine in enough time to cure the crew.
-Ask the locals for help (cost something) or simply steal the medicine needed?
-:I will ask for help.
-:I will just take it
-:I bartered away an item
-:I lost morality points
+:Sure enough, a few days later, the crew spots a tiny landmass that crops up almost out of nowhere. 
+
+“Land ho-!” 
+
+“We see it, Orlic,” Cas muttered. It was more of a sandbar than an island, but curiously, the surface was covered in greenery; delicate yellow flowers curled out of the soil. As they steered over, their hull was surrounded by chunks of wooden debris bobbing in the waves. Amira leaned out over the bow, clutching her journal, and frowned. Even up close, the island was so hard to spot as to be nearly translucent. 
+
+“I have to get closer,” she said. 
+
+“Are you sure that’s a good idea, Mir? What if it’s some sort of… ghost island?”
+: Swim over to the island
+:Dive off the ship to investigate the debris
+
+:The crew plunges into the salty sea, Amira leading the charge with a sack of instruments strapped to her back. But as you near the edge, the water doesn’t get any shallower. Cautiously, you swim all the way up to the edge, still treading water as if you were beside a boat. When you extend a hand to touch the flowers, your hand passes right through. 
+
+“Well that’s new,” Cas remarks, an edge to her voice. 
+
+“I don’t understand, is it some sort of…  complex mirage?” Amira reaches for her instruments. The crew ends up spending a relatively happy afternoon swimming and eating around the not-there island before Amira surrenders to the scientific mystery, and you sail on.
+:You shoot down into the water, five splashes in the otherwise quiet sea air. Underwater, the sun is nearly as powerful as above, and you see quite clearly that the landmass extends down, not floats. Wasting no breath, the pirates cross their arms and sink further. The surface of the mass is much rougher than the usual wall of sediment beneath an island, and far narrower. Swimming closer, it begins to take shape as a ginormous column made of ship parts and bones. There are a mosaic of types of woods and knots, some strange metal tubing, all in various states of decomposition. It continues down as far as the eye can see. The crew’s lungs begin to burn and they kick back up to the surface. 
+“Well,” Eurydice swallows. “No prey no pay, eh buckos?”
 :inv
 :rudeness
 |2b
-:Sea monster
-:I will go left.
-:I will go right
-:I did the right thing
-:I did the wrong thing
+:N’Jobu was right that the next leg of the journey wouldn’t be long, but when they spotted something from the crow’s nest a few days later, it was more of a jaggedy cave than a beach with delicious snacks. 
+
+“There can’t actually be a way to walk down there, right?” Ish asked nervously. “It would just be tunnels of… water.” 
+
+There was a soft slapping sound from the back of the ship. The pirates rushed to the stern to see a glimmering object protruding out of the sea, like a fluorescent pole. It began to shoot up, growing taller than the mast of the ship, until the crew realized, slack-jawed, that the spike was attached to the head of an enormous sea serpent. 
+
+“Saints,” Ish whispered in horror. The beast’s tail arced out of the water, three ship length’s away, and smashed against the waves furiously. 
+
+“WHAT DO WE DO?” Cas screamed, clinging to a ratline as the deck rocked violently.
+:Our only hope is to outrun it now!
+:Fire the cannons!
+:The crew stagger back to their sailing positions, dodging the flickering, forked tongue of the serpent. 
+
+“WEIGH ANCHOR AND- YOU KNOW WHAT TO DO!” Eurydice yells from the helm. 
+
+The ship begins to pick up speed, riding the currents left in the monster’s wake. Arcing out of the ocean comes the serpent’s tail, poised to smash through the deck, when Eurydice yanks the wheel to the side. Everyone’s thrown off their feet as the tonnage of the appendage strikes water instead. The pirates keep sailing, watching anxiously for another attack, but the further North they go, the more the serpent seems to lose interest.
+
+:Eurydice and Cas heave a shell off the rack together as Amira scarfs up a flame. The first bombshell flies right past the snakelike body of the serpent sticking out of the water. 
+
+“Oh, for the love of-” 
+
+“HIT IT AGAIN!” Amira cuts her off, throwing her body weight against the cannon to raise the angle.
+
+Just as they’re poised to fire, Orlic gives the barrel a haphazard shove, and the shell curves in the air to strike true in the milky eye of the beast. Everyone is still for a moment, before it emits a bloodcurling shriek and head rams the side of the hull. Splintering of wood fills the air. 
+
+“Okay, now we run!”
 :inv
 :inv
 |3
-:Inside a cave, you discover bones and an elaborate trap holding unknown riches.
-Go for the treasure, or salvage the skeletons and flee?
-:Grab the skeletons and flee, we'll give them a proper burial
-:The way's been cleared, we have a good shot at the treasure
-:Find EHE dogtags on the bones; realize they match the seal of the letter
-:Abscond w/ $$, but find more bodies within; realize it was a makeshift prison
+:The next time the crew spotted land came as a real relief. Amira was growing anxious about the vastness of the territory they were trying to map, and stress-eating all the cacao beans. Orlic was composing a three-part ballad of their adventures at sea in a key she herself had invented. Suffice to say, they all ran up the beach enthusiastically. This island was quite a bit larger, but the surface was taken up by yawning mouths of caves. The largest was easily the height of the ship, a wall of blackness. Opened trunks lay scattered around the opening: one filled with armor, another rotting fruit. The pirates grinned and lit their torches. After an hour of walking through damp passages, they came upon a dropoff. It was a circular chamber surrounded by rock ledging, with a stone dais in the center. 
+
+“Jackpot,” Ish and Cas whisperered in unison. 
+
+Strewn across the dais were dozens of gold coins, necklaces, and stones glinting in the torchlight. 
+
+“I suppose we aren’t the first ones here.” The others turned to look at Amira, who stood gazing down at two skeletons. She put a fist to her chest and bowed her head. 
+
+“It’s a pulley system, see?” Ish pointed up at the cave ceiling, embedded with chains and gears.
+:We should leave with the skeletons now, before we end up like them
+:We can solve this and reach the treasure
+:“You’re probably right, these chains must be about to snap,” Ish remarks. 
+
+“Really?” Eurydice groan. “We’re pirates, you guys.” 
+
+“No, Ish is right,” Cas interrupts. The pirates help her gather the scattered remains as carefully as possible, and they retrace their steps back through the dark maze. When they make it back out to the beach, dusk has fallen. Before long they’re sitting amidst the sparks of a homemade bonfire with the silhouette of their ship on the horizon. Soft clinks echo as Amira’s shovels a grave nearby. 
+
+“That’s strange,” she murmurs. She pads back over to the group, clutching a thin chain with a flattened piece of metal.
+
+Ish holds it up to the light, rubbing the engraved surface. “EHE,” they read. 
+
+“That sounds familiar…” Amira’s face pales. “Eurydice, do you have the letter with you?” The captain pats her pockets and pulls out the damp parchment. 
+
+“Yeah,” Amira says faintly, “this letter was sealed with the same initials these bones were wearing.”
+
+:Ish studies the walls. “You, stand over there,” they gesture, “and grab onto that chain. Cas, you pull the one on the right. Nobody stand behind me.”
+The others shuffle out of the way, and with a nod from Ish, pull the chains. A loud roaring fills the chamber as the ledge of rocks next to their feet crumbles down the chasm. Someone screams. But across the room, as the other ends of the chains lift, they raise a stone drawbridge that had been concealed in the rock. The crew carefully inches along the now-clear path to the dais and pocket all the treasure within seconds. In the chaos, Orlic dropped her torch, so it’s slow going to find the way back out of the cave. At one point you notice a series of wild scratches carved into the walls. The passageway gets wider until you’re in another open chamber. Rows of metal bars divide the space into dozens of empty cells.
+“This isn’t…” Amira trails off. “The Eastern Islands are supposed to be unexplored.”
+You stand quietly before unanimously turning around and hurrying out. Dusk has fallen on the beach, and you set to building a fire, the silhouette of the ship on the horizon.
 :branch
 :
 |4a
-:You do more research about several (conspiracy) theories about the EHE's "explorations". 
-:I will make some sort of decision
-:I will make some other sort of decision
-:some sort of outcome
-:idk
+:The next island the crew reached was densely wooded, and they agreed to plot it from aboard the ship. Amira curled up in the crow’s nest with her quills and a spyglass, and the others gathered around the bow. Over the past few days, the captain had examined every inch of the letter from her old boss. There was nothing unusual except for the wax seal.
+“It doesn’t make sense,” Eurydice complained again. “The Crowley I knew would never take a job from a big organization. It was all… seedy tip offs from Mahruden and drunk smuggling. That or helping some noble steal his own loot, like Lord Reed-”
+“Lord Reed?” Cas interjected.
+“What, do you know him?”
+Cas rolled her eyes. “Everyone knows him. Or at least all the posh scurvy dogs in Helion do. He founded this company out of nowhere, Helion Horizons, and now he’s massively rich. There are rumors, though, about where he gets some of his ‘cheap’ labor,” she finished in disgust.
+“So, Crowley’s in league with some real bilge-suckers,” Ish reasoned, “and this EHE guy who’s funding our little ‘expedition’ has literal skeletons in his closet. We should tell someone. Amira’s family could look into him,” Ish suggested.
+Eurydice’s face darkened. “Crowley was clear: we get this done fast with our mouths shut, or there’s no pretty pile of doubloons waiting at the end.”
+: Send a carrier pigeon requesting information
+: Hold onto the letter for now
+:There’s a strong sense of unease, but everyone eventually nods in agreement. Amira agrees to draft a brief account of what the pirates have seen, including a sketch of the engraved dog tags and letter seal. Her family are Hikmani, people of the kingdom of wisdom, and their libraries are rumored to have scriptures on every plant, animal, and mineral, past and present. Once the letter is done, she rolls the parchment tightly and ties a knot around the bird’s leg.
+“It’ll be fine,” Eurydice reassures. “We’re in a new land with all sorts of wonders to discover! Even if Crowley is pulling a fast one, we’ll be out clean soon anyway with just a map on his desk.”
+:Ish gnaws on their lip worriedly, but the rest of the crew look slightly relieved.
+Amira agrees to draft a brief account of what the pirates have seen, including a sketch of the engraved dog tags and letter seal. Her family are Hikmani, people of the kingdom of wisdom, and their libraries are rumored to have scriptures on every plant, animal, and mineral, past and present. Once the letter is done, she rolls the parchment tightly and locks it into the safe with the captain’s log.
+The crew sets about hoisting the anchor to take off once more. From the rigging, you call out a warning for stormy clouds and choppy water ahead. Eurydice tips her hat and spins the large wheel to go North and Eastwards.
 :inv
 :inv
 |4b
-:You look closer at the treasure and realize they seem like personal possessions–jewelry, 
-lockets with art of loved ones, little knicknacks a child might carry with them.
-:I will go left.
-:I will go right
-:I did the right thing
-:I did the wrong thing
+:The next island the crew reached was densely wooded, and they agreed to plot it from aboard the ship. Amira curled up in the crow’s nest with her quills and a spyglass, and the others gathered around the bow where Eurydice was setting a leisurely pace.
+“I think I’m allergic to this ocean,” Orlic said forlornly, holding up her hand.
+Cas grabbed her wrist, “Wow, that rash is gnarly!”
+“Orlic, this is the same ocean we’ve always been on,” Eurydice snorted. “You probably accidentally ate some shellfish again.”
+“Did not!” Orlic protested. “I wasn’t fishing this morning; I was looking at that jewelry we found. It’s actually pretty fascinating, there are a lot of little pictures in lockets and things. Oh, and some toys too. Never seen a baby rattle covered in rubies before.” Eurydice and Cas exchanged looks. “Funny though, I do feel a little sick…” Orlic finished with wide eyes, then threw herself to the railing as her face turned green.
+Cas disappeared into the cabin and returned with the coffer, clutching it gingerly through a rag. “It doesn’t smell like arsenic,” she said darkly. “There’s got to be at least a few hundred doubloons here.”
+:Better throw it into the ocean to be safe
+:We’ll lock it in the storeroom for now
+:You shake out the contents of the chest over the railing, then throw the whole thing in for good measure. A few hours later, Amira descends from the rigging with the map tucked under her arm. “Everything okay down here?” she asks.
+“Sure, everything’s sublime,” Cas chirps. “We’ve only just donated our best haul yet to a bunch of minnows, like some sort of – of – fish charity! Son of a biscuit eater!” She punches the mast angrily and storms off.
+Eurydice turns to you. “Hoist the mizzen, sailor. We’ve got places to be.”
+:“Okay, fine, keep it,” Eurydice sighs, walking over and patting Orlic’s back softly. Cas wraps her hands in rags again and marches the chest below decks. Once Amira finishes with the map, the pirates take up their posts to get as far as they can in the few hours before nightfall. Orlic perks back up enough to sit at the front of the ship and practice her sailing commands.
+“Heave to starboard!”
+“No, don’t do that!” Eurydice corrects frantically.
+“Avast ye, that she blows!” (“No, she doesn’t!”).
+That evening, Cas sneaks back downstairs to peek in the inventory, and she’s shocked to find that the treasure chest has burst open, and the amount of jewelry doubled in size. She slowly blows the candle out and backs out of the room.
+
 :inv
 :inv
 |5

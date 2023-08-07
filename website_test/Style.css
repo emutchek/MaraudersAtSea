@@ -49,8 +49,7 @@ p {
 #asurroundingText {
     font-family: 'Garamond',monospace;
     font-size: 1.4em;
-    white-space: pre-wrap;
-
+    /* white-space: pre-wrap; */
 }
 
 #map { /*place beside grid*/
@@ -202,7 +201,7 @@ p {
 
 /***********************BOTTOM***********************/
 
-#sailButton, #mapButton {
+#sailButton, #mapButton, #obstacleButtonA, #obstacleButtonB, #salesmanButtonA, #salesmanButtonB {
     font-size: 1.5em;
     font-family: monospace;
 }
