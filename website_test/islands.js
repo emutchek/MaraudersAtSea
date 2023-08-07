@@ -77,6 +77,7 @@ function loadText(tree) {
 function fillIslands (islandText,tree) {
 	const filledIslands = [];
 	for(let x = 0; x < 18; x++) {
+		// console.log(islandText[x]);
 		let sanitizedText = islandText[x].replaceAll("\r\n","");
 		let fieldTexts = sanitizedText.split(':');
 		const obj = new IslandNode();
@@ -92,7 +93,6 @@ function fillIslands (islandText,tree) {
 	}
 	fillTree(filledIslands,tree);
 }
-
 loadText(tree);
 //node, attach to, on left, middle node
 function fillTree(filledIslands,tree) {

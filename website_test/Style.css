@@ -49,6 +49,8 @@ p {
 #asurroundingText {
     font-family: 'Garamond',monospace;
     font-size: 1.4em;
+    white-space: pre-wrap;
+
 }
 
 #map { /*place beside grid*/
