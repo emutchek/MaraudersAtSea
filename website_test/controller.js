@@ -258,7 +258,6 @@ function generateIsland() {
   islandObj = tree.getNextIsland(nextIslandType);
   nextIslandType = true;
   latestTag = Number(islandObj["tag"].replaceAll("b","").replaceAll("a",""));
-  console.log(`latest tag: ${latestTag}`);
   displayIsland(islandObj["text"],islandObj["opGd"],islandObj["opBd"]);
 }
 function pickedIsland(aOrB) {

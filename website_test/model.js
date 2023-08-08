@@ -4,7 +4,7 @@ async function fetchObstacle() {
   const request = new Request(requestURL);
   const response = await fetch(request);
   const obsObj = await response.json();
-  let x = Math.floor(Math.random()*7);
+  let x = 0//Math.floor(Math.random()*7);
   obstacle = obsObj["obstacles"][x];
   displayObstacle(obstacle);
 }

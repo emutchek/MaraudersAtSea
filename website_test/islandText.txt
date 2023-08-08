@@ -32,7 +32,7 @@ Eurydice made a show of shaking off her knuckles and then donned her hat. “Fin
 :inv
 :inv
 |1
-:After a full week of sailing, the crew set down at a cozy, inviting shore with a sandy beach. They were already craving fresh food and upon spotting some fruit trees, they piled onshore rather indiscreetly, squabbling over who should tie up the dinghy. As they strained to reach the fruit, a voice came thundering out of nowhere: 
+:After a full week of sailing, the crew set down at a cozy, inviting shore with a sandy beach. They were already craving fresh food and upon spotting some fruit trees, they piled onshore rather indiscreetly, squabbling over who should tie up the dinghy. As they strained to reach the fruit, a voice came thundering out of nowhere.
 
 “WHO?” 
 
@@ -118,7 +118,7 @@ Just as they’re poised to fire, Orlic gives the barrel a haphazard shove, and 
 :inv
 :inv
 |3
-:The next time the crew spotted land came as a real relief. Amira was growing anxious about the vastness of the territory they were trying to map, and stress-eating all the cacao beans. Orlic was composing a three-part ballad of their adventures at sea in a key she herself had invented. Suffice to say, they all ran up the beach enthusiastically. This island was quite a bit larger, but the surface was taken up by yawning mouths of caves. The largest was easily the height of the ship, a wall of blackness. Opened trunks lay scattered around the opening: one filled with armor, another rotting fruit. The pirates grinned and lit their torches. After an hour of walking through damp passages, they came upon a dropoff. It was a circular chamber surrounded by rock ledging, with a stone dais in the center. 
+:The next time the crew spotted land came as a real relief. Amira was growing anxious about the vastness of the territory they were trying to map, and stress-eating all the cacao beans. Orlic was composing a three-part ballad of their adventures at sea in a key she herself had invented. Suffice to say, they all ran up the beach enthusiastically. This island was quite a bit larger, but the surface was taken up by yawning mouths of caves. The largest was easily the height of the ship, a wall of blackness. Opened trunks lay scattered around the opening - one filled with armor, another rotting fruit. The pirates grinned and lit their torches. After an hour of walking through damp passages, they came upon a dropoff. It was a circular chamber surrounded by rock ledging, with a stone dais in the center. 
 
 “Jackpot,” Ish and Cas whisperered in unison. 
 
@@ -156,7 +156,7 @@ You stand quietly before unanimously turning around and hurrying out. Dusk has f
 “What, do you know him?”
 Cas rolled her eyes. “Everyone knows him. Or at least all the posh scurvy dogs in Helion do. He founded this company out of nowhere, Helion Horizons, and now he’s massively rich. There are rumors, though, about where he gets some of his ‘cheap’ labor,” she finished in disgust.
 “So, Crowley’s in league with some real bilge-suckers,” Ish reasoned, “and this EHE guy who’s funding our little ‘expedition’ has literal skeletons in his closet. We should tell someone. Amira’s family could look into him,” Ish suggested.
-Eurydice’s face darkened. “Crowley was clear: we get this done fast with our mouths shut, or there’s no pretty pile of doubloons waiting at the end.”
+Eurydice’s face darkened. “Crowley was clear - we get this done fast with our mouths shut, or there’s no pretty pile of doubloons waiting at the end.”
 : Send a carrier pigeon requesting information
 : Hold onto the letter for now
 :There’s a strong sense of unease, but everyone eventually nods in agreement. Amira agrees to draft a brief account of what the pirates have seen, including a sketch of the engraved dog tags and letter seal. Her family are Hikmani, people of the kingdom of wisdom, and their libraries are rumored to have scriptures on every plant, animal, and mineral, past and present. Once the letter is done, she rolls the parchment tightly and ties a knot around the bird’s leg.
