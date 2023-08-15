@@ -23,15 +23,30 @@
         "descr":"Oi, you fancy a little something to ward off the scurvy? Grog only goes so far, eh?'",
         "yes":"'Enjoy the fruit!'",
         "no":"'Shiver me timbers, why do I bother coming out to your man-o-war?'"
+    },
+    {
+        "name":"holy grail",
+        "cost":"75",
+        "pic":"./website_pics/grail.png",
+        "descr":"Hey lass, I have a very special bit of booty for you today - the Holy Grail!'",
+        "yes":"'Blessings upon ye then'",
+        "no":"'Better keep it out your grubby hands anyway!'"
+    },
+    {
+        "name":"cacao beans",
+        "cost":"15",
+        "pic":"./website_pics/cacoa.png",
+        "descr":"Before I go, care for some tasty beans? Your belly will thank you!'",
+        "yes":"'Enjoy the chocolate, lasses!'",
+        "no":"'I guess I'll be having some hot cocoa tonight!'"
     }
-    
 ],
 "onSaleItems":[
     {
         "name":"dagger",
         "cost":"20",
         "pic":"./website_pics/dagger.png",
-        "descr":"Hey, This here belonged to a king once but I'll give it to you for cheap.'",
+        "descr":"Hey, this here belonged to a king once but I'll give it to you for cheap.'",
         "yes":"'Just keep that thing pointed away from me'",
         "no":"'You'll regret it'"
     },
@@ -50,7 +65,23 @@
         "descr":"Hey, I can't leave me hearties to capsize out here - I've got a sextant for cheap if ye have the doubloons.'",
         "yes":"'Aye, good choice lass. I'm off to take a caulk.'",
         "no":"'Fine then, feed the fish you scurvy dog'"
-    }
+    },
+    {
+        "name":"gold ring",
+        "cost":"30",
+        "pic":"./website_pics/ring.png",
+        "descr":"You're looking a little miserly for a pirate. Want some bling to set yourself to rights?'",
+        "yes":"'Well that's just loads better'",
+        "no":"'Don't be surprised when 'yer mistaken for a waterlogged begger'"
+    },
+    {
+        "name":"eyepatch",
+        "cost":"10",
+        "pic":"./website_pics/eyepatch.png",
+        "descr":"These seas are full of sharks, care to purchase some insurance? I've a lightly used eyepatch here for sale.'",
+        "yes":"'Let's pray you've no need of it, eh?'",
+        "no":"'Never met a pirate with such little sense of style, must say'"
+    },
 ],
 "uselessItems": [
     {
@@ -76,6 +107,22 @@
         "descr":"As it just so happens, I've a book you may fancy... well, it used to be a book. It's about a bunch of lily-livered pirates like yerselves.'",
         "yes":"'Anything to entertain you landlubbers!'",
         "no":"'You know what, it's on the house,' he winks and strolls over to the storeroom."
+    },
+    {
+        "name":"shell",
+        "cost":"20",
+        "pic":"./website_pics/shell.png",
+        "descr":"Feast yer thieving eyes on this seashell, all the way from the beaches of Maghreb.'",
+        "yes":"'Should'er said it was from the moon, you'd have shelled out double! HA!'",
+        "no":"You lasses need to learn about supply and demand - when I find something to supply, I demand you buy it!'"
+    },
+    {
+        "name":"cactus",
+        "cost":"5",
+        "pic":"./website_pics/cactus.png",
+        "descr":"Listen, lubbers, I'm selling a magical cactus that grants good luck. Just for you!'",
+        "yes":"'Such a relief to get this thing out of me pocket.'",
+        "no":"'Well sink me, you lot just asking for bad luck! I'll see myself out'."
     }
 ],
 
@@ -86,6 +133,14 @@
         "opB":"What kind of abilities?",
         "outcomeA":"'Fine, you scallywag. ",
         "outcomeB":"'They can only hit the high C's! Classic. ",
+        "rudeOption":"A"
+    },
+    {
+        "greeting":"'Ahoy, how much did it cost to have your ears pierced?'",
+        "opA":"Get out of here, lubber!",
+        "opB":"How much?",
+        "outcomeA":"'All right, all right you sprogs.",
+        "outcomeB":"'A buccaneer! Get it?",
         "rudeOption":"A"
     }
 ]
