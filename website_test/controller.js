@@ -25,7 +25,7 @@ function coordinateEncounter () {
 function generatePopUp() {
   let x = Math.random();
   if(x < 0.15) fetchObstacle(); //0.15
-  else if (x < 0.25) fetchConversation(); //0.25
+  else if (x < 0.20) fetchConversation(); //0.25
 }
 
 function sail () {
@@ -79,8 +79,8 @@ function generateRow () {
   let side = Math.round(Math.random());                 // picks 0 (left) or 1 (right)
   let x = Math.random();
                                                        
-  if(x < 0.20) grid[4][side] = new Island();            // 20% chance of island
-  if(x >= 0.20 && x < 0.40) grid[4][side] = new RA();   // 20% chance of RA
+  if(x < 0.10) grid[4][side] = new Island();            // 10% chance of island
+  if(x >= 0.10 && x < 0.25) grid[4][side] = new RA();   // 15% chance of RA
   if(x > 0.65) grid[4][side] = "mark"                   // 25% chance of wave picture
 }
 
@@ -130,39 +130,29 @@ function pickupRA() {
       whatever small bit you had left
 */
 function updateInventory(type,amt,paying) {
-  switch(type) {
-    case("medicine"): 
-      if(inventory.medicine + amt < 0) {
-        if(paying) return false;
-        else inventory.medicine = 0;
-      }
-      inventory.medicine += amt; 
-      highlightResource("medicine"); break;
-
-    case("rope"): 
-    if(inventory.rope + amt < 0) {
-      if(paying) return false;
-      else inventory.rope = 0;
-    }
-      inventory.rope += amt; 
-      highlightResource("rope"); break;
-
-    case("wood"): 
-    if(inventory.wood + amt < 0) {
-      if(paying) return false;
-      else inventory.wood = 0;
-    }
-      inventory.wood += amt; 
-      highlightResource("wood"); break;
-
-    case("doubloons"):
-    if(inventory.doubloons + amt < 0) {
-      if(paying) return false;
-      else inventory.doubloons = 0;
-    }
-      doubloons += amt;
-      highlightResource("doubloons"); break;
+  let category = inventory.type;
+  let setZero = false;
+  if (category + amt < 0) {
+    if(paying) return false;
+    else setZero = true;
   }
+  if (setZero) {
+    switch(type){
+      case("medicine"): inventory.medicine = 0; break;
+      case("rope"): inventory.rope = 0; break;
+      case("wood"): inventory.wood = 0; break;
+      case("doubloons"): inventory.doubloons = 0; break;
+    }
+  }
+  else {
+    switch(type){
+      case("medicine"): inventory.medicine += amt; break;
+      case("rope"): inventory.rope += amt; break;
+      case("wood"): inventory.wood += amt; break;
+      case("doubloons"): inventory.doubloons += amt; break;
+    }
+  }
+  highlightResource(type); 
   paintInventory();
   return true;
 }
@@ -188,7 +178,6 @@ function performSale(aOrB) {
     if(updateInventory("doubloons",-item["cost"],true)) {
       extraInventory.push(item);
       $('#invMode2').prepend(`<img class="invMode2Pics" src=${item["pic"]} />`);
-      console.log(`new items: ${extraInventory.length}`);
       displaySaleOutcome(true);
     }
     //they can't afford the item
@@ -211,7 +200,7 @@ function securityBreach() {
 }
 
 function generateSale() {
-  console.log(`ratio is ${rudeness[0]/rudeness[1]}`);
+  console.log(`ratio is ${rudeness[0]/rudeness[1]} (0-0.5 = useless, 0.5-1 = regular, 1+ onsale)`);
   if(rudeness[0]/rudeness[1] < 0.5) fetchItem("uselessItems");
   else if(rudeness[0]/rudeness[1] < 1) fetchItem("regularItems");
   else fetchItem("onSaleItems");
@@ -232,43 +221,35 @@ function updateHealth(amt) {
   paintHealth();
 }
 
-/* Refers to global obstacle field to figure out what this solution does
+// Tells obstacle handler which option the player picked
+function performSolutionA() {performSolution(obstacle.actionA,obstacle.outcomeGd);}
+function performSolutionB() {performSolution(obstacle.actionB,obstacle.outcomeBd);}
+
+/* Refers to global obstacle field & params to figure out what this solution does
    (e.g. reduces health or consumes resource)
    If they try to use a resource they don't have, it docks health and sends a message explaining why
    Obstacles w/ amt of 10 are consuming resources; any other means the resource is under attack (paying = false)
 */
-function performSolutionA() {
-  if(obstacle.actionA === "health") updateHealth(-25);
-  else if(resourceTypes.includes(obstacle.actionA)) {
-    // Player is trying to use a resource, so if they don't have enough of it they lose health
-    if(obstacle.amt === 10) {
-      let hadEnough = updateInventory(obstacle.actionA,Number(obstacle.amt),true);
-      if (!hadEnough) {
-        updateHealth(-25);
-        displayObstacleResult("Turns out we didn't have any of that anyway. Whoops!");
-        return;
-    }}
-    // Player's resources are attacked by obstacle, so they'll lose whatever small amount they have
-    updateInventory(obstacle.actionA,Number(obstacle.amt),false);
-  }
-  displayObstacleResult(obstacle.outcomeGd);
-}
+function performSolution(action,outcome) {
+  // Obstacle affects health
+  if(action === "health") updateHealth(-25);
 
-function performSolutionB() {
-  if(obstacle.actionB === "health") updateHealth(-25);
-  else if(resourceTypes.includes(obstacle.actionB)) {
+  // Obstacle affects resources
+  else if(resourceTypes.includes(action)) {
     // Player is trying to use a resource, so if they don't have enough of it they lose health
     if(obstacle.amt === 10) {
-      let hadEnough = updateInventory(obstacle.actionB,Number(obstacle.amt),true);
+      let hadEnough = updateInventory(action,Number(obstacle.amt),true);
       if (!hadEnough) {
-        updateHealth(-25);
-        displayObstacleResult("Turns out we didn't have any of that anyway. Whoops!");
-        return;
-    }}
+          updateHealth(-25);
+          displayObstacleResult("Turns out we didn't have any of that anyway. Whoops!");
+      }
+    }
     // Player's resources are attacked by obstacle, so they'll lose whatever small amount they have
-    updateInventory(obstacle.actionB,Number(obstacle.amt),false);
+    else updateInventory(action,Number(obstacle.amt),false);
   }
-  displayObstacleResult(obstacle.outcomeBd);
+
+  // Obstacle affects nothing
+  else displayObstacleResult(outcome);
 }
 
 /*

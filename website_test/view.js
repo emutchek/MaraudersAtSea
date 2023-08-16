@@ -104,8 +104,8 @@ function highlightResource (type) {
         case "wood": item = $("#woodLabel"); break;
         case "doubloons": item = $("#doubloonsText"); break;
     }
-    item.animate({color: "#b58d30",fontSize: "1.6em"},"slow");
-    item.animate({color: "black",fontSize: "1.4em"},"slow");
+    item.animate({color: "#b58d30",fontSize: "1.7em"},"slow");
+    item.animate({color: "black",fontSize: "1.5em"},"slow");
 }
 
 //Fills in text of the salesman pop-up: his greeting and the 2 possible responses the user has
