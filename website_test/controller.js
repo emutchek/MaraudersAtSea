@@ -99,7 +99,7 @@ function shiftRows() {
 
 const inventory = {medicine:10,rope:10,wood:10};
 const extraInventory = [];
-const resourceTypes = ["medicine","rope","wood"];
+const resourceTypes = ["medicine","rope","wood","doubloons"];
 const rudeness = [1,1];
 var doubloons = 50;
 var conversation;
@@ -121,28 +121,45 @@ class RA {
 // Identifies what is inside the barrel we're next to, and updates inventory
 function pickupRA() {
   let raType = shipBesideWhat();
-  updateInventory(raType,10);
+  updateInventory(raType,10,false);
 }
 
 /* Updates inventory values and re-displays it on the screen
    If you try to consume a resource that's already at 0, it returns false
+   But if that resource is under attack (e.g. paying = false), you'll lose
+      whatever small bit you had left
 */
-function updateInventory(type,amt) {
+function updateInventory(type,amt,paying) {
   switch(type) {
     case("medicine"): 
-      if(inventory.medicine + amt < 0) return false;
+      if(inventory.medicine + amt < 0) {
+        if(paying) return false;
+        else inventory.medicine = 0;
+      }
       inventory.medicine += amt; 
       highlightResource("medicine"); break;
+
     case("rope"): 
-      if(inventory.rope + amt < 0) return false;
+    if(inventory.rope + amt < 0) {
+      if(paying) return false;
+      else inventory.rope = 0;
+    }
       inventory.rope += amt; 
       highlightResource("rope"); break;
+
     case("wood"): 
-      if(inventory.wood + amt < 0) return false;
+    if(inventory.wood + amt < 0) {
+      if(paying) return false;
+      else inventory.wood = 0;
+    }
       inventory.wood += amt; 
       highlightResource("wood"); break;
+
     case("doubloons"):
-      if(doubloons + amt < 0) return false;
+    if(inventory.doubloons + amt < 0) {
+      if(paying) return false;
+      else inventory.doubloons = 0;
+    }
       doubloons += amt;
       highlightResource("doubloons"); break;
   }
@@ -168,7 +185,7 @@ function performConvoAnswer(aOrB){
 function performSale(aOrB) {
   //they clicked buy
   if(aOrB=='A') {
-    if(updateInventory("doubloons",-item["cost"])) {
+    if(updateInventory("doubloons",-item["cost"],true)) {
       extraInventory.push(item);
       $('#invMode2').prepend(`<img class="invMode2Pics" src=${item["pic"]} />`);
       console.log(`new items: ${extraInventory.length}`);
@@ -189,7 +206,7 @@ function securityBreach() {
   if(rudeness[0]/rudeness[1] < 0.5) {
     let idx = Math.floor(Math.random()*3); 
     let type = resourceTypes[idx];
-    updateInventory(type,-10);
+    updateInventory(type,-10,false);
   }
 }
 
@@ -218,16 +235,21 @@ function updateHealth(amt) {
 /* Refers to global obstacle field to figure out what this solution does
    (e.g. reduces health or consumes resource)
    If they try to use a resource they don't have, it docks health and sends a message explaining why
+   Obstacles w/ amt of 10 are consuming resources; any other means the resource is under attack (paying = false)
 */
 function performSolutionA() {
   if(obstacle.actionA === "health") updateHealth(-25);
   else if(resourceTypes.includes(obstacle.actionA)) {
-    let hadEnough = updateInventory(obstacle.actionA,Number(obstacle.amt));
-    if (!hadEnough) {
-      updateHealth(-25);
-      displayObstacleResult("Genius idea, but we don't actually have any of that :(");
-      return;
-    }
+    // Player is trying to use a resource, so if they don't have enough of it they lose health
+    if(obstacle.amt === 10) {
+      let hadEnough = updateInventory(obstacle.actionA,Number(obstacle.amt),true);
+      if (!hadEnough) {
+        updateHealth(-25);
+        displayObstacleResult("Turns out we didn't have any of that anyway. Whoops!");
+        return;
+    }}
+    // Player's resources are attacked by obstacle, so they'll lose whatever small amount they have
+    updateInventory(obstacle.actionA,Number(obstacle.amt),false);
   }
   displayObstacleResult(obstacle.outcomeGd);
 }
@@ -235,12 +257,16 @@ function performSolutionA() {
 function performSolutionB() {
   if(obstacle.actionB === "health") updateHealth(-25);
   else if(resourceTypes.includes(obstacle.actionB)) {
-    let hadEnough = updateInventory(obstacle.actionB,Number(obstacle.amt));
-    if (!hadEnough) {
-      updateHealth(-25);
-      displayObstacleResult("Genius idea, but we don't actually have any of that :(");
-      return;
-    }
+    // Player is trying to use a resource, so if they don't have enough of it they lose health
+    if(obstacle.amt === 10) {
+      let hadEnough = updateInventory(obstacle.actionB,Number(obstacle.amt),true);
+      if (!hadEnough) {
+        updateHealth(-25);
+        displayObstacleResult("Turns out we didn't have any of that anyway. Whoops!");
+        return;
+    }}
+    // Player's resources are attacked by obstacle, so they'll lose whatever small amount they have
+    updateInventory(obstacle.actionB,Number(obstacle.amt),false);
   }
   displayObstacleResult(obstacle.outcomeBd);
 }
