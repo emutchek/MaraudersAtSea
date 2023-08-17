@@ -67,13 +67,13 @@
 "outcomeGd":"Isha's ankle sustains minor burns, so they'll be on bed rest for awhile (-25 HEALTH)",
 "outcomeBd":"Phew, we all made it! Looks like a few things got a little, uh... crispy",
 "actionA":"health",
-"actionB":"rope"
+"actionB":"medicine"
 },
 {"title":"WEIGHT OF THE WORLD",
 "descr":"The winds have stalled, and the ship is losing speed quickly!",
 "amt":"-15",
 "opGd":"Adjust the foresail to catch the breeze off the water",
-"opBd":"Dump some supplies to reduce the weight [10 spools of rope]",
+"opBd":"Dump any spare supplies to reduce the weight [10 spools of rope]",
 "outcomeGd":"That got us moving... for now!",
 "outcomeBd":"Apparently the weight of rope was negligible. Darn it! Now we're low on rope!",
 "actionA":"",

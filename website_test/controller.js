@@ -218,10 +218,9 @@ function performSolution(action,outcome) {
     // Player is trying to use a resource, so if they don't have enough of it they lose health
     if(obstacle.amt === "-10") {
       let hadEnough = useInventory(action,Number(obstacle.amt));
-      console.log(`tried to modify ${action} by ${Number(obstacle.amt)}`);
       if (!hadEnough) {
           updateHealth(-25);
-          displayObstacleResult("Turns out we didn't have any of that. Whoops!");
+          displayObstacleResult("Turns out we didn't have much of that. Whoops!");
           return;
       }
     }
