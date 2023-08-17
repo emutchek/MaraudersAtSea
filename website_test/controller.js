@@ -50,9 +50,9 @@ function restart() {
   inventory["medicine"] = 10;
   inventory["rope"] = 10;
   inventory["wood"] = 10;
+  inventory["doubloons"] = 75;
   extraInventory.length = 0;
   rudeness[0],rudeness[1] = 1;
-  inventory["doubloons"] = 50;
   islandObj = [];
   nextIslandType = true;
   window.location.replace('./welcome.html');
@@ -97,7 +97,7 @@ function shiftRows() {
 **************************INVENTORY/RA**************************
 */
 
-const inventory = {medicine:10,rope:10,wood:10,doubloons:50};
+const inventory = {medicine:10,rope:10,wood:10,doubloons:75};
 const extraInventory = [];
 const resourceTypes = ["medicine","rope","wood","doubloons"];
 const rudeness = [1,1];
@@ -187,8 +187,6 @@ function generateSale() {
   else fetchItem("onSaleItems");
 }
 
-
-
 /*
 **************************OBSTACLE/HEALTH**************************
 */
@@ -249,6 +247,7 @@ function generateIsland() {
   latestTag = Number(islandObj["tag"].replaceAll("b","").replaceAll("a",""));
   displayIsland(islandObj["text"],islandObj["opGd"],islandObj["opBd"]);
 }
+
 function pickedIsland(aOrB) {
   choseGood = (aOrB=='A' && gdOnLeft) || (aOrB=='B' && !gdOnLeft);
   if(islandObj["outcomeGd"]==="branch") { 
@@ -262,12 +261,15 @@ function pickedIsland(aOrB) {
   else closeIsland(islandObj["outcomeBd"]);
   gameOver();
 }
+
 function executeOtherIsland(effectType) {
   switch (effectType) {
-    case "inv": invIsland(); break;
-    
+    case "bonusAll": invIsland(10,10,10,-30,""); break;
+    case "d+50": dropInventory("doubloons",50); break;
+    case "d-50": dropInventory("doubloons",-50); break;
   }
 }
+
 function branchIsland() {
   if(choseGood) {
     morality[0] += 1;
@@ -279,7 +281,13 @@ function branchIsland() {
   }
   console.log(`heroism: ${heroism[0]}g:${heroism[1]}b`);
 }
-function invIsland(){}
+
+function invIsland(m,r,w,d){
+  dropInventory("medicine",m);
+  dropInventory("rope",r);
+  dropInventory("wood",w);
+  dropInventory("doubloons",d);
+}
 
 function earnedGoodEnding() {
   console.log(`getting good ending: ${heroism[0]>=3} because it's ${heroism[0]}g:${heroism[1]}b`)

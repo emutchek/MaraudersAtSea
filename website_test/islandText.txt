@@ -29,8 +29,8 @@ So a few days later, the pirates pushed off the dock warily, setting course for 
 Cas matched her wistful tone: “And for my vintage sword collectio- Ow!” 
 
 Eurydice made a show of shaking off her knuckles and then donned her hat. “Find Ish and tell them to buy as much food as they can. Anchors up in an hour.”
-:inv
-:inv
+:bonusAll
+:
 |1
 :After a full week of sailing, the crew set down at a cozy, inviting shore with a sandy beach. They were already craving fresh food and upon spotting some fruit trees, they piled onshore rather indiscreetly, squabbling over who should tie up the dinghy. As they strained to reach the fruit, a voice came thundering out of nowhere.
 
@@ -148,7 +148,7 @@ The others shuffle out of the way, and with a nod from Ish, pull the chains. A l
 “This isn’t…” Amira trails off. “The Eastern Islands are supposed to be unexplored.”
 You stand quietly before unanimously turning around and hurrying out. Dusk has fallen on the beach, and you set to building a fire, the silhouette of the ship on the horizon.
 :branch
-:
+:d+50
 |4a
 :The next island the crew reached was densely wooded, and they agreed to plot it from aboard the ship. Amira curled up in the crow’s nest with her quills and a spyglass, and the others gathered around the bow. Over the past few days, the captain had examined every inch of the letter from her old boss. There was nothing unusual except for the wax seal.
 “It doesn’t make sense,” Eurydice complained again. “The Crowley I knew would never take a job from a big organization. It was all… seedy tip offs from Mahruden and drunk smuggling. That or helping some noble steal his own loot, like Lord Reed-”
@@ -172,7 +172,7 @@ The crew sets about hoisting the anchor to take off once more. From the rigging,
 Cas grabbed her wrist, “Wow, that rash is gnarly!”
 “Orlic, this is the same ocean we’ve always been on,” Eurydice snorted. “You probably accidentally ate some shellfish again.”
 “Did not!” Orlic protested. “I wasn’t fishing this morning; I was looking at that jewelry we found. It’s actually pretty fascinating, there are a lot of little pictures in lockets and things. Oh, and some toys too. Never seen a baby rattle covered in rubies before.” Eurydice and Cas exchanged looks. “Funny though, I do feel a little sick…” Orlic finished with wide eyes, then threw herself to the railing as her face turned green.
-Cas disappeared into the cabin and returned with the coffer, clutching it gingerly through a rag. “It doesn’t smell like arsenic,” she said darkly. “There’s got to be at least a few hundred doubloons here.”
+Cas disappeared into the cabin and returned with the coffer, clutching it gingerly through a rag. “It doesn’t smell like arsenic,” she said darkly. “We could use these as doubloons.”
 :Better throw it into the ocean to be safe
 :We’ll lock it in the storeroom for now
 :You shake out the contents of the chest over the railing, then throw the whole thing in for good measure. A few hours later, Amira descends from the rigging with the map tucked under her arm. “Everything okay down here?” she asks.
@@ -183,9 +183,8 @@ Eurydice turns to you. “Hoist the mizzen, sailor. We’ve got places to be.”
 “No, don’t do that!” Eurydice corrects frantically.
 “Avast ye, that she blows!” (“No, she doesn’t!”).
 That evening, Cas sneaks back downstairs to peek in the inventory, and she’s shocked to find that the treasure chest has burst open, and the amount of jewelry doubled in size. She slowly blows the candle out and backs out of the room.
-
-:inv
-:inv
+:d-50
+:d+50
 |5
 :Go camping w/ locals. They have a diary, and at night, nobody is looking.
 :Don't look, what if they wake up?
