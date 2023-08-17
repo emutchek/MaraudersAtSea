@@ -92,7 +92,7 @@ function paintInventory() {
     $('#medicineLabel').text(`${inventory.medicine} vials`);
     $('#ropeLabel').text(`${inventory.rope} spools`);
     $('#woodLabel').text(`${inventory.wood} planks`);
-    $("#doubloonsText").text(`$${doubloons}`);
+    $("#doubloonsText").text(`$${inventory.doubloons}`);
 }
 
 // When you lose or gain a resource, the text gets bigger and changes color for a second
