@@ -1,5 +1,6 @@
 0
-:On the day the crew docked at the Isle of Pirates, everyone was abuzz with news of a king dying in the powerful land of Helion. Of course, pirates did not serve kings, and most had long since left any place called home, but it was good to know whose treasures one was plundering. As she opened her mouth to ask what happened, Eurydice was distracted by a harried messenger shoving a dampened letter at her. She slit it open, curious, and saw it had been sent a week ago by the boss of her former thieving crew. He was offering a thousand doubloons for an urgent cartography mission in the Eastern islands (a vast, mysterious territory that any sailor worth her salt knew to avoid). Just then, a tearful redheaded girl ran out of a tavern down the street. Cas popped her head out a second later. 
+----
+On the day the crew docked at the Isle of Pirates, everyone was abuzz with news of a king dying in the powerful land of Helion. Of course, pirates did not serve kings, and most had long since left any place called home, but it was good to know whose treasures one was plundering. As she opened her mouth to ask what happened, Eurydice was distracted by a harried messenger shoving a dampened letter at her. She slit it open, curious, and saw it had been sent a week ago by the boss of her former thieving crew. He was offering a thousand doubloons for an urgent cartography mission in the Eastern islands (a vast, mysterious territory that any sailor worth her salt knew to avoid). Just then, a tearful redheaded girl ran out of a tavern down the street. Cas popped her head out a second later. 
 “It’s not you, it’s me!” she called helpfully. Passerby stared at Cas flipped her tumbling black curls, and she winked back at them.
 
 Eurydice sighed and marched over to fill her in. 
@@ -7,9 +8,12 @@ Eurydice sighed and marched over to fill her in.
 “You want to leave right now?” Cas exclaimed. “Isha just left for the market, we haven’t stocked up yet!” 
 
 “If we don’t go now, we may not have time to make a map by this deadline.” Eurydice chews her thumb and turns to you. “What do you think?”
-:We can’t risk losing out on the haul, we should sail now.
-:We should take a couple days to resupply - who knows how long we’ll be gone?
-:Cas dropped her shoulders, looking relieved. 
+----
+We should take a couple days to resupply - who knows how long we’ll be gone?
+----
+We can’t risk losing out on the haul, we should sail now.
+----
+Cas dropped her shoulders, looking relieved. 
 
 “We still need to focus on resupplying for this job,” Eurydice warned. 
 
@@ -19,20 +23,22 @@ Eurydice sighed and marched over to fill her in.
 
 “-sorry, BUY three barrels of rum each-” 
 
-Eurydice knocked her friend upside the head and watched as Cas meandered away, still grinning and reciting her imaginary shopping list. That night, the crew assembled in the tavern to subtly troll for some information. Most of what they heard qualified more as entertainment than legitimate navigational advice. One drunken carouser pounded the counter with all three of his fingers for emphasis: 
+Eurydice knocked her friend upside the head and watched as Cas meandered away, still grinning and reciting her imaginary shopping list. That night, the crew assembled in the tavern to subtly troll for some information. Most of what they heard qualified more as entertainment than legitimate navigational advice. One drunken carouser pounded the counter with all three of his fingers for emphasis, 
 
 “Aye, the people ‘round those parts live with tigers… and they feed ‘em ther young!” He panted, wide-eyed. Orlic stared at his wild nose hair in morbid fascination.
 
 So a few days later, the pirates pushed off the dock warily, setting course for the unknown. 
-:“You’re probably right,” Eurydice sighed. “This kind of booty could be life-changing for Ish’s family.” 
+----
+“You’re probably right,” Eurydice sighed. “This kind of booty could be life-changing for Ish’s family.” 
 
-Cas matched her wistful tone: “And for my vintage sword collectio- Ow!” 
+Cas matched her wistful tone, “And for my vintage sword collectio- Ow!” 
 
 Eurydice made a show of shaking off her knuckles and then donned her hat. “Find Ish and tell them to buy as much food as they can. Anchors up in an hour.”
-:bonusAll
-:
+----
+gainInv
+----
 |1
-:After a full week of sailing, the crew set down at a cozy, inviting shore with a sandy beach. They were already craving fresh food and upon spotting some fruit trees, they piled onshore rather indiscreetly, squabbling over who should tie up the dinghy. As they strained to reach the fruit, a voice came thundering out of nowhere.
+----After a full week of sailing, the crew set down at a cozy, inviting shore with a sandy beach. They were already craving fresh food and upon spotting some fruit trees, they piled onshore rather indiscreetly, squabbling over who should tie up the dinghy. As they strained to reach the fruit, a voice came thundering out of nowhere.
 
 “WHO?” 
 
@@ -46,10 +52,12 @@ The man scrutinized her. “We know your language, but we do not welcome your ki
 Amira pushed her glasses up nervously. “We are foreigners, but we’re just here to observe. We don’t want to harm anyone. What’s your name?”
 
 He frowned. “My name is N’Jobu. And if you speak the truth, you won’t mind revealing your tools of… observance” he gestured at the dagger and pouch of blasting powders strapped to Eurydice’s side. The crew exchanged looks.
-
-:Tell her to give him the pouch of chemicals as a gesture of goodwill
-:We can’t let our weapons spread around this place - just place your blade down to show you’re unarmed
-:N’Jobu seems surprised, but he accepts the pouch and deftly tucks it away in his clothes. 
+----
+Tell her to give him the pouch of chemicals as a gesture of goodwill
+----
+We can’t let our weapons spread around this place - just place your blade down to show you’re unarmed
+----
+N’Jobu seems surprised, but he accepts the pouch and deftly tucks it away in his clothes. 
 
 “It’s dangerous for you to be here,” he says urgently. “Not all islands will welcome you. But you and I have no quarrel. You may eat, rest here, on the beaches. Tonight I will see you off,” he stares meaningfully. 
 
@@ -58,16 +66,19 @@ Amira smiles and nods in easy agreement. With the fright wearing off, the pirate
 “Do not sail East tonight. There is a passage that lies South of here, it will bring you around certain… dangers.” 
 
 Eurydice gives a grateful nod, and the crew piles into the dinghy once more.
-:“I see,” he says with a small smile, placing his own spear down. 
+----
+“I see,” he says with a small smile, placing his own spear down. 
 “You are welcome to take food with you, but I cannot offer you shelter here. It is not wise for -” N’Jobu cuts himself off with a faraway gaze, then shakes himself.
 
 “The next island is straight East from here, you will reach it before long.” The meaning is clear, and Eurydice gives a respectful nod. 
 
 “We’ll be on our way then.”
-:branch
-:
+----
+branch
+----
 |2a
-:Sure enough, a few days later, the crew spots a tiny landmass that crops up almost out of nowhere. 
+----
+Sure enough, a few days later, the crew spots a tiny landmass that crops up almost out of nowhere. 
 
 “Land ho-!” 
 
@@ -76,20 +87,25 @@ Eurydice gives a grateful nod, and the crew piles into the dinghy once more.
 “I have to get closer,” she said. 
 
 “Are you sure that’s a good idea, Mir? What if it’s some sort of… ghost island?”
-: Swim over to the island
-:Dive off the ship to investigate the debris
+----
+Swim over to the island
+----
+Dive off the ship to investigate the debris
 
-:The crew plunges into the salty sea, Amira leading the charge with a sack of instruments strapped to her back. But as you near the edge, the water doesn’t get any shallower. Cautiously, you swim all the way up to the edge, still treading water as if you were beside a boat. When you extend a hand to touch the flowers, your hand passes right through. 
+----
+The crew plunges into the salty sea, Amira leading the charge with a sack of instruments strapped to her back. But as you near the edge, the water doesn’t get any shallower. Cautiously, you swim all the way up to the edge, still treading water as if you were beside a boat. When you extend a hand to touch the flowers, your hand passes right through. 
 
 “Well that’s new,” Cas remarks, an edge to her voice. 
 
 “I don’t understand, is it some sort of…  complex mirage?” Amira reaches for her instruments. The crew ends up spending a relatively happy afternoon swimming and eating around the not-there island before Amira surrenders to the scientific mystery, and you sail on.
-:You shoot down into the water, five splashes in the otherwise quiet sea air. Underwater, the sun is nearly as powerful as above, and you see quite clearly that the landmass extends down, not floats. Wasting no breath, the pirates cross their arms and sink further. The surface of the mass is much rougher than the usual wall of sediment beneath an island, and far narrower. Swimming closer, it begins to take shape as a ginormous column made of ship parts and bones. There are a mosaic of types of woods and knots, some strange metal tubing, all in various states of decomposition. It continues down as far as the eye can see. The crew’s lungs begin to burn and they kick back up to the surface. 
+----
+You shoot down into the water, five splashes in the otherwise quiet sea air. Underwater, the sun is nearly as powerful as above, and you see quite clearly that the landmass extends down, not floats. Wasting no breath, the pirates cross their arms and sink further. The surface of the mass is much rougher than the usual wall of sediment beneath an island, and far narrower. Swimming closer, it begins to take shape as a ginormous column made of ship parts and bones. There are a mosaic of types of woods and knots, some strange metal tubing, all in various states of decomposition. It continues down as far as the eye can see. The crew’s lungs begin to burn and they kick back up to the surface. 
 “Well,” Eurydice swallows. “No prey no pay, eh buckos?”
-:inv
-:rudeness
+----
+----
 |2b
-:N’Jobu was right that the next leg of the journey wouldn’t be long, but when they spotted something from the crow’s nest a few days later, it was more of a jaggedy cave than a beach with delicious snacks. 
+----
+N’Jobu was right that the next leg of the journey wouldn’t be long, but when they spotted something from the crow’s nest a few days later, it was more of a jaggedy cave than a beach with delicious snacks. 
 
 “There can’t actually be a way to walk down there, right?” Ish asked nervously. “It would just be tunnels of… water.” 
 
@@ -98,15 +114,19 @@ There was a soft slapping sound from the back of the ship. The pirates rushed to
 “Saints,” Ish whispered in horror. The beast’s tail arced out of the water, three ship length’s away, and smashed against the waves furiously. 
 
 “WHAT DO WE DO?” Cas screamed, clinging to a ratline as the deck rocked violently.
-:Our only hope is to outrun it now!
-:Fire the cannons!
-:The crew stagger back to their sailing positions, dodging the flickering, forked tongue of the serpent. 
+----
+Our only hope is to outrun it now!
+----
+Fire the cannons!
+----
+The crew stagger back to their sailing positions, dodging the flickering, forked tongue of the serpent. 
 
 “WEIGH ANCHOR AND- YOU KNOW WHAT TO DO!” Eurydice yells from the helm. 
 
 The ship begins to pick up speed, riding the currents left in the monster’s wake. Arcing out of the ocean comes the serpent’s tail, poised to smash through the deck, when Eurydice yanks the wheel to the side. Everyone’s thrown off their feet as the tonnage of the appendage strikes water instead. The pirates keep sailing, watching anxiously for another attack, but the further North they go, the more the serpent seems to lose interest.
 
-:Eurydice and Cas heave a shell off the rack together as Amira scarfs up a flame. The first bombshell flies right past the snakelike body of the serpent sticking out of the water. 
+----
+Eurydice and Cas heave a shell off the rack together as Amira scarfs up a flame. The first bombshell flies right past the snakelike body of the serpent sticking out of the water. 
 
 “Oh, for the love of-” 
 
@@ -115,10 +135,12 @@ The ship begins to pick up speed, riding the currents left in the monster’s wa
 Just as they’re poised to fire, Orlic gives the barrel a haphazard shove, and the shell curves in the air to strike true in the milky eye of the beast. Everyone is still for a moment, before it emits a bloodcurling shriek and head rams the side of the hull. Splintering of wood fills the air. 
 
 “Okay, now we run!”
-:inv
-:inv
+----
+----
+loseHealth
 |3
-:The next time the crew spotted land came as a real relief. Amira was growing anxious about the vastness of the territory they were trying to map, and stress-eating all the cacao beans. Orlic was composing a three-part ballad of their adventures at sea in a key she herself had invented. Suffice to say, they all ran up the beach enthusiastically. This island was quite a bit larger, but the surface was taken up by yawning mouths of caves. The largest was easily the height of the ship, a wall of blackness. Opened trunks lay scattered around the opening - one filled with armor, another rotting fruit. The pirates grinned and lit their torches. After an hour of walking through damp passages, they came upon a dropoff. It was a circular chamber surrounded by rock ledging, with a stone dais in the center. 
+----
+The next time the crew spotted land came as a real relief. Amira was growing anxious about the vastness of the territory they were trying to map, and stress-eating all the cacao beans. Orlic was composing a three-part ballad of their adventures at sea in a key she herself had invented. Suffice to say, they all ran up the beach enthusiastically. This island was quite a bit larger, but the surface was taken up by yawning mouths of caves. The largest was easily the height of the ship, a wall of blackness. Opened trunks lay scattered around the opening - one filled with armor, another rotting fruit. The pirates grinned and lit their torches. After an hour of walking through damp passages, they came upon a dropoff. It was a circular chamber surrounded by rock ledging, with a stone dais in the center. 
 
 “Jackpot,” Ish and Cas whisperered in unison. 
 
@@ -127,9 +149,12 @@ Strewn across the dais were dozens of gold coins, necklaces, and stones glinting
 “I suppose we aren’t the first ones here.” The others turned to look at Amira, who stood gazing down at two skeletons. She put a fist to her chest and bowed her head. 
 
 “It’s a pulley system, see?” Ish pointed up at the cave ceiling, embedded with chains and gears.
-:We should leave with the skeletons now, before we end up like them
-:We can solve this and reach the treasure
-:“You’re probably right, these chains must be about to snap,” Ish remarks. 
+----
+We should leave with the skeletons now, before we end up like them
+----
+We can solve this and reach the treasure
+----
+“You’re probably right, these chains must be about to snap,” Ish remarks. 
 
 “Really?” Eurydice groan. “We’re pirates, you guys.” 
 
@@ -143,144 +168,217 @@ Ish holds it up to the light, rubbing the engraved surface. “EHE,” they read
 
 “Yeah,” Amira says faintly, “this letter was sealed with the same initials these bones were wearing.”
 
-:Ish studies the walls. “You, stand over there,” they gesture, “and grab onto that chain. Cas, you pull the one on the right. Nobody stand behind me.”
+----
+Ish studies the walls. “You, stand over there,” they gesture, “and grab onto that chain. Cas, you pull the one on the right. Nobody stand behind me.”
 The others shuffle out of the way, and with a nod from Ish, pull the chains. A loud roaring fills the chamber as the ledge of rocks next to their feet crumbles down the chasm. Someone screams. But across the room, as the other ends of the chains lift, they raise a stone drawbridge that had been concealed in the rock. The crew carefully inches along the now-clear path to the dais and pocket all the treasure within seconds. In the chaos, Orlic dropped her torch, so it’s slow going to find the way back out of the cave. At one point you notice a series of wild scratches carved into the walls. The passageway gets wider until you’re in another open chamber. Rows of metal bars divide the space into dozens of empty cells.
 “This isn’t…” Amira trails off. “The Eastern Islands are supposed to be unexplored.”
 You stand quietly before unanimously turning around and hurrying out. Dusk has fallen on the beach, and you set to building a fire, the silhouette of the ship on the horizon.
-:branch
-:d+50
+----
+branch
+----
 |4a
-:The next island the crew reached was densely wooded, and they agreed to plot it from aboard the ship. Amira curled up in the crow’s nest with her quills and a spyglass, and the others gathered around the bow. Over the past few days, the captain had examined every inch of the letter from her old boss. There was nothing unusual except for the wax seal.
+----
+The next island the crew reached was densely wooded, and they agreed to plot it from aboard the ship. Amira curled up in the crow’s nest with her quills and a spyglass, and the others gathered around the bow. Over the past few days, the captain had examined every inch of the letter from her old boss. There was nothing unusual except for the wax seal.
 “It doesn’t make sense,” Eurydice complained again. “The Crowley I knew would never take a job from a big organization. It was all… seedy tip offs from Mahruden and drunk smuggling. That or helping some noble steal his own loot, like Lord Reed-”
 “Lord Reed?” Cas interjected.
 “What, do you know him?”
 Cas rolled her eyes. “Everyone knows him. Or at least all the posh scurvy dogs in Helion do. He founded this company out of nowhere, Helion Horizons, and now he’s massively rich. There are rumors, though, about where he gets some of his ‘cheap’ labor,” she finished in disgust.
 “So, Crowley’s in league with some real bilge-suckers,” Ish reasoned, “and this EHE guy who’s funding our little ‘expedition’ has literal skeletons in his closet. We should tell someone. Amira’s family could look into him,” Ish suggested.
 Eurydice’s face darkened. “Crowley was clear - we get this done fast with our mouths shut, or there’s no pretty pile of doubloons waiting at the end.”
-: Send a carrier pigeon requesting information
-: Hold onto the letter for now
-:There’s a strong sense of unease, but everyone eventually nods in agreement. Amira agrees to draft a brief account of what the pirates have seen, including a sketch of the engraved dog tags and letter seal. Her family are Hikmani, people of the kingdom of wisdom, and their libraries are rumored to have scriptures on every plant, animal, and mineral, past and present. Once the letter is done, she rolls the parchment tightly and ties a knot around the bird’s leg.
+---- 
+Send a carrier pigeon requesting information
+---- 
+Hold onto the letter for now
+----
+There’s a strong sense of unease, but everyone eventually nods in agreement. Amira agrees to draft a brief account of what the pirates have seen, including a sketch of the engraved dog tags and letter seal. Her family are Hikmani, people of the kingdom of wisdom, and their libraries are rumored to have scriptures on every plant, animal, and mineral, past and present. Once the letter is done, she rolls the parchment tightly and ties a knot around the bird’s leg.
 “It’ll be fine,” Eurydice reassures. “We’re in a new land with all sorts of wonders to discover! Even if Crowley is pulling a fast one, we’ll be out clean soon anyway with just a map on his desk.”
-:Ish gnaws on their lip worriedly, but the rest of the crew look slightly relieved.
+----
+Ish gnaws on their lip worriedly, but the rest of the crew look slightly relieved.
 Amira agrees to draft a brief account of what the pirates have seen, including a sketch of the engraved dog tags and letter seal. Her family are Hikmani, people of the kingdom of wisdom, and their libraries are rumored to have scriptures on every plant, animal, and mineral, past and present. Once the letter is done, she rolls the parchment tightly and locks it into the safe with the captain’s log.
 The crew sets about hoisting the anchor to take off once more. From the rigging, you call out a warning for stormy clouds and choppy water ahead. Eurydice tips her hat and spins the large wheel to go North and Eastwards.
-:inv
-:inv
+----
+heroism
+----
+heroism
 |4b
-:The next island the crew reached was densely wooded, and they agreed to plot it from aboard the ship. Amira curled up in the crow’s nest with her quills and a spyglass, and the others gathered around the bow where Eurydice was setting a leisurely pace.
+----
+The next island the crew reached was densely wooded, and they agreed to plot it from aboard the ship. Amira curled up in the crow’s nest with her quills and a spyglass, and the others gathered around the bow where Eurydice was setting a leisurely pace.
 “I think I’m allergic to this ocean,” Orlic said forlornly, holding up her hand.
 Cas grabbed her wrist, “Wow, that rash is gnarly!”
 “Orlic, this is the same ocean we’ve always been on,” Eurydice snorted. “You probably accidentally ate some shellfish again.”
 “Did not!” Orlic protested. “I wasn’t fishing this morning; I was looking at that jewelry we found. It’s actually pretty fascinating, there are a lot of little pictures in lockets and things. Oh, and some toys too. Never seen a baby rattle covered in rubies before.” Eurydice and Cas exchanged looks. “Funny though, I do feel a little sick…” Orlic finished with wide eyes, then threw herself to the railing as her face turned green.
 Cas disappeared into the cabin and returned with the coffer, clutching it gingerly through a rag. “It doesn’t smell like arsenic,” she said darkly. “We could use these as doubloons.”
-:Better throw it into the ocean to be safe
-:We’ll lock it in the storeroom for now
-:You shake out the contents of the chest over the railing, then throw the whole thing in for good measure. A few hours later, Amira descends from the rigging with the map tucked under her arm. “Everything okay down here?” she asks.
+----
+Better throw it into the ocean to be safe
+----
+We’ll lock it in the storeroom for now
+----
+You shake out the contents of the chest over the railing, then throw the whole thing in for good measure. A few hours later, Amira descends from the rigging with the map tucked under her arm. “Everything okay down here?” she asks.
 “Sure, everything’s sublime,” Cas chirps. “We’ve only just donated our best haul yet to a bunch of minnows, like some sort of – of – fish charity! Son of a biscuit eater!” She punches the mast angrily and storms off.
 Eurydice turns to you. “Hoist the mizzen, sailor. We’ve got places to be.”
-:“Okay, fine, keep it,” Eurydice sighs, walking over and patting Orlic’s back softly. Cas wraps her hands in rags again and marches the chest below decks. Once Amira finishes with the map, the pirates take up their posts to get as far as they can in the few hours before nightfall. Orlic perks back up enough to sit at the front of the ship and practice her sailing commands.
+----
+“Okay, fine, keep it,” Eurydice sighs, walking over and patting Orlic’s back softly. Cas wraps her hands in rags again and marches the chest below decks. Once Amira finishes with the map, the pirates take up their posts to get as far as they can in the few hours before nightfall. Orlic perks back up enough to sit at the front of the ship and practice her sailing commands.
 “Heave to starboard!”
 “No, don’t do that!” Eurydice corrects frantically.
 “Avast ye, that she blows!” (“No, she doesn’t!”).
 That evening, Cas sneaks back downstairs to peek in the inventory, and she’s shocked to find that the treasure chest has burst open, and the amount of jewelry doubled in size. She slowly blows the candle out and backs out of the room.
-:d-50
-:d+50
+----
+----
 |5
-:Go camping w/ locals. They have a diary, and at night, nobody is looking.
-:Don't look, what if they wake up?
-:Peek at their papers.
-:Because they trust you, the locals bring you to the grove
-:Learn about grove & the creatures who protect it
-:branch
-:
+----
+Go camping w/ locals. They have a diary, and at night, nobody is looking.
+----
+Don't look, what if they wake up?
+----
+Peek at their papers.
+----
+Because they trust you, the locals bring you to the grove
+----
+Learn about grove & the creatures who protect it
+----
+branch
+----
 |6a
-:Locals show you the healing magic of the grove. They ask you not to put it on map.
-:Sure, we'll leave it off
-:We can't afford to make something incomplete
-:Great, you did the right thing
-:Oh no, that was kind of mean of you
-:rudeness
-:rudeness
+----
+Locals show you the healing magic of the grove. They ask you not to put it on map.
+----
+Sure, we'll leave it off
+----
+We can't afford to make something incomplete
+----
+Great, you did the right thing
+----
+Oh no, that was kind of mean of you
+----
+heroism
+----
+heroism
 |6b
-:Reach grove by memory; you assume it may be harmful & mark it on the map.
+----
+Reach grove by memory; you assume it may be harmful & mark it on the map.
 Do you want to take some as a sample? It's probably worth a lot.
-:No, that's not my job
-:Of course, we struck gold
-:You left it alone, so you get doubt meter points
-:You get a little vial of stolen property yay
-:rudeness
-:inv
+----
+No, that's not my job
+----
+Of course, we struck gold
+----
+You left it alone, so you get doubt meter points
+----
+You get a little vial of stolen property yay
+----
+heroism
+----
+heroism
 |7
-:Attend local festival, where you hear rumors of incoming attack. Do you tell them what you know?
-:Yes, they deserve to be alert at least
-:No, we don't know how they might respond. They might be warlike.
-:Something about them liking you
-:You lose out on some info in return
-:branch
-:
+----
+Attend local festival, where you hear rumors of incoming attack. Do you tell them what you know?
+----
+Yes, they deserve to be alert at least
+----
+No, we don't know how they might respond. They might be warlike.
+----
+Something about them liking you
+----
+You lose out on some info in return
+----
+branch
+----
 |8a
-:No text yet.
-:I will go left
-:I will go right
-:I did the right thing
-:I did the wrong thing
-:inv
-:inv
+----
+A (disease) bug attack wipes out half the. Ask the locals for help (cost something) or simply steal the medicine needed? 
+----
+I'll ask for help
+----
+Let's just nab what we need
+----
+The locals give you soothing lotion in exchange for a bit of all your supplies
+----
+You steal the medicine with no one the wiser
+----
+inv(loseAll)
+----
+heroism
 |8b
-:No text yet.
-:I will go left
-:I will go right
-:I did the right thing
-:I did the wrong thing
-:inv
-:inv
+----
+On your way to warn them, a bug attack wipes out half the crew. Continue to the island to warn them now, or heal up and do it after?
+----
+Warn them now
+----
+Wait to heal up
+----
+They appreciate you making the effort to warn them, and give you medicine as a thank you
+----
+Your health improves after a few days; you plan to turn back around
+----
+inv(gainMed)
+----
 |9
-:This is the penultimate island, so the decision should be dramatic, but it's too late for you 
-either way
-:I will go left.
-:I will go right
-:I did the right thing
-:I did the wrong thing
-:branch
-:
+----
+A carrier pigeon arrives, telling you EHE will be giving you your reward, please turn around and deliver map now. Stall and ask for more time so you can investigate their intentions or begin sailing home?
+----
+Request more time
+----
+Start heading back
+----
+You attach a message to the pigeon and continue East
+----
+You start heading back home
+----
+branch
+----
 |10a
-:Map is stolen by lackeys. You are now sure that your mission was past exploratory. 
-Do you turn around to confront your bosses, or try to find some locals to fess up to?
-:We have to tell someone now
-:There may be time to stop them
-:You find some locals who agree to travel with you to a bigger island.
-:You begin proceeding backwards, but are stopped by some locals who insist that you accompany them
-to a big strategy meeting
-:
-:
+----
+Map is stolen by lackeys; they try to kidnap you to join their cause, but locals intervene. Fess up that you made a map and they have it or stay silent?
+----
+We have to tell someone now
+----
+There may be time to stop them
+----
+You tell the truth, and knowing their enemies have a map, they send their fastest ship out to warn N'Jobu
+----
+They sympathize with you but make plans to warn Northeast islands instead of Southeast (RIP N'Jobu)
+----
+----
 |10b
-:Map is stolen by lackeys. You are now sure that your mission was past exploratory. The lackeys
-force their way onto your ship and insist on escorting you back to the Isle of Pirates so you won't
-interfere with their work. You run into some locals and offer to help them, but they refuse you. You've
-given their enemies the map, and for that they will suffer. Some question
-:Option a
-:Option B
-:outcome a
-:outcome b
-:
-:
+----
+Map is stolen by lackeys, who forcibly board your ship and make you go home. They offer you a signing bonus to join their crew since you're already familiar with the area.
+----
+Refuse them
+----
+Join them
+----
+You refuse on moral grounds (little late for that)
+----
+That's so evil you took the money
+----
+----
 |11a
-:At the meeting, everyone is upset that you made the map. However, because of the good will you've 
+----
+At the meeting, everyone is upset that you made the map. However, because of the good will you've 
 shown, they choose to give you another chance to prove yourself. You learn that local scouts report 
-an armada approaching to colonize the islands; your crew joins the war effort. Some profound,
-epilogue question.
-:Option A
-:Option B
-:profound ending #1
-:profound ending #1
-:
-:
+an armada approaching to colonize the islands; your crew joins the war effort. Do you stay together
+as a crew or split up onto their ships?
+----
+Stay together
+----
+Split up
+----
+You enjoy fighting together
+----
+You make amazing new friends
+----
+----
 |11b
-:The crew returns home warily; a month later they sail by and see the destruction. Some profound,
+----
+The crew returns home warily; a month later they sail by and see the destruction. Some profound,
 epilogue question.
-:Option A
-:Option B
-:profound ending #1
-:profound ending #1
-:
-:
+----
+Option A
+----
+Option B
+----
+profound ending #1
+----
+profound ending #1
+----
+----

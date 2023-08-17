@@ -218,6 +218,7 @@ function performSolution(action,outcome) {
     // Player is trying to use a resource, so if they don't have enough of it they lose health
     if(obstacle.amt === "-10") {
       let hadEnough = useInventory(action,Number(obstacle.amt));
+      console.log(`tried to modify ${action} by ${Number(obstacle.amt)}`);
       if (!hadEnough) {
           updateHealth(-25);
           displayObstacleResult("Turns out we didn't have any of that. Whoops!");
@@ -250,39 +251,45 @@ function generateIsland() {
 
 function pickedIsland(aOrB) {
   choseGood = (aOrB=='A' && gdOnLeft) || (aOrB=='B' && !gdOnLeft);
-  if(islandObj["outcomeGd"]==="branch") { 
-    branchIsland();
-  }
-  else if (choseGood) {
-    executeOtherIsland(islandObj["outcomeGd"]);
-  }
-  else executeOtherIsland(islandObj["effectTypeBd"]);
+  if(islandObj["effectTypeGd"]==="branch") branchIsland();
+  else if (choseGood) executeOtherIsland(islandObj["effectTypeGd"],true);
+  else executeOtherIsland(islandObj["effectTypeBd"],false);
+
   if (choseGood) closeIsland(islandObj["outcomeGd"]);
   else closeIsland(islandObj["outcomeBd"]);
   gameOver();
 }
 
-function executeOtherIsland(effectType) {
+function executeOtherIsland(effectType,choseGood) {
   switch (effectType) {
-    case "bonusAll": invIsland(10,10,10,-30,""); break;
-    case "d+50": dropInventory("doubloons",50); break;
-    case "d-50": dropInventory("doubloons",-50); break;
+    case "gainInv": invIsland(10,10,10,-30); break;
+    case "loseInv": invIsland(-10,-10,-10,0); break;
+    case "gainMed": invIsland(40,0,0,0); break;
+    case "loseHealth": updateHealth(-25); break;
+    case "heroism": 
+      if(choseGood) {heroism[0] += 1;console.log("gained some heroism");}
+      else {heroism[1] += 1; console.log("lost some heroism");}break;
+    case "": 
+
   }
 }
 
 function branchIsland() {
   if(choseGood) {
-    morality[0] += 1;
+    heroism[0] += 1;
+    console.log("gained some heroism");
     nextIslandType = true;
   }
   else {
     heroism[1] += 1;
+    console.log("lost some heroism");
     nextIslandType = false;
   }
   console.log(`heroism: ${heroism[0]}g:${heroism[1]}b`);
 }
 
 function invIsland(m,r,w,d){
+  console.log("inside inv island");
   dropInventory("medicine",m);
   dropInventory("rope",r);
   dropInventory("wood",w);

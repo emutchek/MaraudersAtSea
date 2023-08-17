@@ -79,7 +79,7 @@ function fillIslands (islandText,tree) {
 	for(let x = 0; x < 18; x++) {
 		// console.log(islandText[x]);
 		let sanitizedText = islandText[x].replaceAll("\r\n","");
-		let fieldTexts = sanitizedText.split(':');
+		let fieldTexts = sanitizedText.split('----');
 		const obj = new IslandNode();
 		obj["tag"] = fieldTexts[0];
 		obj["text"] = fieldTexts[1];
