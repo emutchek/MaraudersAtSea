@@ -17,7 +17,9 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
+            az storage blob delete-batch --account-name maraudersatsea  --auth-mode key -s '$web'
             az storage blob upload-batch --account-name maraudersatsea  --auth-mode key -d '$web' -s ./website_test
+            az storage blob upload-batch --account-name maraudersatsea  --auth-mode key -d '$web' -s ./website_pics/
     # Azure logout
     - name: logout
       run: |
