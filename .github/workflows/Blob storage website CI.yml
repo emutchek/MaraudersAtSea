@@ -24,12 +24,6 @@ jobs:
       with:
         inlineScript: |
             az storage blob upload-batch --account-name maraudersatsea  --auth-mode key -d '$web' -s ./website_test
-          
-    - name: Upload pics to blob storage
-      uses: azure/CLI@v1
-      with:
-        inlineScript: |
-            az storage blob upload-batch --account-name maraudersatsea  --auth-mode key -d '$web/website_pics' -s ./website_pics
 
     # Azure logout
     - name: logout
