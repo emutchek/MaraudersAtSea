@@ -1,16 +1,11 @@
-# CMPU-203 S23 - Team 2B
-Pooja Huded and Erin Mutchek 
+# MARAUDERS AT SEA
+by Erin Mutchek and Pooja Huded
 
-Iteration 4: Construction Functionality Implemented:
-<ul>
-<li>Made the health and inventory visible at all times during the game.</li>
-<li>Implemented resource areas and managing inventory within resource areas in Android Studio.</li>
-<li>Implemented obstacles that pop up randomly and their effects on inventory and health.</li>
-<li>Implemented the map option, which displays a map of all the islands the user has visited so far. Automatically updates 
-    when a user exits an island.</li>
-<li>Finished writing and testing JUnit tests for all the updated Java classes. </li>
-<li>Finished writing and testing all the views with Android Studio Espresso tests. </li>
-<li>Implemented dynamic state so that the user will return to their current game unless a new game is started or the app is exited.</li>
-<li>Added a home screen to start or restart (after finishing the game) and an end screen for if the user dies during the game. </li>
-<li>Updated documentation such as sequence diagrams and design class diagrams to reflect the added functionality.</li>
-</ul>
+## Overview 
+This website was designed from scratch with HTML/CSS and JavaScript. In the game, the user embarks on an adventure as a member of a pirate crew. 
+
+## Instructions - play game [here](https://maraudersatsea.z13.web.core.windows.net/)
+The user presses sail to move forward and a 3x5 grid represents the immediate surroundings of their ship. When they reach a location of interest, text will appear alongside two option buttons about how to proceed. The user must also resolve random obstacles using their collection of resources, or they risk losing health. The decisions they make have consequences on the world around them, so sail wisely.
+
+## Credits
+Special thanks to Professor Rui Meireles at Vassar College, John Mutchek V, and Byrom J. for their assistance with this game.
