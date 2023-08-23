@@ -13,13 +13,24 @@ jobs:
       with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-    - name: Upload to blob storage
+    - name: delete to blob storage
       uses: azure/CLI@v1
       with:
         inlineScript: |
             az storage blob delete-batch --account-name maraudersatsea  --auth-mode key -s '$web'
+           
+    - name: Upload website to blob storage
+      uses: azure/CLI@v1
+      with:
+        inlineScript: |
             az storage blob upload-batch --account-name maraudersatsea  --auth-mode key -d '$web' -s ./website_test
+          
+    - name: Upload pics to blob storage
+      uses: azure/CLI@v1
+      with:
+        inlineScript: |
             az storage blob upload-batch --account-name maraudersatsea  --auth-mode key -d '$web' -s ./website_pics/
+            
     # Azure logout
     - name: logout
       run: |
